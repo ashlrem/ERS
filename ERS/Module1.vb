@@ -401,7 +401,7 @@ Module Module1
         objConn.ConnectionString = cn
         objConn.Open()
         Try
-            If (My.Forms.AddSubject.gl.SelectedIndex = -1 Or My.Forms.AddSubject.sec.SelectedIndex = -1 Or My.Forms.AddSubject.sy.Text = "" Or My.Forms.AddSubject.tme.Text = "" Or My.Forms.AddSubject.nm.Text = "" Or My.Forms.AddSubject.subjname.SelectedIndex = -1 Or My.Forms.AddSubject.teacher.Text = "") Then
+            If (My.Forms.AddClass.gl.SelectedIndex = -1 Or My.Forms.AddClass.sec.SelectedIndex = -1 Or My.Forms.AddClass.sy.Text = "" Or My.Forms.AddClass.tme.Text = "" Or My.Forms.AddClass.nm.Text = "" Or My.Forms.AddClass.subjname.SelectedIndex = -1 Or My.Forms.AddClass.teacher.Text = "") Then
                 MsgBox("Enter the empty fields!")
             Else
                 'so dito, subjects yung sine save natin sa database, so yung SQL Query natin,
@@ -410,13 +410,13 @@ Module Module1
                 'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
                 ins.CommandText = "INSERT INTO subject_tbl VALUES( @GradeLevel, @Section, @SchoolYear, @Time, @No_Minutes, @Subject_Name, @Teacher)"
-                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddSubject.gl.SelectedItem.ToString)
-                ins.Parameters.AddWithValue("@Section", My.Forms.AddSubject.sec.SelectedItem.ToString)
-                ins.Parameters.AddWithValue("@SchoolYear", My.Forms.AddSubject.sy.Text)
-                ins.Parameters.AddWithValue("@Time", My.Forms.AddSubject.tme.Text)
-                ins.Parameters.AddWithValue("@No_Minutes", My.Forms.AddSubject.nm.Text)
-                ins.Parameters.AddWithValue("@Subject_Name", My.Forms.AddSubject.subjname.SelectedItem)
-                ins.Parameters.AddWithValue("@Teacher", My.Forms.AddSubject.teacher.Text)
+                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClass.gl.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@SchoolYear", My.Forms.AddClass.sy.Text)
+                ins.Parameters.AddWithValue("@Time", My.Forms.AddClass.tme.Text)
+                ins.Parameters.AddWithValue("@No_Minutes", My.Forms.AddClass.nm.Text)
+                ins.Parameters.AddWithValue("@Subject_Name", My.Forms.AddClass.subjname.SelectedItem)
+                ins.Parameters.AddWithValue("@Teacher", My.Forms.AddClass.teacher.Text)
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
                 MsgBox("Subject saved successfully!")
@@ -427,7 +427,7 @@ Module Module1
                     AddSubClear()
                 ElseIf (a = MsgBoxResult.No) Then
                     StudentCreate.Show()
-                    My.Forms.AddSubject.Close()
+                    My.Forms.AddClass.Close()
                 End If
             End If
         Catch ex As Exception
@@ -448,13 +448,13 @@ Module Module1
         'every successful query. naka automate na kumbaga.
 
         'clearing fields per forms
-        My.Forms.AddSubject.gl.SelectedIndex = -1
-        My.Forms.AddSubject.sec.SelectedIndex = -1
-        My.Forms.AddSubject.sy.Text = ""
-        My.Forms.AddSubject.tme.Text = ""
-        My.Forms.AddSubject.nm.Text = ""
-        My.Forms.AddSubject.subjname.SelectedIndex = -1
-        My.Forms.AddSubject.teacher.Text = ""
+        My.Forms.AddClass.gl.SelectedIndex = -1
+        My.Forms.AddClass.sec.SelectedIndex = -1
+        My.Forms.AddClass.sy.Text = ""
+        My.Forms.AddClass.tme.Text = ""
+        My.Forms.AddClass.nm.Text = ""
+        My.Forms.AddClass.subjname.SelectedIndex = -1
+        My.Forms.AddClass.teacher.Text = ""
 
         My.Forms.AdminCreate.pl.Text = ""
         My.Forms.AdminCreate.ln.Text = ""
@@ -1736,27 +1736,27 @@ Module Module1
   
     Public Sub updateSubjA_btn()
         Try
-            If (My.Forms.UpdateSub_A.gl.Text = "" And My.Forms.UpdateSub_A.sec.Text = "" _
-              And My.Forms.UpdateSub_A.nm.Text = "" And My.Forms.UpdateSub_A.teacher.Text = "" _
-              And My.Forms.UpdateSub_A.sy.Text = "" And My.Forms.UpdateSub_A.nm.Text = "") Then
+            If (My.Forms.UpdateClass_A.gl.Text = "" And My.Forms.UpdateClass_A.sec.Text = "" _
+              And My.Forms.UpdateClass_A.nm.Text = "" And My.Forms.UpdateClass_A.teacher.Text = "" _
+              And My.Forms.UpdateClass_A.sy.Text = "" And My.Forms.UpdateClass_A.nm.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE subject_tbl SET Grade_Level = '" & My.Forms.UpdateSub_A.gl.Text & "', Section = '" & My.Forms.UpdateSub_A.sec.Text & "', School_Year = '" & My.Forms.UpdateSub_A.sy.Text & "', Time = '" & My.Forms.UpdateSub_A.tim.Text & "', No_Minutes = '" & My.Forms.UpdateSub_A.nm.Text = "" & "', Teacher = '" & My.Forms.UpdateSub_A.teacher.Text & "'"
+                Dim reg As String = "UPDATE subject_tbl SET Grade_Level = '" & My.Forms.UpdateClass_A.gl.Text & "', Section = '" & My.Forms.UpdateClass_A.sec.Text & "', School_Year = '" & My.Forms.UpdateClass_A.sy.Text & "', Time = '" & My.Forms.UpdateClass_A.tim.Text & "', No_Minutes = '" & My.Forms.UpdateClass_A.nm.Text = "" & "', Teacher = '" & My.Forms.UpdateClass_A.teacher.Text & "'"
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
                         sqlCmd.ExecuteNonQuery()
                         MsgBox("Subject Updated!")
-                        My.Forms.UpdateSub_A.gl.Text = ""
-                        My.Forms.UpdateSub_A.sec.Text = ""
-                        My.Forms.UpdateSub_A.nm.Text = ""
-                        My.Forms.UpdateSub_A.teacher.Text = ""
-                        My.Forms.UpdateSub_A.sy.Text = ""
-                        My.Forms.UpdateSub_A.tim.Text = ""
-                        My.Forms.UpdateSub_A.GroupBox2.Enabled = False
-                        My.Forms.UpdateSub_A.SearchSubj_btn.Enabled = True
-                        My.Forms.UpdateSub_A.subj.Enabled = True
-                        My.Forms.UpdateSub_A.subj.Focus()
+                        My.Forms.UpdateClass_A.gl.Text = ""
+                        My.Forms.UpdateClass_A.sec.Text = ""
+                        My.Forms.UpdateClass_A.nm.Text = ""
+                        My.Forms.UpdateClass_A.teacher.Text = ""
+                        My.Forms.UpdateClass_A.sy.Text = ""
+                        My.Forms.UpdateClass_A.tim.Text = ""
+                        My.Forms.UpdateClass_A.GroupBox2.Enabled = False
+                        My.Forms.UpdateClass_A.SearchSubj_btn.Enabled = True
+                        My.Forms.UpdateClass_A.subj.Enabled = True
+                        My.Forms.UpdateClass_A.subj.Focus()
                         cn1.Close()
                     End Using
                     cn1.Close()
@@ -1772,24 +1772,24 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim reg As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateSub_A.subj.Text & "')"
+            Dim reg As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateClass_A.subj.Text & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(reg, cn)
             r = cmd.ExecuteReader()
             If r.Read Then
-                My.Forms.UpdateSub_A.gl.Text = r("Grade_Level").ToString()
-                My.Forms.UpdateSub_A.sec.Text = r("Section").ToString()
-                My.Forms.UpdateSub_A.sy.Text = r("School_Year").ToString()
-                My.Forms.UpdateSub_A.tim.Text = r("Time").ToString()
-                My.Forms.UpdateSub_A.nm.Text = r("No_Minutes").ToString()
-                My.Forms.UpdateSub_A.teacher.Text = r("Teacher").ToString()
-                My.Forms.UpdateSub_A.SearchSubj_btn.Enabled = False
-                My.Forms.UpdateSub_A.subj.Enabled = False
+                My.Forms.UpdateClass_A.gl.Text = r("Grade_Level").ToString()
+                My.Forms.UpdateClass_A.sec.Text = r("Section").ToString()
+                My.Forms.UpdateClass_A.sy.Text = r("School_Year").ToString()
+                My.Forms.UpdateClass_A.tim.Text = r("Time").ToString()
+                My.Forms.UpdateClass_A.nm.Text = r("No_Minutes").ToString()
+                My.Forms.UpdateClass_A.teacher.Text = r("Teacher").ToString()
+                My.Forms.UpdateClass_A.SearchSubj_btn.Enabled = False
+                My.Forms.UpdateClass_A.subj.Enabled = False
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
-                My.Forms.UpdateSub_A.subj.Text = ""
-                My.Forms.UpdateSub_A.subj.Focus()
+                My.Forms.UpdateClass_A.subj.Text = ""
+                My.Forms.UpdateClass_A.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -1799,27 +1799,27 @@ Module Module1
     End Sub
     Public Sub updateSubjR_btn()
         Try
-            If (My.Forms.UpdateSub_A.gl.Text = "" And My.Forms.UpdateSub_A.sec.Text = "" _
-              And My.Forms.UpdateSub_A.nm.Text = "" And My.Forms.UpdateSub_A.teacher.Text = "" _
-              And My.Forms.UpdateSub_A.sy.Text = "" And My.Forms.UpdateSub_A.nm.Text = "") Then
+            If (My.Forms.UpdateClass_A.gl.Text = "" And My.Forms.UpdateClass_A.sec.Text = "" _
+              And My.Forms.UpdateClass_A.nm.Text = "" And My.Forms.UpdateClass_A.teacher.Text = "" _
+              And My.Forms.UpdateClass_A.sy.Text = "" And My.Forms.UpdateClass_A.nm.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE subject_tbl SET Grade_Level = '" & My.Forms.UpdateSub_A.gl.Text & "', Section = '" & My.Forms.UpdateSub_A.sec.Text & "', School_Year = '" & My.Forms.UpdateSub_A.sy.Text & "', Time = '" & My.Forms.UpdateSub_A.tim.Text & "', No_Minutes = '" & My.Forms.UpdateSub_A.nm.Text = "" & "', Teacher = '" & My.Forms.UpdateSub_A.teacher.Text & "'"
+                Dim reg As String = "UPDATE subject_tbl SET Grade_Level = '" & My.Forms.UpdateClass_A.gl.Text & "', Section = '" & My.Forms.UpdateClass_A.sec.Text & "', School_Year = '" & My.Forms.UpdateClass_A.sy.Text & "', Time = '" & My.Forms.UpdateClass_A.tim.Text & "', No_Minutes = '" & My.Forms.UpdateClass_A.nm.Text = "" & "', Teacher = '" & My.Forms.UpdateClass_A.teacher.Text & "'"
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
                         sqlCmd.ExecuteNonQuery()
                         MsgBox("Subject Updated!")
-                        My.Forms.UpdateSub_A.gl.Text = ""
-                        My.Forms.UpdateSub_A.sec.Text = ""
-                        My.Forms.UpdateSub_A.nm.Text = ""
-                        My.Forms.UpdateSub_A.teacher.Text = ""
-                        My.Forms.UpdateSub_A.sy.Text = ""
-                        My.Forms.UpdateSub_A.tim.Text = ""
-                        My.Forms.UpdateSub_A.GroupBox2.Enabled = False
-                        My.Forms.UpdateSub_A.SearchSubj_btn.Enabled = True
-                        My.Forms.UpdateSub_A.subj.Enabled = True
-                        My.Forms.UpdateSub_A.subj.Focus()
+                        My.Forms.UpdateClass_A.gl.Text = ""
+                        My.Forms.UpdateClass_A.sec.Text = ""
+                        My.Forms.UpdateClass_A.nm.Text = ""
+                        My.Forms.UpdateClass_A.teacher.Text = ""
+                        My.Forms.UpdateClass_A.sy.Text = ""
+                        My.Forms.UpdateClass_A.tim.Text = ""
+                        My.Forms.UpdateClass_A.GroupBox2.Enabled = False
+                        My.Forms.UpdateClass_A.SearchSubj_btn.Enabled = True
+                        My.Forms.UpdateClass_A.subj.Enabled = True
+                        My.Forms.UpdateClass_A.subj.Focus()
                         cn1.Close()
                     End Using
                     cn1.Close()
@@ -1836,23 +1836,23 @@ Module Module1
             insert()
             Dim r As MySqlDataReader
 
-            Dim ViewSubject_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewSubject.subj.SelectedItem & "')"
-           cn.Open()
+            Dim ViewSubject_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewClass.subj.SelectedItem & "')"
+            cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(ViewSubject_frm, cn)
             r = cmd.ExecuteReader()
             If r.Read Then
                 'For form ViewSubject_frm search button
-                My.Forms.ViewSubject.gl.Text = r("Grade_Level").ToString()
-                My.Forms.ViewSubject.sec.Text = r("Section").ToString()
-                My.Forms.ViewSubject.sy.Text = r("School_Year").ToString()
-                My.Forms.ViewSubject.tim.Text = r("Time").ToString()
-                My.Forms.ViewSubject.nm.Text = r("No_Minutes").ToString()
-                My.Forms.ViewSubject.teacher.Text = r("Teacher").ToString()
+                My.Forms.ViewClass.gl.Text = r("Grade_Level").ToString()
+                My.Forms.ViewClass.sec.Text = r("Section").ToString()
+                My.Forms.ViewClass.sy.Text = r("School_Year").ToString()
+                My.Forms.ViewClass.tim.Text = r("Time").ToString()
+                My.Forms.ViewClass.nm.Text = r("No_Minutes").ToString()
+                My.Forms.ViewClass.teacher.Text = r("Teacher").ToString()
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
-                My.Forms.ViewSubject.subj.Text = ""
-                My.Forms.ViewSubject.subj.Focus()
+                My.Forms.ViewClass.subj.Text = ""
+                My.Forms.ViewClass.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -1932,27 +1932,27 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim UpdateSub_A_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateSub_A.subj.Text & "')"
+            Dim UpdateSub_A_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateClass_A.subj.Text & "')"
             cn.Open()
             Dim cmd1 As MySqlCommand = New MySqlCommand(UpdateSub_A_frm, cn)
             r = cmd1.ExecuteReader()
             If r.Read Then
 
                 'For form UpdateSub_A search button
-                My.Forms.UpdateSub_A.gl.Text = r("Grade_Level").ToString()
-                My.Forms.UpdateSub_A.sec.Text = r("Section").ToString()
-                My.Forms.UpdateSub_A.sy.Text = r("School_Year").ToString()
-                My.Forms.UpdateSub_A.tim.Text = r("Time").ToString()
-                My.Forms.UpdateSub_A.nm.Text = r("No_Minutes").ToString()
-                My.Forms.UpdateSub_A.teacher.Text = r("Teacher").ToString()
-                My.Forms.UpdateSub_A.SearchSubj_btn.Enabled = False
-                My.Forms.UpdateSub_A.subj.Enabled = False
+                My.Forms.UpdateClass_A.gl.Text = r("Grade_Level").ToString()
+                My.Forms.UpdateClass_A.sec.Text = r("Section").ToString()
+                My.Forms.UpdateClass_A.sy.Text = r("School_Year").ToString()
+                My.Forms.UpdateClass_A.tim.Text = r("Time").ToString()
+                My.Forms.UpdateClass_A.nm.Text = r("No_Minutes").ToString()
+                My.Forms.UpdateClass_A.teacher.Text = r("Teacher").ToString()
+                My.Forms.UpdateClass_A.SearchSubj_btn.Enabled = False
+                My.Forms.UpdateClass_A.subj.Enabled = False
 
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.UpdateSub_A.subj.Text = ""
-                My.Forms.UpdateSub_A.subj.Focus()
+                My.Forms.UpdateClass_A.subj.Text = ""
+                My.Forms.UpdateClass_A.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -1965,27 +1965,27 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim UpdateSub_A_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateSub_R.subj.Text & "')"
+            Dim UpdateSub_A_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateClass_R.subj.Text & "')"
             cn.Open()
             Dim cmd1 As MySqlCommand = New MySqlCommand(UpdateSub_A_frm, cn)
             r = cmd1.ExecuteReader()
             If r.Read Then
 
                 'For form UpdateSub_A search button
-                My.Forms.UpdateSub_R.gl.Text = r("Grade_Level").ToString()
-                My.Forms.UpdateSub_R.sec.Text = r("Section").ToString()
-                My.Forms.UpdateSub_R.sy.Text = r("School_Year").ToString()
-                My.Forms.UpdateSub_R.tim.Text = r("Time").ToString()
-                My.Forms.UpdateSub_R.nm.Text = r("No_Minutes").ToString()
-                My.Forms.UpdateSub_R.teacher.Text = r("Teacher").ToString()
-                My.Forms.UpdateSub_R.SearchSubj_btn.Enabled = False
-                My.Forms.UpdateSub_R.subj.Enabled = False
+                My.Forms.UpdateClass_R.gl.Text = r("Grade_Level").ToString()
+                My.Forms.UpdateClass_R.sec.Text = r("Section").ToString()
+                My.Forms.UpdateClass_R.sy.Text = r("School_Year").ToString()
+                My.Forms.UpdateClass_R.tim.Text = r("Time").ToString()
+                My.Forms.UpdateClass_R.nm.Text = r("No_Minutes").ToString()
+                My.Forms.UpdateClass_R.teacher.Text = r("Teacher").ToString()
+                My.Forms.UpdateClass_R.SearchSubj_btn.Enabled = False
+                My.Forms.UpdateClass_R.subj.Enabled = False
 
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.UpdateSub_R.subj.Text = ""
-                My.Forms.UpdateSub_R.subj.Focus()
+                My.Forms.UpdateClass_R.subj.Text = ""
+                My.Forms.UpdateClass_R.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2051,8 +2051,8 @@ Module Module1
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.UpdateSub_A.subj.Text = ""
-                My.Forms.UpdateSub_A.subj.Focus()
+                My.Forms.UpdateClass_A.subj.Text = ""
+                My.Forms.UpdateClass_A.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2066,7 +2066,7 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewSubject.subj.SelectedItem & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewClass.subj.SelectedItem & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
@@ -2074,19 +2074,19 @@ Module Module1
             If r.Read Then
 
                 'For form DeleteSubj_R search button
-                My.Forms.ViewSubject.gl.Text = r("Grade_Level").ToString()
-                My.Forms.ViewSubject.sec.Text = r("Section").ToString()
-                My.Forms.ViewSubject.sy.Text = r("School_Year").ToString()
-                My.Forms.ViewSubject.tim.Text = r("Time").ToString()
-                My.Forms.ViewSubject.nm.Text = r("No_Minutes").ToString()
-                My.Forms.ViewSubject.teacher.Text = r("Teacher").ToString()
-                My.Forms.ViewSubject.SearchSubj_btn.Enabled = False
-                My.Forms.ViewSubject.subj.Enabled = False
+                My.Forms.ViewClass.gl.Text = r("Grade_Level").ToString()
+                My.Forms.ViewClass.sec.Text = r("Section").ToString()
+                My.Forms.ViewClass.sy.Text = r("School_Year").ToString()
+                My.Forms.ViewClass.tim.Text = r("Time").ToString()
+                My.Forms.ViewClass.nm.Text = r("No_Minutes").ToString()
+                My.Forms.ViewClass.teacher.Text = r("Teacher").ToString()
+                My.Forms.ViewClass.SearchSubj_btn.Enabled = False
+                My.Forms.ViewClass.subj.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.ViewSubject.subj.Text = ""
-                My.Forms.ViewSubject.subj.Focus()
+                My.Forms.ViewClass.subj.Text = ""
+                My.Forms.ViewClass.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2099,7 +2099,7 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewSubjectR.subj.SelectedItem & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewClassR.subj.SelectedItem & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
@@ -2107,19 +2107,19 @@ Module Module1
             If r.Read Then
 
                 'For form DeleteSubj_R search button
-                My.Forms.ViewSubjectR.gl.Text = r("Grade_Level").ToString()
-                My.Forms.ViewSubjectR.sec.Text = r("Section").ToString()
-                My.Forms.ViewSubjectR.sy.Text = r("School_Year").ToString()
-                My.Forms.ViewSubjectR.tim.Text = r("Time").ToString()
-                My.Forms.ViewSubjectR.nm.Text = r("No_Minutes").ToString()
-                My.Forms.ViewSubjectR.teacher.Text = r("Teacher").ToString()
-                My.Forms.ViewSubjectR.SearchSubj_btn.Enabled = False
-                My.Forms.ViewSubjectR.subj.Enabled = False
+                My.Forms.ViewClassR.gl.Text = r("Grade_Level").ToString()
+                My.Forms.ViewClassR.sec.Text = r("Section").ToString()
+                My.Forms.ViewClassR.sy.Text = r("School_Year").ToString()
+                My.Forms.ViewClassR.tim.Text = r("Time").ToString()
+                My.Forms.ViewClassR.nm.Text = r("No_Minutes").ToString()
+                My.Forms.ViewClassR.teacher.Text = r("Teacher").ToString()
+                My.Forms.ViewClassR.SearchSubj_btn.Enabled = False
+                My.Forms.ViewClassR.subj.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.ViewSubjectR.subj.Text = ""
-                My.Forms.ViewSubjectR.subj.Focus()
+                My.Forms.ViewClassR.subj.Text = ""
+                My.Forms.ViewClassR.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception

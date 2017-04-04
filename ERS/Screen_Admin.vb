@@ -38,10 +38,10 @@
     End Sub
 
     Private Sub AddSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddSubjectToolStripMenuItem.Click
-        AddSubject.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(AddSubject)
+        AddClass.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(AddClass)
         AdminPanel.Hide()
-        AddSubject.Show()
+        AddClass.Show()
     End Sub
 
     Private Sub AddAdminToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddAdminToolStripMenuItem.Click
@@ -108,10 +108,10 @@
     End Sub
 
     Private Sub UpdateSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateSubjectToolStripMenuItem.Click
-        UpdateSub_A.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(UpdateSub_A)
+        UpdateClass_A.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(UpdateClass_A)
         AdminPanel.Hide()
-        UpdateSub_A.Show()
+        UpdateClass_A.Show()
     End Sub
 
     Private Sub DeleteSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteSubjectToolStripMenuItem.Click
@@ -190,17 +190,17 @@
     End Sub
 
     Private Sub SearchSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchSubjectToolStripMenuItem.Click
-        ViewSubject.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(ViewSubject)
+        ViewClass.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(ViewClass)
         AdminPanel.Hide()
-        ViewSubject.Show()
+        ViewClass.Show()
     End Sub
 
     Private Sub ViewSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewSubjectToolStripMenuItem.Click
-        ViewSubject.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(ViewSubject)
+        ViewClass.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(ViewClass)
         AdminPanel.Hide()
-        ViewSubject.Show()
+        ViewClass.Show()
     End Sub
 
     Private Sub UpdateAdminToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateAdminToolStripMenuItem.Click

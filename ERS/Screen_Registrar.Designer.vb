@@ -150,25 +150,25 @@ Partial Class Screen_Registrar
         Me.SubjectsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddSubjectToolStripMenuItem, Me.UpdateSubjectToolStripMenuItem, Me.DeleteSubjectToolStripMenuItem, Me.ToolStripSeparator3, Me.ViewSubjectToolStripMenuItem})
         Me.SubjectsToolStripMenuItem.Name = "SubjectsToolStripMenuItem"
         Me.SubjectsToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.SubjectsToolStripMenuItem.Text = "Subjects"
+        Me.SubjectsToolStripMenuItem.Text = "Class Section"
         '
         'AddSubjectToolStripMenuItem
         '
         Me.AddSubjectToolStripMenuItem.Name = "AddSubjectToolStripMenuItem"
-        Me.AddSubjectToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.AddSubjectToolStripMenuItem.Text = "Add Subject"
+        Me.AddSubjectToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.AddSubjectToolStripMenuItem.Text = "Add Class Section"
         '
         'UpdateSubjectToolStripMenuItem
         '
         Me.UpdateSubjectToolStripMenuItem.Name = "UpdateSubjectToolStripMenuItem"
-        Me.UpdateSubjectToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.UpdateSubjectToolStripMenuItem.Text = "Update Subject"
+        Me.UpdateSubjectToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.UpdateSubjectToolStripMenuItem.Text = "Update Class Section"
         '
         'DeleteSubjectToolStripMenuItem
         '
         Me.DeleteSubjectToolStripMenuItem.Name = "DeleteSubjectToolStripMenuItem"
-        Me.DeleteSubjectToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.DeleteSubjectToolStripMenuItem.Text = "Delete Subject"
+        Me.DeleteSubjectToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.DeleteSubjectToolStripMenuItem.Text = "Delete Class Section"
         '
         'ToolStripSeparator3
         '
@@ -178,8 +178,8 @@ Partial Class Screen_Registrar
         'ViewSubjectToolStripMenuItem
         '
         Me.ViewSubjectToolStripMenuItem.Name = "ViewSubjectToolStripMenuItem"
-        Me.ViewSubjectToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.ViewSubjectToolStripMenuItem.Text = "View Subject"
+        Me.ViewSubjectToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.ViewSubjectToolStripMenuItem.Text = "View Class Section"
         '
         'SearchToolStripMenuItem
         '
