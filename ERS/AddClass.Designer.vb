@@ -23,7 +23,6 @@ Partial Class AddClass
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gl = New System.Windows.Forms.ComboBox()
-        Me.sec = New System.Windows.Forms.ComboBox()
         Me.sy = New System.Windows.Forms.MaskedTextBox()
         Me.tme = New System.Windows.Forms.TextBox()
         Me.nm = New System.Windows.Forms.MaskedTextBox()
@@ -36,75 +35,49 @@ Partial Class AddClass
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.sec = New System.Windows.Forms.TextBox()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gl
         '
-        Me.gl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.gl.FormattingEnabled = True
-        Me.gl.Items.AddRange(New Object() {"GradeLevel"})
-        Me.gl.Location = New System.Drawing.Point(175, 54)
+        Me.gl.Location = New System.Drawing.Point(117, 25)
         Me.gl.Name = "gl"
         Me.gl.Size = New System.Drawing.Size(121, 21)
-        Me.gl.TabIndex = 1
-        '
-        'sec
-        '
-        Me.sec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.sec.FormattingEnabled = True
-        Me.sec.Items.AddRange(New Object() {"Sec"})
-        Me.sec.Location = New System.Drawing.Point(175, 93)
-        Me.sec.Name = "sec"
-        Me.sec.Size = New System.Drawing.Size(121, 21)
-        Me.sec.TabIndex = 2
+        Me.gl.TabIndex = 11
         '
         'sy
         '
-        Me.sy.Location = New System.Drawing.Point(175, 132)
+        Me.sy.Location = New System.Drawing.Point(117, 102)
         Me.sy.Name = "sy"
         Me.sy.Size = New System.Drawing.Size(121, 20)
         Me.sy.TabIndex = 3
         '
         'tme
         '
-        Me.tme.Location = New System.Drawing.Point(175, 178)
+        Me.tme.Location = New System.Drawing.Point(117, 144)
         Me.tme.Name = "tme"
         Me.tme.Size = New System.Drawing.Size(121, 20)
         Me.tme.TabIndex = 4
         '
         'nm
         '
-        Me.nm.Location = New System.Drawing.Point(175, 214)
+        Me.nm.Location = New System.Drawing.Point(117, 180)
         Me.nm.Name = "nm"
         Me.nm.Size = New System.Drawing.Size(121, 20)
         Me.nm.TabIndex = 5
         '
-<<<<<<< HEAD:ERS/AddSubject.Designer.vb
         'teacher
         '
-        Me.teacher.Location = New System.Drawing.Point(131, 258)
-=======
-        'subjname
-        '
-        Me.subjname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.subjname.FormattingEnabled = True
-        Me.subjname.Items.AddRange(New Object() {"Subj"})
-        Me.subjname.Location = New System.Drawing.Point(175, 253)
-        Me.subjname.Name = "subjname"
-        Me.subjname.Size = New System.Drawing.Size(121, 21)
-        Me.subjname.TabIndex = 6
-        '
-        'teacher
-        '
-        Me.teacher.Location = New System.Drawing.Point(175, 294)
->>>>>>> refs/remotes/origin/master:ERS/AddClass.Designer.vb
+        Me.teacher.Location = New System.Drawing.Point(117, 219)
         Me.teacher.Name = "teacher"
         Me.teacher.Size = New System.Drawing.Size(121, 20)
         Me.teacher.TabIndex = 7
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(60, 309)
+        Me.Button1.Location = New System.Drawing.Point(50, 297)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 32)
         Me.Button1.TabIndex = 8
@@ -114,7 +87,7 @@ Partial Class AddClass
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(75, 62)
+        Me.Label2.Location = New System.Drawing.Point(17, 28)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(62, 13)
         Me.Label2.TabIndex = 9
@@ -123,7 +96,7 @@ Partial Class AddClass
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(75, 101)
+        Me.Label3.Location = New System.Drawing.Point(17, 67)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 9
@@ -132,7 +105,7 @@ Partial Class AddClass
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(75, 139)
+        Me.Label4.Location = New System.Drawing.Point(17, 105)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(62, 13)
         Me.Label4.TabIndex = 9
@@ -141,7 +114,7 @@ Partial Class AddClass
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(75, 185)
+        Me.Label5.Location = New System.Drawing.Point(17, 147)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(30, 13)
         Me.Label5.TabIndex = 9
@@ -150,32 +123,16 @@ Partial Class AddClass
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(75, 221)
+        Me.Label6.Location = New System.Drawing.Point(17, 183)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(99, 13)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Number of Minutes:"
         '
-<<<<<<< HEAD:ERS/AddSubject.Designer.vb
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(31, 265)
-=======
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(75, 261)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(74, 13)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "SubjectName:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(75, 301)
->>>>>>> refs/remotes/origin/master:ERS/AddClass.Designer.vb
+        Me.Label8.Location = New System.Drawing.Point(17, 222)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(85, 13)
         Me.Label8.TabIndex = 9
@@ -183,42 +140,58 @@ Partial Class AddClass
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(205, 309)
+        Me.Button2.Location = New System.Drawing.Point(187, 298)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(91, 31)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Cancel"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.sec)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.gl)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.sy)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.tme)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.nm)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.teacher)
+        Me.GroupBox1.Location = New System.Drawing.Point(33, 25)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(256, 254)
+        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabStop = False
+        '
+        'sec
+        '
+        Me.sec.Location = New System.Drawing.Point(117, 64)
+        Me.sec.Name = "sec"
+        Me.sec.Size = New System.Drawing.Size(121, 20)
+        Me.sec.TabIndex = 12
+        '
         'AddClass
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(379, 450)
+        Me.ClientSize = New System.Drawing.Size(321, 354)
         Me.ControlBox = False
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.teacher)
-        Me.Controls.Add(Me.nm)
-        Me.Controls.Add(Me.tme)
-        Me.Controls.Add(Me.sy)
-        Me.Controls.Add(Me.sec)
-        Me.Controls.Add(Me.gl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "AddClass"
         Me.Text = "Add Class"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents gl As System.Windows.Forms.ComboBox
-    Friend WithEvents sec As System.Windows.Forms.ComboBox
     Friend WithEvents sy As System.Windows.Forms.MaskedTextBox
     Friend WithEvents tme As System.Windows.Forms.TextBox
     Friend WithEvents nm As System.Windows.Forms.MaskedTextBox
@@ -231,4 +204,6 @@ Partial Class AddClass
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents sec As System.Windows.Forms.TextBox
 End Class
