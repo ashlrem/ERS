@@ -609,3 +609,7 @@ C:\Users\Jinwin\Desktop\ERS_New\ERS\obj\Debug\ERS.ViewSubjectR.resources
 C:\Users\Jinwin\Desktop\ERS_New\ERS\obj\Debug\ERS.Webcam.resources
 C:\Users\Jinwin\Desktop\ERS_New\ERS\obj\Debug\ERS.vbproj.GenerateResource.Cache
 C:\Users\Jinwin\Desktop\ERS_New\ERS\obj\Debug\ERS.ViewStud_C.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\bin\Debug\ERS.exe.config
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.exe
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.xml
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.pdb
