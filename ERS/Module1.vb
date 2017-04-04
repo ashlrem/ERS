@@ -534,9 +534,9 @@ Module Module1
                             'if active, login, else, show error that error is blocked.
 
                             My.Forms.RegistrarLogin.Hide() 'hide yung login screen
-                            RegistrarPanel.TopLevel = False
-                            My.Forms.MainScreen.Pi.Controls.Add(RegistrarPanel)
-                            RegistrarPanel.Show() 'show natin yung registrar panel kasi successful yung login.
+                            Screen_Registrar.TopLevel = False
+                            My.Forms.MainScreen.Pi.Controls.Add(Screen_Registrar)
+                            Screen_Registrar.Show() 'show natin yung registrar panel kasi successful yung login.
                             My.Forms.MainScreen.Button5.Visible = False
                             cn.Close() 'need natin iclose lagi yung connection sa database. why? para ma prevent yung database leaks.
 
@@ -611,10 +611,10 @@ Module Module1
             If (My.Forms.LoginAdmin.en.Text = "") Then
                 MsgBox("Please enter Employee Number.", vbInformation, "St. Martin De Porres")
                 My.Forms.LoginAdmin.en.Focus()
-            ElseIf (My.Forms.CashierLogin.pw.Text = "") Then
+            ElseIf (My.Forms.LoginAdmin.pw.Text = "") Then
                 MsgBox("Please enter Password.", vbInformation, "St. Martin De Porres")
                 My.Forms.LoginAdmin.pw.Focus()
-            ElseIf (My.Forms.CashierLogin.en.Text = "" And My.Forms.LoginAdmin.pw.Text = "") Then
+            ElseIf (My.Forms.LoginAdmin.en.Text = "" And My.Forms.LoginAdmin.pw.Text = "") Then
                 MsgBox("Please fill the empty fields.", vbInformation, "St. Martin De Porres")
                 My.Forms.LoginAdmin.en.Focus()
             Else
@@ -622,7 +622,7 @@ Module Module1
                 insert()
                 cn.Open()
 
-                Dim status As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & My.Forms.LoginAdmin.en.Text & "') "
+                Dim status As String = "SELECT * FROM admin WHERE (EmployeeID ='" & My.Forms.LoginAdmin.en.Text & "') "
                 Dim comd As MySqlCommand = New MySqlCommand(status, cn)
                 r = comd.ExecuteReader()
 
@@ -634,11 +634,11 @@ Module Module1
 
                             cn.Close()
                             My.Forms.LoginAdmin.Hide()
-                            AdminPanel.TopLevel = False
-                            My.Forms.MainScreen.Pi.Controls.Add(AdminPanel)
-                            AdminPanel.Show()
+                            Screen_Admin.TopLevel = False
+                            My.Forms.MainScreen.Pi.Controls.Add(Screen_Admin)
+                            Screen_Admin.Show()
 
-                            statusAttempts = "Update cashier_account Set LogIn_Attempts= 0 WHERE EmployeeID = ' " & My.Forms.LoginAdmin.en.Text & " '"
+                            statusAttempts = "Update admin Set LogIn_Attempts= 0 WHERE EmployeeID = ' " & My.Forms.LoginAdmin.en.Text & " '"
 
 
                             Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
@@ -647,7 +647,7 @@ Module Module1
                             End Using
                             cn1.Close()
                         Else
-                            statusAttempts = "Update cashier_account SET LogIn_Attempts= LogIn_Attempts + 1 WHERE EmployeeID = '" & My.Forms.LoginAdmin.en.Text & " '"
+                            statusAttempts = "Update admin SET LogIn_Attempts= LogIn_Attempts + 1 WHERE EmployeeID = '" & My.Forms.LoginAdmin.en.Text & " '"
                             Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
                                 cn1.Open()
                                 sqlCmdStatus.ExecuteNonQuery()
@@ -656,7 +656,7 @@ Module Module1
 
                             If Val(r.GetString("LogIn_Attempts")) > 2 Then
 
-                                statusAttempts = "Update cashier_account SET status= 'Blocked ' WHERE EmployeeID = '" & My.Forms.LoginAdmin.en.Text & " '"
+                                statusAttempts = "Update admin SET status= 'Blocked ' WHERE EmployeeID = '" & My.Forms.LoginAdmin.en.Text & " '"
                                 Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
                                     sqlCmdStatus.ExecuteNonQuery()
                                 End Using
@@ -686,7 +686,7 @@ Module Module1
 
                 End If
 
-                Dim att As String = "Update cashier_account SET LogIn_Attempts= ' 0 ' WHERE EmployeeID <> '" & My.Forms.LoginAdmin.en.Text & " '  AND  LogIn_Attempts<> '3'"
+                Dim att As String = "Update admin SET LogIn_Attempts= ' 0 ' WHERE EmployeeID <> '" & My.Forms.LoginAdmin.en.Text & " '  AND  LogIn_Attempts<> '3'"
                 Using sqlCmdAtt = New MySqlCommand(att, cn1)
                     cn1.Open()
                     sqlCmdAtt.ExecuteNonQuery()
@@ -737,9 +737,9 @@ Module Module1
 
                             cn.Close()
                             My.Forms.CashierLogin.Hide()
-                            CashierPanel.TopLevel = False
-                            My.Forms.MainScreen.Pi.Controls.Add(CashierPanel)
-                            CashierPanel.Show()
+                            Screen_Cashier.TopLevel = False
+                            My.Forms.MainScreen.Pi.Controls.Add(Screen_Cashier)
+                            Screen_Cashier.Show()
 
                             statusAttempts = "Update cashier_account Set LogIn_Attempts= 0 WHERE EmployeeID = ' " & My.Forms.CashierLogin.en.Text & " '"
 
