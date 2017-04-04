@@ -48,8 +48,6 @@ Partial Class Screen_Registrar
         Me.SubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PaymentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrarPanelPictureBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.RegistrarPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +63,7 @@ Partial Class Screen_Registrar
         '
         'MenuStrip2
         '
-        Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AcademeToolStripMenuItem, Me.SearchToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AcademeToolStripMenuItem, Me.SearchToolStripMenuItem})
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip2.Name = "MenuStrip2"
         Me.MenuStrip2.Size = New System.Drawing.Size(1020, 24)
@@ -173,7 +171,7 @@ Partial Class Screen_Registrar
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(151, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(181, 6)
         '
         'ViewSubjectToolStripMenuItem
         '
@@ -220,19 +218,6 @@ Partial Class Screen_Registrar
         Me.PaymentsToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.PaymentsToolStripMenuItem.Text = "Search Payments"
         '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutUsToolStripMenuItem})
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'AboutUsToolStripMenuItem
-        '
-        Me.AboutUsToolStripMenuItem.Name = "AboutUsToolStripMenuItem"
-        Me.AboutUsToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.AboutUsToolStripMenuItem.Text = "About Us"
-        '
         'RegistrarPanelPictureBox
         '
         Me.RegistrarPanelPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
@@ -266,7 +251,6 @@ Partial Class Screen_Registrar
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcademeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UpdateAccountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -286,7 +270,6 @@ Partial Class Screen_Registrar
     Friend WithEvents StudentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchStudentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AboutUsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PaymentsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistrarPanelPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents SubjectToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem

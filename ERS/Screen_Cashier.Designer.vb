@@ -37,8 +37,6 @@ Partial Class Screen_Cashier
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchPaymentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CashierPanelPictureBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.CashierPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,7 +44,7 @@ Partial Class Screen_Cashier
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.PaymentsToolStripMenuItem, Me.SearchToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.PaymentsToolStripMenuItem, Me.SearchToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(520, 24)
@@ -138,19 +136,6 @@ Partial Class Screen_Cashier
         Me.SearchPaymentToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.SearchPaymentToolStripMenuItem.Text = "Search Payment"
         '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutUsToolStripMenuItem})
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'AboutUsToolStripMenuItem
-        '
-        Me.AboutUsToolStripMenuItem.Name = "AboutUsToolStripMenuItem"
-        Me.AboutUsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AboutUsToolStripMenuItem.Text = "About Us"
-        '
         'CashierPanelPictureBox
         '
         Me.CashierPanelPictureBox.BackColor = System.Drawing.Color.Transparent
@@ -197,7 +182,5 @@ Partial Class Screen_Cashier
     Friend WithEvents SearchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchStudentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchPaymentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AboutUsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CashierPanelPictureBox As System.Windows.Forms.PictureBox
 End Class

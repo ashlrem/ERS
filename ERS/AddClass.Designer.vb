@@ -42,6 +42,7 @@ Partial Class AddClass
         '
         'gl
         '
+        Me.gl.Items.AddRange(New Object() {"Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6"})
         Me.gl.Location = New System.Drawing.Point(117, 25)
         Me.gl.Name = "gl"
         Me.gl.Size = New System.Drawing.Size(121, 21)
