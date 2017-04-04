@@ -205,10 +205,10 @@
     <Compile Include="AddPayment_A.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSubject.Designer.vb">
-      <DependentUpon>AddSubject.vb</DependentUpon>
+    <Compile Include="AddClass.Designer.vb">
+      <DependentUpon>AddClass.vb</DependentUpon>
     </Compile>
-    <Compile Include="AddSubject.vb">
+    <Compile Include="AddClass.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminCreate.Designer.vb">
@@ -446,16 +446,16 @@
     <Compile Include="UpdateStudent_R.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateSub_A.Designer.vb">
-      <DependentUpon>UpdateSub_A.vb</DependentUpon>
+    <Compile Include="UpdateClass_A.Designer.vb">
+      <DependentUpon>UpdateClass_A.vb</DependentUpon>
     </Compile>
-    <Compile Include="UpdateSub_A.vb">
+    <Compile Include="UpdateClass_A.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateSub_R.Designer.vb">
-      <DependentUpon>UpdateSub_R.vb</DependentUpon>
+    <Compile Include="UpdateClass_R.Designer.vb">
+      <DependentUpon>UpdateClass_R.vb</DependentUpon>
     </Compile>
-    <Compile Include="UpdateSub_R.vb">
+    <Compile Include="UpdateClass_R.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewStudent.Designer.vb">
@@ -482,16 +482,16 @@
     <Compile Include="ViewStud_C.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewSubject.Designer.vb">
-      <DependentUpon>ViewSubject.vb</DependentUpon>
+    <Compile Include="ViewClass.Designer.vb">
+      <DependentUpon>ViewClass.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewSubject.vb">
+    <Compile Include="ViewClass.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewSubjectR.Designer.vb">
-      <DependentUpon>ViewSubjectR.vb</DependentUpon>
+    <Compile Include="ViewClassR.Designer.vb">
+      <DependentUpon>ViewClassR.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewSubjectR.vb">
+    <Compile Include="ViewClassR.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Webcam.Designer.vb">
@@ -514,8 +514,8 @@
     <EmbeddedResource Include="AddPayment_A.resx">
       <DependentUpon>AddPayment_A.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddSubject.resx">
-      <DependentUpon>AddSubject.vb</DependentUpon>
+    <EmbeddedResource Include="AddClass.resx">
+      <DependentUpon>AddClass.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminCreate.resx">
@@ -652,11 +652,11 @@
     <EmbeddedResource Include="UpdateStudent_R.resx">
       <DependentUpon>UpdateStudent_R.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateSub_A.resx">
-      <DependentUpon>UpdateSub_A.vb</DependentUpon>
+    <EmbeddedResource Include="UpdateClass_A.resx">
+      <DependentUpon>UpdateClass_A.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateSub_R.resx">
-      <DependentUpon>UpdateSub_R.vb</DependentUpon>
+    <EmbeddedResource Include="UpdateClass_R.resx">
+      <DependentUpon>UpdateClass_R.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewStudent.resx">
       <DependentUpon>ViewStudent.vb</DependentUpon>
@@ -671,11 +671,11 @@
     <EmbeddedResource Include="ViewStud_C.resx">
       <DependentUpon>ViewStud_C.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewSubject.resx">
-      <DependentUpon>ViewSubject.vb</DependentUpon>
+    <EmbeddedResource Include="ViewClass.resx">
+      <DependentUpon>ViewClass.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewSubjectR.resx">
-      <DependentUpon>ViewSubjectR.vb</DependentUpon>
+    <EmbeddedResource Include="ViewClassR.resx">
+      <DependentUpon>ViewClassR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Webcam.resx">
       <DependentUpon>Webcam.vb</DependentUpon>

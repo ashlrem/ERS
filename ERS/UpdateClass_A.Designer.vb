@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UpdateSub_R
+Partial Class UpdateClass_A
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -28,13 +28,11 @@ Partial Class UpdateSub_R
         Me.nm = New System.Windows.Forms.TextBox()
         Me.tim = New System.Windows.Forms.MaskedTextBox()
         Me.sy = New System.Windows.Forms.TextBox()
-        Me.sec = New System.Windows.Forms.TextBox()
         Me.gl = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.subj = New System.Windows.Forms.TextBox()
@@ -51,21 +49,19 @@ Partial Class UpdateSub_R
         Me.GroupBox2.Controls.Add(Me.nm)
         Me.GroupBox2.Controls.Add(Me.tim)
         Me.GroupBox2.Controls.Add(Me.sy)
-        Me.GroupBox2.Controls.Add(Me.sec)
         Me.GroupBox2.Controls.Add(Me.gl)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Enabled = False
         Me.GroupBox2.Location = New System.Drawing.Point(16, 103)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(415, 247)
-        Me.GroupBox2.TabIndex = 18
+        Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Subject Information"
+        Me.GroupBox2.Text = "Class Information"
         '
         'UpdateSubj_btn
         '
@@ -73,7 +69,7 @@ Partial Class UpdateSub_R
         Me.UpdateSubj_btn.Name = "UpdateSubj_btn"
         Me.UpdateSubj_btn.Size = New System.Drawing.Size(159, 27)
         Me.UpdateSubj_btn.TabIndex = 6
-        Me.UpdateSubj_btn.Text = "UpdateSubject"
+        Me.UpdateSubj_btn.Text = "Update"
         Me.UpdateSubj_btn.UseVisualStyleBackColor = True
         '
         'teacher
@@ -103,13 +99,6 @@ Partial Class UpdateSub_R
         Me.sy.Name = "sy"
         Me.sy.Size = New System.Drawing.Size(170, 20)
         Me.sy.TabIndex = 3
-        '
-        'sec
-        '
-        Me.sec.Location = New System.Drawing.Point(115, 58)
-        Me.sec.Name = "sec"
-        Me.sec.Size = New System.Drawing.Size(170, 20)
-        Me.sec.TabIndex = 2
         '
         'gl
         '
@@ -154,15 +143,6 @@ Partial Class UpdateSub_R
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "School_Year"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 65)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Section"
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -179,10 +159,10 @@ Partial Class UpdateSub_R
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 16)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(368, 81)
-        Me.GroupBox1.TabIndex = 17
+        Me.GroupBox1.Size = New System.Drawing.Size(415, 81)
+        Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Search Subject"
+        Me.GroupBox1.Text = "Search Section"
         '
         'subj
         '
@@ -205,11 +185,11 @@ Partial Class UpdateSub_R
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(16, 36)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 13)
+        Me.Label1.Size = New System.Drawing.Size(71, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Enter Subject:"
+        Me.Label1.Text = "Enter Section"
         '
-        'UpdateSub_R
+        'UpdateClass_A
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -217,8 +197,8 @@ Partial Class UpdateSub_R
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.Name = "UpdateSub_R"
-        Me.Text = "UpdateSub_R"
+        Me.Name = "UpdateClass_A"
+        Me.Text = "Update Class Section"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -232,13 +212,11 @@ Partial Class UpdateSub_R
     Friend WithEvents nm As System.Windows.Forms.TextBox
     Friend WithEvents tim As System.Windows.Forms.MaskedTextBox
     Friend WithEvents sy As System.Windows.Forms.TextBox
-    Friend WithEvents sec As System.Windows.Forms.TextBox
     Friend WithEvents gl As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents subj As System.Windows.Forms.TextBox
