@@ -193,12 +193,6 @@
     <Compile Include="addBookItem.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEnrollStudent.Designer.vb">
-      <DependentUpon>AddEnrollStudent.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AddEnrollStudent.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AddPayment_A.Designer.vb">
       <DependentUpon>AddPayment_A.vb</DependentUpon>
     </Compile>
@@ -507,9 +501,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addBookItem.resx">
       <DependentUpon>addBookItem.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddEnrollStudent.resx">
-      <DependentUpon>AddEnrollStudent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPayment_A.resx">
       <DependentUpon>AddPayment_A.vb</DependentUpon>

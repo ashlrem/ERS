@@ -69,10 +69,6 @@ Partial Class Screen_Admin
         Me.SearchStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchSubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PaymentsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SearchPaymentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminPanelPictureBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.AdminPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,7 +76,7 @@ Partial Class Screen_Admin
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AccountsToolStripMenuItem, Me.AcademeToolStripMenuItem, Me.HelpToolStripMenuItem, Me.HelpToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AccountsToolStripMenuItem, Me.AcademeToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1028, 24)
@@ -128,43 +124,43 @@ Partial Class Screen_Admin
         '
         Me.AdministratorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAdminToolStripMenuItem, Me.UpdateAdminToolStripMenuItem, Me.DeleteAdminToolStripMenuItem, Me.ToolStripSeparator2, Me.ViewAdminToolStripMenuItem})
         Me.AdministratorToolStripMenuItem.Name = "AdministratorToolStripMenuItem"
-        Me.AdministratorToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AdministratorToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.AdministratorToolStripMenuItem.Text = "Administrator"
         '
         'AddAdminToolStripMenuItem
         '
         Me.AddAdminToolStripMenuItem.Name = "AddAdminToolStripMenuItem"
-        Me.AddAdminToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AddAdminToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.AddAdminToolStripMenuItem.Text = "Add Admin"
         '
         'UpdateAdminToolStripMenuItem
         '
         Me.UpdateAdminToolStripMenuItem.Name = "UpdateAdminToolStripMenuItem"
-        Me.UpdateAdminToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UpdateAdminToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.UpdateAdminToolStripMenuItem.Text = "Update Admin"
         '
         'DeleteAdminToolStripMenuItem
         '
         Me.DeleteAdminToolStripMenuItem.Name = "DeleteAdminToolStripMenuItem"
-        Me.DeleteAdminToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DeleteAdminToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.DeleteAdminToolStripMenuItem.Text = "Delete Admin"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(148, 6)
         '
         'ViewAdminToolStripMenuItem
         '
         Me.ViewAdminToolStripMenuItem.Name = "ViewAdminToolStripMenuItem"
-        Me.ViewAdminToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ViewAdminToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ViewAdminToolStripMenuItem.Text = "View Admin"
         '
         'RegistrarToolStripMenuItem
         '
         Me.RegistrarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddRegistrarToolStripMenuItem, Me.UpdateRegistrarToolStripMenuItem, Me.DeleteRegistrarToolStripMenuItem, Me.ToolStripSeparator3, Me.ViewRegistrarToolStripMenuItem})
         Me.RegistrarToolStripMenuItem.Name = "RegistrarToolStripMenuItem"
-        Me.RegistrarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RegistrarToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.RegistrarToolStripMenuItem.Text = "Registrar"
         '
         'AddRegistrarToolStripMenuItem
@@ -200,7 +196,7 @@ Partial Class Screen_Admin
         '
         Me.CashierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddCashierToolStripMenuItem, Me.UpdateCashierToolStripMenuItem, Me.DeleteCashierToolStripMenuItem, Me.ToolStripSeparator4, Me.ViewCashierToolStripMenuItem})
         Me.CashierToolStripMenuItem.Name = "CashierToolStripMenuItem"
-        Me.CashierToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CashierToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.CashierToolStripMenuItem.Text = "Cashier"
         '
         'AddCashierToolStripMenuItem
@@ -313,7 +309,7 @@ Partial Class Screen_Admin
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountsToolStripMenuItem1, Me.StudentToolStripMenuItem, Me.SubjectToolStripMenuItem, Me.PaymentsToolStripMenuItem1})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountsToolStripMenuItem1, Me.StudentToolStripMenuItem, Me.SubjectToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.HelpToolStripMenuItem.Text = "Search"
@@ -322,7 +318,7 @@ Partial Class Screen_Admin
         '
         Me.AccountsToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchAdminToolStripMenuItem, Me.SearchRegistrarToolStripMenuItem, Me.SearchCashierToolStripMenuItem})
         Me.AccountsToolStripMenuItem1.Name = "AccountsToolStripMenuItem1"
-        Me.AccountsToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
+        Me.AccountsToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.AccountsToolStripMenuItem1.Text = "Accounts"
         '
         'SearchAdminToolStripMenuItem
@@ -347,7 +343,7 @@ Partial Class Screen_Admin
         '
         Me.StudentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchStudentToolStripMenuItem})
         Me.StudentToolStripMenuItem.Name = "StudentToolStripMenuItem"
-        Me.StudentToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.StudentToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.StudentToolStripMenuItem.Text = "Student"
         '
         'SearchStudentToolStripMenuItem
@@ -360,7 +356,7 @@ Partial Class Screen_Admin
         '
         Me.SubjectToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchSubjectToolStripMenuItem})
         Me.SubjectToolStripMenuItem.Name = "SubjectToolStripMenuItem"
-        Me.SubjectToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.SubjectToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SubjectToolStripMenuItem.Text = "Subject"
         '
         'SearchSubjectToolStripMenuItem
@@ -368,32 +364,6 @@ Partial Class Screen_Admin
         Me.SearchSubjectToolStripMenuItem.Name = "SearchSubjectToolStripMenuItem"
         Me.SearchSubjectToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.SearchSubjectToolStripMenuItem.Text = "Search Subject"
-        '
-        'PaymentsToolStripMenuItem1
-        '
-        Me.PaymentsToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchPaymentToolStripMenuItem})
-        Me.PaymentsToolStripMenuItem1.Name = "PaymentsToolStripMenuItem1"
-        Me.PaymentsToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
-        Me.PaymentsToolStripMenuItem1.Text = "Payments"
-        '
-        'SearchPaymentToolStripMenuItem
-        '
-        Me.SearchPaymentToolStripMenuItem.Name = "SearchPaymentToolStripMenuItem"
-        Me.SearchPaymentToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
-        Me.SearchPaymentToolStripMenuItem.Text = "Search Payment"
-        '
-        'HelpToolStripMenuItem1
-        '
-        Me.HelpToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutUsToolStripMenuItem})
-        Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
-        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem1.Text = "Help"
-        '
-        'AboutUsToolStripMenuItem
-        '
-        Me.AboutUsToolStripMenuItem.Name = "AboutUsToolStripMenuItem"
-        Me.AboutUsToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.AboutUsToolStripMenuItem.Text = "About Us"
         '
         'AdminPanelPictureBox
         '
@@ -472,10 +442,6 @@ Partial Class Screen_Admin
     Friend WithEvents SearchStudentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchSubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PaymentsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SearchPaymentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UpdateAccountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AboutUsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdminPanelPictureBox As System.Windows.Forms.PictureBox
 End Class
