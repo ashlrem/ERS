@@ -57,6 +57,5 @@ Public Class CashierCreate
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         Webcam.Show()
-        Me.Enabled = False
     End Sub
 End Class

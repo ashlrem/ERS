@@ -23,8 +23,8 @@ Partial Class UpdateAdmin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.status = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.status = New System.Windows.Forms.ComboBox()
         Me.pl = New System.Windows.Forms.TextBox()
         Me.UpdateAdmin_btn = New System.Windows.Forms.Button()
         Me.cno = New System.Windows.Forms.MaskedTextBox()
@@ -78,6 +78,16 @@ Partial Class UpdateAdmin
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Personal Information"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox1.Location = New System.Drawing.Point(291, 32)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(103, 81)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
         'status
         '
         Me.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -88,20 +98,10 @@ Partial Class UpdateAdmin
         Me.status.Size = New System.Drawing.Size(103, 21)
         Me.status.TabIndex = 13
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(294, 32)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(103, 81)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
-        '
         'pl
         '
         Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(294, 50)
+        Me.pl.Location = New System.Drawing.Point(291, 50)
         Me.pl.Multiline = True
         Me.pl.Name = "pl"
         Me.pl.Size = New System.Drawing.Size(100, 28)

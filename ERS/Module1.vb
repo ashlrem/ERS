@@ -401,7 +401,7 @@ Module Module1
         objConn.ConnectionString = cn
         objConn.Open()
         Try
-            If (My.Forms.AddClass.gl.SelectedIndex = -1 Or My.Forms.AddClass.sec.SelectedIndex = -1 Or My.Forms.AddClass.sy.Text = "" Or My.Forms.AddClass.tme.Text = "" Or My.Forms.AddClass.nm.Text = "" Or My.Forms.AddClass.subjname.SelectedIndex = -1 Or My.Forms.AddClass.teacher.Text = "") Then
+            If (My.Forms.AddSubject.gl.SelectedIndex = -1 Or My.Forms.AddSubject.sec.SelectedIndex = -1 Or My.Forms.AddSubject.sy.Text = "" Or My.Forms.AddSubject.tme.Text = "" Or My.Forms.AddSubject.nm.Text = "" Or My.Forms.AddSubject.teacher.Text = "") Then
                 MsgBox("Enter the empty fields!")
             Else
                 'so dito, subjects yung sine save natin sa database, so yung SQL Query natin,
@@ -410,13 +410,12 @@ Module Module1
                 'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
                 ins.CommandText = "INSERT INTO subject_tbl VALUES( @GradeLevel, @Section, @SchoolYear, @Time, @No_Minutes, @Subject_Name, @Teacher)"
-                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClass.gl.SelectedItem.ToString)
-                ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.SelectedItem.ToString)
-                ins.Parameters.AddWithValue("@SchoolYear", My.Forms.AddClass.sy.Text)
-                ins.Parameters.AddWithValue("@Time", My.Forms.AddClass.tme.Text)
-                ins.Parameters.AddWithValue("@No_Minutes", My.Forms.AddClass.nm.Text)
-                ins.Parameters.AddWithValue("@Subject_Name", My.Forms.AddClass.subjname.SelectedItem)
-                ins.Parameters.AddWithValue("@Teacher", My.Forms.AddClass.teacher.Text)
+                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddSubject.gl.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@Section", My.Forms.AddSubject.sec.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@SchoolYear", My.Forms.AddSubject.sy.Text)
+                ins.Parameters.AddWithValue("@Time", My.Forms.AddSubject.tme.Text)
+                ins.Parameters.AddWithValue("@No_Minutes", My.Forms.AddSubject.nm.Text)
+                ins.Parameters.AddWithValue("@Teacher", My.Forms.AddSubject.teacher.Text)
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
                 MsgBox("Subject saved successfully!")
@@ -427,7 +426,7 @@ Module Module1
                     AddSubClear()
                 ElseIf (a = MsgBoxResult.No) Then
                     StudentCreate.Show()
-                    My.Forms.AddClass.Close()
+                    My.Forms.AddSubject.Close()
                 End If
             End If
         Catch ex As Exception
@@ -448,13 +447,12 @@ Module Module1
         'every successful query. naka automate na kumbaga.
 
         'clearing fields per forms
-        My.Forms.AddClass.gl.SelectedIndex = -1
-        My.Forms.AddClass.sec.SelectedIndex = -1
-        My.Forms.AddClass.sy.Text = ""
-        My.Forms.AddClass.tme.Text = ""
-        My.Forms.AddClass.nm.Text = ""
-        My.Forms.AddClass.subjname.SelectedIndex = -1
-        My.Forms.AddClass.teacher.Text = ""
+        My.Forms.AddSubject.gl.SelectedIndex = -1
+        My.Forms.AddSubject.sec.SelectedIndex = -1
+        My.Forms.AddSubject.sy.Text = ""
+        My.Forms.AddSubject.tme.Text = ""
+        My.Forms.AddSubject.nm.Text = ""
+        My.Forms.AddSubject.teacher.Text = ""
 
         My.Forms.AdminCreate.pl.Text = ""
         My.Forms.AdminCreate.ln.Text = ""
@@ -503,6 +501,9 @@ Module Module1
         'SELECT na. iccheck natin kung meron bang username sa database table.
 
         'Login registrar account for security(selecting from registrar_account table)
+        Dim statusAttempts As String
+        Dim statusCount As Integer
+        'Login registrar account for security(selecting from registrar_account table)
         Try
             If (My.Forms.RegistrarLogin.en.Text = "") Then
                 MsgBox("Please enter EmployeeNo.")
@@ -518,7 +519,7 @@ Module Module1
                 cn.Open() 'siyempre, para maka connect tayo sa database, need natin iopen yung connection.
 
                 'see, yung SQL Query natin, select all from registrar_account where yung EmployeeID ay equals dun sa nakatype textbox and yung Password ay equals dun sa password na nakatype sa text box.
-                Dim ad As String = "SELECT * FROM registrar_account WHERE (EmployeeID ='" & My.Forms.RegistrarLogin.en.Text & "' AND Password ='" & My.Forms.RegistrarLogin.pw.Text & "')"
+                Dim ad As String = "SELECT * FROM registrar_account WHERE EmployeeID ='" & My.Forms.RegistrarLogin.en.Text & "' "
 
                 Dim cmd As MySqlCommand = New MySqlCommand(ad, cn)
                 r = cmd.ExecuteReader() 'execute query
@@ -526,28 +527,76 @@ Module Module1
                 'if r.Read, ibig sabihin nun, merong username and password dun sa databae na nag match dun sa username and password na
                 'naka type sa login screen. 
                 If r.Read Then
+                    If r.GetString("status") = "Active" Then
 
-                    'add if else here to check if account status is active!
-                    'if active, login, else, show error that error is blocked.
+                        If r.GetString("Password") = My.Forms.RegistrarLogin.pw.Text Then
+                            'add if else here to check if account status is active!
+                            'if active, login, else, show error that error is blocked.
 
-                    My.Forms.Screen_Registrar.Show()
-                    RegistrarPanel.TopLevel = False
-                    My.Forms.Screen_Registrar.RegistrarPanelPictureBox.Controls.Add(RegistrarPanel)
-                    RegistrarPanel.Show()
-                    My.Forms.MainScreen.Hide()
-                    'show natin yung registrar panel kasi successful yung login.
-                    My.Forms.MainScreen.Button5.Visible = False
-                    cn.Close() 'need natin iclose lagi yung connection sa database. why? para ma prevent yung database leaks.
+                            My.Forms.RegistrarLogin.Hide() 'hide yung login screen
+                            RegistrarPanel.TopLevel = False
+                            My.Forms.MainScreen.Pi.Controls.Add(RegistrarPanel)
+                            RegistrarPanel.Show() 'show natin yung registrar panel kasi successful yung login.
+                            My.Forms.MainScreen.Button5.Visible = False
+                            cn.Close() 'need natin iclose lagi yung connection sa database. why? para ma prevent yung database leaks.
 
+                            statusAttempts = "Update registrar_account SET LogIn_Attempts = 0 WHERE EmployeeID= ' " & My.Forms.RegistrarLogin.en.Text & "'"
+                            Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
+                                cn1.Open()
+                                sqlCmdStatus.ExecuteNonQuery()
+                            End Using
+                            cn1.Close()
+
+                        Else
+                            statusAttempts = "Update registrar_account SET LogIn_Attempts= LogIn_Attempts +1  WHERE EmployeeID = '" & My.Forms.RegistrarLogin.en.Text & " '"
+
+                            Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
+                                cn1.Open()
+                                sqlCmdStatus.ExecuteNonQuery()
+                            End Using
+
+
+                            If Val(r.GetString("LogIn_Attempts")) > 2 Then
+
+                                statusAttempts = "Update registrar_account SET status= 'Blocked ' WHERE EmployeeID = '" & My.Forms.RegistrarLogin.en.Text & " '"
+                                Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
+                                    sqlCmdStatus.ExecuteNonQuery()
+                                End Using
+
+                            End If
+
+                            statusCount = Val(r.GetString("LogIn_Attempts") + 1)
+                            cn1.Close()
+                            MsgBox("Employee number and Password did not match !", vbCritical, "St. Martin De Porres")
+
+                        End If
+                    Else
+                        MsgBox("Sorry! Your Account has been Blocked", vbCritical, "St. Martin De Porres")
+                        My.Forms.RegistrarLogin.en.Focus()
+                        My.Forms.RegistrarLogin.pw.Text = ""
+                        My.Forms.RegistrarLogin.en.Text = ""
+
+
+                    End If
                 Else
-                    'else, magsshow tayo ng error. kasi hindi match yung nasa database, saka yung naka type sa login screen.
-                    MsgBox("EmployeeID and Password did'nt Match!")
-                    My.Forms.RegistrarLogin.en.Focus()
-                    My.Forms.RegistrarLogin.pw.Text = ""
                     cn.Close()
+                    MsgBox("Employee number and Password did not match!", vbExclamation, "St. Martin De Porres")
+                    My.Forms.CashierLogin.en.Focus()
+                    My.Forms.CashierLogin.pw.Text = ""
+
+
                 End If
+                Dim att As String = "Update registrar_account SET LogIn_Attempts= ' 0 ' WHERE EmployeeID <> '" & My.Forms.RegistrarLogin.en.Text & " '  AND  LogIn_Attempts<> '3'"
+                Using sqlCmdAtt = New MySqlCommand(att, cn1)
+                    cn1.Open()
+                    sqlCmdAtt.ExecuteNonQuery()
+                End Using
+                cn.Close()
+                cn1.Close()
+
             End If
-            cn.Close()
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -557,77 +606,72 @@ Module Module1
 
         Dim statusAttempts As String
         Dim statusCount As Integer
-        Dim statusValue As String
-
 
         Try
             If (My.Forms.LoginAdmin.en.Text = "") Then
                 MsgBox("Please enter Employee Number.", vbInformation, "St. Martin De Porres")
                 My.Forms.LoginAdmin.en.Focus()
-            ElseIf (My.Forms.LoginAdmin.pw.Text = "") Then
+            ElseIf (My.Forms.CashierLogin.pw.Text = "") Then
                 MsgBox("Please enter Password.", vbInformation, "St. Martin De Porres")
                 My.Forms.LoginAdmin.pw.Focus()
-            ElseIf (My.Forms.LoginAdmin.en.Text = "" And My.Forms.LoginAdmin.pw.Text = "") Then
+            ElseIf (My.Forms.CashierLogin.en.Text = "" And My.Forms.LoginAdmin.pw.Text = "") Then
                 MsgBox("Please fill the empty fields.", vbInformation, "St. Martin De Porres")
                 My.Forms.LoginAdmin.en.Focus()
             Else
 
-
                 insert()
                 cn.Open()
-                Dim status As String = "SELECT * FROM admin WHERE (EmployeeID='" & My.Forms.LoginAdmin.en.Text & " ' )"
+
+                Dim status As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & My.Forms.LoginAdmin.en.Text & "') "
                 Dim comd As MySqlCommand = New MySqlCommand(status, cn)
                 r = comd.ExecuteReader()
-
 
                 If r.Read = True Then
 
                     If r.GetString("status") = "Active" Then
+
                         If r.GetString("Password") = My.Forms.LoginAdmin.pw.Text Then
 
                             cn.Close()
                             My.Forms.LoginAdmin.Hide()
-                            My.Forms.Screen_Admin.Show()
                             AdminPanel.TopLevel = False
-                            My.Forms.Screen_Admin.AdminPanelPictureBox.Controls.Add(AdminPanel)
+                            My.Forms.MainScreen.Pi.Controls.Add(AdminPanel)
                             AdminPanel.Show()
-                            My.Forms.MainScreen.Hide()
 
-                            statusAttempts = "UPDATE admin SET LogIn_Attempts= 0 WHERE EmployeeID = '" & My.Forms.LoginAdmin.en.Text & "'"
-                            My.Forms.LoginAdmin.lblcount.Text = 0
+                            statusAttempts = "Update cashier_account Set LogIn_Attempts= 0 WHERE EmployeeID = ' " & My.Forms.LoginAdmin.en.Text & " '"
+
 
                             Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
                                 cn1.Open()
                                 sqlCmdStatus.ExecuteNonQuery()
                             End Using
                             cn1.Close()
-
                         Else
-                            statusCount = Val(My.Forms.LoginAdmin.lblcount.Text)
-                            statusValue = "Active"
-
-                            If statusCount >= 2 Then
-                                statusValue = "Blocked"
-                            End If
-
-                            statusAttempts = "UPDATE admin SET LogIn_Attempts= LogIn_Attempts + 1, Status = '" & statusValue & "' WHERE EmployeeID = '" & My.Forms.LoginAdmin.en.Text & "'"
+                            statusAttempts = "Update cashier_account SET LogIn_Attempts= LogIn_Attempts + 1 WHERE EmployeeID = '" & My.Forms.LoginAdmin.en.Text & " '"
                             Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
                                 cn1.Open()
                                 sqlCmdStatus.ExecuteNonQuery()
                             End Using
 
+
+                            If Val(r.GetString("LogIn_Attempts")) > 2 Then
+
+                                statusAttempts = "Update cashier_account SET status= 'Blocked ' WHERE EmployeeID = '" & My.Forms.LoginAdmin.en.Text & " '"
+                                Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
+                                    sqlCmdStatus.ExecuteNonQuery()
+                                End Using
+
+                            End If
+
                             statusCount = Val(r.GetString("LogIn_Attempts") + 1)
-                            My.Forms.LoginAdmin.lblcount.Text = statusCount
-
-
                             cn1.Close()
                             MsgBox("Employee number and Password did not match !", vbCritical, "St. Martin De Porres")
 
                         End If
 
                     Else
-                        My.Forms.LoginAdmin.lblcount.Text = 0
-                        MsgBox("Sorry! Your Account is blocked. Please contact your administrator.", vbCritical, "St. Martin De Porres")
+
+                        MsgBox("Sorry! Your Account has been Blocked", vbCritical, "St. Martin De Porres")
                         My.Forms.LoginAdmin.en.Focus()
                         My.Forms.LoginAdmin.pw.Text = ""
                         My.Forms.LoginAdmin.en.Text = ""
@@ -636,97 +680,130 @@ Module Module1
 
                 Else
                     cn.Close()
-                    My.Forms.LoginAdmin.lblcount.Text = 0
                     MsgBox("Employee number and Password did not match!", vbExclamation, "St. Martin De Porres")
                     My.Forms.LoginAdmin.en.Focus()
                     My.Forms.LoginAdmin.pw.Text = ""
 
-
                 End If
 
+                Dim att As String = "Update cashier_account SET LogIn_Attempts= ' 0 ' WHERE EmployeeID <> '" & My.Forms.LoginAdmin.en.Text & " '  AND  LogIn_Attempts<> '3'"
+                Using sqlCmdAtt = New MySqlCommand(att, cn1)
+                    cn1.Open()
+                    sqlCmdAtt.ExecuteNonQuery()
+                End Using
                 cn.Close()
+                cn1.Close()
+
             End If
+
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MsgBox(ex.Message)
+            cn1.Close()
             cn.Close()
         End Try
-
-
-
 
 
     End Sub
     Public Sub LoginCash()
         'login cashier naman toooo. 
         'Login cashier account for security(selecting from cashier_account table)
-        Dim loginCounter As Integer
-        Dim employeeID As String
-        Dim lastLoginEmpID As String
-        Dim statusBlocked As String
-        Dim loginStatus As String
+        Dim statusAttempts As String
+        Dim statusCount As Integer
 
-        statusBlocked = "blocked"
-        loginCounter = 0
         Try
             If (My.Forms.CashierLogin.en.Text = "") Then
-                MsgBox("Please enter Employee Number.")
+                MsgBox("Please enter Employee Number.", vbInformation, "St. Martin De Porres")
                 My.Forms.CashierLogin.en.Focus()
             ElseIf (My.Forms.CashierLogin.pw.Text = "") Then
-                MsgBox("Please enter Password.")
+                MsgBox("Please enter Password.", vbInformation, "St. Martin De Porres")
                 My.Forms.CashierLogin.pw.Focus()
             ElseIf (My.Forms.CashierLogin.en.Text = "" And My.Forms.CashierLogin.pw.Text = "") Then
-                MsgBox("Please fill the empty fields.")
+                MsgBox("Please fill the empty fields.", vbInformation, "St. Martin De Porres")
                 My.Forms.CashierLogin.en.Focus()
             Else
-                employeeID = My.Forms.CashierLogin.en.Text
-                insert()
-                'SQL Query lang naman yung nagbabago, pero yung feelings ni princess poppy hindi magbabago yun. haha
-                Dim ad As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & My.Forms.CashierLogin.en.Text & "' AND Password ='" & My.Forms.CashierLogin.pw.Text & "')"
-                cn.Open()
-                Dim cmd As MySqlCommand = New MySqlCommand(ad, cn)
-                r = cmd.ExecuteReader()
-                If r.Read Then
 
-                    loginStatus = r("status").ToString()
-                    If loginStatus = "active" Then
-                        My.Forms.MainScreen.Button5.Visible = False
-                        My.Forms.CashierLogin.Hide()
-                        CashierPanel.TopLevel = False
-                        My.Forms.MainScreen.Pi.Controls.Add(CashierPanel)
-                        CashierPanel.Show()
-                        cn.Close()
+                insert()
+                cn.Open()
+
+                Dim status As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & My.Forms.CashierLogin.en.Text & "') "
+                Dim comd As MySqlCommand = New MySqlCommand(status, cn)
+                r = comd.ExecuteReader()
+
+                If r.Read = True Then
+
+                    If r.GetString("status") = "Active" Then
+
+                        If r.GetString("Password") = My.Forms.CashierLogin.pw.Text Then
+
+                            cn.Close()
+                            My.Forms.CashierLogin.Hide()
+                            CashierPanel.TopLevel = False
+                            My.Forms.MainScreen.Pi.Controls.Add(CashierPanel)
+                            CashierPanel.Show()
+
+                            statusAttempts = "Update cashier_account Set LogIn_Attempts= 0 WHERE EmployeeID = ' " & My.Forms.CashierLogin.en.Text & " '"
+
+
+                            Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
+                                cn1.Open()
+                                sqlCmdStatus.ExecuteNonQuery()
+                            End Using
+                            cn1.Close()
+
+                        Else
+
+                            statusAttempts = "Update cashier_account SET LogIn_Attempts= LogIn_Attempts + 1 WHERE EmployeeID = '" & My.Forms.CashierLogin.en.Text & " '"
+                            Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
+                                cn1.Open()
+                                sqlCmdStatus.ExecuteNonQuery()
+                            End Using
+
+
+                            If Val(r.GetString("LogIn_Attempts")) > 2 Then
+
+                                statusAttempts = "Update cashier_account SET status= 'Blocked ' WHERE EmployeeID = '" & My.Forms.CashierLogin.en.Text & " '"
+                                Using sqlCmdStatus = New MySqlCommand(statusAttempts, cn1)
+                                    sqlCmdStatus.ExecuteNonQuery()
+                                End Using
+
+                            End If
+
+                            statusCount = Val(r.GetString("LogIn_Attempts") + 1)
+                            cn1.Close()
+                            MsgBox("Employee number and Password did not match !", vbCritical, "St. Martin De Porres")
+
+                        End If
+
                     Else
-                        MsgBox("Your account is blocked! Please contact your System Administrator")
+
+                        MsgBox("Sorry! Your Account has been Blocked", vbCritical, "St. Martin De Porres")
+                        My.Forms.CashierLogin.en.Focus()
+                        My.Forms.CashierLogin.pw.Text = ""
+                        My.Forms.CashierLogin.en.Text = ""
+
                     End If
 
                 Else
-                    lastLoginEmpID = My.Forms.CashierLogin.en.Text
-                    If lastLoginEmpID = employeeID Then
-                        loginCounter += 1
-                    Else
-                        loginCounter = 0
-                    End If
-
-                    MsgBox("Employee number and Password did not match!")
+                    cn.Close()
+                    MsgBox("Employee number and Password did not match!", vbExclamation, "St. Martin De Porres")
                     My.Forms.CashierLogin.en.Focus()
                     My.Forms.CashierLogin.pw.Text = ""
-                    cn.Close()
-                End If
-
-                If loginCounter = 3 Then
-                    Dim reg As String = "UPDATE cashier_account SET status = '" & statusBlocked & "'"
-                    Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
-                        Using sqlCmd = New MySqlCommand(reg, cn1)
-                            cn1.Open()
-                            sqlCmd.ExecuteNonQuery()
-                            cn1.Close()
-                        End Using
-                    End Using
-                End If
 
                 End If
+
+                Dim att As String = "Update cashier_account SET LogIn_Attempts= ' 0 ' WHERE EmployeeID <> '" & My.Forms.CashierLogin.en.Text & " '  AND  LogIn_Attempts<> '3'"
+                Using sqlCmdAtt = New MySqlCommand(att, cn1)
+                    cn1.Open()
+                    sqlCmdAtt.ExecuteNonQuery()
+                End Using
+                cn.Close()
+                cn1.Close()
+
+            End If
+
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MsgBox(ex.Message)
+            cn1.Close()
             cn.Close()
         End Try
     End Sub
@@ -955,7 +1032,6 @@ Module Module1
                 My.Forms.RegistrarEdit.cno.Text = r("ContactNumber").ToString()
                 My.Forms.RegistrarEdit.eadd.Text = r("Email_Account").ToString()
                 My.Forms.RegistrarEdit.pl.Text = r("Photo").ToString()
-                My.Forms.RegistrarEdit.PictureBox1.Image = Image.FromFile(My.Forms.RegistrarEdit.pl.Text)
                 My.Forms.RegistrarEdit.GroupBox2.Enabled = True
                 My.Forms.RegistrarEdit.Button1.Enabled = False
                 My.Forms.RegistrarEdit.en.Enabled = False
@@ -1016,7 +1092,6 @@ Module Module1
                 My.Forms.CashierEdit.GroupBox2.Enabled = True
                 My.Forms.CashierEdit.Button1.Enabled = False
                 My.Forms.CashierEdit.en.Enabled = False
-                My.Forms.CashierEdit.PictureBox1.Image = Image.FromFile(My.Forms.CashierEdit.pl.Text)
                 cn.Close()
             Else
                 MsgBox("Employee number not Found!")
@@ -1076,7 +1151,6 @@ Module Module1
                 My.Forms.DeleteRegistrar.cno.Text = r("ContactNumber").ToString()
                 My.Forms.DeleteRegistrar.eadd.Text = r("Email_Account").ToString()
                 My.Forms.DeleteRegistrar.pl.Text = r("Photo").ToString()
-                My.Forms.DeleteRegistrar.PictureBox1.Image = Image.FromFile(My.Forms.DeleteRegistrar.pl.Text)
                 My.Forms.DeleteRegistrar.GroupBox2.Enabled = True
                 My.Forms.DeleteRegistrar.Button1.Enabled = False
                 My.Forms.DeleteRegistrar.en.Enabled = False
@@ -1141,7 +1215,6 @@ Module Module1
                 My.Forms.DeleteCashier.cno.Text = r("ContactNumber").ToString()
                 My.Forms.DeleteCashier.eadd.Text = r("Email_Account").ToString()
                 My.Forms.DeleteCashier.pl.Text = r("Photo").ToString()
-                My.Forms.DeleteCashier.PictureBox1.Image = Image.FromFile(My.Forms.DeleteCashier.pl.Text)
                 My.Forms.DeleteCashier.GroupBox2.Enabled = True
                 My.Forms.DeleteCashier.Button1.Enabled = False
                 My.Forms.DeleteCashier.en.Enabled = False
@@ -1539,7 +1612,6 @@ Module Module1
                 My.Forms.UpdateAdmin.cno.Text = r("ContactNumber").ToString()
                 My.Forms.UpdateAdmin.eadd.Text = r("Email_Account").ToString()
                 My.Forms.UpdateAdmin.pl.Text = r("Photo").ToString()
-                'My.Forms.UpdateAdmin.PictureBox1.Image = Image.FromFile(My.Forms.UpdateAdmin.pl.Text)
                 My.Forms.UpdateAdmin.GroupBox2.Enabled = True
                 My.Forms.UpdateAdmin.ValidateAccountUpdate_btn.Enabled = False
                 My.Forms.UpdateAdmin.en.Enabled = False
@@ -1563,7 +1635,7 @@ Module Module1
               And My.Forms.UpdateAdmin.cno.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE admin SET Surname = '" & My.Forms.UpdateAdmin.ln.Text & "', GivenName = '" & My.Forms.UpdateAdmin.fn.Text & "', MiddleName = '" & My.Forms.UpdateAdmin.mn.Text & "', Birthday = '" & My.Forms.UpdateAdmin.bd.Text & "', Address = '" & My.Forms.UpdateAdmin.add.Text & "', Email_Account = '" & My.Forms.UpdateAdmin.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateAdmin.cno.Text & "', status = '" & My.Forms.UpdateAdmin.status.Text & "'"
+                Dim reg As String = "UPDATE admin SET Surname = '" & My.Forms.UpdateAdmin.ln.Text & "', GivenName = '" & My.Forms.UpdateAdmin.fn.Text & "', MiddleName = '" & My.Forms.UpdateAdmin.mn.Text & "', Birthday = '" & My.Forms.UpdateAdmin.bd.Text & "', Address = '" & My.Forms.UpdateAdmin.add.Text & "', Email_Account = '" & My.Forms.UpdateAdmin.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateAdmin.cno.Text & "', status = '" & My.Forms.UpdateAdmin.status.Text & "', LogIn_Attempts = 0"
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
@@ -1581,6 +1653,7 @@ Module Module1
                         My.Forms.UpdateAdmin.ValidateAccountUpdate_btn.Enabled = True
                         My.Forms.UpdateAdmin.en.Enabled = True
                         My.Forms.UpdateAdmin.en.Focus()
+                        My.Forms.UpdateAdmin.PictureBox1.Image = Nothing
                         cn1.Close()
                     End Using
                     cn1.Close()
@@ -1610,7 +1683,6 @@ Module Module1
                 My.Forms.UpdateRegistrar.cno.Text = r("ContactNumber").ToString()
                 My.Forms.UpdateRegistrar.eadd.Text = r("Email_Account").ToString()
                 My.Forms.UpdateRegistrar.pl.Text = r("Photo").ToString()
-                My.Forms.UpdateRegistrar.PictureBox1.Image = Image.FromFile(My.Forms.UpdateRegistrar.pl.Text)
                 My.Forms.UpdateRegistrar.GroupBox2.Enabled = True
                 My.Forms.UpdateRegistrar.ValidateAccountUpdate_btn.Enabled = False
                 My.Forms.UpdateRegistrar.en.Enabled = False
@@ -1634,7 +1706,7 @@ Module Module1
               And My.Forms.UpdateRegistrar.cno.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE registrar_account SET Surname = '" & My.Forms.UpdateRegistrar.ln.Text & "', GivenName = '" & My.Forms.UpdateRegistrar.fn.Text & "', MiddleName = '" & My.Forms.UpdateRegistrar.mn.Text & "', Birthday = '" & My.Forms.UpdateRegistrar.bd.Text & "', Address = '" & My.Forms.UpdateRegistrar.add.Text & "', Email_Account = '" & My.Forms.UpdateRegistrar.eadd.Text & "'ContactNumber = '" & My.Forms.UpdateCashier.cno.Text & "' status = '" & My.Forms.UpdateCashier.status.Text & "'"
+                Dim reg As String = "UPDATE registrar_account SET Surname = '" & My.Forms.UpdateRegistrar.ln.Text & "', GivenName = '" & My.Forms.UpdateRegistrar.fn.Text & "', MiddleName = '" & My.Forms.UpdateRegistrar.mn.Text & "', Birthday = '" & My.Forms.UpdateRegistrar.bd.Text & "', Address = '" & My.Forms.UpdateRegistrar.add.Text & "', Email_Account = '" & My.Forms.UpdateRegistrar.eadd.Text & "'ContactNumber = '" & My.Forms.UpdateCashier.cno.Text & "' status = '" & My.Forms.UpdateCashier.status.Text & "', LogIn_Attempts = 0"
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
@@ -1652,6 +1724,7 @@ Module Module1
                         My.Forms.UpdateRegistrar.ValidateAccountUpdate_btn.Enabled = True
                         My.Forms.UpdateRegistrar.en.Enabled = True
                         My.Forms.UpdateRegistrar.en.Focus()
+                        My.Forms.UpdateRegistrar.PictureBox1.Image = Nothing
                         cn1.Close()
                     End Using
                     cn1.Close()
@@ -1681,7 +1754,6 @@ Module Module1
                 My.Forms.UpdateCashier.cno.Text = r("ContactNumber").ToString()
                 My.Forms.UpdateCashier.eadd.Text = r("Email_Account").ToString()
                 My.Forms.UpdateCashier.pl.Text = r("Photo").ToString()
-                My.Forms.UpdateCashier.PictureBox1.Image = Image.FromFile(My.Forms.UpdateCashier.pl.Text)
                 My.Forms.UpdateCashier.GroupBox2.Enabled = True
                 My.Forms.UpdateCashier.ValidateAccountUpdate_btn.Enabled = False
                 My.Forms.UpdateCashier.en.Enabled = False
@@ -1705,7 +1777,7 @@ Module Module1
               And My.Forms.UpdateCashier.cno.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE cashier_account SET Surname = '" & My.Forms.UpdateCashier.ln.Text & "', GivenName = '" & My.Forms.UpdateCashier.fn.Text & "', MiddleName = '" & My.Forms.UpdateCashier.mn.Text & "', Birthday = '" & My.Forms.UpdateCashier.bd.Text & "', Address = '" & My.Forms.UpdateCashier.add.Text & "', Email_Account = '" & My.Forms.UpdateCashier.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateCashier.cno.Text & "', status = '" & My.Forms.UpdateCashier.status.Text & "'"
+                Dim reg As String = "UPDATE cashier_account SET Surname = '" & My.Forms.UpdateCashier.ln.Text & "', GivenName = '" & My.Forms.UpdateCashier.fn.Text & "', MiddleName = '" & My.Forms.UpdateCashier.mn.Text & "', Birthday = '" & My.Forms.UpdateCashier.bd.Text & "', Address = '" & My.Forms.UpdateCashier.add.Text & "', Email_Account = '" & My.Forms.UpdateCashier.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateCashier.cno.Text & "', status = '" & My.Forms.UpdateCashier.status.Text & "', LogIn_Attempts = 0"
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
@@ -1722,6 +1794,7 @@ Module Module1
                         My.Forms.UpdateCashier.GroupBox2.Enabled = False
                         My.Forms.UpdateCashier.ValidateAccountUpdate_btn.Enabled = True
                         My.Forms.UpdateCashier.en.Enabled = True
+                        My.Forms.UpdateCashier.PictureBox1.Image = Nothing
                         My.Forms.UpdateCashier.en.Focus()
                         cn1.Close()
                     End Using
@@ -1736,27 +1809,27 @@ Module Module1
   
     Public Sub updateSubjA_btn()
         Try
-            If (My.Forms.UpdateClass_A.gl.Text = "" And My.Forms.UpdateClass_A.sec.Text = "" _
-              And My.Forms.UpdateClass_A.nm.Text = "" And My.Forms.UpdateClass_A.teacher.Text = "" _
-              And My.Forms.UpdateClass_A.sy.Text = "" And My.Forms.UpdateClass_A.nm.Text = "") Then
+            If (My.Forms.UpdateSub_A.gl.Text = "" And My.Forms.UpdateSub_A.sec.Text = "" _
+              And My.Forms.UpdateSub_A.nm.Text = "" And My.Forms.UpdateSub_A.teacher.Text = "" _
+              And My.Forms.UpdateSub_A.sy.Text = "" And My.Forms.UpdateSub_A.nm.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE subject_tbl SET Grade_Level = '" & My.Forms.UpdateClass_A.gl.Text & "', Section = '" & My.Forms.UpdateClass_A.sec.Text & "', School_Year = '" & My.Forms.UpdateClass_A.sy.Text & "', Time = '" & My.Forms.UpdateClass_A.tim.Text & "', No_Minutes = '" & My.Forms.UpdateClass_A.nm.Text = "" & "', Teacher = '" & My.Forms.UpdateClass_A.teacher.Text & "'"
+                Dim reg As String = "UPDATE subject_tbl SET Grade_Level = '" & My.Forms.UpdateSub_A.gl.Text & "', Section = '" & My.Forms.UpdateSub_A.sec.Text & "', School_Year = '" & My.Forms.UpdateSub_A.sy.Text & "', Time = '" & My.Forms.UpdateSub_A.tim.Text & "', No_Minutes = '" & My.Forms.UpdateSub_A.nm.Text = "" & "', Teacher = '" & My.Forms.UpdateSub_A.teacher.Text & "'"
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
                         sqlCmd.ExecuteNonQuery()
                         MsgBox("Subject Updated!")
-                        My.Forms.UpdateClass_A.gl.Text = ""
-                        My.Forms.UpdateClass_A.sec.Text = ""
-                        My.Forms.UpdateClass_A.nm.Text = ""
-                        My.Forms.UpdateClass_A.teacher.Text = ""
-                        My.Forms.UpdateClass_A.sy.Text = ""
-                        My.Forms.UpdateClass_A.tim.Text = ""
-                        My.Forms.UpdateClass_A.GroupBox2.Enabled = False
-                        My.Forms.UpdateClass_A.SearchSubj_btn.Enabled = True
-                        My.Forms.UpdateClass_A.subj.Enabled = True
-                        My.Forms.UpdateClass_A.subj.Focus()
+                        My.Forms.UpdateSub_A.gl.Text = ""
+                        My.Forms.UpdateSub_A.sec.Text = ""
+                        My.Forms.UpdateSub_A.nm.Text = ""
+                        My.Forms.UpdateSub_A.teacher.Text = ""
+                        My.Forms.UpdateSub_A.sy.Text = ""
+                        My.Forms.UpdateSub_A.tim.Text = ""
+                        My.Forms.UpdateSub_A.GroupBox2.Enabled = False
+                        My.Forms.UpdateSub_A.SearchSubj_btn.Enabled = True
+                        My.Forms.UpdateSub_A.subj.Enabled = True
+                        My.Forms.UpdateSub_A.subj.Focus()
                         cn1.Close()
                     End Using
                     cn1.Close()
@@ -1772,24 +1845,24 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim reg As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateClass_A.subj.Text & "')"
+            Dim reg As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateSub_A.subj.Text & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(reg, cn)
             r = cmd.ExecuteReader()
             If r.Read Then
-                My.Forms.UpdateClass_A.gl.Text = r("Grade_Level").ToString()
-                My.Forms.UpdateClass_A.sec.Text = r("Section").ToString()
-                My.Forms.UpdateClass_A.sy.Text = r("School_Year").ToString()
-                My.Forms.UpdateClass_A.tim.Text = r("Time").ToString()
-                My.Forms.UpdateClass_A.nm.Text = r("No_Minutes").ToString()
-                My.Forms.UpdateClass_A.teacher.Text = r("Teacher").ToString()
-                My.Forms.UpdateClass_A.SearchSubj_btn.Enabled = False
-                My.Forms.UpdateClass_A.subj.Enabled = False
+                My.Forms.UpdateSub_A.gl.Text = r("Grade_Level").ToString()
+                My.Forms.UpdateSub_A.sec.Text = r("Section").ToString()
+                My.Forms.UpdateSub_A.sy.Text = r("School_Year").ToString()
+                My.Forms.UpdateSub_A.tim.Text = r("Time").ToString()
+                My.Forms.UpdateSub_A.nm.Text = r("No_Minutes").ToString()
+                My.Forms.UpdateSub_A.teacher.Text = r("Teacher").ToString()
+                My.Forms.UpdateSub_A.SearchSubj_btn.Enabled = False
+                My.Forms.UpdateSub_A.subj.Enabled = False
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
-                My.Forms.UpdateClass_A.subj.Text = ""
-                My.Forms.UpdateClass_A.subj.Focus()
+                My.Forms.UpdateSub_A.subj.Text = ""
+                My.Forms.UpdateSub_A.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -1799,27 +1872,27 @@ Module Module1
     End Sub
     Public Sub updateSubjR_btn()
         Try
-            If (My.Forms.UpdateClass_A.gl.Text = "" And My.Forms.UpdateClass_A.sec.Text = "" _
-              And My.Forms.UpdateClass_A.nm.Text = "" And My.Forms.UpdateClass_A.teacher.Text = "" _
-              And My.Forms.UpdateClass_A.sy.Text = "" And My.Forms.UpdateClass_A.nm.Text = "") Then
+            If (My.Forms.UpdateSub_A.gl.Text = "" And My.Forms.UpdateSub_A.sec.Text = "" _
+              And My.Forms.UpdateSub_A.nm.Text = "" And My.Forms.UpdateSub_A.teacher.Text = "" _
+              And My.Forms.UpdateSub_A.sy.Text = "" And My.Forms.UpdateSub_A.nm.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE subject_tbl SET Grade_Level = '" & My.Forms.UpdateClass_A.gl.Text & "', Section = '" & My.Forms.UpdateClass_A.sec.Text & "', School_Year = '" & My.Forms.UpdateClass_A.sy.Text & "', Time = '" & My.Forms.UpdateClass_A.tim.Text & "', No_Minutes = '" & My.Forms.UpdateClass_A.nm.Text = "" & "', Teacher = '" & My.Forms.UpdateClass_A.teacher.Text & "'"
+                Dim reg As String = "UPDATE subject_tbl SET Grade_Level = '" & My.Forms.UpdateSub_A.gl.Text & "', Section = '" & My.Forms.UpdateSub_A.sec.Text & "', School_Year = '" & My.Forms.UpdateSub_A.sy.Text & "', Time = '" & My.Forms.UpdateSub_A.tim.Text & "', No_Minutes = '" & My.Forms.UpdateSub_A.nm.Text = "" & "', Teacher = '" & My.Forms.UpdateSub_A.teacher.Text & "'"
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
                         sqlCmd.ExecuteNonQuery()
                         MsgBox("Subject Updated!")
-                        My.Forms.UpdateClass_A.gl.Text = ""
-                        My.Forms.UpdateClass_A.sec.Text = ""
-                        My.Forms.UpdateClass_A.nm.Text = ""
-                        My.Forms.UpdateClass_A.teacher.Text = ""
-                        My.Forms.UpdateClass_A.sy.Text = ""
-                        My.Forms.UpdateClass_A.tim.Text = ""
-                        My.Forms.UpdateClass_A.GroupBox2.Enabled = False
-                        My.Forms.UpdateClass_A.SearchSubj_btn.Enabled = True
-                        My.Forms.UpdateClass_A.subj.Enabled = True
-                        My.Forms.UpdateClass_A.subj.Focus()
+                        My.Forms.UpdateSub_A.gl.Text = ""
+                        My.Forms.UpdateSub_A.sec.Text = ""
+                        My.Forms.UpdateSub_A.nm.Text = ""
+                        My.Forms.UpdateSub_A.teacher.Text = ""
+                        My.Forms.UpdateSub_A.sy.Text = ""
+                        My.Forms.UpdateSub_A.tim.Text = ""
+                        My.Forms.UpdateSub_A.GroupBox2.Enabled = False
+                        My.Forms.UpdateSub_A.SearchSubj_btn.Enabled = True
+                        My.Forms.UpdateSub_A.subj.Enabled = True
+                        My.Forms.UpdateSub_A.subj.Focus()
                         cn1.Close()
                     End Using
                     cn1.Close()
@@ -1836,23 +1909,23 @@ Module Module1
             insert()
             Dim r As MySqlDataReader
 
-            Dim ViewSubject_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewClass.subj.SelectedItem & "')"
-            cn.Open()
+            Dim ViewSubject_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewSubject.subj.SelectedItem & "')"
+           cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(ViewSubject_frm, cn)
             r = cmd.ExecuteReader()
             If r.Read Then
                 'For form ViewSubject_frm search button
-                My.Forms.ViewClass.gl.Text = r("Grade_Level").ToString()
-                My.Forms.ViewClass.sec.Text = r("Section").ToString()
-                My.Forms.ViewClass.sy.Text = r("School_Year").ToString()
-                My.Forms.ViewClass.tim.Text = r("Time").ToString()
-                My.Forms.ViewClass.nm.Text = r("No_Minutes").ToString()
-                My.Forms.ViewClass.teacher.Text = r("Teacher").ToString()
+                My.Forms.ViewSubject.gl.Text = r("Grade_Level").ToString()
+                My.Forms.ViewSubject.sec.Text = r("Section").ToString()
+                My.Forms.ViewSubject.sy.Text = r("School_Year").ToString()
+                My.Forms.ViewSubject.tim.Text = r("Time").ToString()
+                My.Forms.ViewSubject.nm.Text = r("No_Minutes").ToString()
+                My.Forms.ViewSubject.teacher.Text = r("Teacher").ToString()
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
-                My.Forms.ViewClass.subj.Text = ""
-                My.Forms.ViewClass.subj.Focus()
+                My.Forms.ViewSubject.subj.Text = ""
+                My.Forms.ViewSubject.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -1932,27 +2005,27 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim UpdateSub_A_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateClass_A.subj.Text & "')"
+            Dim UpdateSub_A_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateSub_A.subj.Text & "')"
             cn.Open()
             Dim cmd1 As MySqlCommand = New MySqlCommand(UpdateSub_A_frm, cn)
             r = cmd1.ExecuteReader()
             If r.Read Then
 
                 'For form UpdateSub_A search button
-                My.Forms.UpdateClass_A.gl.Text = r("Grade_Level").ToString()
-                My.Forms.UpdateClass_A.sec.Text = r("Section").ToString()
-                My.Forms.UpdateClass_A.sy.Text = r("School_Year").ToString()
-                My.Forms.UpdateClass_A.tim.Text = r("Time").ToString()
-                My.Forms.UpdateClass_A.nm.Text = r("No_Minutes").ToString()
-                My.Forms.UpdateClass_A.teacher.Text = r("Teacher").ToString()
-                My.Forms.UpdateClass_A.SearchSubj_btn.Enabled = False
-                My.Forms.UpdateClass_A.subj.Enabled = False
+                My.Forms.UpdateSub_A.gl.Text = r("Grade_Level").ToString()
+                My.Forms.UpdateSub_A.sec.Text = r("Section").ToString()
+                My.Forms.UpdateSub_A.sy.Text = r("School_Year").ToString()
+                My.Forms.UpdateSub_A.tim.Text = r("Time").ToString()
+                My.Forms.UpdateSub_A.nm.Text = r("No_Minutes").ToString()
+                My.Forms.UpdateSub_A.teacher.Text = r("Teacher").ToString()
+                My.Forms.UpdateSub_A.SearchSubj_btn.Enabled = False
+                My.Forms.UpdateSub_A.subj.Enabled = False
 
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.UpdateClass_A.subj.Text = ""
-                My.Forms.UpdateClass_A.subj.Focus()
+                My.Forms.UpdateSub_A.subj.Text = ""
+                My.Forms.UpdateSub_A.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -1965,27 +2038,27 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim UpdateSub_A_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateClass_R.subj.Text & "')"
+            Dim UpdateSub_A_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.UpdateSub_R.subj.Text & "')"
             cn.Open()
             Dim cmd1 As MySqlCommand = New MySqlCommand(UpdateSub_A_frm, cn)
             r = cmd1.ExecuteReader()
             If r.Read Then
 
                 'For form UpdateSub_A search button
-                My.Forms.UpdateClass_R.gl.Text = r("Grade_Level").ToString()
-                My.Forms.UpdateClass_R.sec.Text = r("Section").ToString()
-                My.Forms.UpdateClass_R.sy.Text = r("School_Year").ToString()
-                My.Forms.UpdateClass_R.tim.Text = r("Time").ToString()
-                My.Forms.UpdateClass_R.nm.Text = r("No_Minutes").ToString()
-                My.Forms.UpdateClass_R.teacher.Text = r("Teacher").ToString()
-                My.Forms.UpdateClass_R.SearchSubj_btn.Enabled = False
-                My.Forms.UpdateClass_R.subj.Enabled = False
+                My.Forms.UpdateSub_R.gl.Text = r("Grade_Level").ToString()
+                My.Forms.UpdateSub_R.sec.Text = r("Section").ToString()
+                My.Forms.UpdateSub_R.sy.Text = r("School_Year").ToString()
+                My.Forms.UpdateSub_R.tim.Text = r("Time").ToString()
+                My.Forms.UpdateSub_R.nm.Text = r("No_Minutes").ToString()
+                My.Forms.UpdateSub_R.teacher.Text = r("Teacher").ToString()
+                My.Forms.UpdateSub_R.SearchSubj_btn.Enabled = False
+                My.Forms.UpdateSub_R.subj.Enabled = False
 
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.UpdateClass_R.subj.Text = ""
-                My.Forms.UpdateClass_R.subj.Focus()
+                My.Forms.UpdateSub_R.subj.Text = ""
+                My.Forms.UpdateSub_R.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2051,8 +2124,8 @@ Module Module1
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.UpdateClass_A.subj.Text = ""
-                My.Forms.UpdateClass_A.subj.Focus()
+                My.Forms.UpdateSub_A.subj.Text = ""
+                My.Forms.UpdateSub_A.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2066,7 +2139,7 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewClass.subj.SelectedItem & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewSubject.subj.SelectedItem & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
@@ -2074,19 +2147,19 @@ Module Module1
             If r.Read Then
 
                 'For form DeleteSubj_R search button
-                My.Forms.ViewClass.gl.Text = r("Grade_Level").ToString()
-                My.Forms.ViewClass.sec.Text = r("Section").ToString()
-                My.Forms.ViewClass.sy.Text = r("School_Year").ToString()
-                My.Forms.ViewClass.tim.Text = r("Time").ToString()
-                My.Forms.ViewClass.nm.Text = r("No_Minutes").ToString()
-                My.Forms.ViewClass.teacher.Text = r("Teacher").ToString()
-                My.Forms.ViewClass.SearchSubj_btn.Enabled = False
-                My.Forms.ViewClass.subj.Enabled = False
+                My.Forms.ViewSubject.gl.Text = r("Grade_Level").ToString()
+                My.Forms.ViewSubject.sec.Text = r("Section").ToString()
+                My.Forms.ViewSubject.sy.Text = r("School_Year").ToString()
+                My.Forms.ViewSubject.tim.Text = r("Time").ToString()
+                My.Forms.ViewSubject.nm.Text = r("No_Minutes").ToString()
+                My.Forms.ViewSubject.teacher.Text = r("Teacher").ToString()
+                My.Forms.ViewSubject.SearchSubj_btn.Enabled = False
+                My.Forms.ViewSubject.subj.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.ViewClass.subj.Text = ""
-                My.Forms.ViewClass.subj.Focus()
+                My.Forms.ViewSubject.subj.Text = ""
+                My.Forms.ViewSubject.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2099,7 +2172,7 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewClassR.subj.SelectedItem & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewSubjectR.subj.SelectedItem & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
@@ -2107,19 +2180,19 @@ Module Module1
             If r.Read Then
 
                 'For form DeleteSubj_R search button
-                My.Forms.ViewClassR.gl.Text = r("Grade_Level").ToString()
-                My.Forms.ViewClassR.sec.Text = r("Section").ToString()
-                My.Forms.ViewClassR.sy.Text = r("School_Year").ToString()
-                My.Forms.ViewClassR.tim.Text = r("Time").ToString()
-                My.Forms.ViewClassR.nm.Text = r("No_Minutes").ToString()
-                My.Forms.ViewClassR.teacher.Text = r("Teacher").ToString()
-                My.Forms.ViewClassR.SearchSubj_btn.Enabled = False
-                My.Forms.ViewClassR.subj.Enabled = False
+                My.Forms.ViewSubjectR.gl.Text = r("Grade_Level").ToString()
+                My.Forms.ViewSubjectR.sec.Text = r("Section").ToString()
+                My.Forms.ViewSubjectR.sy.Text = r("School_Year").ToString()
+                My.Forms.ViewSubjectR.tim.Text = r("Time").ToString()
+                My.Forms.ViewSubjectR.nm.Text = r("No_Minutes").ToString()
+                My.Forms.ViewSubjectR.teacher.Text = r("Teacher").ToString()
+                My.Forms.ViewSubjectR.SearchSubj_btn.Enabled = False
+                My.Forms.ViewSubjectR.subj.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.ViewClassR.subj.Text = ""
-                My.Forms.ViewClassR.subj.Focus()
+                My.Forms.ViewSubjectR.subj.Text = ""
+                My.Forms.ViewSubjectR.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2162,11 +2235,6 @@ Module Module1
                 My.Forms.UpdateStudent_A.pl.Enabled = True
                 My.Forms.UpdateStudent_A.sn.Enabled = False
                 My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = False
-
-
-
-
-                My.Forms.UpdateStudent_A.PictureBox2.Image = Image.FromFile(My.Forms.UpdateStudent_A.pl.Text)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2208,7 +2276,6 @@ Module Module1
                 My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = True
 
 
-                My.Forms.DeleteStudent_A.PictureBox2.Image = Image.FromFile(My.Forms.DeleteStudent_A.pl.Text)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2250,7 +2317,6 @@ Module Module1
                 My.Forms.DeleteStudent_R.DeleteButton_a_Student.Enabled = True
 
 
-                My.Forms.DeleteStudent_R.PictureBox2.Image = Image.FromFile(My.Forms.DeleteStudent_R.pl.Text)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2297,7 +2363,6 @@ Module Module1
                 My.Forms.UpdateStudent_R.pl.Enabled = True
                 My.Forms.UpdateStudent_R.sn.Enabled = False
                 My.Forms.UpdateStudent_R.SearchStudent_btn.Enabled = False
-                My.Forms.UpdateStudent_R.PictureBox2.Image = Image.FromFile(My.Forms.UpdateStudent_R.pl.Text)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2333,9 +2398,6 @@ Module Module1
                 My.Forms.ViewStudent.pl.Text = r("Photo").ToString()
                 My.Forms.ViewStudent.ag.Text = r("Age").ToString()
                 My.Forms.ViewStudent.pl.Text = r("Photo").ToString()
-
-             
-                My.Forms.ViewStudent.PictureBox2.Image = Image.FromFile(My.Forms.ViewStudent.pl.Text)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2374,7 +2436,6 @@ Module Module1
                 My.Forms.ViewStudent_R.pl.Text = r("Photo").ToString()
 
 
-                My.Forms.ViewStudent_R.PictureBox2.Image = Image.FromFile(My.Forms.ViewStudent_R.pl.Text)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2412,7 +2473,6 @@ Module Module1
                 My.Forms.ViewStud_C.pl.Text = r("Photo").ToString()
                 My.Forms.ViewStud_C.ag.Text = r("Age").ToString()
                 My.Forms.ViewStud_C.pl.Text = r("Photo").ToString()
-                My.Forms.ViewStud_C.PictureBox2.Image = Image.FromFile(My.Forms.ViewStud_C.pl.Text)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
