@@ -23,6 +23,8 @@ Public Class AdminCreate
             ElseIf PictureBox1.ImageLocation.ToLower.EndsWith(".png") Then
                 encodeType = ImageFormat.Png
                 encodingtypestring = "data:image/png:base64,"
+            ElseIf PictureBox1.ImageLocation = "" Then
+                MsgBox("Please select image!")
             End If
         Catch
         End Try
@@ -58,11 +60,11 @@ Public Class AdminCreate
 
     End Sub
     Public Function imagetobase64(ByVal image As Image, ByVal format As ImageFormat) As String
-        Using ms As New MemoryStream()
-            image.Save(ms, format)
-            Dim imageByte As Byte() = ms.ToArray()
-            Dim base64String As String = Convert.ToBase64String(imageByte)
-            Return base64String
-        End Using
+            Using ms As New MemoryStream()
+                image.Save(ms, format)
+                Dim imageByte As Byte() = ms.ToArray()
+                Dim base64String As String = Convert.ToBase64String(imageByte)
+                Return base64String
+            End Using
     End Function
 End Class

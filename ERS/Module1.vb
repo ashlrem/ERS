@@ -287,7 +287,7 @@ Module Module1
                         ins.Connection = objConn 'ins lang yung ginamit dito, so ginamit siya para sa pag save sa registrar. check niyo yung sa admin saka sa cashier.
 
                         'registrar create (insert to database)
-                        ins.CommandText = "INSERT INTO registrar_account VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status)"
+                        ins.CommandText = "INSERT INTO registrar_account VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status, @LogIn_Attempts)"
                         ins.Parameters.AddWithValue("@Photo", My.Forms.RegistrarCreate.pl.Text)
                         ins.Parameters.AddWithValue("@Surname", My.Forms.RegistrarCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.RegistrarCreate.fn.Text)
@@ -303,6 +303,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@EmployeeID", My.Forms.RegistrarCreate.en.Text)
                         ins.Parameters.AddWithValue("@Password", My.Forms.RegistrarCreate.pw.Text)
                         ins.Parameters.AddWithValue("@status", My.Forms.RegistrarCreate.statusTextBoxRegistrar.Text)
+                        ins.Parameters.AddWithValue("@LogIn_Attempts", My.Forms.RegistrarCreate.loginAttempt.Text)
                         ins.ExecuteNonQuery()
                         MsgBox("Registrar Account Successfully Created!")
                         My.Forms.RegistrarCreate.ln.Focus()
@@ -360,7 +361,7 @@ Module Module1
                         ins.Connection = objConn
 
                         'cashier_accounts create (insert to database)
-                        ins.CommandText = "INSERT INTO cashier_account VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status)"
+                        ins.CommandText = "INSERT INTO cashier_account VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status, @LogIn_Attempts)"
                         ins.Parameters.AddWithValue("@Photo", My.Forms.CashierCreate.pl.Text)
                         ins.Parameters.AddWithValue("@Surname", My.Forms.CashierCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.CashierCreate.fn.Text)
@@ -376,6 +377,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@EmployeeID", My.Forms.CashierCreate.en.Text)
                         ins.Parameters.AddWithValue("@Password", My.Forms.CashierCreate.pw.Text)
                         ins.Parameters.AddWithValue("@status", My.Forms.CashierCreate.statusTextBoxCashier.Text)
+                        ins.Parameters.AddWithValue("@LogIn_Attempts", My.Forms.CashierCreate.loginAttempt.Text)
                         ins.ExecuteNonQuery()
                         MsgBox("Cashier Account Successfuly Created!")
                         My.Forms.CashierCreate.ln.Focus()
@@ -604,6 +606,8 @@ Module Module1
     End Sub
     Public Sub LoginAdm()
 
+        cn.Close()
+        cn1.Close()
 
         Dim statusAttempts As String
         Dim statusCount As Integer
