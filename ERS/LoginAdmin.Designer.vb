@@ -26,11 +26,11 @@ Partial Class LoginAdmin
         Me.Button1 = New System.Windows.Forms.Button()
         Me.en = New System.Windows.Forms.TextBox()
         Me.pw = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LoginCancelBtn = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblcount = New System.Windows.Forms.Label()
+        Me.forgotPassword = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,16 +58,6 @@ Partial Class LoginAdmin
         Me.pw.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.pw.Size = New System.Drawing.Size(172, 20)
         Me.pw.TabIndex = 4
-        '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Location = New System.Drawing.Point(245, 149)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(125, 28)
-        Me.Button2.TabIndex = 5
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -110,6 +100,17 @@ Partial Class LoginAdmin
         Me.lblcount.TabIndex = 9
         Me.lblcount.Text = "Label2"
         '
+        'forgotPassword
+        '
+        Me.forgotPassword.AutoSize = True
+        Me.forgotPassword.BackColor = System.Drawing.Color.Transparent
+        Me.forgotPassword.Location = New System.Drawing.Point(278, 156)
+        Me.forgotPassword.Name = "forgotPassword"
+        Me.forgotPassword.Size = New System.Drawing.Size(92, 13)
+        Me.forgotPassword.TabIndex = 10
+        Me.forgotPassword.TabStop = True
+        Me.forgotPassword.Text = "Forgot Password?"
+        '
         'LoginAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -119,9 +120,9 @@ Partial Class LoginAdmin
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(508, 188)
         Me.ControlBox = False
+        Me.Controls.Add(Me.forgotPassword)
         Me.Controls.Add(Me.LoginCancelBtn)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.pw)
         Me.Controls.Add(Me.en)
         Me.Controls.Add(Me.Button1)
@@ -140,9 +141,9 @@ Partial Class LoginAdmin
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents en As System.Windows.Forms.TextBox
     Friend WithEvents pw As System.Windows.Forms.TextBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents LoginCancelBtn As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lblcount As System.Windows.Forms.Label
+    Friend WithEvents forgotPassword As System.Windows.Forms.LinkLabel
 End Class

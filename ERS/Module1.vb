@@ -604,6 +604,8 @@ Module Module1
     End Sub
     Public Sub LoginAdm()
 
+        cn.Close()
+        cn1.Close()
 
         Dim statusAttempts As String
         Dim statusCount As Integer

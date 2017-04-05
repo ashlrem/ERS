@@ -12,13 +12,6 @@ Public Class LoginAdmin
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         LoginAdm()
     End Sub
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        ForgotV.TopLevel = False
-        My.Forms.MainScreen.Pi.Controls.Add(ForgotV)
-        ForgotV.Show()
-        Me.Close()
-    End Sub
-
 
     Private Sub LoginCancelBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoginCancelBtn.Click
         My.Forms.MainScreen.AdminBtn.Visible = True
@@ -27,5 +20,12 @@ Public Class LoginAdmin
         My.Forms.MainScreen.AboutUsBtn.Visible = True
         My.Forms.MainScreen.PictureBox1.Visible = True
         Me.Close()
+    End Sub
+
+    Private Sub forgotPassword_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles forgotPassword.LinkClicked
+        ForgotV.TopLevel = False
+        My.Forms.MainScreen.Pi.Controls.Add(ForgotV)
+        ForgotV.Show()
+        Me.Hide()
     End Sub
 End Class
