@@ -52,3 +52,7 @@ ERS/bin/Debug/ERS.exe
 *.suo
 *.exe
 ERS/bin/Debug/ERS.pdb
+ERS/bin/Debug/ERS.exe
+ERS/bin/Debug/ERS.pdb
+ERS/obj/Debug/ERS.exe
+ERS/obj/Debug/ERS.vbproj.GenerateResource.Cache
