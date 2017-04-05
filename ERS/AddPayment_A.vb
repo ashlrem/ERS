@@ -68,11 +68,6 @@
         Proceed_btn.Enabled = True
        
     End Sub
-    Private Sub AddPayment_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-        Screen_Admin.Show()
-        AdminPanel.Show()
-    End Sub
-
     Private Sub pp_rdbnt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pp_rdbnt.CheckedChanged
         EnterPartial_grp.Enabled = True
         Payment_grp.Text = "Partial payment"
@@ -162,8 +157,11 @@
         grade.Text = "---"
         Proceed_btn.Enabled = False
   
-  End Sub
-
+    End Sub
+    Private Sub AddPayment_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        Screen_Cashier.Show()
+        Screen_Cashier.Show()
+    End Sub
     Private Sub enterTuition_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles enterTuition_btn.Click
         If total.Text = "" Then
             MsgBox("Please enter tuitionfee.")

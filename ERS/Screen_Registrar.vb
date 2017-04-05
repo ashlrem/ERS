@@ -2,10 +2,10 @@
 
  
     Private Sub UpdateAccountToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateAccountToolStripMenuItem.Click
-        UpdateRegistrar.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(UpdateRegistrar)
+        UpdateRegistrarR.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(UpdateRegistrarR)
         RegistrarPanel.Hide()
-        UpdateRegistrar.Show()
+        UpdateRegistrarR.Show()
     End Sub
     Private Sub UpdateSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateSubjectToolStripMenuItem.Click
         UpdateClass_R.TopLevel = False
@@ -43,10 +43,10 @@
     End Sub
 
     Private Sub SubjectToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SubjectToolStripMenuItem1.Click
-        ViewClass.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(ViewClass)
+        ViewClassR.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(ViewClassR)
         RegistrarPanel.Hide()
-        ViewClass.Show()
+        ViewClassR.Show()
     End Sub
 
     Private Sub AddStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddStudentRecordToolStripMenuItem.Click
@@ -63,10 +63,6 @@
         ViewStudent_R.Show()
     End Sub
 
-    Private Sub PaymentsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PaymentsToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub ViewSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewSubjectToolStripMenuItem.Click
         ViewClassR.TopLevel = False
         RegistrarPanelPictureBox.Controls.Add(ViewClassR)
@@ -75,10 +71,10 @@
     End Sub
 
     Private Sub AddSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddSubjectToolStripMenuItem.Click
-        AddClass.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(AddClass)
+        AddClassR.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(AddClassR)
         RegistrarPanel.Hide()
-        AddClass.Show()
+        AddClassR.Show()
     End Sub
 
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click

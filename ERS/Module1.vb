@@ -431,12 +431,48 @@ Module Module1
         End Try
         objConn.Close()
     End Sub
+    Public Sub qweR()
+        'Adding Subjects (insert to database table "subject_tbl")
+        Dim cn = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+        objConn.ConnectionString = cn
+        objConn.Open()
+        Try
+            If (My.Forms.AddClassR.gl.SelectedIndex = -1 Or My.Forms.AddClassR.sec.Text = "") Then
+                MsgBox("Enter the empty fields!")
+            Else
+                'so dito, subjects yung sine save natin sa database, so yung SQL Query natin,
+                'INSERT INTO subject_tbl, para lang din tayong gumagawa ng user account, pero nagbago yung variables natin.
+                'pero same flow. gawa ng connection string, ioopen yung connection ni database,
+                'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
+                ins.Connection = objConn
+                ins.CommandText = "INSERT INTO subject_tbl VALUES( @GradeLevel, @Section)"
+                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClassR.gl.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@Section", My.Forms.AddClassR.sec.Text.ToString)
+                ins.ExecuteNonQuery()
+                ins.Parameters.Clear()
+                MsgBox("Subject saved successfully!")
+                objConn.Close()
+                Dim a As Integer
+                a = MsgBox("Do you want to Add another subject?", MsgBoxStyle.YesNo)
+                If (a = MsgBoxResult.Yes) Then
+                    AddSubClear()
+                ElseIf (a = MsgBoxResult.No) Then
+                    My.Forms.AddClassR.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        objConn.Close()
+    End Sub
+
     Public Sub insert()
         'insert method to. tandaan lang natin na kapag may nakita tayong 'insert()' sa ibang method, eto yung tinatawag niya.
         'bakit kelangan nito? para hindi na natin paulit ulit na copy paste etong 2 lines of code sa lahat ng method.
         cn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
         cn1.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
     End Sub
+
     Public Sub AddSubClear()
 
         'so eto yung method para mag clear yung mga text boxes and stuff sa code natin.
@@ -1893,6 +1929,41 @@ Module Module1
             cn.Close()
         End Try
     End Sub
+    Public Sub rRegistrar_btn()
+        'not implemented
+        Try
+            insert()
+            Dim r As MySqlDataReader
+            Dim reg As String = "SELECT * FROM registrar_account WHERE (EmployeeID ='" & My.Forms.UpdateRegistrarR.en.Text & "')"
+            cn.Open()
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn)
+            r = cmd.ExecuteReader()
+            If r.Read Then
+                My.Forms.UpdateRegistrarR.ln.Text = r("Surname").ToString()
+                My.Forms.UpdateRegistrarR.fn.Text = r("GivenName").ToString()
+                My.Forms.UpdateRegistrarR.mn.Text = r("MiddleName").ToString()
+                My.Forms.UpdateRegistrarR.bd.Text = r("Birthday").ToString()
+                My.Forms.UpdateRegistrarR.add.Text = r("Address").ToString()
+                My.Forms.UpdateRegistrarR.eadd.Text = r("Email_Account").ToString()
+                My.Forms.UpdateRegistrarR.cno.Text = r("ContactNumber").ToString()
+                My.Forms.UpdateRegistrarR.eadd.Text = r("Email_Account").ToString()
+                My.Forms.UpdateRegistrarR.pl.Text = r("Photo").ToString()
+                My.Forms.UpdateRegistrarR.GroupBox2.Enabled = True
+                My.Forms.UpdateRegistrarR.ValidateAccountUpdate_btn.Enabled = False
+                My.Forms.UpdateRegistrarR.en.Enabled = False
+                My.Forms.UpdateRegistrarR.PictureBox1.Image = base64toimage(My.Forms.UpdateRegistrarR.pl.Text)
+                cn.Close()
+            Else
+                MsgBox("EmployeeID not Found!")
+                My.Forms.UpdateRegistrarR.en.Text = ""
+                My.Forms.UpdateRegistrarR.en.Focus()
+                cn.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
     Public Sub updateAccntRegistrar_btn()
         Try
             If (My.Forms.UpdateRegistrar.ln.Text = "" And My.Forms.UpdateRegistrar.fn.Text = "" _
@@ -1901,7 +1972,7 @@ Module Module1
               And My.Forms.UpdateRegistrar.cno.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE registrar_account SET Surname = '" & My.Forms.UpdateRegistrar.ln.Text & "', GivenName = '" & My.Forms.UpdateRegistrar.fn.Text & "', MiddleName = '" & My.Forms.UpdateRegistrar.mn.Text & "', Birthday = '" & My.Forms.UpdateRegistrar.bd.Text & "', Address = '" & My.Forms.UpdateRegistrar.add.Text & "', Email_Account = '" & My.Forms.UpdateRegistrar.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateRegistrar.cno.Text & "' , status = '" & My.Forms.UpdateCashier.status.Text & "', LogIn_Attempts = 0 WHERE EmployeeID = '" & My.Forms.UpdateRegistrar.en.Text & "' "
+                Dim reg As String = "UPDATE registrar_account SET Surname = '" & My.Forms.UpdateRegistrar.ln.Text & "', GivenName = '" & My.Forms.UpdateRegistrar.fn.Text & "', MiddleName = '" & My.Forms.UpdateRegistrar.mn.Text & "', Birthday = '" & My.Forms.UpdateRegistrar.bd.Text & "', Address = '" & My.Forms.UpdateRegistrar.add.Text & "', Email_Account = '" & My.Forms.UpdateRegistrar.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateRegistrar.cno.Text & "' , status = '" & My.Forms.UpdateRegistrar.status.Text & "', LogIn_Attempts = 0 WHERE EmployeeID = '" & My.Forms.UpdateRegistrar.en.Text & "' "
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
@@ -1920,6 +1991,43 @@ Module Module1
                         My.Forms.UpdateRegistrar.en.Enabled = True
                         My.Forms.UpdateRegistrar.en.Focus()
                         My.Forms.UpdateRegistrar.PictureBox1.Image = Nothing
+                        cn1.Close()
+                    End Using
+                    cn1.Close()
+                End Using
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+    Public Sub updateAccntRegistrarR_btn()
+        Try
+            If (My.Forms.UpdateRegistrarR.ln.Text = "" And My.Forms.UpdateRegistrarR.fn.Text = "" _
+              And My.Forms.UpdateRegistrarR.mn.Text = "" And My.Forms.UpdateRegistrarR.bd.Text = "" _
+              And My.Forms.UpdateRegistrarR.add.Text = "" And My.Forms.UpdateRegistrarR.eadd.Text = "" _
+              And My.Forms.UpdateRegistrarR.cno.Text = "") Then
+                MsgBox("Please enter the empty fields")
+            Else
+                Dim reg As String = "UPDATE registrar_account SET Surname = '" & My.Forms.UpdateRegistrarR.ln.Text & "', GivenName = '" & My.Forms.UpdateRegistrarR.fn.Text & "', MiddleName = '" & My.Forms.UpdateRegistrarR.mn.Text & "', Birthday = '" & My.Forms.UpdateRegistrarR.bd.Text & "', Address = '" & My.Forms.UpdateRegistrarR.add.Text & "', Email_Account = '" & My.Forms.UpdateRegistrarR.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateRegistrarR.cno.Text & "' , status = '" & My.Forms.UpdateRegistrarR.status.Text & "', LogIn_Attempts = 0 WHERE EmployeeID = '" & My.Forms.UpdateRegistrarR.en.Text & "' "
+                Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
+                    Using sqlCmd = New MySqlCommand(reg, cn1)
+                        cn1.Open()
+                        sqlCmd.ExecuteNonQuery()
+                        MsgBox("Registrar Account Updated!")
+                        My.Forms.UpdateRegistrarR.en.Text = ""
+                        My.Forms.UpdateRegistrarR.ln.Text = ""
+                        My.Forms.UpdateRegistrarR.fn.Text = ""
+                        My.Forms.UpdateRegistrarR.mn.Text = ""
+                        My.Forms.UpdateRegistrarR.bd.Text = ""
+                        My.Forms.UpdateRegistrarR.add.Text = ""
+                        My.Forms.UpdateRegistrarR.eadd.Text = ""
+                        My.Forms.UpdateRegistrarR.cno.Text = ""
+                        My.Forms.UpdateRegistrarR.GroupBox2.Enabled = False
+                        My.Forms.UpdateRegistrarR.ValidateAccountUpdate_btn.Enabled = True
+                        My.Forms.UpdateRegistrarR.en.Enabled = True
+                        My.Forms.UpdateRegistrarR.en.Focus()
+                        My.Forms.UpdateRegistrarR.PictureBox1.Image = Nothing
                         cn1.Close()
                     End Using
                     cn1.Close()
@@ -1959,6 +2067,42 @@ Module Module1
                 MsgBox("EmployeeID not Found!")
                 My.Forms.UpdateCashier.en.Text = ""
                 My.Forms.UpdateCashier.en.Focus()
+                cn.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+    Public Sub SCashier_btn()
+        'not implemented
+        Try
+            insert()
+            Dim r As MySqlDataReader
+            Dim reg As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & My.Forms.UpdateCashierC.en.Text & "')"
+            cn.Open()
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn)
+            r = cmd.ExecuteReader()
+            If r.Read Then
+                My.Forms.UpdateCashierC.ln.Text = r("Surname").ToString()
+                My.Forms.UpdateCashierC.fn.Text = r("GivenName").ToString()
+                My.Forms.UpdateCashierC.mn.Text = r("MiddleName").ToString()
+                My.Forms.UpdateCashierC.bd.Text = r("Birthday").ToString()
+                My.Forms.UpdateCashierC.add.Text = r("Address").ToString()
+                My.Forms.UpdateCashierC.eadd.Text = r("Email_Account").ToString()
+                My.Forms.UpdateCashierC.cno.Text = r("ContactNumber").ToString()
+                My.Forms.UpdateCashierC.eadd.Text = r("Email_Account").ToString()
+                My.Forms.UpdateCashierC.pl.Text = r("Photo").ToString()
+                My.Forms.UpdateCashierC.cno.Text = r("ContactNumber").ToString()
+                My.Forms.UpdateCashierC.GroupBox2.Enabled = True
+                My.Forms.UpdateCashierC.ValidateAccountUpdate_btn.Enabled = False
+                My.Forms.UpdateCashierC.en.Enabled = False
+                My.Forms.UpdateCashierC.PictureBox1.Image = base64toimage(My.Forms.UpdateCashierC.pl.Text)
+                cn.Close()
+            Else
+                MsgBox("EmployeeID not Found!")
+                My.Forms.UpdateCashierC.en.Text = ""
+                My.Forms.UpdateCashierC.en.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2009,7 +2153,43 @@ Module Module1
             cn.Close()
         End Try
     End Sub
-  
+    Public Sub UpdateCashiercc()
+        Try
+            If (My.Forms.UpdateCashierC.ln.Text = "" And My.Forms.UpdateCashierC.fn.Text = "" _
+              And My.Forms.UpdateCashierC.mn.Text = "" And My.Forms.UpdateCashierC.bd.Text = "" _
+              And My.Forms.UpdateCashierC.add.Text = "" And My.Forms.UpdateCashierC.eadd.Text = "" _
+              And My.Forms.UpdateCashierC.cno.Text = "") Then
+                MsgBox("Please enter the empty fields")
+            Else
+                Dim reg As String = "UPDATE cashier_account SET Surname = '" & My.Forms.UpdateCashierC.ln.Text & "', GivenName = '" & My.Forms.UpdateCashierC.fn.Text & "', MiddleName = '" & My.Forms.UpdateCashierC.mn.Text & "', Birthday = '" & My.Forms.UpdateCashierC.bd.Text & "', Address = '" & My.Forms.UpdateCashierC.add.Text & "', Email_Account = '" & My.Forms.UpdateCashierC.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateCashierC.cno.Text & "', status = '" & My.Forms.UpdateCashierC.status.Text & "', LogIn_Attempts = 0 where EmployeeID = '" & My.Forms.UpdateCashierC.en.Text & "'"
+                Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
+                    Using sqlCmd = New MySqlCommand(reg, cn1)
+                        cn1.Open()
+                        sqlCmd.ExecuteNonQuery()
+                        MsgBox("Cashier Account Updated!")
+                        My.Forms.UpdateCashierC.en.Text = ""
+                        My.Forms.UpdateCashierC.ln.Text = ""
+                        My.Forms.UpdateCashierC.fn.Text = ""
+                        My.Forms.UpdateCashierC.mn.Text = ""
+                        My.Forms.UpdateCashierC.bd.Text = ""
+                        My.Forms.UpdateCashierC.add.Text = ""
+                        My.Forms.UpdateCashierC.eadd.Text = ""
+                        My.Forms.UpdateCashierC.cno.Text = ""
+                        My.Forms.UpdateCashierC.GroupBox2.Enabled = False
+                        My.Forms.UpdateCashierC.ValidateAccountUpdate_btn.Enabled = True
+                        My.Forms.UpdateCashierC.en.Enabled = True
+                        My.Forms.UpdateCashierC.PictureBox1.Image = Nothing
+                        My.Forms.UpdateCashierC.en.Focus()
+                        cn1.Close()
+                    End Using
+                    cn1.Close()
+                End Using
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
     Public Sub updateSubjA_btn()
         Try
             If (My.Forms.UpdateClass_A.nm.Text = "" And My.Forms.UpdateClass_A.teacher.Text = "" _
@@ -2355,22 +2535,18 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewClassR.subj.SelectedItem & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Grade_Level ='" & My.Forms.ViewClassR.subj.SelectedItem & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
             r = cmd.ExecuteReader()
             If r.Read Then
 
-                'For form DeleteSubj_R search button
-                My.Forms.ViewClassR.gl.Text = r("Grade_Level").ToString()
-                My.Forms.ViewClassR.sec.Text = r("Section").ToString()
-                My.Forms.ViewClassR.sy.Text = r("School_Year").ToString()
-                My.Forms.ViewClassR.tim.Text = r("Time").ToString()
-                My.Forms.ViewClassR.nm.Text = r("No_Minutes").ToString()
-                My.Forms.ViewClassR.teacher.Text = r("Teacher").ToString()
-                My.Forms.ViewClassR.SearchSubj_btn.Enabled = False
-                My.Forms.ViewClassR.subj.Enabled = False
+                My.Forms.ViewClassR.sec.Items.Clear()
+                My.Forms.ViewClassR.sec.Items.Add(r("Section").ToString())
+                While (r.Read())
+                    My.Forms.ViewClassR.sec.Items.Add(r("Section").ToString())
+                End While
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")

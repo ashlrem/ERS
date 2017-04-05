@@ -67,10 +67,12 @@ Partial Class ForgotC
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(298, 116)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ne1)
         Me.Controls.Add(Me.Button1)
+        Me.Location = New System.Drawing.Point(350, 50)
         Me.Name = "ForgotC"
         Me.Text = "ForgotC"
         Me.ResumeLayout(False)

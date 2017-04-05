@@ -78,7 +78,7 @@ Public Class UpdatePayment_A
         total.Text = t
     End Sub
     Private Sub UpadatePayment_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-        Screen_Admin.Show()
-        AdminPanel.Show()
+        Screen_Cashier.Show()
+        Screen_Cashier.Show()
     End Sub
 End Class

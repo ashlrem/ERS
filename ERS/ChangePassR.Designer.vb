@@ -91,6 +91,7 @@ Partial Class ChangePassR
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.rtp)
         Me.Controls.Add(Me.pw)
+        Me.Location = New System.Drawing.Point(350, 50)
         Me.Name = "ChangePassR"
         Me.Text = "ChangePassR"
         Me.ResumeLayout(False)

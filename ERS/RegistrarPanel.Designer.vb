@@ -105,9 +105,8 @@ Partial Class RegistrarPanel
         Me.empl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.empl.Location = New System.Drawing.Point(341, 134)
         Me.empl.Name = "empl"
-        Me.empl.Size = New System.Drawing.Size(86, 24)
+        Me.empl.Size = New System.Drawing.Size(0, 24)
         Me.empl.TabIndex = 47
-        Me.empl.Text = "2012-028"
         '
         'n1
         '

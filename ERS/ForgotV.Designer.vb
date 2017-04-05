@@ -67,11 +67,13 @@ Partial Class ForgotV
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(304, 122)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ne1)
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Location = New System.Drawing.Point(350, 50)
         Me.Name = "ForgotV"
         Me.Text = "ForgotV"
         Me.ResumeLayout(False)

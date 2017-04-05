@@ -17,10 +17,10 @@
     End Sub
 
     Private Sub UpdateAccountToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateAccountToolStripMenuItem.Click
-        UpdateCashier.TopLevel = False
-        CashierPanelPictureBox.Controls.Add(UpdateCashier)
+        UpdateCashierC.TopLevel = False
+        CashierPanelPictureBox.Controls.Add(UpdateCashierC)
         CashierPanel.Hide()
-        UpdateCashier.Show()
+        UpdateCashierC.Show()
     End Sub
 
     Private Sub AddPaymentToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddPaymentToolStripMenuItem.Click

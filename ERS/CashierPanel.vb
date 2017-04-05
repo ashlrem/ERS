@@ -30,7 +30,7 @@ Public Class CashierPanel
         connection.Close()
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim a As Integer
         a = MsgBox("Are you sure do you want to logout?", MsgBoxStyle.YesNo)
         If (a = MsgBoxResult.Yes) Then

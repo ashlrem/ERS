@@ -22,8 +22,8 @@
         total.Text = t
     End Sub
     Private Sub DeletePayment_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-        Screen_Admin.Show()
-        AdminPanel.Show()
+        Screen_Cashier.Show()
+        Screen_Cashier.Show()
         DeletePayment_btn.Visible = True
     End Sub
 End Class
