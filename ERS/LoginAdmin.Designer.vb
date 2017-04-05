@@ -30,7 +30,7 @@ Partial Class LoginAdmin
         Me.LoginCancelBtn = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblcount = New System.Windows.Forms.Label()
-        Me.forgotPassword = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -100,16 +100,16 @@ Partial Class LoginAdmin
         Me.lblcount.TabIndex = 9
         Me.lblcount.Text = "Label2"
         '
-        'forgotPassword
+        'LinkLabel1
         '
-        Me.forgotPassword.AutoSize = True
-        Me.forgotPassword.BackColor = System.Drawing.Color.Transparent
-        Me.forgotPassword.Location = New System.Drawing.Point(278, 156)
-        Me.forgotPassword.Name = "forgotPassword"
-        Me.forgotPassword.Size = New System.Drawing.Size(92, 13)
-        Me.forgotPassword.TabIndex = 10
-        Me.forgotPassword.TabStop = True
-        Me.forgotPassword.Text = "Forgot Password?"
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel1.Location = New System.Drawing.Point(281, 156)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(92, 13)
+        Me.LinkLabel1.TabIndex = 10
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Forgot Password?"
         '
         'LoginAdmin
         '
@@ -120,7 +120,7 @@ Partial Class LoginAdmin
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(508, 188)
         Me.ControlBox = False
-        Me.Controls.Add(Me.forgotPassword)
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.LoginCancelBtn)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pw)
@@ -145,5 +145,5 @@ Partial Class LoginAdmin
     Friend WithEvents LoginCancelBtn As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lblcount As System.Windows.Forms.Label
-    Friend WithEvents forgotPassword As System.Windows.Forms.LinkLabel
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
 End Class

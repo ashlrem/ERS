@@ -49,6 +49,7 @@ Partial Class RegistrarPanel
         'pl
         '
         Me.pl.Location = New System.Drawing.Point(91, 92)
+        Me.pl.Multiline = True
         Me.pl.Name = "pl"
         Me.pl.Size = New System.Drawing.Size(100, 20)
         Me.pl.TabIndex = 58
@@ -183,7 +184,7 @@ Partial Class RegistrarPanel
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "RegistrarPanel"
-        Me.Text = "cc"
+        Me.Text = "Registrar Panel"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

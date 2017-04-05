@@ -794,3 +794,9 @@ C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ViewClass.resourc
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ViewClassR.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.Webcam.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.vbproj.GenerateResource.Cache
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ChangePassC.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ChangePassR.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.forgot2.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.forgot3.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ForgotC.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ForgotR.resources

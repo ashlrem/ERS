@@ -41,6 +41,7 @@ Partial Class AdminPanel
         '
         'PictureBox3
         '
+        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox3.Location = New System.Drawing.Point(220, 122)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(120, 92)
@@ -50,9 +51,10 @@ Partial Class AdminPanel
         '
         'pl
         '
-        Me.pl.Location = New System.Drawing.Point(240, 157)
+        Me.pl.Location = New System.Drawing.Point(221, 141)
+        Me.pl.Multiline = True
         Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 20)
+        Me.pl.Size = New System.Drawing.Size(100, 40)
         Me.pl.TabIndex = 41
         '
         'Label4

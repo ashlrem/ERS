@@ -25,6 +25,7 @@
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
         PictureBox1.Visible = False
+        ForgotV.Close()
         RegistrarLogin.Close()
         LoginAdmin.Close()
         Pi.Controls.Add(AboutBox1)
@@ -43,6 +44,7 @@
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
         PictureBox1.Visible = False
+        ForgotV.Close()
         RegistrarLogin.Close()
         LoginAdmin.Close()
         Pi.Controls.Add(CashierLogin)
@@ -57,6 +59,7 @@
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
+        ForgotV.Close()
         LoginAdmin.Close()
         CashierLogin.Close()
         RegistrarLogin.Show()
@@ -69,6 +72,7 @@
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
+        ForgotV.Close()
         RegistrarLogin.Close()
         CashierLogin.Close()
         Pi.Controls.Add(LoginAdmin)

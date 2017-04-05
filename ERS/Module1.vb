@@ -835,8 +835,10 @@ Module Module1
                 My.Forms.AdminPanel.email.Text = r("Email_Account").ToString() & "."
                 My.Forms.AdminPanel.cn.Text = r("ContactNumber").ToString() & "."
                 My.Forms.AdminPanel.pl.Text = r("Photo").ToString()
-                My.Forms.AdminPanel.PictureBox3.Image = base64toimage(My.Forms.AdminPanel.pl.Text)
-                cn1.Close() 'remember na laging icclose yung database connection. parang sa pag ibig, dapat laging may closure kayo ng x mo. hahaha
+                Try
+                    My.Forms.AdminPanel.PictureBox3.Image = base64toimage(My.Forms.AdminPanel.pl.Text)
+                Catch
+                End Try
             Else
                 MsgBox("Employee number not Found!")
                 cn1.Close()
@@ -846,6 +848,7 @@ Module Module1
         cn1.Close()
         
     End Sub
+    
     Public Sub studentSearch()
         'View Student info. To display Picture of Student, Name, StudentNo, etc.
 
@@ -934,12 +937,19 @@ Module Module1
                 If (My.Forms.ChangePass.pw.Text = My.Forms.ChangePass.rtp.Text) Then
                     'eto yung sql query natin for changing password. medyo magbabago lang dito, kasi wala na yung insert().
                     'hindi naman na kasi tayo mag i insert or titingin sa db, mag a update na tayo.
-                    Dim reg As String = "UPDATE admin SET Password = '" & My.Forms.ChangePass.rtp.Text & "'"
+                    Dim reg As String = "UPDATE admin SET Password = '" & My.Forms.ChangePass.rtp.Text & "' where EmployeeID = '" & My.Forms.ForgotV.ne1.Text & "'"
                     Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                         Using sqlCmd = New MySqlCommand(reg, cn1)
                             cn1.Open() 'pero siyempre andito pa din yung mag o open tayo ng connection,
                             sqlCmd.ExecuteNonQuery() 'mag e execute ng query,
                             MsgBox("Password changed successfully!")
+                            My.Forms.MainScreen.AdminBtn.Visible = True
+                            My.Forms.MainScreen.CashierBtn.Visible = True
+                            My.Forms.MainScreen.RegistrarBtn.Visible = True
+                            My.Forms.MainScreen.AboutUsBtn.Visible = True
+                            My.Forms.MainScreen.PictureBox1.Visible = True
+                            My.Forms.ChangePass.Close()
+                            My.Forms.ForgotV.Close()
                             cn1.Close() 'at close connection. para san ulit to guys? remember! para ma prevent yung db leaks.
                             'pag kasi may naka open lang na connection ng database, bukod sa prone sa database leaks,
                             'kumakain pa siya ng resources (memory) ng computer. which is cause ng pagbagal ng computer
@@ -954,6 +964,112 @@ Module Module1
                     My.Forms.ChangePass.pw.Text = ""
                     My.Forms.ChangePass.rtp.Text = ""
                     My.Forms.ChangePass.pw.Focus()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+    Public Sub chapassC()
+
+        'change password na tayo guys, ibang sql query na gamit natin dito. change password, need natin mag update sa database,
+        'so UPDATE table SET fields = laman ng text box
+        'Change password of Admin
+        Try
+            If (My.Forms.ChangePassC.pw.Text = "") Then
+                MsgBox("Please enter Password")
+                My.Forms.ChangePassC.pw.Focus()
+            ElseIf (My.Forms.ChangePassC.rtp.Text = "") Then
+                MsgBox("Please enter re-type password!")
+                My.Forms.ChangePassC.rtp.Focus()
+            ElseIf (My.Forms.ChangePassC.rtp.Text = "" And My.Forms.ChangePassC.pw.Text = "") Then
+                MsgBox("Please enter the empty fields")
+                My.Forms.ChangePassC.pw.Focus()
+            Else
+                If (My.Forms.ChangePassC.pw.Text = My.Forms.ChangePassC.rtp.Text) Then
+                    'eto yung sql query natin for changing password. medyo magbabago lang dito, kasi wala na yung insert().
+                    'hindi naman na kasi tayo mag i insert or titingin sa db, mag a update na tayo.
+                    Dim reg As String = "UPDATE cashier_account SET Password = '" & My.Forms.ChangePassC.rtp.Text & "' where EmployeeID = '" & My.Forms.ChangePassC.ne1.Text & "'"
+                    Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
+                        Using sqlCmd = New MySqlCommand(reg, cn1)
+                            cn1.Open() 'pero siyempre andito pa din yung mag o open tayo ng connection,
+                            sqlCmd.ExecuteNonQuery() 'mag e execute ng query,
+                            MsgBox("Password changed successfully!")
+                            My.Forms.MainScreen.AdminBtn.Visible = True
+                            My.Forms.MainScreen.CashierBtn.Visible = True
+                            My.Forms.MainScreen.RegistrarBtn.Visible = True
+                            My.Forms.MainScreen.AboutUsBtn.Visible = True
+                            My.Forms.MainScreen.PictureBox1.Visible = True
+                            My.Forms.ChangePassC.Close()
+                            My.Forms.ForgotC.Close()
+                            cn1.Close() 'at close connection. para san ulit to guys? remember! para ma prevent yung db leaks.
+                            'pag kasi may naka open lang na connection ng database, bukod sa prone sa database leaks,
+                            'kumakain pa siya ng resources (memory) ng computer. which is cause ng pagbagal ng computer
+                            'na gamit ni admin, or cashier, or registrar. kaya important na every open ng database connection,
+                            'perform yung database transaction (SELECT or INSERT or UPDATE, etc.)
+                            'then close connection.
+                        End Using
+                        cn1.Close()
+                    End Using
+                Else
+                    MsgBox("Passwords are not mathced!")
+                    My.Forms.ChangePassC.pw.Text = ""
+                    My.Forms.ChangePassC.rtp.Text = ""
+                    My.Forms.ChangePassC.pw.Focus()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+    Public Sub chapassR()
+
+        'change password na tayo guys, ibang sql query na gamit natin dito. change password, need natin mag update sa database,
+        'so UPDATE table SET fields = laman ng text box
+        'Change password of Admin
+        Try
+            If (My.Forms.ChangePassR.pw.Text = "") Then
+                MsgBox("Please enter Password")
+                My.Forms.ChangePassR.pw.Focus()
+            ElseIf (My.Forms.ChangePassR.rtp.Text = "") Then
+                MsgBox("Please enter re-type password!")
+                My.Forms.ChangePassR.rtp.Focus()
+            ElseIf (My.Forms.ChangePassR.rtp.Text = "" And My.Forms.ChangePassR.pw.Text = "") Then
+                MsgBox("Please enter the empty fields")
+                My.Forms.ChangePassR.pw.Focus()
+            Else
+                If (My.Forms.ChangePassR.pw.Text = My.Forms.ChangePassR.rtp.Text) Then
+                    'eto yung sql query natin for changing password. medyo magbabago lang dito, kasi wala na yung insert().
+                    'hindi naman na kasi tayo mag i insert or titingin sa db, mag a update na tayo.
+                    Dim reg As String = "UPDATE registrar_account SET Password = '" & My.Forms.ChangePassR.rtp.Text & "' where EmployeeID = '" & My.Forms.ChangePassR.ne1.Text & "'"
+                    Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
+                        Using sqlCmd = New MySqlCommand(reg, cn1)
+                            cn1.Open() 'pero siyempre andito pa din yung mag o open tayo ng connection,
+                            sqlCmd.ExecuteNonQuery() 'mag e execute ng query,
+                            MsgBox("Password changed successfully!")
+                            My.Forms.MainScreen.AdminBtn.Visible = True
+                            My.Forms.MainScreen.CashierBtn.Visible = True
+                            My.Forms.MainScreen.RegistrarBtn.Visible = True
+                            My.Forms.MainScreen.AboutUsBtn.Visible = True
+                            My.Forms.MainScreen.PictureBox1.Visible = True
+                            My.Forms.ChangePassR.Close()
+                            My.Forms.ForgotR.Close()
+                            cn1.Close() 'at close connection. para san ulit to guys? remember! para ma prevent yung db leaks.
+                            'pag kasi may naka open lang na connection ng database, bukod sa prone sa database leaks,
+                            'kumakain pa siya ng resources (memory) ng computer. which is cause ng pagbagal ng computer
+                            'na gamit ni admin, or cashier, or registrar. kaya important na every open ng database connection,
+                            'perform yung database transaction (SELECT or INSERT or UPDATE, etc.)
+                            'then close connection.
+                        End Using
+                        cn1.Close()
+                    End Using
+                Else
+                    MsgBox("Passwords are not mathced!")
+                    My.Forms.ChangePassR.pw.Text = ""
+                    My.Forms.ChangePassR.rtp.Text = ""
+                    My.Forms.ChangePassR.pw.Focus()
                 End If
             End If
         Catch ex As Exception
@@ -990,6 +1106,64 @@ Module Module1
             cn.Close()
         End Try
     End Sub
+    Public Sub forgotCC()
+
+        'sa forgot password naman to. 
+        'Forgot password (To verify secret question)
+        Try
+            insert() 'andito na ulit si insert() kasi SELECT lang naman tayo eh. nakuha na natin yung employeeid dun sa unang text box,
+            'so kapag yung employee id sa unang textbox at si answer1 and answer2 sa text box ngayon ay matched dun sa database,
+            Dim r As MySqlDataReader
+            Dim reg As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & My.Forms.forgot2.ne1.Text & "' and Answer1 ='" & My.Forms.forgot2.ans1.Text & "' and Answer2 ='" & My.Forms.forgot2.ans2.Text & "')"
+            cn1.Open()
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn1)
+            r = cmd.ExecuteReader()
+            'eto yun. open si change password form para mai type niya yung bago niyang password.
+            If r.Read Then
+                ChangePassC.TopLevel = False
+                My.Forms.MainScreen.Pi.Controls.Add(ChangePassC)
+                ChangePassC.Show()
+                My.Forms.forgot2.Close()
+                cn1.Close()
+            Else
+                MsgBox("Secret Question and Answer are not Matched!")
+                My.Forms.forgot2.ans1.Focus()
+                cn1.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+    Public Sub forgotRR()
+
+        'sa forgot password naman to. 
+        'Forgot password (To verify secret question)
+        Try
+            insert() 'andito na ulit si insert() kasi SELECT lang naman tayo eh. nakuha na natin yung employeeid dun sa unang text box,
+            'so kapag yung employee id sa unang textbox at si answer1 and answer2 sa text box ngayon ay matched dun sa database,
+            Dim r As MySqlDataReader
+            Dim reg As String = "SELECT * FROM registrar_account WHERE (EmployeeID ='" & My.Forms.forgot3.ne1.Text & "' and Answer1 ='" & My.Forms.forgot3.ans1.Text & "' and Answer2 ='" & My.Forms.forgot3.ans2.Text & "')"
+            cn1.Open()
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn1)
+            r = cmd.ExecuteReader()
+            'eto yun. open si change password form para mai type niya yung bago niyang password.
+            If r.Read Then
+                ChangePassR.TopLevel = False
+                My.Forms.MainScreen.Pi.Controls.Add(ChangePassR)
+                ChangePassR.Show()
+                My.Forms.forgot3.Close()
+                cn1.Close()
+            Else
+                MsgBox("Secret Question and Answer are not Matched!")
+                My.Forms.forgot3.ans1.Focus()
+                cn1.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
     Public Sub forgor01()
         'etong method na to, nagveverify lang kung existing si employee number sa database.
         'same explanation lang din to guys tulad ng ibang methods natin.
@@ -997,29 +1171,94 @@ Module Module1
         'Verification for EmployeeNumber of Admin to change password
         Try
             'eto yung connection string natin, same lang din ng nasa insert()
-            cn1.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+            cn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
             Dim r As MySqlDataReader
             'eto yung sql query naten. check natin kung yung ni type ni user sa text box ay existing sa databaes.
             Dim reg As String = "SELECT * FROM admin WHERE (EmployeeID ='" & My.Forms.ForgotV.ne1.Text & "')"
-            cn1.Open() 'open database connection
-            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn1) 'lagay natin kay cmd yung reg saka cn1
+            cn.Open() 'open database connection
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn) 'lagay natin kay cmd yung reg saka cn1
             r = cmd.ExecuteReader() 'execute natin
 
             'kung meron ngang username na tinype ni user sa database, show yung next form. else, error
             If r.Read Then
-                ChangePass.TopLevel = False
+                Forgot1.TopLevel = False
                 My.Forms.MainScreen.Pi.Controls.Add(Forgot1)
                 Forgot1.Show()
                 My.Forms.ForgotV.Hide()
-                cn1.Close()
+                cn.Close()
             Else
                 MsgBox("Employee number not Found!")
-                cn1.Close()
+                cn.Close()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             cn.Close()
         End Try
+        cn.Close()
+    End Sub
+    Public Sub forgor02()
+        'etong method na to, nagveverify lang kung existing si employee number sa database.
+        'same explanation lang din to guys tulad ng ibang methods natin.
+
+        'Verification for EmployeeNumber of Admin to change password
+        Try
+            'eto yung connection string natin, same lang din ng nasa insert()
+            cn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+            Dim r As MySqlDataReader
+            'eto yung sql query naten. check natin kung yung ni type ni user sa text box ay existing sa databaes.
+            Dim reg As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & My.Forms.ForgotC.ne1.Text & "')"
+            cn.Open() 'open database connection
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn) 'lagay natin kay cmd yung reg saka cn1
+            r = cmd.ExecuteReader() 'execute natin
+
+            'kung meron ngang username na tinype ni user sa database, show yung next form. else, error
+            If r.Read Then
+                Forgot2.TopLevel = False
+                My.Forms.MainScreen.Pi.Controls.Add(Forgot2)
+                Forgot2.Show()
+                My.Forms.ForgotC.Hide()
+                cn.Close()
+            Else
+                MsgBox("Employee number not Found!")
+                cn.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+        cn.Close()
+    End Sub
+    Public Sub forgor03()
+        'etong method na to, nagveverify lang kung existing si employee number sa database.
+        'same explanation lang din to guys tulad ng ibang methods natin.
+
+        'Verification for EmployeeNumber of Admin to change password
+        Try
+            'eto yung connection string natin, same lang din ng nasa insert()
+            cn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+            Dim r As MySqlDataReader
+            'eto yung sql query naten. check natin kung yung ni type ni user sa text box ay existing sa databaes.
+            Dim reg As String = "SELECT * FROM registrar_account WHERE (EmployeeID ='" & My.Forms.ForgotR.ne1.Text & "')"
+            cn.Open() 'open database connection
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn) 'lagay natin kay cmd yung reg saka cn1
+            r = cmd.ExecuteReader() 'execute natin
+
+            'kung meron ngang username na tinype ni user sa database, show yung next form. else, error
+            If r.Read Then
+                forgot3.TopLevel = False
+                My.Forms.MainScreen.Pi.Controls.Add(forgot3)
+                forgot3.Show()
+                My.Forms.ForgotR.Hide()
+                cn.Close()
+            Else
+                MsgBox("Employee number not Found!")
+                cn.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+        cn.Close()
     End Sub
     Public Sub veditR()
         'not implemented in system

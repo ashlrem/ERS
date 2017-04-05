@@ -35,19 +35,18 @@ Partial Class CashierCreate
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.bd = New System.Windows.Forms.DateTimePicker()
-        Me.cno = New System.Windows.Forms.MaskedTextBox()
         Me.eadd = New System.Windows.Forms.TextBox()
-        Me.ans2 = New System.Windows.Forms.MaskedTextBox()
         Me.sq2 = New System.Windows.Forms.ComboBox()
-        Me.ans1 = New System.Windows.Forms.MaskedTextBox()
         Me.sq1 = New System.Windows.Forms.ComboBox()
         Me.en = New System.Windows.Forms.MaskedTextBox()
-        Me.rtp = New System.Windows.Forms.MaskedTextBox()
-        Me.pw = New System.Windows.Forms.MaskedTextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.statusTextBoxCashier = New System.Windows.Forms.TextBox()
-        Me.loginAttempt = New System.Windows.Forms.TextBox()
+        Me.pw = New System.Windows.Forms.TextBox()
+        Me.rtp = New System.Windows.Forms.TextBox()
+        Me.ans2 = New System.Windows.Forms.TextBox()
+        Me.ans1 = New System.Windows.Forms.TextBox()
+        Me.cno = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,7 +57,7 @@ Partial Class CashierCreate
         Me.Button1.Location = New System.Drawing.Point(645, 277)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(170, 38)
-        Me.Button1.TabIndex = 17
+        Me.Button1.TabIndex = 16
         Me.Button1.UseVisualStyleBackColor = True
         '
         'PictureBox1
@@ -81,30 +80,30 @@ Partial Class CashierCreate
         '
         'add
         '
-        Me.add.Location = New System.Drawing.Point(261, 125)
+        Me.add.Location = New System.Drawing.Point(256, 125)
         Me.add.Name = "add"
-        Me.add.Size = New System.Drawing.Size(338, 20)
+        Me.add.Size = New System.Drawing.Size(343, 20)
         Me.add.TabIndex = 4
         '
         'mn
         '
-        Me.mn.Location = New System.Drawing.Point(614, 99)
+        Me.mn.Location = New System.Drawing.Point(613, 96)
         Me.mn.Name = "mn"
         Me.mn.Size = New System.Drawing.Size(216, 20)
         Me.mn.TabIndex = 3
         '
         'fn
         '
-        Me.fn.Location = New System.Drawing.Point(382, 99)
+        Me.fn.Location = New System.Drawing.Point(377, 95)
         Me.fn.Name = "fn"
-        Me.fn.Size = New System.Drawing.Size(205, 20)
+        Me.fn.Size = New System.Drawing.Size(222, 20)
         Me.fn.TabIndex = 2
         '
         'ln
         '
-        Me.ln.Location = New System.Drawing.Point(145, 99)
+        Me.ln.Location = New System.Drawing.Point(141, 95)
         Me.ln.Name = "ln"
-        Me.ln.Size = New System.Drawing.Size(206, 20)
+        Me.ln.Size = New System.Drawing.Size(215, 20)
         Me.ln.TabIndex = 1
         '
         'Button2
@@ -112,7 +111,7 @@ Partial Class CashierCreate
         Me.Button2.Location = New System.Drawing.Point(548, 292)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 5
+        Me.Button2.TabIndex = 19
         Me.Button2.Text = "Cancel"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -136,7 +135,7 @@ Partial Class CashierCreate
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Male", "Female"})
-        Me.ComboBox1.Location = New System.Drawing.Point(696, 125)
+        Me.ComboBox1.Location = New System.Drawing.Point(696, 124)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(134, 21)
         Me.ComboBox1.TabIndex = 5
@@ -146,17 +145,10 @@ Partial Class CashierCreate
         Me.bd.Cursor = System.Windows.Forms.Cursors.Hand
         Me.bd.CustomFormat = "MM/dd/yyyy"
         Me.bd.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.bd.Location = New System.Drawing.Point(240, 159)
+        Me.bd.Location = New System.Drawing.Point(237, 156)
         Me.bd.Name = "bd"
         Me.bd.Size = New System.Drawing.Size(260, 20)
         Me.bd.TabIndex = 6
-        '
-        'cno
-        '
-        Me.cno.Location = New System.Drawing.Point(623, 162)
-        Me.cno.Name = "cno"
-        Me.cno.Size = New System.Drawing.Size(207, 20)
-        Me.cno.TabIndex = 7
         '
         'eadd
         '
@@ -165,38 +157,24 @@ Partial Class CashierCreate
         Me.eadd.Size = New System.Drawing.Size(229, 20)
         Me.eadd.TabIndex = 8
         '
-        'ans2
-        '
-        Me.ans2.Location = New System.Drawing.Point(180, 299)
-        Me.ans2.Name = "ans2"
-        Me.ans2.Size = New System.Drawing.Size(235, 20)
-        Me.ans2.TabIndex = 15
-        '
         'sq2
         '
         Me.sq2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sq2.FormattingEnabled = True
         Me.sq2.Items.AddRange(New Object() {"What was the name of your elementary/primary school?", "What time of the day were you born?", "What is your favorite basketball team?"})
-        Me.sq2.Location = New System.Drawing.Point(180, 272)
+        Me.sq2.Location = New System.Drawing.Point(180, 267)
         Me.sq2.Name = "sq2"
-        Me.sq2.Size = New System.Drawing.Size(251, 21)
-        Me.sq2.TabIndex = 14
-        '
-        'ans1
-        '
-        Me.ans1.Location = New System.Drawing.Point(180, 240)
-        Me.ans1.Name = "ans1"
-        Me.ans1.Size = New System.Drawing.Size(235, 20)
-        Me.ans1.TabIndex = 12
+        Me.sq2.Size = New System.Drawing.Size(260, 21)
+        Me.sq2.TabIndex = 12
         '
         'sq1
         '
         Me.sq1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sq1.FormattingEnabled = True
         Me.sq1.Items.AddRange(New Object() {"Who is your favorite hero?", "What is the color of your first pet?", "In what year was your father born?"})
-        Me.sq1.Location = New System.Drawing.Point(180, 213)
+        Me.sq1.Location = New System.Drawing.Point(179, 212)
         Me.sq1.Name = "sq1"
-        Me.sq1.Size = New System.Drawing.Size(251, 21)
+        Me.sq1.Size = New System.Drawing.Size(261, 21)
         Me.sq1.TabIndex = 10
         '
         'en
@@ -206,26 +184,12 @@ Partial Class CashierCreate
         Me.en.Size = New System.Drawing.Size(207, 20)
         Me.en.TabIndex = 9
         '
-        'rtp
-        '
-        Me.rtp.Location = New System.Drawing.Point(603, 252)
-        Me.rtp.Name = "rtp"
-        Me.rtp.Size = New System.Drawing.Size(227, 20)
-        Me.rtp.TabIndex = 13
-        '
-        'pw
-        '
-        Me.pw.Location = New System.Drawing.Point(602, 215)
-        Me.pw.Name = "pw"
-        Me.pw.Size = New System.Drawing.Size(228, 20)
-        Me.pw.TabIndex = 11
-        '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(4, 162)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(135, 23)
-        Me.Button3.TabIndex = 16
+        Me.Button3.TabIndex = 17
         Me.Button3.Text = "UploadPhoto"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -234,7 +198,7 @@ Partial Class CashierCreate
         Me.Button4.Location = New System.Drawing.Point(4, 184)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(135, 23)
-        Me.Button4.TabIndex = 27
+        Me.Button4.TabIndex = 18
         Me.Button4.Text = "TakePhoto"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -248,30 +212,55 @@ Partial Class CashierCreate
         Me.statusTextBoxCashier.Text = "Active"
         Me.statusTextBoxCashier.Visible = False
         '
-        'loginAttempt
+        'pw
         '
-        Me.loginAttempt.Location = New System.Drawing.Point(442, 295)
-        Me.loginAttempt.Name = "loginAttempt"
-        Me.loginAttempt.Size = New System.Drawing.Size(100, 20)
-        Me.loginAttempt.TabIndex = 29
-        Me.loginAttempt.Text = "0"
-        Me.loginAttempt.Visible = False
+        Me.pw.Location = New System.Drawing.Point(599, 217)
+        Me.pw.Name = "pw"
+        Me.pw.Size = New System.Drawing.Size(231, 20)
+        Me.pw.TabIndex = 14
+        '
+        'rtp
+        '
+        Me.rtp.Location = New System.Drawing.Point(600, 248)
+        Me.rtp.Name = "rtp"
+        Me.rtp.Size = New System.Drawing.Size(230, 20)
+        Me.rtp.TabIndex = 15
+        '
+        'ans2
+        '
+        Me.ans2.Location = New System.Drawing.Point(177, 295)
+        Me.ans2.Name = "ans2"
+        Me.ans2.Size = New System.Drawing.Size(239, 20)
+        Me.ans2.TabIndex = 13
+        '
+        'ans1
+        '
+        Me.ans1.Location = New System.Drawing.Point(177, 241)
+        Me.ans1.Name = "ans1"
+        Me.ans1.Size = New System.Drawing.Size(242, 20)
+        Me.ans1.TabIndex = 11
+        '
+        'cno
+        '
+        Me.cno.Location = New System.Drawing.Point(621, 157)
+        Me.cno.Name = "cno"
+        Me.cno.Size = New System.Drawing.Size(207, 20)
+        Me.cno.TabIndex = 7
         '
         'CashierCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 330)
-        Me.Controls.Add(Me.loginAttempt)
+        Me.Controls.Add(Me.cno)
+        Me.Controls.Add(Me.ans2)
+        Me.Controls.Add(Me.ans1)
+        Me.Controls.Add(Me.rtp)
+        Me.Controls.Add(Me.pw)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.rtp)
-        Me.Controls.Add(Me.ans2)
-        Me.Controls.Add(Me.pw)
         Me.Controls.Add(Me.eadd)
         Me.Controls.Add(Me.sq2)
-        Me.Controls.Add(Me.cno)
-        Me.Controls.Add(Me.ans1)
         Me.Controls.Add(Me.bd)
         Me.Controls.Add(Me.sq1)
         Me.Controls.Add(Me.ComboBox1)
@@ -288,7 +277,7 @@ Partial Class CashierCreate
         Me.Controls.Add(Me.statusTextBoxCashier)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "CashierCreate"
-        Me.Text = "CashierCreate"
+        Me.Text = "t"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -307,17 +296,16 @@ Partial Class CashierCreate
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents bd As System.Windows.Forms.DateTimePicker
-    Friend WithEvents cno As System.Windows.Forms.MaskedTextBox
     Friend WithEvents eadd As System.Windows.Forms.TextBox
-    Friend WithEvents ans2 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents sq2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ans1 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents sq1 As System.Windows.Forms.ComboBox
     Friend WithEvents en As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents rtp As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents pw As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents statusTextBoxCashier As System.Windows.Forms.TextBox
-    Friend WithEvents loginAttempt As System.Windows.Forms.TextBox
+    Friend WithEvents pw As System.Windows.Forms.TextBox
+    Friend WithEvents rtp As System.Windows.Forms.TextBox
+    Friend WithEvents ans2 As System.Windows.Forms.TextBox
+    Friend WithEvents ans1 As System.Windows.Forms.TextBox
+    Friend WithEvents cno As System.Windows.Forms.TextBox
 End Class
