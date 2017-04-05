@@ -49,6 +49,7 @@ Partial Class RegistrarCreate
         Me.rtp = New System.Windows.Forms.TextBox()
         Me.ans2 = New System.Windows.Forms.TextBox()
         Me.ans1 = New System.Windows.Forms.TextBox()
+        Me.loginAttempt = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -261,11 +262,21 @@ Partial Class RegistrarCreate
         Me.ans1.Size = New System.Drawing.Size(235, 20)
         Me.ans1.TabIndex = 11
         '
+        'loginAttempt
+        '
+        Me.loginAttempt.Location = New System.Drawing.Point(446, 298)
+        Me.loginAttempt.Name = "loginAttempt"
+        Me.loginAttempt.Size = New System.Drawing.Size(100, 20)
+        Me.loginAttempt.TabIndex = 50
+        Me.loginAttempt.Text = "0"
+        Me.loginAttempt.Visible = False
+        '
         'RegistrarCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 330)
+        Me.Controls.Add(Me.loginAttempt)
         Me.Controls.Add(Me.ans2)
         Me.Controls.Add(Me.ans1)
         Me.Controls.Add(Me.rtp)
@@ -326,4 +337,5 @@ Partial Class RegistrarCreate
     Friend WithEvents rtp As System.Windows.Forms.TextBox
     Friend WithEvents ans2 As System.Windows.Forms.TextBox
     Friend WithEvents ans1 As System.Windows.Forms.TextBox
+    Friend WithEvents loginAttempt As System.Windows.Forms.TextBox
 End Class
