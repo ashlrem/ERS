@@ -60,7 +60,7 @@ Public Class StudentCreate
             objConn.Open()
             Try
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
+                ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
                 ins.Parameters.AddWithValue("@Photo", pl.Text)
                 ins.Parameters.AddWithValue("@Student_ID_No", sn.Text)
                 ins.Parameters.AddWithValue("@LastName", ln.Text)
