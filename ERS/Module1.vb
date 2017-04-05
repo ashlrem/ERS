@@ -1371,7 +1371,7 @@ Module Module1
     End Sub
     Public Sub delcas1()
         'not implemented
-        Dim reg As String = "DELETE FROM admin WHERE EmployeeID = '" & My.Forms.DeleteCashier.en.Text & "'"
+        Dim reg As String = "DELETE FROM cashier_account WHERE EmployeeID = '" & My.Forms.DeleteCashier.en.Text & "'"
         Try
             Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn)
