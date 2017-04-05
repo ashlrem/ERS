@@ -119,9 +119,8 @@ Partial Class AdminPanel
         Me.empl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.empl.Location = New System.Drawing.Point(475, 190)
         Me.empl.Name = "empl"
-        Me.empl.Size = New System.Drawing.Size(86, 24)
+        Me.empl.Size = New System.Drawing.Size(0, 24)
         Me.empl.TabIndex = 30
-        Me.empl.Text = "2012-028"
         '
         'n1
         '
