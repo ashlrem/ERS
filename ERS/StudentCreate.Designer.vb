@@ -23,6 +23,7 @@ Partial Class StudentCreate
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pi = New System.Windows.Forms.GroupBox()
+        Me.sn = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.frm137 = New System.Windows.Forms.TextBox()
         Me.gmr = New System.Windows.Forms.TextBox()
@@ -90,7 +91,8 @@ Partial Class StudentCreate
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
         Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
-        Me.sn = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.pi.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -99,6 +101,8 @@ Partial Class StudentCreate
         '
         'pi
         '
+        Me.pi.Controls.Add(Me.ComboBox1)
+        Me.pi.Controls.Add(Me.Label22)
         Me.pi.Controls.Add(Me.sn)
         Me.pi.Controls.Add(Me.PictureBox1)
         Me.pi.Controls.Add(Me.frm137)
@@ -144,6 +148,13 @@ Partial Class StudentCreate
         Me.pi.TabIndex = 4
         Me.pi.TabStop = False
         Me.pi.Text = "Personal Information"
+        '
+        'sn
+        '
+        Me.sn.Location = New System.Drawing.Point(335, 49)
+        Me.sn.Name = "sn"
+        Me.sn.Size = New System.Drawing.Size(328, 26)
+        Me.sn.TabIndex = 1
         '
         'PictureBox1
         '
@@ -242,7 +253,7 @@ Partial Class StudentCreate
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(767, 281)
+        Me.CheckBox1.Location = New System.Drawing.Point(891, 284)
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(89, 24)
@@ -770,12 +781,22 @@ Partial Class StudentCreate
         Me.VScrollBar1.Size = New System.Drawing.Size(17, 645)
         Me.VScrollBar1.TabIndex = 192
         '
-        'sn
+        'Label22
         '
-        Me.sn.Location = New System.Drawing.Point(335, 49)
-        Me.sn.Name = "sn"
-        Me.sn.Size = New System.Drawing.Size(328, 26)
-        Me.sn.TabIndex = 1
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(567, 287)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(75, 20)
+        Me.Label22.TabIndex = 200
+        Me.Label22.Text = "Section:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(648, 282)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(199, 28)
+        Me.ComboBox1.TabIndex = 201
         '
         'StudentCreate
         '
@@ -872,4 +893,6 @@ Partial Class StudentCreate
     Friend WithEvents Transferee As System.Windows.Forms.CheckBox
     Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
     Friend WithEvents sn As System.Windows.Forms.TextBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label22 As System.Windows.Forms.Label
 End Class

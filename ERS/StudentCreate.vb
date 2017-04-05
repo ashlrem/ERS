@@ -119,7 +119,7 @@ Public Class StudentCreate
     End Sub
 
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        AddSubject.Show()
+        AddClass.Show()
         Me.Hide()
     End Sub
 

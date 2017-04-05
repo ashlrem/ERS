@@ -8,10 +8,10 @@
         UpdateRegistrar.Show()
     End Sub
     Private Sub UpdateSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateSubjectToolStripMenuItem.Click
-        UpdateSub_R.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(UpdateSub_R)
+        UpdateClass_R.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(UpdateClass_R)
         RegistrarPanel.Hide()
-        UpdateSub_R.Show()
+        UpdateClass_R.Show()
     End Sub
 
     Private Sub DeleteSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteSubjectToolStripMenuItem.Click
@@ -43,9 +43,13 @@
     End Sub
 
     Private Sub SubjectToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SubjectToolStripMenuItem1.Click
-        ViewSubject.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(ViewSubject)
+        ViewClass.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(ViewClass)
         RegistrarPanel.Hide()
-        ViewSubject.Show()
+        ViewClass.Show()
+    End Sub
+
+    Private Sub AddSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddSubjectToolStripMenuItem.Click
+
     End Sub
 End Class

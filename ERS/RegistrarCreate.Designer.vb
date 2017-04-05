@@ -116,7 +116,7 @@ Partial Class RegistrarCreate
         '
         Me.sq2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sq2.FormattingEnabled = True
-        Me.sq2.Items.AddRange(New Object() {"sq2"})
+        Me.sq2.Items.AddRange(New Object() {"What is your favorite book?", "What is the first name of your bestfriend?", "What is the last three digits of your Social Security Number?"})
         Me.sq2.Location = New System.Drawing.Point(183, 265)
         Me.sq2.Name = "sq2"
         Me.sq2.Size = New System.Drawing.Size(255, 21)
@@ -149,7 +149,7 @@ Partial Class RegistrarCreate
         '
         Me.sq1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sq1.FormattingEnabled = True
-        Me.sq1.Items.AddRange(New Object() {"sq1"})
+        Me.sq1.Items.AddRange(New Object() {"What is your favorite pet?", "What is the zip code of your parents house?", "What is your mother's maiden name?"})
         Me.sq1.Location = New System.Drawing.Point(188, 211)
         Me.sq1.Name = "sq1"
         Me.sq1.Size = New System.Drawing.Size(251, 21)
@@ -254,11 +254,11 @@ Partial Class RegistrarCreate
         '
         'statusTextBoxRegistrar
         '
-        Me.statusTextBoxRegistrar.Location = New System.Drawing.Point(452, 298)
+        Me.statusTextBoxRegistrar.Location = New System.Drawing.Point(12, 78)
         Me.statusTextBoxRegistrar.Name = "statusTextBoxRegistrar"
         Me.statusTextBoxRegistrar.Size = New System.Drawing.Size(46, 20)
         Me.statusTextBoxRegistrar.TabIndex = 49
-        Me.statusTextBoxRegistrar.Text = "active"
+        Me.statusTextBoxRegistrar.Text = "Active"
         Me.statusTextBoxRegistrar.Visible = False
         '
         'RegistrarCreate
@@ -266,7 +266,6 @@ Partial Class RegistrarCreate
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 330)
-        Me.Controls.Add(Me.statusTextBoxRegistrar)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.rtp)
@@ -290,6 +289,7 @@ Partial Class RegistrarCreate
         Me.Controls.Add(Me.mn)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.statusTextBoxRegistrar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "RegistrarCreate"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide

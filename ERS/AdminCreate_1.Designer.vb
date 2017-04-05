@@ -127,7 +127,7 @@ Partial Class AdminCreate_1
         '
         Me.sq2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sq2.FormattingEnabled = True
-        Me.sq2.Items.AddRange(New Object() {"sq2"})
+        Me.sq2.Items.AddRange(New Object() {"What was the name of the company where you had your first job?", "What school did you attend for sixth grade?", "What was the last name of your third grade teacher?"})
         Me.sq2.Location = New System.Drawing.Point(180, 265)
         Me.sq2.Name = "sq2"
         Me.sq2.Size = New System.Drawing.Size(264, 21)
@@ -160,7 +160,7 @@ Partial Class AdminCreate_1
         '
         Me.sq1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sq1.FormattingEnabled = True
-        Me.sq1.Items.AddRange(New Object() {"sq1"})
+        Me.sq1.Items.AddRange(New Object() {"What was your favorite sport in high school?", "What is the name of your favorite childhood friend?", "What was the name of the hospital where you were born?"})
         Me.sq1.Location = New System.Drawing.Point(180, 207)
         Me.sq1.Name = "sq1"
         Me.sq1.Size = New System.Drawing.Size(264, 21)
