@@ -39,7 +39,6 @@ Public Class CashierPanel
             My.Forms.MainScreen.RegistrarBtn.Visible = True
             My.Forms.MainScreen.AboutUsBtn.Visible = True
             My.Forms.MainScreen.Button5.Visible = True
-            ViewStudentInfo.Close()
             RegistrarCreate.Close()
             CashierCreate.Close()
             AdminCreate.Close()
