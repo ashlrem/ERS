@@ -5,7 +5,6 @@ Public Class UpdateStudent_R
     Dim decoding As String = String.Empty
     Private Sub SearchStudent_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchStudent_btn.Click
         SearchStudent_r_Update_btn()
-        PictureBox2.Image = base64toimage(pl.Text)
     End Sub
 
     Public Function base64toimage(ByVal base64code As String) As Image

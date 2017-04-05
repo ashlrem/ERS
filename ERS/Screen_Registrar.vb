@@ -96,4 +96,10 @@
             close1()
         End If
     End Sub
+
+    Private Sub Screen_Registrar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        Me.Location = New Point(1, 1)
+        Me.Size = SystemInformation.PrimaryMonitorSize()
+    End Sub
 End Class

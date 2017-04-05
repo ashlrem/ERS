@@ -662,7 +662,6 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\bin\Debug\AForge.Vision.xml
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.vbprojResolveAssemblyReference.cache
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AboutBox1.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.addBookItem.resources
-C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddEnrollStudent.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddPayment_A.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AdminCreate.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AdminPanel.resources
@@ -712,3 +711,4 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateClass_A.reso
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateClass_R.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewClass.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewClassR.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.Reciept.resources

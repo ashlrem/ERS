@@ -6,7 +6,7 @@ Public Class UpdateCashier
 
     Private Sub ValidateAccountUpdate_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ValidateAccountUpdate_btn.Click
         vCashier_btn()
-        PictureBox1.Image = base64toimage(pl.Text)
+
     End Sub
 
     Public Function base64toimage(ByVal base64code As String) As Image
