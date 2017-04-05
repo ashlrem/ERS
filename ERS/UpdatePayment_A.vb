@@ -1,6 +1,37 @@
-﻿Public Class UpdatePayment_A
+﻿Imports MySql.Data.MySqlClient
+
+Public Class UpdatePayment_A
 
     Private Sub SearchAddpayemt_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchAddpayemt_btn.Click
+        
+
+        Dim conn As New MySqlConnection ' <---
+        ' Me.sn.Text = My.Forms.AdminPanel.TextBox1.Text
+        'Me.FormBorderStyle = 0
+
+        Try
+            'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
+            conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+            Dim r As MySqlDataReader
+            Dim reg As String = "SELECT * FROM 	student_info WHERE (Student_ID_No ='" & sn.Text & "')"
+            conn.Open() 'instead na cn1.Open, babaguhin natin. ilalagay natin yung conn na ni declare natin sa taas.
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, conn) '<--- dapat gagana na to. haha.
+            r = cmd.ExecuteReader()
+            If r.Read Then
+                grade.Text = r("GradeLevel").ToString()
+            Else
+                conn.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.StackTrace) '<-- tanggalin naten yung error.
+        End Try
+        conn.Close()
+
+
+
+
+
+
 
         SearchUpdatePayment_A()
         If midterm.Text = "0" Then
@@ -17,6 +48,7 @@
         If prelim.Text = "0" Then
             pre_btn.Visible = False
             mid_btn.Visible = True
+            Me.Enabled = False
         End If
         'If fin_btn.Text = "Paid!" Then
         '    MsgBox("Already Paid!")
@@ -30,6 +62,7 @@
             MsgBox("Already paid!")
             pre_btn.Visible = False
             mid_btn.Visible = False
+            Me.Enabled = False
         End If
     End Sub
 

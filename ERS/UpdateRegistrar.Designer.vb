@@ -100,7 +100,7 @@ Partial Class UpdateRegistrar
         'pl
         '
         Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(294, 65)
+        Me.pl.Location = New System.Drawing.Point(294, 58)
         Me.pl.Name = "pl"
         Me.pl.Size = New System.Drawing.Size(100, 20)
         Me.pl.TabIndex = 8

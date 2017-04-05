@@ -3,7 +3,6 @@ Imports System.Drawing.Imaging
 Public Class DeleteRegistrar
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         RegE()
-        PictureBox1.Image = base64toimage(pl.Text)
     End Sub
 
     Public Function base64toimage(ByVal base64code As String) As Image

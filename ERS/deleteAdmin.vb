@@ -3,7 +3,6 @@ Imports System.Drawing.Imaging
 Public Class deleteAdmin
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         delad()
-        PictureBox1.Image = base64toimage(pl.Text)
     End Sub
     Public Function base64toimage(ByVal base64code As String) As Image
         Dim imagebyte As Byte() = Convert.FromBase64String(base64code)
@@ -20,5 +19,4 @@ Public Class deleteAdmin
         AdminPanel.Show()
         DeleteAccount_btn.Show()
     End Sub
-
 End Class

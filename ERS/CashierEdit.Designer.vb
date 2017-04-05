@@ -89,7 +89,7 @@ Partial Class CashierEdit
         'pl
         '
         Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(305, 119)
+        Me.pl.Location = New System.Drawing.Point(305, 65)
         Me.pl.Name = "pl"
         Me.pl.Size = New System.Drawing.Size(103, 20)
         Me.pl.TabIndex = 8

@@ -2,6 +2,7 @@
 Public Class CashierPanel
     Private Sub CashierPanel_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim connection As New MySqlConnection
+
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.Location = New Point(1, 1)
         Me.Size = SystemInformation.PrimaryMonitorSize()
@@ -17,7 +18,7 @@ Public Class CashierPanel
                 email.Text = r("Email_Account").ToString() & "."
                 cn.Text = r("ContactNumber").ToString() & "."
                 pl.Text = r("Photo").ToString()
-                PictureBox3.Image = Image.FromFile(pl.Text)
+                PictureBox3.Image = base64toimage(pl.Text)
                 connection.Close()
             Else
                 MsgBox("EmployeeID not Found!")

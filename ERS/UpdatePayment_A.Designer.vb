@@ -47,6 +47,8 @@ Partial Class UpdatePayment_A
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.grade = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Payment_grp.SuspendLayout()
         Me.miscellaneous_fee_grp.SuspendLayout()
         Me.SuspendLayout()
@@ -85,7 +87,7 @@ Partial Class UpdatePayment_A
         Me.Payment_grp.Controls.Add(Me.midterm)
         Me.Payment_grp.Controls.Add(Me.prelim)
         Me.Payment_grp.Enabled = False
-        Me.Payment_grp.Location = New System.Drawing.Point(353, 83)
+        Me.Payment_grp.Location = New System.Drawing.Point(353, 100)
         Me.Payment_grp.Name = "Payment_grp"
         Me.Payment_grp.Size = New System.Drawing.Size(233, 89)
         Me.Payment_grp.TabIndex = 7
@@ -166,7 +168,7 @@ Partial Class UpdatePayment_A
         Me.miscellaneous_fee_grp.Controls.Add(Me.Label4)
         Me.miscellaneous_fee_grp.Controls.Add(Me.Label3)
         Me.miscellaneous_fee_grp.Controls.Add(Me.Label2)
-        Me.miscellaneous_fee_grp.Location = New System.Drawing.Point(45, 45)
+        Me.miscellaneous_fee_grp.Location = New System.Drawing.Point(45, 62)
         Me.miscellaneous_fee_grp.Name = "miscellaneous_fee_grp"
         Me.miscellaneous_fee_grp.Size = New System.Drawing.Size(286, 212)
         Me.miscellaneous_fee_grp.TabIndex = 6
@@ -301,11 +303,31 @@ Partial Class UpdatePayment_A
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Registration Fee:"
         '
+        'grade
+        '
+        Me.grade.AutoSize = True
+        Me.grade.Location = New System.Drawing.Point(139, 29)
+        Me.grade.Name = "grade"
+        Me.grade.Size = New System.Drawing.Size(10, 13)
+        Me.grade.TabIndex = 8
+        Me.grade.Text = "-"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(68, 29)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(68, 13)
+        Me.Label12.TabIndex = 8
+        Me.Label12.Text = "Grade Level:"
+        '
         'UpdatePayment_A
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(612, 302)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.grade)
         Me.Controls.Add(Me.Payment_grp)
         Me.Controls.Add(Me.miscellaneous_fee_grp)
         Me.Controls.Add(Me.SearchAddpayemt_btn)
@@ -347,4 +369,6 @@ Partial Class UpdatePayment_A
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents grade As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
 End Class
