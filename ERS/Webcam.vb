@@ -6,6 +6,12 @@ Public Class Webcam
     Public CAMERA As VideoCaptureDevice
     Public bmp As Bitmap
     Private Sub Webcam_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        AdminCreate_1.Enabled = False
+        AdminCreate.Enabled = False
+        CashierCreate.Enabled = False
+        RegistrarCreate.Enabled = False
+        StudentCreate.Enabled = False
+
         Dim cameras As VideoCaptureDeviceForm = New VideoCaptureDeviceForm
         If cameras.ShowDialog() = Windows.Forms.DialogResult.OK Then
             CAMERA = cameras.VideoDevice
@@ -13,6 +19,7 @@ Public Class Webcam
             CAMERA.Start()
         ElseIf cameras.ShowDialog() = Windows.Forms.DialogResult.Cancel Then
             AdminCreate.Enabled = True
+            Me.Close()
         End If
     End Sub
     Private Sub Captured(ByVal sender As Object, ByVal eventArgs As NewFrameEventArgs)

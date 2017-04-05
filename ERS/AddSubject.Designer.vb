@@ -27,7 +27,6 @@ Partial Class AddSubject
         Me.sy = New System.Windows.Forms.MaskedTextBox()
         Me.tme = New System.Windows.Forms.TextBox()
         Me.nm = New System.Windows.Forms.MaskedTextBox()
-        Me.subjname = New System.Windows.Forms.ComboBox()
         Me.teacher = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -35,7 +34,6 @@ Partial Class AddSubject
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -81,26 +79,16 @@ Partial Class AddSubject
         Me.nm.Size = New System.Drawing.Size(121, 20)
         Me.nm.TabIndex = 5
         '
-        'subjname
-        '
-        Me.subjname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.subjname.FormattingEnabled = True
-        Me.subjname.Items.AddRange(New Object() {"Subj"})
-        Me.subjname.Location = New System.Drawing.Point(131, 260)
-        Me.subjname.Name = "subjname"
-        Me.subjname.Size = New System.Drawing.Size(121, 21)
-        Me.subjname.TabIndex = 6
-        '
         'teacher
         '
-        Me.teacher.Location = New System.Drawing.Point(131, 301)
+        Me.teacher.Location = New System.Drawing.Point(131, 258)
         Me.teacher.Name = "teacher"
         Me.teacher.Size = New System.Drawing.Size(121, 20)
         Me.teacher.TabIndex = 7
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(60, 352)
+        Me.Button1.Location = New System.Drawing.Point(60, 309)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 32)
         Me.Button1.TabIndex = 8
@@ -152,19 +140,10 @@ Partial Class AddSubject
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Number of Minutes:"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(31, 268)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(74, 13)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "SubjectName:"
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(31, 308)
+        Me.Label8.Location = New System.Drawing.Point(31, 265)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(85, 13)
         Me.Label8.TabIndex = 9
@@ -172,7 +151,7 @@ Partial Class AddSubject
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(205, 352)
+        Me.Button2.Location = New System.Drawing.Point(205, 309)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(91, 31)
         Me.Button2.TabIndex = 10
@@ -187,7 +166,6 @@ Partial Class AddSubject
         Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -195,7 +173,6 @@ Partial Class AddSubject
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.teacher)
-        Me.Controls.Add(Me.subjname)
         Me.Controls.Add(Me.nm)
         Me.Controls.Add(Me.tme)
         Me.Controls.Add(Me.sy)
@@ -213,7 +190,6 @@ Partial Class AddSubject
     Friend WithEvents sy As System.Windows.Forms.MaskedTextBox
     Friend WithEvents tme As System.Windows.Forms.TextBox
     Friend WithEvents nm As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents subjname As System.Windows.Forms.ComboBox
     Friend WithEvents teacher As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -221,7 +197,6 @@ Partial Class AddSubject
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

@@ -52,7 +52,6 @@ Public Class AdminCreate
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         Webcam.Show()
 
-        Me.Enabled = False
     End Sub
 
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
