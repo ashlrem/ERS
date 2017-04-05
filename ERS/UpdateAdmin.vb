@@ -17,6 +17,7 @@ Public Class UpdateAdmin
     End Function
     Private Sub UpdateAdmin_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateAdmin_btn.Click
         updateAccntAdmin_btn()
+        'change
     End Sub
 
     Private Sub UpdateAdmin_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
