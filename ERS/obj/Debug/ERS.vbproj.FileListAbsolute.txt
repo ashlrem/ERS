@@ -664,7 +664,6 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AboutBox1.resource
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.addBookItem.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddEnrollStudent.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddPayment_A.resources
-C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddSubject.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AdminCreate.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AdminPanel.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.CashierEdit.resources
@@ -702,13 +701,14 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdatePayment_A.re
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateRegistrar.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateStudent_A.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateStudent_R.resources
-C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateSub_A.resources
-C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateSub_R.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewStudent.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewStudentInfo.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewStudent_R.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewStud_C.resources
-C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewSubject.resources
-C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewSubjectR.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.Webcam.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.vbproj.GenerateResource.Cache
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddClass.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateClass_A.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateClass_R.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewClass.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewClassR.resources
