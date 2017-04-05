@@ -35,8 +35,7 @@
         Dim tuition As Integer
         tuition = t / 2
             Proceed_btn.Enabled = True
-        prelim.Text = tuition
-        midterm.Text = tuition
+        prelim.Text = t
         total1.Text = "-"
     End Sub
 
@@ -120,6 +119,7 @@
     Private Sub Proceed_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Proceed_btn.Click
         If fp_rdobnt.Checked = True Then
             FullPayment_A()
+            Reciept.Show()
             Proceed_btn.Enabled = True
             EnterPartial_grp.Enabled = False
             Payment_grp.Enabled = False
@@ -135,9 +135,12 @@
             CheckBox1.Enabled = True
             midterm.Text = "-"
             total.Enabled = True
+            Me.Enabled = False
+
         ElseIf pp_rdbnt.Checked = True Then
             Proceed_btn.Enabled = False
             PartialPayment_A()
+            Reciept.Show()
             partialp.Text = ""
             EnterPartial_grp.Enabled = False
             Payment_grp.Enabled = False
@@ -153,6 +156,7 @@
             CheckBox1.Enabled = True
             midterm.Text = "-"
             total.Enabled = True
+            Me.Enabled = False
         End If
         nameOS.Text = "---"
         grade.Text = "---"
@@ -317,5 +321,9 @@
 
     Private Sub p9_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p9.TextChanged
         subjandbooksComputation()
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 End Class

@@ -67,4 +67,10 @@
         My.Forms.DeletePayment.DeletePayment_btn.Visible = False
         My.Forms.DeletePayment.Text = "View Payment"
     End Sub
+
+    Private Sub Screen_Cashier_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        Me.Location = New Point(1, 1)
+        Me.Size = SystemInformation.PrimaryMonitorSize()
+    End Sub
 End Class

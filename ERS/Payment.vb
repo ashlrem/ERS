@@ -107,8 +107,14 @@ Module Payment
                 If r.Read Then
                 My.Forms.UpdatePayment_A.prelim.Text = r("FirstPayment").ToString()
                 My.Forms.UpdatePayment_A.midterm.Text = r("SecondPayment").ToString()
-                    My.Forms.UpdatePayment_A.pre_btn.Visible = True
-                    My.Forms.UpdatePayment_A.Payment_grp.Enabled = True
+                My.Forms.UpdatePayment_A.pre_btn.Visible = True
+
+
+                My.Forms.Reciept.nameOS.Text = My.Forms.UpdatePayment_A.sn.Text
+                My.Forms.Reciept.grade.Text = My.Forms.UpdatePayment_A.grade.Text
+
+
+                My.Forms.UpdatePayment_A.Payment_grp.Enabled = True
                     If My.Forms.UpdatePayment_A.prelim.Text = "0" Then
                         My.Forms.UpdatePayment_A.pre_btn.Visible = False
                         My.Forms.UpdatePayment_A.mid_btn.Visible = True
@@ -129,18 +135,21 @@ Module Payment
     Public Sub prelimPay_btn()
         Try
        
-            Dim reg As String = "UPDATE payment_tbl SET FirstPayment = 0"
+            Dim reg As String = "UPDATE payment_tbl SET FirstPayment = 0 where Student_ID_No ='" & My.Forms.UpdatePayment_A.sn.Text & "'"
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn1)
                     cn1.Open()
                     sqlCmd.ExecuteNonQuery()
+                    My.Forms.Reciept.nameOS.Text = My.Forms.UpdatePayment_A.sn.Text
+                    My.Forms.Reciept.grade.Text = My.Forms.UpdatePayment_A.grade.Text
+                    My.Forms.Reciept.amount.Text = My.Forms.UpdatePayment_A.prelim.Text
+                    Reciept.Show()
                     MsgBox("Prelim Paid!")
                     My.Forms.UpdatePayment_A.pre_btn.Text = "Paid!"
                     cn1.Close()
                 End Using
                 cn1.Close()
             End Using
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             cn.Close()
@@ -149,14 +158,17 @@ Module Payment
     Public Sub midtermPay_btn()
         Try
 
-            Dim reg As String = "UPDATE payment_tbl SET SecondPayment = 0"
+            Dim reg As String = "UPDATE payment_tbl SET SecondPayment = 0 Where Student_ID_No  '" & My.Forms.UpdatePayment_A.sn.Text & "'"
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn1)
                     cn1.Open()
                     sqlCmd.ExecuteNonQuery()
                     MsgBox("Midterm Paid!")
                     My.Forms.UpdatePayment_A.mid_btn.Text = "Paid!"
-
+                    My.Forms.Reciept.nameOS.Text = My.Forms.UpdatePayment_A.sn.Text
+                    My.Forms.Reciept.grade.Text = My.Forms.UpdatePayment_A.grade.Text
+                    My.Forms.Reciept.amount.Text = My.Forms.UpdatePayment_A.prelim.Text
+                    Reciept.Show()
                     cn1.Close()
                 End Using
                 cn1.Close()

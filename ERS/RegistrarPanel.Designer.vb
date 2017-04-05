@@ -183,7 +183,7 @@ Partial Class RegistrarPanel
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "RegistrarPanel"
-        Me.Text = "RegistrarPanel"
+        Me.Text = "cc"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
