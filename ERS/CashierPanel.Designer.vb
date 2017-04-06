@@ -160,6 +160,7 @@ Partial Class CashierPanel
         'pl
         '
         Me.pl.Location = New System.Drawing.Point(191, 92)
+        Me.pl.Multiline = True
         Me.pl.Name = "pl"
         Me.pl.Size = New System.Drawing.Size(100, 20)
         Me.pl.TabIndex = 46

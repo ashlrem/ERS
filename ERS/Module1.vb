@@ -831,8 +831,10 @@ Module Module1
                 My.Forms.AdminPanel.email.Text = r("Email_Account").ToString() & "."
                 My.Forms.AdminPanel.cn.Text = r("ContactNumber").ToString() & "."
                 My.Forms.AdminPanel.pl.Text = r("Photo").ToString()
-                My.Forms.AdminPanel.PictureBox3.Image = base64toimage(My.Forms.AdminPanel.pl.Text)
-                cn1.Close() 'remember na laging icclose yung database connection. parang sa pag ibig, dapat laging may closure kayo ng x mo. hahaha
+                Try
+                    My.Forms.AdminPanel.PictureBox3.Image = base64toimage(My.Forms.AdminPanel.pl.Text)
+                Catch
+                End Try
             Else
                 MsgBox("Employee number not Found!")
                 cn1.Close()
@@ -842,6 +844,7 @@ Module Module1
         cn1.Close()
         
     End Sub
+    
     Public Sub studentSearch()
         'View Student info. To display Picture of Student, Name, StudentNo, etc.
 

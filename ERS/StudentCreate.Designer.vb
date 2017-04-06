@@ -23,6 +23,8 @@ Partial Class StudentCreate
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pi = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.sn = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.frm137 = New System.Windows.Forms.TextBox()
@@ -91,8 +93,6 @@ Partial Class StudentCreate
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
         Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.pi.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -149,6 +149,23 @@ Partial Class StudentCreate
         Me.pi.TabStop = False
         Me.pi.Text = "Personal Information"
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(648, 282)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(199, 28)
+        Me.ComboBox1.TabIndex = 14
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(567, 287)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(75, 20)
+        Me.Label22.TabIndex = 200
+        Me.Label22.Text = "Section:"
+        '
         'sn
         '
         Me.sn.Location = New System.Drawing.Point(335, 49)
@@ -187,7 +204,7 @@ Partial Class StudentCreate
         Me.Button3.Margin = New System.Windows.Forms.Padding(5)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(172, 35)
-        Me.Button3.TabIndex = 12
+        Me.Button3.TabIndex = 30
         Me.Button3.Text = "UploadPhoto"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -197,7 +214,7 @@ Partial Class StudentCreate
         Me.Button4.Margin = New System.Windows.Forms.Padding(5)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(172, 35)
-        Me.Button4.TabIndex = 13
+        Me.Button4.TabIndex = 31
         Me.Button4.Text = "TakePhoto"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -223,7 +240,7 @@ Partial Class StudentCreate
         Me.age.Location = New System.Drawing.Point(976, 169)
         Me.age.Name = "age"
         Me.age.Size = New System.Drawing.Size(73, 26)
-        Me.age.TabIndex = 196
+        Me.age.TabIndex = 11
         '
         'bc
         '
@@ -257,7 +274,7 @@ Partial Class StudentCreate
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(89, 24)
-        Me.CheckBox1.TabIndex = 11
+        Me.CheckBox1.TabIndex = 15
         Me.CheckBox1.Text = "Scholar"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -270,7 +287,7 @@ Partial Class StudentCreate
         Me.gl.Margin = New System.Windows.Forms.Padding(5)
         Me.gl.Name = "gl"
         Me.gl.Size = New System.Drawing.Size(199, 28)
-        Me.gl.TabIndex = 10
+        Me.gl.TabIndex = 9
         '
         'Label13
         '
@@ -288,7 +305,7 @@ Partial Class StudentCreate
         Me.sy.Margin = New System.Windows.Forms.Padding(5)
         Me.sy.Name = "sy"
         Me.sy.Size = New System.Drawing.Size(282, 26)
-        Me.sy.TabIndex = 9
+        Me.sy.TabIndex = 13
         '
         'Label12
         '
@@ -324,7 +341,7 @@ Partial Class StudentCreate
         Me.rel.Margin = New System.Windows.Forms.Padding(5)
         Me.rel.Name = "rel"
         Me.rel.Size = New System.Drawing.Size(281, 26)
-        Me.rel.TabIndex = 124
+        Me.rel.TabIndex = 12
         '
         'bp
         '
@@ -332,7 +349,7 @@ Partial Class StudentCreate
         Me.bp.Margin = New System.Windows.Forms.Padding(5)
         Me.bp.Name = "bp"
         Me.bp.Size = New System.Drawing.Size(315, 26)
-        Me.bp.TabIndex = 122
+        Me.bp.TabIndex = 7
         '
         'Label11
         '
@@ -363,7 +380,7 @@ Partial Class StudentCreate
         Me.bd.Margin = New System.Windows.Forms.Padding(5)
         Me.bd.Name = "bd"
         Me.bd.Size = New System.Drawing.Size(157, 26)
-        Me.bd.TabIndex = 7
+        Me.bd.TabIndex = 10
         '
         'Label5
         '
@@ -498,7 +515,7 @@ Partial Class StudentCreate
         Me.rl.Margin = New System.Windows.Forms.Padding(5)
         Me.rl.Name = "rl"
         Me.rl.Size = New System.Drawing.Size(242, 26)
-        Me.rl.TabIndex = 19
+        Me.rl.TabIndex = 21
         '
         'gdn
         '
@@ -506,7 +523,7 @@ Partial Class StudentCreate
         Me.gdn.Margin = New System.Windows.Forms.Padding(5)
         Me.gdn.Name = "gdn"
         Me.gdn.Size = New System.Drawing.Size(301, 26)
-        Me.gdn.TabIndex = 18
+        Me.gdn.TabIndex = 20
         '
         'fono
         '
@@ -514,7 +531,7 @@ Partial Class StudentCreate
         Me.fono.Margin = New System.Windows.Forms.Padding(5)
         Me.fono.Name = "fono"
         Me.fono.Size = New System.Drawing.Size(242, 26)
-        Me.fono.TabIndex = 17
+        Me.fono.TabIndex = 19
         '
         'fon
         '
@@ -522,7 +539,7 @@ Partial Class StudentCreate
         Me.fon.Margin = New System.Windows.Forms.Padding(5)
         Me.fon.Name = "fon"
         Me.fon.Size = New System.Drawing.Size(301, 26)
-        Me.fon.TabIndex = 16
+        Me.fon.TabIndex = 18
         '
         'mono
         '
@@ -530,7 +547,7 @@ Partial Class StudentCreate
         Me.mono.Margin = New System.Windows.Forms.Padding(5)
         Me.mono.Name = "mono"
         Me.mono.Size = New System.Drawing.Size(242, 26)
-        Me.mono.TabIndex = 15
+        Me.mono.TabIndex = 17
         '
         'mon
         '
@@ -538,7 +555,7 @@ Partial Class StudentCreate
         Me.mon.Margin = New System.Windows.Forms.Padding(5)
         Me.mon.Name = "mon"
         Me.mon.Size = New System.Drawing.Size(300, 26)
-        Me.mon.TabIndex = 14
+        Me.mon.TabIndex = 16
         '
         'Label19
         '
@@ -641,7 +658,7 @@ Partial Class StudentCreate
         Me.cont.Margin = New System.Windows.Forms.Padding(5)
         Me.cont.Name = "cont"
         Me.cont.Size = New System.Drawing.Size(301, 26)
-        Me.cont.TabIndex = 20
+        Me.cont.TabIndex = 22
         '
         'GroupBox2
         '
@@ -670,7 +687,7 @@ Partial Class StudentCreate
         Me.Transferee.Location = New System.Drawing.Point(185, 24)
         Me.Transferee.Name = "Transferee"
         Me.Transferee.Size = New System.Drawing.Size(115, 24)
-        Me.Transferee.TabIndex = 199
+        Me.Transferee.TabIndex = 25
         Me.Transferee.Text = "Transferee"
         Me.Transferee.UseVisualStyleBackColor = True
         '
@@ -681,7 +698,7 @@ Partial Class StudentCreate
         Me.CheckBox6.Location = New System.Drawing.Point(771, 57)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.Size = New System.Drawing.Size(166, 24)
-        Me.CheckBox6.TabIndex = 198
+        Me.CheckBox6.TabIndex = 29
         Me.CheckBox6.Text = "Upload Form 137"
         Me.CheckBox6.UseVisualStyleBackColor = True
         '
@@ -692,7 +709,7 @@ Partial Class StudentCreate
         Me.CheckBox5.Location = New System.Drawing.Point(555, 57)
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.Size = New System.Drawing.Size(183, 24)
-        Me.CheckBox5.TabIndex = 197
+        Me.CheckBox5.TabIndex = 28
         Me.CheckBox5.Text = "Upload Good Moral"
         Me.CheckBox5.UseVisualStyleBackColor = True
         '
@@ -711,14 +728,14 @@ Partial Class StudentCreate
         Me.nols.Location = New System.Drawing.Point(555, 18)
         Me.nols.Name = "nols"
         Me.nols.Size = New System.Drawing.Size(214, 26)
-        Me.nols.TabIndex = 195
+        Me.nols.TabIndex = 26
         '
         'StudentCreateEnrollBtn
         '
         Me.StudentCreateEnrollBtn.Location = New System.Drawing.Point(472, 88)
         Me.StudentCreateEnrollBtn.Name = "StudentCreateEnrollBtn"
         Me.StudentCreateEnrollBtn.Size = New System.Drawing.Size(141, 39)
-        Me.StudentCreateEnrollBtn.TabIndex = 25
+        Me.StudentCreateEnrollBtn.TabIndex = 32
         Me.StudentCreateEnrollBtn.Text = "Enroll"
         Me.StudentCreateEnrollBtn.UseVisualStyleBackColor = True
         '
@@ -727,7 +744,7 @@ Partial Class StudentCreate
         Me.StudentCreateBackBtn.Location = New System.Drawing.Point(619, 86)
         Me.StudentCreateBackBtn.Name = "StudentCreateBackBtn"
         Me.StudentCreateBackBtn.Size = New System.Drawing.Size(141, 39)
-        Me.StudentCreateBackBtn.TabIndex = 26
+        Me.StudentCreateBackBtn.TabIndex = 33
         Me.StudentCreateBackBtn.Text = "Back"
         Me.StudentCreateBackBtn.UseVisualStyleBackColor = True
         '
@@ -737,7 +754,7 @@ Partial Class StudentCreate
         Me.CheckBox4.Location = New System.Drawing.Point(23, 57)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(107, 24)
-        Me.CheckBox4.TabIndex = 2
+        Me.CheckBox4.TabIndex = 24
         Me.CheckBox4.Text = "Baptismal"
         Me.CheckBox4.UseVisualStyleBackColor = True
         '
@@ -748,7 +765,7 @@ Partial Class StudentCreate
         Me.CheckBox3.Location = New System.Drawing.Point(402, 57)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(128, 24)
-        Me.CheckBox3.TabIndex = 1
+        Me.CheckBox3.TabIndex = 27
         Me.CheckBox3.Text = "Upload Card"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
@@ -758,7 +775,7 @@ Partial Class StudentCreate
         Me.CheckBox2.Location = New System.Drawing.Point(23, 27)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(65, 24)
-        Me.CheckBox2.TabIndex = 0
+        Me.CheckBox2.TabIndex = 23
         Me.CheckBox2.Text = "NSO"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
@@ -780,23 +797,6 @@ Partial Class StudentCreate
         Me.VScrollBar1.Name = "VScrollBar1"
         Me.VScrollBar1.Size = New System.Drawing.Size(17, 645)
         Me.VScrollBar1.TabIndex = 192
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(567, 287)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(75, 20)
-        Me.Label22.TabIndex = 200
-        Me.Label22.Text = "Section:"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(648, 282)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(199, 28)
-        Me.ComboBox1.TabIndex = 201
         '
         'StudentCreate
         '

@@ -10,5 +10,4 @@
         My.Forms.MainScreen.AboutUsBtn.Visible = True
         My.Forms.MainScreen.PictureBox1.Visible = True
     End Sub
-
 End Class

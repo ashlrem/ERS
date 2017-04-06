@@ -50,6 +50,7 @@ Public Class Webcam
             If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
                 SaveFileDialog1.Title = "Save an Image File"
                 PictureBox1.Image.Save(SaveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Jpeg)
+
                 My.Forms.AdminCreate.pl.Text = SaveFileDialog1.FileName
                 My.Forms.AdminCreate.PictureBox1.Image = Image.FromFile(My.Forms.AdminCreate.pl.Text)
                 My.Forms.AdminCreate.pl.Text = ""

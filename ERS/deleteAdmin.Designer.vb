@@ -79,7 +79,7 @@ Partial Class deleteAdmin
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(291, 32)
+        Me.PictureBox1.Location = New System.Drawing.Point(291, 110)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(103, 81)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -90,6 +90,7 @@ Partial Class deleteAdmin
         '
         Me.pl.Enabled = False
         Me.pl.Location = New System.Drawing.Point(294, 65)
+        Me.pl.Multiline = True
         Me.pl.Name = "pl"
         Me.pl.Size = New System.Drawing.Size(100, 20)
         Me.pl.TabIndex = 8

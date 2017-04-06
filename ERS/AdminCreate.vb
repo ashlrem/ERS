@@ -35,7 +35,6 @@ Public Class AdminCreate
         'Me.FormBorderStyle = 0
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        pl.Text = ""
         Try
             If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
                 pl.Text = OpenFileDialog1.FileName
@@ -65,4 +64,5 @@ Public Class AdminCreate
             Return base64String
         End Using
     End Function
+
 End Class
