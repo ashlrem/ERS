@@ -701,7 +701,6 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateRegistrar.re
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateStudent_A.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateStudent_R.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewStudent.resources
-C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewStudentInfo.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewStudent_R.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ViewStud_C.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.Webcam.resources

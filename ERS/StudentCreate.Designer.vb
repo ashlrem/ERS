@@ -23,7 +23,7 @@ Partial Class StudentCreate
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pi = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.sec = New System.Windows.Forms.ComboBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.sn = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -101,7 +101,7 @@ Partial Class StudentCreate
         '
         'pi
         '
-        Me.pi.Controls.Add(Me.ComboBox1)
+        Me.pi.Controls.Add(Me.sec)
         Me.pi.Controls.Add(Me.Label22)
         Me.pi.Controls.Add(Me.sn)
         Me.pi.Controls.Add(Me.PictureBox1)
@@ -149,13 +149,14 @@ Partial Class StudentCreate
         Me.pi.TabStop = False
         Me.pi.Text = "Personal Information"
         '
-        'ComboBox1
+        'sec
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(648, 282)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(199, 28)
-        Me.ComboBox1.TabIndex = 14
+        Me.sec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.sec.FormattingEnabled = True
+        Me.sec.Location = New System.Drawing.Point(648, 282)
+        Me.sec.Name = "sec"
+        Me.sec.Size = New System.Drawing.Size(199, 28)
+        Me.sec.TabIndex = 14
         '
         'Label22
         '
@@ -176,7 +177,7 @@ Partial Class StudentCreate
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(38, 29)
+        Me.PictureBox1.Location = New System.Drawing.Point(41, 29)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(169, 122)
@@ -282,7 +283,7 @@ Partial Class StudentCreate
         '
         Me.gl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.gl.FormattingEnabled = True
-        Me.gl.Items.AddRange(New Object() {"Grade 1"})
+        Me.gl.Items.AddRange(New Object() {"Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6"})
         Me.gl.Location = New System.Drawing.Point(335, 282)
         Me.gl.Margin = New System.Windows.Forms.Padding(5)
         Me.gl.Name = "gl"
@@ -893,6 +894,6 @@ Partial Class StudentCreate
     Friend WithEvents Transferee As System.Windows.Forms.CheckBox
     Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
     Friend WithEvents sn As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents sec As System.Windows.Forms.ComboBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
 End Class

@@ -36,10 +36,10 @@
     End Sub
 
     Private Sub SearchStudentToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchStudentToolStripMenuItem.Click
-        ViewStudentInfo.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(ViewStudentInfo)
+        ViewStudent_R.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(ViewStudent_R)
         RegistrarPanel.Hide()
-        ViewStudentInfo.Show()
+        ViewStudent_R.Show()
     End Sub
 
     Private Sub SubjectToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SubjectToolStripMenuItem1.Click
@@ -57,10 +57,10 @@
     End Sub
 
     Private Sub ViewStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewStudentRecordToolStripMenuItem.Click
-        ViewStudentInfo.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(ViewStudentInfo)
+        ViewStudent_R.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(ViewStudent_R)
         RegistrarPanel.Hide()
-        ViewStudentInfo.Show()
+        ViewStudent_R.Show()
     End Sub
 
     Private Sub PaymentsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PaymentsToolStripMenuItem.Click

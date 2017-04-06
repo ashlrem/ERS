@@ -501,12 +501,6 @@
     <Compile Include="ViewStudent.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewStudentInfo.Designer.vb">
-      <DependentUpon>ViewStudentInfo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ViewStudentInfo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ViewStudent_R.Designer.vb">
       <DependentUpon>ViewStudent_R.vb</DependentUpon>
     </Compile>
@@ -715,10 +709,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewStudent.resx">
       <DependentUpon>ViewStudent.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewStudentInfo.resx">
-      <DependentUpon>ViewStudentInfo.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewStudent_R.resx">
       <DependentUpon>ViewStudent_R.vb</DependentUpon>

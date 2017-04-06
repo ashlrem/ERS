@@ -94,10 +94,10 @@
     End Sub
 
     Private Sub ViewStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewStudentRecordToolStripMenuItem.Click
-        ViewStudentInfo.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(ViewStudentInfo)
+        ViewStudent.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(ViewStudent)
         AdminPanel.Hide()
-        ViewStudentInfo.Show()
+        ViewStudent.Show()
     End Sub
 
     Private Sub UpdateAccountToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateAccountToolStripMenuItem.Click
@@ -122,10 +122,10 @@
     End Sub
 
     Private Sub DeleteStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteStudentRecordToolStripMenuItem.Click
-        DeleteStudent_R.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(DeleteStudent_R)
+        DeleteStudent_A.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(DeleteStudent_A)
         AdminPanel.Hide()
-        DeleteStudent_R.Show()
+        DeleteStudent_A.Show()
     End Sub
 
     Private Sub ViewRegistrarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewRegistrarToolStripMenuItem.Click
@@ -183,20 +183,20 @@
     End Sub
 
     Private Sub SearchStudentToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchStudentToolStripMenuItem.Click
-        ViewStudentInfo.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(ViewStudentInfo)
+        ViewStudent.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(ViewStudent)
         AdminPanel.Hide()
-        ViewStudentInfo.Show()
+        ViewStudent.Show()
     End Sub
 
-    Private Sub SearchSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchSubjectToolStripMenuItem.Click
+    Private Sub SearchSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ViewClass.TopLevel = False
         AdminPanelPictureBox.Controls.Add(ViewClass)
         AdminPanel.Hide()
         ViewClass.Show()
     End Sub
 
-    Private Sub ViewSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewSubjectToolStripMenuItem.Click
+    Private Sub ViewSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ViewClass.TopLevel = False
         AdminPanelPictureBox.Controls.Add(ViewClass)
         AdminPanel.Hide()
