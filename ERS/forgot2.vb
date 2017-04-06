@@ -1,13 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class Forgot1
+
+Public Class forgot2
     Dim cn As New MySqlConnection
-    Private Sub Forgot1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub forgot2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         cn.Close()
 
-        Me.ne1.Text = My.Forms.ForgotV.ne1.Text
+        Me.ne1.Text = My.Forms.ForgotC.ne1.Text
         cn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
         Dim r As MySqlDataReader
-        Dim reg As String = "SELECT * FROM admin WHERE (EmployeeID ='" & ne1.Text & "')"
+        Dim reg As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & ne1.Text & "')"
         cn.Open()
         Dim cmd As MySqlCommand = New MySqlCommand(reg, cn)
         r = cmd.ExecuteReader()
@@ -24,15 +25,9 @@ Public Class Forgot1
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        forgot()
+        forgotCC()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        ans1.Text = ""
-        ans2.Text = ""
-        Me.Close()
-        ForgotV.Show()
-    End Sub
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         My.Forms.MainScreen.AdminBtn.Visible = True
         My.Forms.MainScreen.CashierBtn.Visible = True
@@ -40,5 +35,12 @@ Public Class Forgot1
         My.Forms.MainScreen.AboutUsBtn.Visible = True
         My.Forms.MainScreen.PictureBox1.Visible = True
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        ans1.Text = ""
+        ans2.Text = ""
+        Me.Close()
+        ForgotC.Show()
     End Sub
 End Class

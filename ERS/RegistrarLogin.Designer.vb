@@ -27,8 +27,8 @@ Partial Class RegistrarLogin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pw = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.en = New System.Windows.Forms.TextBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -72,22 +72,23 @@ Partial Class RegistrarLogin
         Me.Button1.TabIndex = 3
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Location = New System.Drawing.Point(248, 145)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 34)
-        Me.Button2.TabIndex = 4
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'en
         '
         Me.en.Location = New System.Drawing.Point(317, 77)
         Me.en.Name = "en"
         Me.en.Size = New System.Drawing.Size(142, 20)
         Me.en.TabIndex = 5
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel1.Location = New System.Drawing.Point(267, 157)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(92, 13)
+        Me.LinkLabel1.TabIndex = 12
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Forgot Password?"
         '
         'RegistrarLogin
         '
@@ -96,8 +97,8 @@ Partial Class RegistrarLogin
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(508, 186)
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.en)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.pw)
         Me.Controls.Add(Me.Label1)
@@ -115,6 +116,6 @@ Partial Class RegistrarLogin
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents pw As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents en As System.Windows.Forms.TextBox
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
 End Class

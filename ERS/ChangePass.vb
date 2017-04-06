@@ -1,6 +1,7 @@
 ﻿Public Class ChangePass
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         chapass()
+
     End Sub
 
     Private Sub ChangePass_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

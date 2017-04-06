@@ -254,6 +254,18 @@
     <Compile Include="AdminCreate_1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChangePassC.Designer.vb">
+      <DependentUpon>ChangePassC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassR.Designer.vb">
+      <DependentUpon>ChangePassR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassR.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="deleteAdmin.Designer.vb">
       <DependentUpon>deleteAdmin.vb</DependentUpon>
     </Compile>
@@ -306,6 +318,30 @@
       <DependentUpon>Forgot1.vb</DependentUpon>
     </Compile>
     <Compile Include="Forgot1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgot2.Designer.vb">
+      <DependentUpon>forgot2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forgot2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgot3.Designer.vb">
+      <DependentUpon>forgot3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forgot3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotC.Designer.vb">
+      <DependentUpon>ForgotC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotR.Designer.vb">
+      <DependentUpon>ForgotR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotR.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ForgotV.Designer.vb">
@@ -548,6 +584,12 @@
       <DependentUpon>AdminCreate_1.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassC.resx">
+      <DependentUpon>ChangePassC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassR.resx">
+      <DependentUpon>ChangePassR.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="deleteAdmin.resx">
       <DependentUpon>deleteAdmin.vb</DependentUpon>
     </EmbeddedResource>
@@ -577,6 +619,18 @@
     <EmbeddedResource Include="Forgot1.resx">
       <DependentUpon>Forgot1.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgot2.resx">
+      <DependentUpon>forgot2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgot3.resx">
+      <DependentUpon>forgot3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotC.resx">
+      <DependentUpon>ForgotC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotR.resx">
+      <DependentUpon>ForgotR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotV.resx">
       <DependentUpon>ForgotV.vb</DependentUpon>

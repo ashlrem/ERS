@@ -48,6 +48,6 @@ Public Class LoginAdmin
         ForgotV.TopLevel = False
         My.Forms.MainScreen.Pi.Controls.Add(ForgotV)
         ForgotV.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 End Class
