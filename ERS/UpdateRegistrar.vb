@@ -18,7 +18,8 @@ Public Class UpdateRegistrar
         updateAccntRegistrar_btn()
     End Sub
     Private Sub UpdateRegistrar_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-        Screen_Registrar.Show()
-        RegistrarPanel.Show()
+        Screen_Admin.Show()
+        AdminPanel.Show()
     End Sub
+
 End Class

@@ -229,6 +229,7 @@ Partial Class ViewStudent
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(904, 353)
+        Me.ControlBox = False
         Me.Controls.Add(Me.SearchStudent_btn)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)

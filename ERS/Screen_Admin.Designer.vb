@@ -59,7 +59,6 @@ Partial Class Screen_Admin
         Me.UpdateSubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteSubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ViewSubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccountsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchAdminToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,8 +66,6 @@ Partial Class Screen_Admin
         Me.SearchCashierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SearchSubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminPanelPictureBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.AdminPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -273,7 +270,7 @@ Partial Class Screen_Admin
         '
         'SubjectsToolStripMenuItem
         '
-        Me.SubjectsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddSubjectToolStripMenuItem, Me.UpdateSubjectToolStripMenuItem, Me.DeleteSubjectToolStripMenuItem, Me.ToolStripSeparator5, Me.ViewSubjectToolStripMenuItem})
+        Me.SubjectsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddSubjectToolStripMenuItem, Me.UpdateSubjectToolStripMenuItem, Me.DeleteSubjectToolStripMenuItem, Me.ToolStripSeparator5})
         Me.SubjectsToolStripMenuItem.Name = "SubjectsToolStripMenuItem"
         Me.SubjectsToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.SubjectsToolStripMenuItem.Text = "Subjects"
@@ -301,15 +298,9 @@ Partial Class Screen_Admin
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(151, 6)
         '
-        'ViewSubjectToolStripMenuItem
-        '
-        Me.ViewSubjectToolStripMenuItem.Name = "ViewSubjectToolStripMenuItem"
-        Me.ViewSubjectToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.ViewSubjectToolStripMenuItem.Text = "View Subject"
-        '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountsToolStripMenuItem1, Me.StudentToolStripMenuItem, Me.SubjectToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountsToolStripMenuItem1, Me.StudentToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.HelpToolStripMenuItem.Text = "Search"
@@ -351,19 +342,6 @@ Partial Class Screen_Admin
         Me.SearchStudentToolStripMenuItem.Name = "SearchStudentToolStripMenuItem"
         Me.SearchStudentToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.SearchStudentToolStripMenuItem.Text = "Search Student"
-        '
-        'SubjectToolStripMenuItem
-        '
-        Me.SubjectToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchSubjectToolStripMenuItem})
-        Me.SubjectToolStripMenuItem.Name = "SubjectToolStripMenuItem"
-        Me.SubjectToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.SubjectToolStripMenuItem.Text = "Subject"
-        '
-        'SearchSubjectToolStripMenuItem
-        '
-        Me.SearchSubjectToolStripMenuItem.Name = "SearchSubjectToolStripMenuItem"
-        Me.SearchSubjectToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
-        Me.SearchSubjectToolStripMenuItem.Text = "Search Subject"
         '
         'AdminPanelPictureBox
         '
@@ -432,7 +410,6 @@ Partial Class Screen_Admin
     Friend WithEvents UpdateSubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteSubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ViewSubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AccountsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchAdminToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -440,8 +417,6 @@ Partial Class Screen_Admin
     Friend WithEvents SearchCashierToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StudentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchStudentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SearchSubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UpdateAccountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdminPanelPictureBox As System.Windows.Forms.PictureBox
 End Class
