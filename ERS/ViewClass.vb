@@ -22,4 +22,8 @@ Public Class ViewClass
         cn.Close()
         SearchSubject_A_View_btn()
     End Sub
+    Private Sub ViewClass_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        Screen_Admin.Show()
+        AdminPanel.Show()
+    End Sub
 End Class

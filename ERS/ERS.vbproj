@@ -194,6 +194,12 @@
     <Compile Include="addBookItem.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddClassR.Designer.vb">
+      <DependentUpon>AddClassR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddClassR.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddPayment_A.Designer.vb">
       <DependentUpon>AddPayment_A.vb</DependentUpon>
     </Compile>
@@ -459,6 +465,12 @@
     <Compile Include="UpdateCashier.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UpdateCashierC.Designer.vb">
+      <DependentUpon>UpdateCashierC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCashierC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UpdatePayment_A.Designer.vb">
       <DependentUpon>UpdatePayment_A.vb</DependentUpon>
     </Compile>
@@ -469,6 +481,12 @@
       <DependentUpon>UpdateRegistrar.vb</DependentUpon>
     </Compile>
     <Compile Include="UpdateRegistrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateRegistrarR.Designer.vb">
+      <DependentUpon>UpdateRegistrarR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateRegistrarR.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdateStudent_A.Designer.vb">
@@ -538,6 +556,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addBookItem.resx">
       <DependentUpon>addBookItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddClassR.resx">
+      <DependentUpon>AddClassR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPayment_A.resx">
       <DependentUpon>AddPayment_A.vb</DependentUpon>
@@ -689,11 +710,17 @@
     <EmbeddedResource Include="UpdateCashier.resx">
       <DependentUpon>UpdateCashier.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCashierC.resx">
+      <DependentUpon>UpdateCashierC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdatePayment_A.resx">
       <DependentUpon>UpdatePayment_A.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateRegistrar.resx">
       <DependentUpon>UpdateRegistrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateRegistrarR.resx">
+      <DependentUpon>UpdateRegistrarR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateStudent_A.resx">
       <DependentUpon>UpdateStudent_A.vb</DependentUpon>

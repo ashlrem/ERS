@@ -799,3 +799,6 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.forgot2.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.forgot3.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ForgotC.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ForgotR.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateCashierC.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateRegistrarR.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddClassR.resources

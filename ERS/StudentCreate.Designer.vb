@@ -707,7 +707,7 @@ Partial Class StudentCreate
         '
         Me.CheckBox5.AutoSize = True
         Me.CheckBox5.Enabled = False
-        Me.CheckBox5.Location = New System.Drawing.Point(555, 57)
+        Me.CheckBox5.Location = New System.Drawing.Point(555, 50)
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.Size = New System.Drawing.Size(183, 24)
         Me.CheckBox5.TabIndex = 28

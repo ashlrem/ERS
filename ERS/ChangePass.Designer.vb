@@ -92,6 +92,7 @@ Partial Class ChangePass
         Me.Controls.Add(Me.rtp)
         Me.Controls.Add(Me.pw)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Location = New System.Drawing.Point(350, 50)
         Me.Name = "ChangePass"
         Me.Text = "ChangePass"
         Me.ResumeLayout(False)

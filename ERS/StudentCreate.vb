@@ -92,6 +92,7 @@ Public Class StudentCreate
                 ins.Parameters.AddWithValue("@UploadForm137", frm137.Text)
                 ins.Parameters.AddWithValue("@UploadGoodMoral", gmr.Text)
                 ins.ExecuteNonQuery()
+                PictureBox1.Image = Nothing
                 MsgBox("Student Added!!")
                 AddSubClear()
                 objConn.Close()
@@ -107,8 +108,15 @@ Public Class StudentCreate
     End Sub
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StudentCreateBackBtn.Click
-        AdminPanel.Show()
-        Me.Close()
+        If My.Forms.AdminPanel.empl.Text = "" Then
+            RegistrarPanel.Show()
+            Screen_Registrar.Show()
+            Me.Close()
+        ElseIf My.Forms.CashierPanel.empl.Text = "" Then
+            AdminPanel.Show()
+            Screen_Admin.Show()
+            Me.Close()
+        End If
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged

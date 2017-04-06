@@ -119,6 +119,7 @@ Partial Class forgot3
         Me.Controls.Add(Me.sq1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.Location = New System.Drawing.Point(350, 50)
         Me.Name = "forgot3"
         Me.Text = "forgot3"
         Me.ResumeLayout(False)
