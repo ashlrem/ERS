@@ -60,7 +60,7 @@ Public Class StudentCreate
             objConn.Open()
             Try
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
+                ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
                 ins.Parameters.AddWithValue("@Photo", pl.Text)
                 ins.Parameters.AddWithValue("@Student_ID_No", sn.Text)
                 ins.Parameters.AddWithValue("@LastName", ln.Text)
@@ -75,6 +75,7 @@ Public Class StudentCreate
                 ins.Parameters.AddWithValue("@Religion", rel.Text)
                 ins.Parameters.AddWithValue("@SchoolYear", sy.Text)
                 ins.Parameters.AddWithValue("@GradeLevel", gl.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@Section", sec.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Scholar", scho.Text)
                 ins.Parameters.AddWithValue("@MotherName", mon.Text)
                 ins.Parameters.AddWithValue("@OccupationM", mono.Text)
@@ -211,4 +212,25 @@ Public Class StudentCreate
         Webcam.Show()
         Me.Enabled = False
     End Sub
+
+    Private Sub gl_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gl.SelectedIndexChanged
+        cn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+        Dim r As MySqlDataReader
+        Dim reg As String = "SELECT Section FROM subject_tbl where Grade_Level = '" & gl.SelectedItem.ToString & "'"
+        cn.Open()
+        Dim cmd As MySqlCommand = New MySqlCommand(reg, cn)
+        r = cmd.ExecuteReader()
+        If r.Read Then
+            sec.Items.Clear()
+            sec.Items.Add(r("Section").ToString())
+            While (r.Read())
+                sec.Items.Add(r("Section").ToString())
+            End While
+        Else
+            MessageBox.Show("No Section Found")
+        End If
+
+        cn.Close()
+    End Sub
+
 End Class

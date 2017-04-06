@@ -303,7 +303,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@EmployeeID", My.Forms.RegistrarCreate.en.Text)
                         ins.Parameters.AddWithValue("@Password", My.Forms.RegistrarCreate.pw.Text)
                         ins.Parameters.AddWithValue("@status", My.Forms.RegistrarCreate.statusTextBoxRegistrar.Text)
-                        ins.Parameters.AddWithValue("@LogIn_Attempts", My.Forms.RegistrarCreate.loginAttempt.Text)
+                        ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
                         MsgBox("Registrar Account Successfully Created!")
                         My.Forms.RegistrarCreate.ln.Focus()
@@ -377,7 +377,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@EmployeeID", My.Forms.CashierCreate.en.Text)
                         ins.Parameters.AddWithValue("@Password", My.Forms.CashierCreate.pw.Text)
                         ins.Parameters.AddWithValue("@status", My.Forms.CashierCreate.statusTextBoxCashier.Text)
-                        ins.Parameters.AddWithValue("@LogIn_Attempts", My.Forms.CashierCreate.loginAttempt.Text)
+                        ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
                         MsgBox("Cashier Account Successfuly Created!")
                         My.Forms.CashierCreate.ln.Focus()
@@ -403,7 +403,7 @@ Module Module1
         objConn.ConnectionString = cn
         objConn.Open()
         Try
-            If (My.Forms.AddClass.gl.SelectedIndex = -1 Or My.Forms.AddClass.sec.Text = "" Or My.Forms.AddClass.sy.Text = "" Or My.Forms.AddClass.tme.Text = "" Or My.Forms.AddClass.nm.Text = "" Or My.Forms.AddClass.teacher.Text = "") Then
+            If (My.Forms.AddClass.gl.SelectedIndex = -1 Or My.Forms.AddClass.sec.Text = "") Then
                 MsgBox("Enter the empty fields!")
             Else
                 'so dito, subjects yung sine save natin sa database, so yung SQL Query natin,
@@ -411,13 +411,9 @@ Module Module1
                 'pero same flow. gawa ng connection string, ioopen yung connection ni database,
                 'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO subject_tbl VALUES( @GradeLevel, @Section, @SchoolYear, @Time, @No_Minutes, @Teacher)"
+                ins.CommandText = "INSERT INTO subject_tbl VALUES( @GradeLevel, @Section)"
                 ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClass.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.Text.ToString)
-                ins.Parameters.AddWithValue("@SchoolYear", My.Forms.AddClass.sy.Text)
-                ins.Parameters.AddWithValue("@Time", My.Forms.AddClass.tme.Text)
-                ins.Parameters.AddWithValue("@No_Minutes", My.Forms.AddClass.nm.Text)
-                ins.Parameters.AddWithValue("@Teacher", My.Forms.AddClass.teacher.Text)
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
                 MsgBox("Subject saved successfully!")
@@ -427,7 +423,6 @@ Module Module1
                 If (a = MsgBoxResult.Yes) Then
                     AddSubClear()
                 ElseIf (a = MsgBoxResult.No) Then
-                    StudentCreate.Show()
                     My.Forms.AddClass.Close()
                 End If
             End If
@@ -451,10 +446,6 @@ Module Module1
         'clearing fields per forms
         My.Forms.AddClass.gl.SelectedIndex = -1
         My.Forms.AddClass.sec.Text = ""
-        My.Forms.AddClass.sy.Text = ""
-        My.Forms.AddClass.tme.Text = ""
-        My.Forms.AddClass.nm.Text = ""
-        My.Forms.AddClass.teacher.Text = ""
 
         My.Forms.AdminCreate.pl.Text = ""
         My.Forms.AdminCreate.ln.Text = ""
@@ -847,55 +838,6 @@ Module Module1
         End Try
         cn1.Close()
         
-    End Sub
-    
-    Public Sub studentSearch()
-        'View Student info. To display Picture of Student, Name, StudentNo, etc.
-
-        'so eto yung method ng pag search ng student guys,
-        'ang lagi lang natin iccheck is yung SQL Query. siyempre ang sine search natin is yung student information,
-        'dun tayo titingin sa student_info na table. sql query is, SELECT * FROM student_info where is yung Student_ID_No is
-        'equals dun sa nai type sa text box.
-        Try
-            'pag empty yung text box pero ni click yung search button,
-            'display ng error. siyempre hindi naman tayo pwedeng maghanap ng wala. hehe
-            ' If (My.Forms.AdminPanel.TextBox1.Text = "") Then
-            'MsgBox("Enter Student Number.")
-            'Else
-            'insert() 'lagi na lang natin nakikita to. always remember na pag ko connect tayo sa database, lagi siyang nanjan. ayoko na humugot. haha
-            'Dim r As MySqlDataReader
-
-            'eto yung sql query naten.
-            'Dim reg As String = "SELECT * FROM student_info WHERE (Student_ID_No ='" & My.Forms.AdminPanel.TextBox1.Text & "')"
-            ' cn1.Open() 'open ng database connection
-            ' Dim cmd As MySqlCommand = New MySqlCommand(reg, cn1) 'etong line ng code na to, kung mapapansin naten,
-            'cmd as MySqlCommand daw. tapos kinuha niya yung reg which is yung SQL query natin, at yung cn1 which is yung
-            'nasa insert(), which is pag connect sa database. then check yung next line,
-            'r = cmd.ExecuteReader() <--- so ibig sabihin nun, para magkaron tayo ng successful connection kay database,
-            'need natin ng SQL Query string which is yung 'reg', need din natin ng connection kay db, which is yung 'cn1',
-            'na makikita natin dun sa insert() method, and yung 'r' para mai execute yung connection kay database.
-
-            'r = cmd.ExecuteReader() 'execute ng sql query. eto si r
-
-            'so r.Read, alam na natin na nag success siya, display niya yung student information. else, display error tayo
-            If r.Read Then
-                My.Forms.AdminPanel.Hide()
-                ViewStudentInfo.TopLevel = False
-                My.Forms.MainScreen.Pi.Controls.Add(ViewStudentInfo)
-                ViewStudentInfo.Show()
-                cn1.Close()
-            Else
-                MsgBox("Studente number not found!")
-                ' en.Focus()
-                '   My.Forms.AdminPanel.TextBox1.Text = ""
-                '   My.Forms.AdminPanel.TextBox1.Focus()
-                cn1.Close()
-            End If
-            ' End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
     End Sub
     Public Sub close1()
         'eto yung pag close method ng mga forms.
@@ -2229,7 +2171,7 @@ Module Module1
     Public Sub deleteSubject_R()
         'not implemented
 
-        Dim reg As String = "DELETE FROM subject_tbl WHERE Subject_Name = '" & My.Forms.DeleteSubj_R.subj.Text & "' "
+        Dim reg As String = "DELETE FROM subject_tbl WHERE Section = '" & My.Forms.DeleteSubj_R.sec.Text & "' and Grade_Level = '" & My.Forms.DeleteSubj_R.gl.Text & "' "
         Try
             Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn)
@@ -2240,14 +2182,6 @@ Module Module1
                     'For form DeleteSubj_R delete button
                     My.Forms.DeleteSubj_R.gl.Text = ""
                     My.Forms.DeleteSubj_R.sec.Text = ""
-                    My.Forms.DeleteSubj_R.sy.Text = ""
-                    My.Forms.DeleteSubj_R.tim.Text = ""
-                    My.Forms.DeleteSubj_R.nm.Text = ""
-                    My.Forms.DeleteSubj_R.teacher.Text = ""
-                    My.Forms.DeleteSubj_R.subj.Text = ""
-                    My.Forms.DeleteSubj_R.SearchSubj_btn.Enabled = True
-                    My.Forms.DeleteSubj_R.GroupBox2.Enabled = False
-                    My.Forms.DeleteSubj_R.subj.Enabled = True
                     MsgBox("Subject Deleted!")
 
                     cn.Close()
@@ -2304,12 +2238,8 @@ Module Module1
             If r.Read Then
 
                 'For form UpdateSub_A search button
-                My.Forms.UpdateClass_R.gl.Text = r("Grade_Level").ToString()
-                'My.Forms.UpdateClass_R.sec.Text = r("Section").ToString()
-                My.Forms.UpdateClass_R.sy.Text = r("School_Year").ToString()
-                My.Forms.UpdateClass_R.tim.Text = r("Time").ToString()
-                My.Forms.UpdateClass_R.nm.Text = r("No_Minutes").ToString()
-                My.Forms.UpdateClass_R.teacher.Text = r("Teacher").ToString()
+
+                My.Forms.UpdateClass_R.sec.Text = r("Section").ToString()
                 My.Forms.UpdateClass_R.SearchSubj_btn.Enabled = False
                 My.Forms.UpdateClass_R.subj.Enabled = False
 
@@ -2330,7 +2260,7 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.DeleteSubj_R.subj.Text & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.DeleteSub_A.subj.Text & "')"
             cn.Open()
             Dim cmd3 As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
@@ -2339,19 +2269,19 @@ Module Module1
 
 
                 'For form DeleteSubj_R search button
-                My.Forms.DeleteSubj_R.gl.Text = r("Grade_Level").ToString()
-                My.Forms.DeleteSubj_R.sec.Text = r("Section").ToString()
-                My.Forms.DeleteSubj_R.sy.Text = r("School_Year").ToString()
-                My.Forms.DeleteSubj_R.tim.Text = r("Time").ToString()
-                My.Forms.DeleteSubj_R.nm.Text = r("No_Minutes").ToString()
-                My.Forms.DeleteSubj_R.teacher.Text = r("Teacher").ToString()
-                My.Forms.DeleteSubj_R.SearchSubj_btn.Enabled = False
-                My.Forms.DeleteSubj_R.subj.Enabled = False
+                My.Forms.DeleteSub_A.gl.Text = r("Grade_Level").ToString()
+                My.Forms.DeleteSub_A.sec.Text = r("Section").ToString()
+                My.Forms.DeleteSub_A.sy.Text = r("School_Year").ToString()
+                My.Forms.DeleteSub_A.tim.Text = r("Time").ToString()
+                My.Forms.DeleteSub_A.nm.Text = r("No_Minutes").ToString()
+                My.Forms.DeleteSub_A.teacher.Text = r("Teacher").ToString()
+                My.Forms.DeleteSub_A.SearchSubj_btn.Enabled = False
+                My.Forms.DeleteSub_A.subj.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.DeleteSubj_R.subj.Text = ""
-                My.Forms.DeleteSubj_R.subj.Focus()
+                My.Forms.DeleteSub_A.subj.Text = ""
+                My.Forms.DeleteSub_A.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2364,7 +2294,7 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.DeleteSubj_R.subj.Text & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Section ='" & My.Forms.DeleteSubj_R.sec.Text & "')"
             cn.Open()
             Dim cmd3 As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
@@ -2373,13 +2303,7 @@ Module Module1
 
                 'For form DeleteSubj_R search button
                 My.Forms.DeleteSubj_R.gl.Text = r("Grade_Level").ToString()
-                My.Forms.DeleteSubj_R.sec.Text = r("Section").ToString()
-                My.Forms.DeleteSubj_R.sy.Text = r("School_Year").ToString()
-                My.Forms.DeleteSubj_R.tim.Text = r("Time").ToString()
-                My.Forms.DeleteSubj_R.nm.Text = r("No_Minutes").ToString()
-                My.Forms.DeleteSubj_R.teacher.Text = r("Teacher").ToString()
                 My.Forms.DeleteSubj_R.SearchSubj_btn.Enabled = False
-                My.Forms.DeleteSubj_R.subj.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")

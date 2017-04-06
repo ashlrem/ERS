@@ -24,16 +24,8 @@ Partial Class UpdateClass_R
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.UpdateSubj_btn = New System.Windows.Forms.Button()
-        Me.teacher = New System.Windows.Forms.TextBox()
-        Me.nm = New System.Windows.Forms.TextBox()
-        Me.tim = New System.Windows.Forms.MaskedTextBox()
-        Me.sy = New System.Windows.Forms.TextBox()
-        Me.gl = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.sec = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.subj = New System.Windows.Forms.TextBox()
         Me.SearchSubj_btn = New System.Windows.Forms.Button()
@@ -45,112 +37,40 @@ Partial Class UpdateClass_R
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.UpdateSubj_btn)
-        Me.GroupBox2.Controls.Add(Me.teacher)
-        Me.GroupBox2.Controls.Add(Me.nm)
-        Me.GroupBox2.Controls.Add(Me.tim)
-        Me.GroupBox2.Controls.Add(Me.sy)
-        Me.GroupBox2.Controls.Add(Me.gl)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.sec)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Enabled = False
         Me.GroupBox2.Location = New System.Drawing.Point(16, 103)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(415, 247)
+        Me.GroupBox2.Size = New System.Drawing.Size(415, 112)
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Subject Information"
         '
         'UpdateSubj_btn
         '
-        Me.UpdateSubj_btn.Location = New System.Drawing.Point(243, 201)
+        Me.UpdateSubj_btn.Location = New System.Drawing.Point(237, 67)
         Me.UpdateSubj_btn.Name = "UpdateSubj_btn"
         Me.UpdateSubj_btn.Size = New System.Drawing.Size(159, 27)
         Me.UpdateSubj_btn.TabIndex = 6
         Me.UpdateSubj_btn.Text = "Update"
         Me.UpdateSubj_btn.UseVisualStyleBackColor = True
         '
-        'teacher
+        'sec
         '
-        Me.teacher.Location = New System.Drawing.Point(115, 162)
-        Me.teacher.Name = "teacher"
-        Me.teacher.Size = New System.Drawing.Size(170, 20)
-        Me.teacher.TabIndex = 6
-        '
-        'nm
-        '
-        Me.nm.Location = New System.Drawing.Point(115, 136)
-        Me.nm.Name = "nm"
-        Me.nm.Size = New System.Drawing.Size(170, 20)
-        Me.nm.TabIndex = 5
-        '
-        'tim
-        '
-        Me.tim.Location = New System.Drawing.Point(115, 110)
-        Me.tim.Name = "tim"
-        Me.tim.Size = New System.Drawing.Size(170, 20)
-        Me.tim.TabIndex = 4
-        '
-        'sy
-        '
-        Me.sy.Location = New System.Drawing.Point(115, 84)
-        Me.sy.Name = "sy"
-        Me.sy.Size = New System.Drawing.Size(170, 20)
-        Me.sy.TabIndex = 3
-        '
-        'gl
-        '
-        Me.gl.Location = New System.Drawing.Point(115, 32)
-        Me.gl.Name = "gl"
-        Me.gl.Size = New System.Drawing.Size(170, 20)
-        Me.gl.TabIndex = 1
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(23, 169)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(47, 13)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "" & Global.Microsoft.VisualBasic.ChrW(9) & "Teacher"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(23, 143)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(64, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "No_Minutes"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(25, 117)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(30, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Time"
+        Me.sec.Location = New System.Drawing.Point(133, 24)
+        Me.sec.Name = "sec"
+        Me.sec.Size = New System.Drawing.Size(170, 20)
+        Me.sec.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(23, 91)
+        Me.Label3.Location = New System.Drawing.Point(41, 31)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 13)
+        Me.Label3.Size = New System.Drawing.Size(46, 13)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "School_Year"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(23, 39)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(68, 13)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "" & Global.Microsoft.VisualBasic.ChrW(9) & "Grade_Level"
+        Me.Label3.Text = "Section:"
         '
         'GroupBox1
         '
@@ -193,7 +113,7 @@ Partial Class UpdateClass_R
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(446, 367)
+        Me.ClientSize = New System.Drawing.Size(446, 225)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -208,16 +128,8 @@ Partial Class UpdateClass_R
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents UpdateSubj_btn As System.Windows.Forms.Button
-    Friend WithEvents teacher As System.Windows.Forms.TextBox
-    Friend WithEvents nm As System.Windows.Forms.TextBox
-    Friend WithEvents tim As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents sy As System.Windows.Forms.TextBox
-    Friend WithEvents gl As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents sec As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents subj As System.Windows.Forms.TextBox
     Friend WithEvents SearchSubj_btn As System.Windows.Forms.Button

@@ -15,8 +15,8 @@ Public Class DeleteStudent_A
         dropstud()
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Screen_Registrar.Show()
-        RegistrarPanel.Show()
+        Screen_Admin.Show()
+        AdminPanel.Show()
         Me.Close()
     End Sub
     Private Sub DeleteStudent_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
