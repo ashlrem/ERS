@@ -36,7 +36,6 @@ Partial Class RegistrarCreate
         Me.sq2 = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.statusTextBoxRegistrar = New System.Windows.Forms.TextBox()
         Me.mn = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -142,7 +141,7 @@ Partial Class RegistrarCreate
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 68)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 67)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(131, 89)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -157,15 +156,6 @@ Partial Class RegistrarCreate
         Me.Button5.Size = New System.Drawing.Size(170, 38)
         Me.Button5.TabIndex = 18
         Me.Button5.UseVisualStyleBackColor = True
-        '
-        'pl
-        '
-        Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(33, 95)
-        Me.pl.Multiline = True
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(83, 46)
-        Me.pl.TabIndex = 35
         '
         'statusTextBoxRegistrar
         '
@@ -292,7 +282,6 @@ Partial Class RegistrarCreate
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.en)
-        Me.Controls.Add(Me.pl)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.ln)
         Me.Controls.Add(Me.fn)
@@ -324,7 +313,6 @@ Partial Class RegistrarCreate
     Friend WithEvents sq2 As System.Windows.Forms.ComboBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents statusTextBoxRegistrar As System.Windows.Forms.TextBox
     Friend WithEvents mn As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox

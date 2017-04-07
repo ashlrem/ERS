@@ -25,7 +25,6 @@ Partial Class CashierCreate
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CashierCreate))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.add = New System.Windows.Forms.TextBox()
         Me.mn = New System.Windows.Forms.TextBox()
         Me.fn = New System.Windows.Forms.TextBox()
@@ -70,14 +69,6 @@ Partial Class CashierCreate
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
-        '
-        'pl
-        '
-        Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(32, 115)
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(83, 20)
-        Me.pl.TabIndex = 8
         '
         'add
         '
@@ -278,7 +269,6 @@ Partial Class CashierCreate
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.en)
-        Me.Controls.Add(Me.pl)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ln)
         Me.Controls.Add(Me.fn)
@@ -296,7 +286,6 @@ Partial Class CashierCreate
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents add As System.Windows.Forms.TextBox
     Friend WithEvents mn As System.Windows.Forms.TextBox
     Friend WithEvents fn As System.Windows.Forms.TextBox

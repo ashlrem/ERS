@@ -15,7 +15,7 @@ Public Class CashierCreate
         Catch
         End Try
         decoding = encodingtypestring
-        pl.Text = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+        pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
         createCashier()
     End Sub
     Public Function imagetobase64(ByVal image As Image, ByVal format As ImageFormat) As String
@@ -31,15 +31,14 @@ Public Class CashierCreate
         Me.Close()
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        pl.Text = ""
-        Try
+                Try
             If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                pl.Text = OpenFileDialog1.FileName
+                pic = OpenFileDialog1.FileName
             End If
-            PictureBox1.Image = Image.FromFile(pl.Text)
+            PictureBox1.Image = Image.FromFile(pic)
         Catch
             MsgBox("Please select picture.")
-            pl.Text = ""
+
             PictureBox1.Image = PictureBox1.ErrorImage
         End Try
     End Sub
@@ -61,4 +60,5 @@ Public Class CashierCreate
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         Webcam.Show()
     End Sub
-End Class
+
+  End Class

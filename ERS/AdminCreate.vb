@@ -44,13 +44,12 @@ Public Class AdminCreate
             If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
                 pic = OpenFileDialog1.FileName
             End If
-            PictureBox1.Image = Image.FromFile(pl.Text)
+            PictureBox1.Image = Image.FromFile(pic)
         Catch
             MsgBox("Please select picture.")
             pic = ""
             PictureBox1.Image = PictureBox1.ErrorImage
         End Try
-        pl.Text = ""
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click

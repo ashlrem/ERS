@@ -51,26 +51,24 @@ Public Class Webcam
                 SaveFileDialog1.Title = "Save an Image File"
                 PictureBox1.Image.Save(SaveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Jpeg)
 
-                My.Forms.AdminCreate.pl.Text = SaveFileDialog1.FileName
-                My.Forms.AdminCreate.PictureBox1.Image = Image.FromFile(My.Forms.AdminCreate.pl.Text)
-                My.Forms.AdminCreate.pl.Text = ""
+                pic = SaveFileDialog1.FileName
+                My.Forms.AdminCreate.PictureBox1.Image = Image.FromFile(pic)
+
 
                 My.Forms.AdminCreate_1.pl.Text = SaveFileDialog1.FileName
                 My.Forms.AdminCreate_1.PictureBox1.Image = Image.FromFile(My.Forms.AdminCreate_1.pl.Text)
                 My.Forms.AdminCreate_1.pl.Text = ""
 
-                My.Forms.CashierCreate.pl.Text = SaveFileDialog1.FileName
-                My.Forms.CashierCreate.PictureBox1.Image = Image.FromFile(My.Forms.CashierCreate.pl.Text)
-                My.Forms.CashierCreate.pl.Text = ""
+                pic = SaveFileDialog1.FileName
+                My.Forms.CashierCreate.PictureBox1.Image = Image.FromFile(pic)
 
-                My.Forms.RegistrarCreate.pl.Text = SaveFileDialog1.FileName
-                My.Forms.RegistrarCreate.PictureBox1.Image = Image.FromFile(My.Forms.RegistrarCreate.pl.Text)
-                My.Forms.RegistrarCreate.pl.Text = ""
 
-                My.Forms.StudentCreate.pl.Text = SaveFileDialog1.FileName
-                My.Forms.StudentCreate.PictureBox1.Image = Image.FromFile(My.Forms.StudentCreate.pl.Text)
-                My.Forms.StudentCreate.pl.Text = ""
+                pic = SaveFileDialog1.FileName
+                My.Forms.RegistrarCreate.PictureBox1.Image = Image.FromFile(pic)
 
+
+                pic = SaveFileDialog1.FileName
+                My.Forms.StudentCreate.PictureBox1.Image = Image.FromFile(pic)
 
                 AdminCreate.Enabled = True
                 AdminCreate_1.Enabled = True
