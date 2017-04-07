@@ -46,7 +46,6 @@ Partial Class CashierCreate
         Me.ans2 = New System.Windows.Forms.TextBox()
         Me.ans1 = New System.Windows.Forms.TextBox()
         Me.cno = New System.Windows.Forms.TextBox()
-        Me.loginAttempt = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -239,21 +238,11 @@ Partial Class CashierCreate
         Me.cno.Size = New System.Drawing.Size(207, 20)
         Me.cno.TabIndex = 7
         '
-        'loginAttempt
-        '
-        Me.loginAttempt.Location = New System.Drawing.Point(442, 298)
-        Me.loginAttempt.Name = "loginAttempt"
-        Me.loginAttempt.Size = New System.Drawing.Size(100, 20)
-        Me.loginAttempt.TabIndex = 29
-        Me.loginAttempt.Text = "0"
-        Me.loginAttempt.Visible = False
-        '
         'CashierCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 330)
-        Me.Controls.Add(Me.loginAttempt)
         Me.Controls.Add(Me.cno)
         Me.Controls.Add(Me.ans2)
         Me.Controls.Add(Me.ans1)
@@ -308,5 +297,4 @@ Partial Class CashierCreate
     Friend WithEvents ans2 As System.Windows.Forms.TextBox
     Friend WithEvents ans1 As System.Windows.Forms.TextBox
     Friend WithEvents cno As System.Windows.Forms.TextBox
-    Friend WithEvents loginAttempt As System.Windows.Forms.TextBox
 End Class

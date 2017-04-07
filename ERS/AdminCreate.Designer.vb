@@ -253,7 +253,7 @@ Partial Class AdminCreate
         '
         'ans2
         '
-        Me.ans2.Location = New System.Drawing.Point(180, 289)
+        Me.ans2.Location = New System.Drawing.Point(180, 293)
         Me.ans2.Name = "ans2"
         Me.ans2.Size = New System.Drawing.Size(235, 20)
         Me.ans2.TabIndex = 13
