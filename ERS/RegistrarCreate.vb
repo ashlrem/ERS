@@ -20,7 +20,7 @@ Public Class RegistrarCreate
         Catch
         End Try
         decoding = encodingtypestring
-        pl.Text = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+        pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
         registrarCreate1()
     End Sub
     Public Function imagetobase64(ByVal image As Image, ByVal format As ImageFormat) As String
@@ -36,7 +36,10 @@ Public Class RegistrarCreate
         Me.Close()
     End Sub
     Private Sub RegistrarCreate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Me.FormBorderStyle = 0
+        Dim Screen As System.Drawing.Rectangle
+        Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 125)
+        Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         pl.Text = ""

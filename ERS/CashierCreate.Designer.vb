@@ -288,7 +288,7 @@ Partial Class CashierCreate
         Me.Controls.Add(Me.statusTextBoxCashier)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "CashierCreate"
-        Me.Text = "t"
+        Me.Text = "Create Cashier"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

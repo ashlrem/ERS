@@ -80,47 +80,47 @@ Partial Class Reciept
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape4, Me.LineShape3, Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(667, 365)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(787, 365)
         Me.ShapeContainer1.TabIndex = 11
         Me.ShapeContainer1.TabStop = False
         '
         'LineShape4
         '
         Me.LineShape4.Name = "LineShape4"
-        Me.LineShape4.X1 = 343
-        Me.LineShape4.X2 = 671
-        Me.LineShape4.Y1 = 291
-        Me.LineShape4.Y2 = 289
+        Me.LineShape4.X1 = 460
+        Me.LineShape4.X2 = 788
+        Me.LineShape4.Y1 = 294
+        Me.LineShape4.Y2 = 292
         '
         'LineShape3
         '
         Me.LineShape3.Name = "LineShape3"
-        Me.LineShape3.X1 = 343
-        Me.LineShape3.X2 = 671
-        Me.LineShape3.Y1 = 264
-        Me.LineShape3.Y2 = 262
+        Me.LineShape3.X1 = 458
+        Me.LineShape3.X2 = 786
+        Me.LineShape3.Y1 = 258
+        Me.LineShape3.Y2 = 256
         '
         'LineShape2
         '
         Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.X1 = -1
-        Me.LineShape2.X2 = 674
-        Me.LineShape2.Y1 = 181
-        Me.LineShape2.Y2 = 181
+        Me.LineShape2.X1 = 119
+        Me.LineShape2.X2 = 794
+        Me.LineShape2.Y1 = 182
+        Me.LineShape2.Y2 = 182
         '
         'LineShape1
         '
         Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 1
-        Me.LineShape1.X2 = 676
-        Me.LineShape1.Y1 = 216
-        Me.LineShape1.Y2 = 216
+        Me.LineShape1.X1 = 119
+        Me.LineShape1.X2 = 794
+        Me.LineShape1.Y1 = 219
+        Me.LineShape1.Y2 = 219
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(144, 22)
+        Me.Label1.Location = New System.Drawing.Point(236, 20)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(485, 29)
         Me.Label1.TabIndex = 10
@@ -130,7 +130,7 @@ Partial Class Reciept
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(246, 85)
+        Me.Label4.Location = New System.Drawing.Point(338, 83)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(185, 25)
         Me.Label4.TabIndex = 10
@@ -140,7 +140,7 @@ Partial Class Reciept
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(270, 52)
+        Me.Label2.Location = New System.Drawing.Point(362, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(138, 18)
         Me.Label2.TabIndex = 10
@@ -150,9 +150,9 @@ Partial Class Reciept
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(12, 189)
+        Me.Label5.Location = New System.Drawing.Point(121, 189)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(89, 16)
+        Me.Label5.Size = New System.Drawing.Size(92, 16)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Payment of:"
         '
@@ -160,9 +160,9 @@ Partial Class Reciept
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(431, 125)
+        Me.Label10.Location = New System.Drawing.Point(523, 123)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(45, 16)
+        Me.Label10.Size = New System.Drawing.Size(47, 16)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = "Date:"
         '
@@ -170,9 +170,9 @@ Partial Class Reciept
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(38, 141)
+        Me.Label6.Location = New System.Drawing.Point(130, 139)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(97, 16)
+        Me.Label6.Size = New System.Drawing.Size(101, 16)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Grade Level:"
         '
@@ -180,9 +180,9 @@ Partial Class Reciept
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(38, 157)
+        Me.Label7.Location = New System.Drawing.Point(130, 155)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(63, 16)
+        Me.Label7.Size = New System.Drawing.Size(65, 16)
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Amount:"
         '
@@ -190,9 +190,9 @@ Partial Class Reciept
         '
         Me.amount.AutoSize = True
         Me.amount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.amount.Location = New System.Drawing.Point(145, 157)
+        Me.amount.Location = New System.Drawing.Point(237, 155)
         Me.amount.Name = "amount"
-        Me.amount.Size = New System.Drawing.Size(13, 16)
+        Me.amount.Size = New System.Drawing.Size(14, 16)
         Me.amount.TabIndex = 10
         Me.amount.Text = "-"
         '
@@ -200,9 +200,9 @@ Partial Class Reciept
         '
         Me.grade.AutoSize = True
         Me.grade.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grade.Location = New System.Drawing.Point(145, 141)
+        Me.grade.Location = New System.Drawing.Point(237, 139)
         Me.grade.Name = "grade"
-        Me.grade.Size = New System.Drawing.Size(13, 16)
+        Me.grade.Size = New System.Drawing.Size(14, 16)
         Me.grade.TabIndex = 10
         Me.grade.Text = "-"
         '
@@ -210,9 +210,9 @@ Partial Class Reciept
         '
         Me.nameOS.AutoSize = True
         Me.nameOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nameOS.Location = New System.Drawing.Point(145, 125)
+        Me.nameOS.Location = New System.Drawing.Point(349, 123)
         Me.nameOS.Name = "nameOS"
-        Me.nameOS.Size = New System.Drawing.Size(13, 16)
+        Me.nameOS.Size = New System.Drawing.Size(14, 16)
         Me.nameOS.TabIndex = 10
         Me.nameOS.Text = "-"
         '
@@ -220,9 +220,9 @@ Partial Class Reciept
         '
         Me.dateP.AutoSize = True
         Me.dateP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateP.Location = New System.Drawing.Point(482, 126)
+        Me.dateP.Location = New System.Drawing.Point(574, 124)
         Me.dateP.Name = "dateP"
-        Me.dateP.Size = New System.Drawing.Size(13, 16)
+        Me.dateP.Size = New System.Drawing.Size(14, 16)
         Me.dateP.TabIndex = 10
         Me.dateP.Text = "-"
         '
@@ -230,7 +230,7 @@ Partial Class Reciept
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(288, 70)
+        Me.Label3.Location = New System.Drawing.Point(380, 68)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(104, 15)
         Me.Label3.TabIndex = 10
@@ -240,9 +240,9 @@ Partial Class Reciept
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(173, 189)
+        Me.Label12.Location = New System.Drawing.Point(265, 187)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(63, 16)
+        Me.Label12.Size = New System.Drawing.Size(65, 16)
         Me.Label12.TabIndex = 10
         Me.Label12.Text = "Amount:"
         '
@@ -250,9 +250,9 @@ Partial Class Reciept
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(319, 189)
+        Me.Label13.Location = New System.Drawing.Point(411, 187)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(128, 16)
+        Me.Label13.Size = New System.Drawing.Size(133, 16)
         Me.Label13.TabIndex = 10
         Me.Label13.Text = "Form of Payment:"
         '
@@ -260,9 +260,9 @@ Partial Class Reciept
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(499, 189)
+        Me.Label14.Location = New System.Drawing.Point(591, 187)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(63, 16)
+        Me.Label14.Size = New System.Drawing.Size(65, 16)
         Me.Label14.TabIndex = 10
         Me.Label14.Text = "Amount:"
         '
@@ -270,9 +270,9 @@ Partial Class Reciept
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(346, 271)
+        Me.Label19.Location = New System.Drawing.Point(474, 267)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(48, 16)
+        Me.Label19.Size = New System.Drawing.Size(49, 16)
         Me.Label19.TabIndex = 10
         Me.Label19.Text = "Total:"
         '
@@ -280,7 +280,7 @@ Partial Class Reciept
         '
         Me.am2.AutoSize = True
         Me.am2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.am2.Location = New System.Drawing.Point(499, 269)
+        Me.am2.Location = New System.Drawing.Point(591, 267)
         Me.am2.Name = "am2"
         Me.am2.Size = New System.Drawing.Size(11, 15)
         Me.am2.TabIndex = 10
@@ -290,7 +290,7 @@ Partial Class Reciept
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(292, 330)
+        Me.Label22.Location = New System.Drawing.Point(423, 327)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(39, 15)
         Me.Label22.TabIndex = 10
@@ -300,9 +300,9 @@ Partial Class Reciept
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(38, 125)
+        Me.Label23.Location = New System.Drawing.Point(130, 123)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(92, 16)
+        Me.Label23.Size = New System.Drawing.Size(96, 16)
         Me.Label23.TabIndex = 10
         Me.Label23.Text = "Rec'd From:"
         '
@@ -310,7 +310,7 @@ Partial Class Reciept
         '
         Me.DateTimePicker1.CustomFormat = "MM/dd/yyyy"
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(68, 70)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(147, 48)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(33, 20)
         Me.DateTimePicker1.TabIndex = 12
@@ -318,7 +318,7 @@ Partial Class Reciept
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(11, 13)
+        Me.PictureBox1.Location = New System.Drawing.Point(103, 11)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(136, 99)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -329,9 +329,9 @@ Partial Class Reciept
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(107, 157)
+        Me.Label8.Location = New System.Drawing.Point(199, 155)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(18, 16)
+        Me.Label8.Size = New System.Drawing.Size(19, 16)
         Me.Label8.TabIndex = 10
         Me.Label8.Text = "P"
         '
@@ -339,9 +339,9 @@ Partial Class Reciept
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(265, 305)
+        Me.Label21.Location = New System.Drawing.Point(395, 301)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(101, 16)
+        Me.Label21.Size = New System.Drawing.Size(105, 16)
         Me.Label21.TabIndex = 10
         Me.Label21.Text = "Recieved By:"
         '
@@ -378,14 +378,14 @@ Partial Class Reciept
         Me.Panel1.Controls.Add(Me.ShapeContainer1)
         Me.Panel1.Location = New System.Drawing.Point(2, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(667, 365)
+        Me.Panel1.Size = New System.Drawing.Size(787, 365)
         Me.Panel1.TabIndex = 0
         '
         'po
         '
         Me.po.AutoSize = True
         Me.po.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.po.Location = New System.Drawing.Point(12, 226)
+        Me.po.Location = New System.Drawing.Point(130, 224)
         Me.po.Name = "po"
         Me.po.Size = New System.Drawing.Size(11, 15)
         Me.po.TabIndex = 10
@@ -395,7 +395,7 @@ Partial Class Reciept
         '
         Me.am1.AutoSize = True
         Me.am1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.am1.Location = New System.Drawing.Point(499, 226)
+        Me.am1.Location = New System.Drawing.Point(591, 224)
         Me.am1.Name = "am1"
         Me.am1.Size = New System.Drawing.Size(11, 15)
         Me.am1.TabIndex = 10
@@ -405,7 +405,7 @@ Partial Class Reciept
         '
         Me.am.AutoSize = True
         Me.am.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.am.Location = New System.Drawing.Point(182, 226)
+        Me.am.Location = New System.Drawing.Point(276, 224)
         Me.am.Name = "am"
         Me.am.Size = New System.Drawing.Size(11, 15)
         Me.am.TabIndex = 10
@@ -415,7 +415,7 @@ Partial Class Reciept
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(327, 226)
+        Me.Label15.Location = New System.Drawing.Point(423, 224)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(39, 15)
         Me.Label15.TabIndex = 10
@@ -425,7 +425,7 @@ Partial Class Reciept
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(665, 413)
+        Me.ClientSize = New System.Drawing.Size(788, 413)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.print_btn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D

@@ -32,30 +32,14 @@ Partial Class UpdatePayment_A
         Me.pre_btn = New System.Windows.Forms.Button()
         Me.midterm = New System.Windows.Forms.Label()
         Me.prelim = New System.Windows.Forms.Label()
-        Me.miscellaneous_fee_grp = New System.Windows.Forms.GroupBox()
-        Me.tf = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.mf = New System.Windows.Forms.Label()
-        Me.gf = New System.Windows.Forms.Label()
-        Me.ef = New System.Windows.Forms.Label()
-        Me.lf = New System.Windows.Forms.Label()
-        Me.rf = New System.Windows.Forms.Label()
-        Me.total = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.grade = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Payment_grp.SuspendLayout()
-        Me.miscellaneous_fee_grp.SuspendLayout()
         Me.SuspendLayout()
         '
         'SearchAddpayemt_btn
         '
-        Me.SearchAddpayemt_btn.Location = New System.Drawing.Point(278, 6)
+        Me.SearchAddpayemt_btn.Location = New System.Drawing.Point(278, 15)
         Me.SearchAddpayemt_btn.Name = "SearchAddpayemt_btn"
         Me.SearchAddpayemt_btn.Size = New System.Drawing.Size(75, 23)
         Me.SearchAddpayemt_btn.TabIndex = 5
@@ -64,7 +48,7 @@ Partial Class UpdatePayment_A
         '
         'sn
         '
-        Me.sn.Location = New System.Drawing.Point(142, 6)
+        Me.sn.Location = New System.Drawing.Point(142, 15)
         Me.sn.Name = "sn"
         Me.sn.Size = New System.Drawing.Size(130, 20)
         Me.sn.TabIndex = 4
@@ -72,7 +56,7 @@ Partial Class UpdatePayment_A
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(12, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(124, 13)
         Me.Label1.TabIndex = 3
@@ -87,7 +71,7 @@ Partial Class UpdatePayment_A
         Me.Payment_grp.Controls.Add(Me.midterm)
         Me.Payment_grp.Controls.Add(Me.prelim)
         Me.Payment_grp.Enabled = False
-        Me.Payment_grp.Location = New System.Drawing.Point(353, 100)
+        Me.Payment_grp.Location = New System.Drawing.Point(58, 68)
         Me.Payment_grp.Name = "Payment_grp"
         Me.Payment_grp.Size = New System.Drawing.Size(233, 89)
         Me.Payment_grp.TabIndex = 7
@@ -152,161 +136,10 @@ Partial Class UpdatePayment_A
         Me.prelim.TabIndex = 1
         Me.prelim.Text = "- "
         '
-        'miscellaneous_fee_grp
-        '
-        Me.miscellaneous_fee_grp.Controls.Add(Me.tf)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.Label9)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.mf)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.gf)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.ef)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.lf)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.rf)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.total)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.Label7)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.Label6)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.Label5)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.Label4)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.Label3)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.Label2)
-        Me.miscellaneous_fee_grp.Location = New System.Drawing.Point(45, 62)
-        Me.miscellaneous_fee_grp.Name = "miscellaneous_fee_grp"
-        Me.miscellaneous_fee_grp.Size = New System.Drawing.Size(286, 212)
-        Me.miscellaneous_fee_grp.TabIndex = 6
-        Me.miscellaneous_fee_grp.TabStop = False
-        Me.miscellaneous_fee_grp.Text = "Miscellaneous Fee:"
-        '
-        'tf
-        '
-        Me.tf.AutoSize = True
-        Me.tf.Location = New System.Drawing.Point(167, 156)
-        Me.tf.Name = "tf"
-        Me.tf.Size = New System.Drawing.Size(25, 13)
-        Me.tf.TabIndex = 3
-        Me.tf.Text = "800"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(25, 156)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(63, 13)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "Tuition Fee:"
-        '
-        'mf
-        '
-        Me.mf.AutoSize = True
-        Me.mf.Location = New System.Drawing.Point(167, 132)
-        Me.mf.Name = "mf"
-        Me.mf.Size = New System.Drawing.Size(25, 13)
-        Me.mf.TabIndex = 1
-        Me.mf.Text = "500"
-        '
-        'gf
-        '
-        Me.gf.AutoSize = True
-        Me.gf.Location = New System.Drawing.Point(167, 105)
-        Me.gf.Name = "gf"
-        Me.gf.Size = New System.Drawing.Size(25, 13)
-        Me.gf.TabIndex = 1
-        Me.gf.Text = "200"
-        '
-        'ef
-        '
-        Me.ef.AutoSize = True
-        Me.ef.Location = New System.Drawing.Point(167, 81)
-        Me.ef.Name = "ef"
-        Me.ef.Size = New System.Drawing.Size(25, 13)
-        Me.ef.TabIndex = 1
-        Me.ef.Text = "200"
-        '
-        'lf
-        '
-        Me.lf.AutoSize = True
-        Me.lf.Location = New System.Drawing.Point(167, 55)
-        Me.lf.Name = "lf"
-        Me.lf.Size = New System.Drawing.Size(25, 13)
-        Me.lf.TabIndex = 1
-        Me.lf.Text = "200"
-        '
-        'rf
-        '
-        Me.rf.AutoSize = True
-        Me.rf.Location = New System.Drawing.Point(167, 33)
-        Me.rf.Name = "rf"
-        Me.rf.Size = New System.Drawing.Size(25, 13)
-        Me.rf.TabIndex = 1
-        Me.rf.Text = "300"
-        '
-        'total
-        '
-        Me.total.AutoSize = True
-        Me.total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.total.Location = New System.Drawing.Point(167, 179)
-        Me.total.Name = "total"
-        Me.total.Size = New System.Drawing.Size(16, 16)
-        Me.total.TabIndex = 0
-        Me.total.Text = "0"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(25, 179)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(48, 16)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Total:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(25, 132)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 13)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Medical Fee:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 105)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Guidance Fee:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(25, 81)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Energy Fee:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(23, 55)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(62, 13)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Library Fee:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(21, 33)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Registration Fee:"
-        '
         'grade
         '
         Me.grade.AutoSize = True
-        Me.grade.Location = New System.Drawing.Point(139, 29)
+        Me.grade.Location = New System.Drawing.Point(139, 38)
         Me.grade.Name = "grade"
         Me.grade.Size = New System.Drawing.Size(10, 13)
         Me.grade.TabIndex = 8
@@ -315,7 +148,7 @@ Partial Class UpdatePayment_A
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(68, 29)
+        Me.Label12.Location = New System.Drawing.Point(68, 38)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(68, 13)
         Me.Label12.TabIndex = 8
@@ -325,11 +158,10 @@ Partial Class UpdatePayment_A
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(612, 302)
+        Me.ClientSize = New System.Drawing.Size(400, 178)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.grade)
         Me.Controls.Add(Me.Payment_grp)
-        Me.Controls.Add(Me.miscellaneous_fee_grp)
         Me.Controls.Add(Me.SearchAddpayemt_btn)
         Me.Controls.Add(Me.sn)
         Me.Controls.Add(Me.Label1)
@@ -338,8 +170,6 @@ Partial Class UpdatePayment_A
         Me.Text = "UpdatePayment_A"
         Me.Payment_grp.ResumeLayout(False)
         Me.Payment_grp.PerformLayout()
-        Me.miscellaneous_fee_grp.ResumeLayout(False)
-        Me.miscellaneous_fee_grp.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -352,21 +182,6 @@ Partial Class UpdatePayment_A
     Friend WithEvents pre_btn As System.Windows.Forms.Button
     Friend WithEvents midterm As System.Windows.Forms.Label
     Friend WithEvents prelim As System.Windows.Forms.Label
-    Friend WithEvents miscellaneous_fee_grp As System.Windows.Forms.GroupBox
-    Friend WithEvents tf As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents mf As System.Windows.Forms.Label
-    Friend WithEvents gf As System.Windows.Forms.Label
-    Friend WithEvents ef As System.Windows.Forms.Label
-    Friend WithEvents lf As System.Windows.Forms.Label
-    Friend WithEvents rf As System.Windows.Forms.Label
-    Friend WithEvents total As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents grade As System.Windows.Forms.Label

@@ -4,7 +4,7 @@
         datelbl.Text = DateTimePicker1.Value
     End Sub
     Private Sub MainScreen_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        'Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.Size = SystemInformation.PrimaryMonitorSize()
         Me.Location = New Point(0, 0)
     End Sub
@@ -19,7 +19,7 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutUsBtn.Click
         PictureBox1.Visible = False
-        AboutBox1.TopLevel = False
+        About.TopLevel = False
         AdminBtn.Visible = False
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
@@ -28,8 +28,8 @@
         ForgotV.Close()
         RegistrarLogin.Close()
         LoginAdmin.Close()
-        Pi.Controls.Add(AboutBox1)
-        AboutBox1.Show()
+        Pi.Controls.Add(About)
+        About.Show()
 
     End Sub
     Private Sub MainScreen_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
