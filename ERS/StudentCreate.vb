@@ -6,15 +6,14 @@ Public Class StudentCreate
 
 
     Private Sub Button3_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        pl.Text = ""
         Try
             If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                pl.Text = OpenFileDialog1.FileName
+                pic = OpenFileDialog1.FileName
             End If
-            PictureBox1.Image = Image.FromFile(pl.Text)
+            PictureBox1.Image = Image.FromFile(pic)
         Catch
             MsgBox("Please select picture.")
-            pl.Text = ""
+
             PictureBox1.Image = PictureBox1.ErrorImage
         End Try
     End Sub
@@ -34,7 +33,7 @@ Public Class StudentCreate
         End If
     End Function
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StudentCreateEnrollBtn.Click
-        If (cont.Text = "" Or pl.Text = "" Or age.Text = "" Or sn.Text = "" Or gen.SelectedItem = "" Or ln.Text = "" Or fn.Text = "" Or mn.Text = "" Or add.Text = "" Or pi.Text = "" Or rel.Text = "" Or citi.Text = "" Or sy.Text = "" Or gl.Text = "" Or mon.Text = "" Or mono.Text = "" Or fon.Text = "" Or fono.Text = "" Or gdn.Text = "" Or rl.Text = "") Then
+        If (cont.Text = "" Or age.Text = "" Or sn.Text = "" Or gen.SelectedItem = "" Or ln.Text = "" Or fn.Text = "" Or mn.Text = "" Or add.Text = "" Or pi.Text = "" Or rel.Text = "" Or citi.Text = "" Or sy.Text = "" Or gl.Text = "" Or mon.Text = "" Or mono.Text = "" Or fon.Text = "" Or fono.Text = "" Or gdn.Text = "" Or rl.Text = "") Then
             MsgBox("Please fill the empty fields!")
         Else
             Dim encodingtypestring As String = String.Empty
@@ -49,7 +48,7 @@ Public Class StudentCreate
             Catch
             End Try
             decoding = encodingtypestring
-            pl.Text = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+            pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
 
 
 
@@ -61,7 +60,7 @@ Public Class StudentCreate
             Try
                 ins.Connection = objConn
                 ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
-                ins.Parameters.AddWithValue("@Photo", pl.Text)
+                ins.Parameters.AddWithValue("@Photo", pic)
                 ins.Parameters.AddWithValue("@Student_ID_No", sn.Text)
                 ins.Parameters.AddWithValue("@LastName", ln.Text)
                 ins.Parameters.AddWithValue("@GivenName", fn.Text)

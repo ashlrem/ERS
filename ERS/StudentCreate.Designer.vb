@@ -61,7 +61,6 @@ Partial Class StudentCreate
         Me.gen = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.rl = New System.Windows.Forms.MaskedTextBox()
         Me.gdn = New System.Windows.Forms.MaskedTextBox()
@@ -139,7 +138,6 @@ Partial Class StudentCreate
         Me.pi.Controls.Add(Me.gen)
         Me.pi.Controls.Add(Me.Label7)
         Me.pi.Controls.Add(Me.Label8)
-        Me.pi.Controls.Add(Me.pl)
         Me.pi.Location = New System.Drawing.Point(20, 9)
         Me.pi.Margin = New System.Windows.Forms.Padding(5)
         Me.pi.Name = "pi"
@@ -177,7 +175,7 @@ Partial Class StudentCreate
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 29)
+        Me.PictureBox1.Location = New System.Drawing.Point(38, 29)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(169, 122)
@@ -495,16 +493,6 @@ Partial Class StudentCreate
         Me.Label8.Size = New System.Drawing.Size(97, 20)
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "StudentID:"
-        '
-        'pl
-        '
-        Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(46, 87)
-        Me.pl.Margin = New System.Windows.Forms.Padding(5)
-        Me.pl.Multiline = True
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(136, 26)
-        Me.pl.TabIndex = 8
         '
         'OpenFileDialog1
         '
@@ -827,7 +815,6 @@ Partial Class StudentCreate
     End Sub
     Friend WithEvents pi As System.Windows.Forms.GroupBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents gen As System.Windows.Forms.ComboBox

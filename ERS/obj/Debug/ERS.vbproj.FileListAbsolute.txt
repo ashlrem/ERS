@@ -740,7 +740,6 @@ C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\bin\Debug\AForge.Video.VFW.xml
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\bin\Debug\AForge.Video.Ximea.xml
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\bin\Debug\AForge.Vision.xml
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.vbprojResolveAssemblyReference.cache
-C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.AboutBox1.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.addBookItem.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.AddPayment_A.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.AddClass.resources
@@ -785,7 +784,6 @@ C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.UpdateStudent_R.r
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.UpdateClass_A.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.UpdateClass_R.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ViewStudent.resources
-C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ViewStudentInfo.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ViewStudent_R.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ViewStud_C.resources
 C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ViewClass.resources
@@ -805,3 +803,16 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.About.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\RdlCompile.cache
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\RdlCompile.compiled
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.SearchStudent.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.About.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.AddClassR.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ChangePassC.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ChangePassR.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.forgot2.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.forgot3.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ForgotC.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.ForgotR.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.SearchStudent.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.UpdateCashierC.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\ERS.UpdateRegistrarR.resources
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\RdlCompile.cache
+C:\Users\Joven Maningas\Documents\GitHub\ERS\ERS\obj\Debug\RdlCompile.compiled

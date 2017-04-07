@@ -22,7 +22,7 @@ Public Class AdminCreate_1
         Catch
         End Try
         decoding = encodingtypestring
-        pl.Text = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+        pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
         createAdmin_1()
     End Sub
     Public Function imagetobase64(ByVal image As Image, ByVal format As ImageFormat) As String
@@ -48,16 +48,15 @@ Public Class AdminCreate_1
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        pl.Text = ""
+
         Try
             If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                pl.Text = OpenFileDialog1.FileName
+                pic = OpenFileDialog1.FileName
             End If
-            PictureBox1.Image = Image.FromFile(pl.Text)
+            PictureBox1.Image = Image.FromFile(pic)
         Catch
             MsgBox("Please select picture.")
-            pl.Text = ""
-            PictureBox1.Image = PictureBox1.ErrorImage
+                 PictureBox1.Image = PictureBox1.ErrorImage
         End Try
     End Sub
 
