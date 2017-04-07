@@ -199,7 +199,7 @@ Partial Class Screen_Registrar
         'SubjectToolStripMenuItem1
         '
         Me.SubjectToolStripMenuItem1.Name = "SubjectToolStripMenuItem1"
-        Me.SubjectToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SubjectToolStripMenuItem1.Size = New System.Drawing.Size(113, 22)
         Me.SubjectToolStripMenuItem1.Text = "Subject"
         '
         'RegistrarPanelPictureBox

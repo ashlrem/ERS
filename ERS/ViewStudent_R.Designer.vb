@@ -48,7 +48,7 @@ Partial Class ViewStudent_R
         '
         'SearchStudent_btn
         '
-        Me.SearchStudent_btn.Location = New System.Drawing.Point(517, 151)
+        Me.SearchStudent_btn.Location = New System.Drawing.Point(513, 111)
         Me.SearchStudent_btn.Name = "SearchStudent_btn"
         Me.SearchStudent_btn.Size = New System.Drawing.Size(75, 23)
         Me.SearchStudent_btn.TabIndex = 83
@@ -59,7 +59,7 @@ Partial Class ViewStudent_R
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(525, 243)
+        Me.Label8.Location = New System.Drawing.Point(521, 203)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(47, 13)
         Me.Label8.TabIndex = 75
@@ -69,7 +69,7 @@ Partial Class ViewStudent_R
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Location = New System.Drawing.Point(525, 191)
+        Me.Label7.Location = New System.Drawing.Point(521, 151)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(48, 13)
         Me.Label7.TabIndex = 76
@@ -79,7 +79,7 @@ Partial Class ViewStudent_R
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(215, 265)
+        Me.Label6.Location = New System.Drawing.Point(211, 225)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 80
@@ -89,7 +89,7 @@ Partial Class ViewStudent_R
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(525, 217)
+        Me.Label5.Location = New System.Drawing.Point(521, 177)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(29, 13)
         Me.Label5.TabIndex = 79
@@ -99,7 +99,7 @@ Partial Class ViewStudent_R
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(215, 236)
+        Me.Label4.Location = New System.Drawing.Point(211, 196)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 13)
         Me.Label4.TabIndex = 77
@@ -109,7 +109,7 @@ Partial Class ViewStudent_R
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(215, 213)
+        Me.Label3.Location = New System.Drawing.Point(211, 173)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 13)
         Me.Label3.TabIndex = 78
@@ -119,7 +119,7 @@ Partial Class ViewStudent_R
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(215, 187)
+        Me.Label2.Location = New System.Drawing.Point(211, 147)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 13)
         Me.Label2.TabIndex = 81
@@ -129,7 +129,7 @@ Partial Class ViewStudent_R
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(209, 157)
+        Me.Label1.Location = New System.Drawing.Point(205, 117)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(84, 13)
         Me.Label1.TabIndex = 82
@@ -146,7 +146,7 @@ Partial Class ViewStudent_R
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(35, 157)
+        Me.PictureBox2.Location = New System.Drawing.Point(31, 117)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(151, 130)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -156,7 +156,7 @@ Partial Class ViewStudent_R
         'con
         '
         Me.con.Enabled = False
-        Me.con.Location = New System.Drawing.Point(616, 240)
+        Me.con.Location = New System.Drawing.Point(612, 200)
         Me.con.Name = "con"
         Me.con.Size = New System.Drawing.Size(158, 20)
         Me.con.TabIndex = 71
@@ -164,7 +164,7 @@ Partial Class ViewStudent_R
         'sy
         '
         Me.sy.Enabled = False
-        Me.sy.Location = New System.Drawing.Point(315, 236)
+        Me.sy.Location = New System.Drawing.Point(311, 196)
         Me.sy.Name = "sy"
         Me.sy.Size = New System.Drawing.Size(176, 20)
         Me.sy.TabIndex = 70
@@ -172,7 +172,7 @@ Partial Class ViewStudent_R
         'ag
         '
         Me.ag.Enabled = False
-        Me.ag.Location = New System.Drawing.Point(615, 213)
+        Me.ag.Location = New System.Drawing.Point(611, 173)
         Me.ag.Name = "ag"
         Me.ag.Size = New System.Drawing.Size(159, 20)
         Me.ag.TabIndex = 73
@@ -180,7 +180,7 @@ Partial Class ViewStudent_R
         'gl
         '
         Me.gl.Enabled = False
-        Me.gl.Location = New System.Drawing.Point(315, 210)
+        Me.gl.Location = New System.Drawing.Point(311, 170)
         Me.gl.Name = "gl"
         Me.gl.Size = New System.Drawing.Size(176, 20)
         Me.gl.TabIndex = 72
@@ -188,7 +188,7 @@ Partial Class ViewStudent_R
         'bd
         '
         Me.bd.Enabled = False
-        Me.bd.Location = New System.Drawing.Point(615, 184)
+        Me.bd.Location = New System.Drawing.Point(611, 144)
         Me.bd.Name = "bd"
         Me.bd.Size = New System.Drawing.Size(159, 20)
         Me.bd.TabIndex = 67
@@ -196,7 +196,7 @@ Partial Class ViewStudent_R
         'nam
         '
         Me.nam.Enabled = False
-        Me.nam.Location = New System.Drawing.Point(315, 184)
+        Me.nam.Location = New System.Drawing.Point(311, 144)
         Me.nam.Name = "nam"
         Me.nam.Size = New System.Drawing.Size(176, 20)
         Me.nam.TabIndex = 66
@@ -204,21 +204,21 @@ Partial Class ViewStudent_R
         'add
         '
         Me.add.Enabled = False
-        Me.add.Location = New System.Drawing.Point(315, 262)
+        Me.add.Location = New System.Drawing.Point(311, 222)
         Me.add.Name = "add"
         Me.add.Size = New System.Drawing.Size(176, 20)
         Me.add.TabIndex = 69
         '
         'sn
         '
-        Me.sn.Location = New System.Drawing.Point(315, 153)
+        Me.sn.Location = New System.Drawing.Point(311, 113)
         Me.sn.Name = "sn"
         Me.sn.Size = New System.Drawing.Size(176, 20)
         Me.sn.TabIndex = 68
         '
         'pl
         '
-        Me.pl.Location = New System.Drawing.Point(86, 180)
+        Me.pl.Location = New System.Drawing.Point(82, 140)
         Me.pl.Name = "pl"
         Me.pl.Size = New System.Drawing.Size(100, 20)
         Me.pl.TabIndex = 84

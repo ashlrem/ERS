@@ -42,7 +42,10 @@ Public Class AdminCreate_1
         End Get
     End Property
     Private Sub AdminCreate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Me.FormBorderStyle = 0
+        Dim Screen As System.Drawing.Rectangle
+        Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 125)
+        Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         pl.Text = ""

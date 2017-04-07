@@ -29,22 +29,25 @@ Public Class AdminCreate
         Catch
         End Try
         decoding = encodingtypestring
-        pl.Text = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+        pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
         createAdmin()
     End Sub
 
     Private Sub AdminCreate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Me.FormBorderStyle = 0
+        Dim Screen As System.Drawing.Rectangle
+        Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 125)
+        Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         Try
             If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                pl.Text = OpenFileDialog1.FileName
+                pic = OpenFileDialog1.FileName
             End If
             PictureBox1.Image = Image.FromFile(pl.Text)
         Catch
             MsgBox("Please select picture.")
-            pl.Text = ""
+            pic = ""
             PictureBox1.Image = PictureBox1.ErrorImage
         End Try
         pl.Text = ""
@@ -62,8 +65,9 @@ Public Class AdminCreate
             Using ms As New MemoryStream()
                 image.Save(ms, format)
                 Dim imageByte As Byte() = ms.ToArray()
-                Dim base64String As String = Convert.ToBase64String(imageByte)
-                Return base64String
+            Dim base64String As String = Convert.ToBase64String(imageByte)
+            pic = base64String
+            Return base64String
             End Using
     End Function
 
