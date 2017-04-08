@@ -33,6 +33,7 @@ Public Class StudentCreate
         End If
     End Function
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StudentCreateEnrollBtn.Click
+        StudentNo = ""
         If (cont.Text = "" Or age.Text = "" Or sn.Text = "" Or gen.SelectedItem = "" Or ln.Text = "" Or fn.Text = "" Or mn.Text = "" Or add.Text = "" Or pi.Text = "" Or rel.Text = "" Or citi.Text = "" Or sy.Text = "" Or gl.Text = "" Or mon.Text = "" Or mono.Text = "" Or fon.Text = "" Or fono.Text = "" Or gdn.Text = "" Or rl.Text = "") Then
             MsgBox("Please fill the empty fields!")
         Else
@@ -58,58 +59,72 @@ Public Class StudentCreate
                     s = "No"
                 End If
 
-            Dim objConn As New MySqlConnection
-            Dim ins As New MySqlCommand
-            Dim cn = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
-            objConn.ConnectionString = cn
-            objConn.Open()
+                Dim objConn As New MySqlConnection
+                Dim ins As New MySqlCommand
+                Dim cn = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+                objConn.ConnectionString = cn
+                objConn.Open()
+                Dim b As String = bd.Value.ToString("MM/dd/yyyy")
 
-                Try
-                    ins.Connection = objConn
-                    ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
-                    ins.Parameters.AddWithValue("@Photo", pic)
-                    ins.Parameters.AddWithValue("@Student_ID_No", sn.Text)
-                    ins.Parameters.AddWithValue("@LastName", ln.Text)
-                    ins.Parameters.AddWithValue("@GivenName", fn.Text)
-                    ins.Parameters.AddWithValue("@MiddleName", mn.Text)
-                    ins.Parameters.AddWithValue("@Birthday", bd.Text)
-                    ins.Parameters.AddWithValue("@Birth_Place", bp.Text)
-                    ins.Parameters.AddWithValue("@Gender", gen.SelectedItem.ToString)
-                    ins.Parameters.AddWithValue("@Address", add.Text)
-                    ins.Parameters.AddWithValue("@Age", age.Text)
-                    ins.Parameters.AddWithValue("@Citizenship", citi.Text)
-                    ins.Parameters.AddWithValue("@Religion", rel.Text)
-                    ins.Parameters.AddWithValue("@SchoolYear", sy.Text)
-                    ins.Parameters.AddWithValue("@GradeLevel", gl.SelectedItem.ToString)
-                    ins.Parameters.AddWithValue("@Section", sec.SelectedItem.ToString)
-                    ins.Parameters.AddWithValue("@Scholar", s)
-                    ins.Parameters.AddWithValue("@MotherName", mon.Text)
-                    ins.Parameters.AddWithValue("@OccupationM", mono.Text)
-                    ins.Parameters.AddWithValue("@FatherName", fon.Text)
-                    ins.Parameters.AddWithValue("@OccupationF", fono.Text)
-                    ins.Parameters.AddWithValue("@Guardian", gdn.Text)
-                    ins.Parameters.AddWithValue("@Relation", rl.Text)
-                    ins.Parameters.AddWithValue("@Contact", cont.Text)
-                    ins.Parameters.AddWithValue("@NSO", NSO2)
-                    ins.Parameters.AddWithValue("@Baptismal", baptis)
-                    ins.Parameters.AddWithValue("@Name_Of_LastSchool", nols.Text)
-                    ins.Parameters.AddWithValue("@Address_of_LastSchool", addScho.Text)
-                    ins.Parameters.AddWithValue("@UploadCard", card)
-                    ins.Parameters.AddWithValue("@UploadForm137", form137)
-                    ins.Parameters.AddWithValue("@UploadGoodMoral", goodMoral)
-
-                    ins.ExecuteNonQuery()
-
-                    pic = ""
-                    PictureBox1.Image = Nothing
-                    MsgBox("Student Added!!")
-                    AddSubClear()
-                    objConn.Close()
+                sn_check()
 
 
-                Catch ex As Exception
-                    MessageBox.Show(ex.ToString)
-                End Try
+                If StudentNo = "" Then
+
+
+                    Try
+                        ins.Connection = objConn
+                        ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
+                        ins.Parameters.AddWithValue("@Photo", pic)
+                        ins.Parameters.AddWithValue("@Student_ID_No", sn.Text)
+                        ins.Parameters.AddWithValue("@LastName", ln.Text)
+                        ins.Parameters.AddWithValue("@GivenName", fn.Text)
+                        ins.Parameters.AddWithValue("@MiddleName", mn.Text)
+                        ins.Parameters.AddWithValue("@Birthday", b)
+                        ins.Parameters.AddWithValue("@Birth_Place", bp.Text)
+                        ins.Parameters.AddWithValue("@Gender", gen.SelectedItem.ToString)
+                        ins.Parameters.AddWithValue("@Address", add.Text)
+                        ins.Parameters.AddWithValue("@Age", age.Text)
+                        ins.Parameters.AddWithValue("@Citizenship", citi.Text)
+                        ins.Parameters.AddWithValue("@Religion", rel.Text)
+                        ins.Parameters.AddWithValue("@SchoolYear", sy.Text)
+                        ins.Parameters.AddWithValue("@GradeLevel", gl.SelectedItem.ToString)
+                        ins.Parameters.AddWithValue("@Section", sec.SelectedItem.ToString)
+                        ins.Parameters.AddWithValue("@Scholar", s)
+                        ins.Parameters.AddWithValue("@MotherName", mon.Text)
+                        ins.Parameters.AddWithValue("@OccupationM", mono.Text)
+                        ins.Parameters.AddWithValue("@FatherName", fon.Text)
+                        ins.Parameters.AddWithValue("@OccupationF", fono.Text)
+                        ins.Parameters.AddWithValue("@Guardian", gdn.Text)
+                        ins.Parameters.AddWithValue("@Relation", rl.Text)
+                        ins.Parameters.AddWithValue("@Contact", cont.Text)
+                        ins.Parameters.AddWithValue("@NSO", NSO2)
+                        ins.Parameters.AddWithValue("@Baptismal", baptis)
+                        ins.Parameters.AddWithValue("@Name_Of_LastSchool", nols.Text)
+                        ins.Parameters.AddWithValue("@Address_of_LastSchool", addScho.Text)
+                        ins.Parameters.AddWithValue("@UploadCard", card)
+                        ins.Parameters.AddWithValue("@UploadForm137", form137)
+                        ins.Parameters.AddWithValue("@UploadGoodMoral", goodMoral)
+
+                        ins.ExecuteNonQuery()
+                        CheckBox1.Checked = False
+                        CheckBox2.Checked = False
+                        CheckBox3.Checked = False
+                        CheckBox4.Checked = False
+                        CheckBox5.Checked = False
+                        CheckBox6.Checked = False
+                        pic = ""
+                        PictureBox1.Image = Nothing
+                        MsgBox("Student Added!!")
+                        AddSubClear()
+                        objConn.Close()
+
+                    Catch ex As Exception
+                        MessageBox.Show(ex.ToString)
+                    End Try
+                Else
+                    MsgBox("Student ID already exist in the Database!")
+                End If
 
             Catch
                 MsgBox("Must upload picture.")
@@ -131,10 +146,6 @@ Public Class StudentCreate
             Screen_Admin.Show()
             Me.Close()
         End If
-    End Sub
-    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        AddClass.Show()
-        Me.Hide()
     End Sub
 
     Private Sub Transferee_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Transferee.CheckedChanged
