@@ -17,4 +17,8 @@
         Me.Top = (Screen.Height \ 2) - (Me.Height - 80)
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
+
+    Private Sub gl_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gl.SelectedIndexChanged
+
+    End Sub
 End Class
