@@ -27,6 +27,7 @@ Partial Class SearchStudent
         Me.filterText = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblNoOfStudent = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -79,11 +80,22 @@ Partial Class SearchStudent
         Me.lblNoOfStudent.TabIndex = 4
         Me.lblNoOfStudent.Text = "-"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(916, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Cancel"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'SearchStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1003, 370)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblNoOfStudent)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.filterText)
@@ -102,4 +114,5 @@ Partial Class SearchStudent
     Friend WithEvents filterText As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblNoOfStudent As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
