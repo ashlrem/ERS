@@ -138,8 +138,8 @@ Module Module1
                         ins.Parameters.AddWithValue("@Answer2", My.Forms.AdminCreate.ans2.Text)
                         ins.Parameters.AddWithValue("@EmployeeID", My.Forms.AdminCreate.en.Text)
                         ins.Parameters.AddWithValue("@Password", My.Forms.AdminCreate.pw.Text)
-                        ins.Parameters.AddWithValue("@status", My.Forms.AdminCreate.statusTxtBoxAdmin.Text)
-                        ins.Parameters.AddWithValue("@LogIn_Attempts", My.Forms.AdminCreate.loginAttempt.Text)
+                        ins.Parameters.AddWithValue("@status", "Active")
+                        ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
                         MsgBox("Admin Account Successfully Created!")
                         My.Forms.AdminCreate.ln.Focus()
@@ -222,8 +222,8 @@ Module Module1
                         ins.Parameters.AddWithValue("@Answer2", My.Forms.AdminCreate_1.ans2.Text)
                         ins.Parameters.AddWithValue("@EmployeeID", My.Forms.AdminCreate_1.en.Text)
                         ins.Parameters.AddWithValue("@Password", My.Forms.AdminCreate_1.pw.Text)
-                        ins.Parameters.AddWithValue("@status", My.Forms.AdminCreate_1.statusTxtBoxAdmin1.Text)
-                        ins.Parameters.AddWithValue("@LogIn_Attempts", My.Forms.AdminCreate_1.loginAttempt.Text)
+                        ins.Parameters.AddWithValue("@status", "Active")
+                        ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
                         MsgBox("Admin Account Successfully Created!")
                         My.Forms.AdminCreate_1.ln.Focus()
@@ -258,7 +258,7 @@ Module Module1
             MsgBox("AlphaNumericSymbol needed to Password!")
             My.Forms.RegistrarCreate.pw.Clear()
 
-        ElseIf (My.Forms.RegistrarCreate.pl.Text = "" Or My.Forms.RegistrarCreate.ln.Text = "" Or My.Forms.RegistrarCreate.fn.Text = "" Or My.Forms.RegistrarCreate.mn.Text = "" Or My.Forms.RegistrarCreate.bd.Text = "" Or My.Forms.RegistrarCreate.add.Text = "" Or My.Forms.RegistrarCreate.eadd.Text = "" Or My.Forms.RegistrarCreate.cno.Text = "" Or My.Forms.RegistrarCreate.sq1.SelectedItem = "" Or My.Forms.RegistrarCreate.sq2.SelectedItem = "" Or My.Forms.RegistrarCreate.ans1.Text = "" Or My.Forms.RegistrarCreate.ans2.Text = "" Or My.Forms.RegistrarCreate.en.Text = "" Or My.Forms.RegistrarCreate.pw.Text = "" Or My.Forms.RegistrarCreate.rtp.Text = "") Then
+        ElseIf (My.Forms.RegistrarCreate.ln.Text = "" Or My.Forms.RegistrarCreate.fn.Text = "" Or My.Forms.RegistrarCreate.mn.Text = "" Or My.Forms.RegistrarCreate.bd.Text = "" Or My.Forms.RegistrarCreate.add.Text = "" Or My.Forms.RegistrarCreate.eadd.Text = "" Or My.Forms.RegistrarCreate.cno.Text = "" Or My.Forms.RegistrarCreate.sq1.SelectedItem = "" Or My.Forms.RegistrarCreate.sq2.SelectedItem = "" Or My.Forms.RegistrarCreate.ans1.Text = "" Or My.Forms.RegistrarCreate.ans2.Text = "" Or My.Forms.RegistrarCreate.en.Text = "" Or My.Forms.RegistrarCreate.pw.Text = "" Or My.Forms.RegistrarCreate.rtp.Text = "") Then
             MsgBox("Fill the empty box")
         Else
             If (My.Forms.RegistrarCreate.rtp.Text = My.Forms.RegistrarCreate.pw.Text) Then
@@ -305,7 +305,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@Answer2", My.Forms.RegistrarCreate.ans2.Text)
                         ins.Parameters.AddWithValue("@EmployeeID", My.Forms.RegistrarCreate.en.Text)
                         ins.Parameters.AddWithValue("@Password", My.Forms.RegistrarCreate.pw.Text)
-                        ins.Parameters.AddWithValue("@status", My.Forms.RegistrarCreate.statusTextBoxRegistrar.Text)
+                        ins.Parameters.AddWithValue("@status", "Active")
                         ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
                         MsgBox("Registrar Account Successfully Created!")
@@ -337,7 +337,7 @@ Module Module1
             MsgBox("AlphaNumericSymbol needed to Password!")
             My.Forms.CashierCreate.pw.Clear()
 
-        ElseIf (My.Forms.CashierCreate.pl.Text = "" Or My.Forms.CashierCreate.ln.Text = "" Or My.Forms.CashierCreate.fn.Text = "" Or My.Forms.CashierCreate.mn.Text = "" Or My.Forms.CashierCreate.bd.Text = "" Or My.Forms.CashierCreate.add.Text = "" Or My.Forms.CashierCreate.eadd.Text = "" Or My.Forms.CashierCreate.cno.Text = "" Or My.Forms.CashierCreate.sq1.SelectedItem = "" Or My.Forms.CashierCreate.sq2.SelectedItem = "" Or My.Forms.CashierCreate.ans1.Text = "" Or My.Forms.CashierCreate.ans2.Text = "" Or My.Forms.CashierCreate.en.Text = "" Or My.Forms.CashierCreate.pw.Text = "" Or My.Forms.CashierCreate.rtp.Text = "") Then
+        ElseIf (My.Forms.CashierCreate.ln.Text = "" Or My.Forms.CashierCreate.fn.Text = "" Or My.Forms.CashierCreate.mn.Text = "" Or My.Forms.CashierCreate.bd.Text = "" Or My.Forms.CashierCreate.add.Text = "" Or My.Forms.CashierCreate.eadd.Text = "" Or My.Forms.CashierCreate.cno.Text = "" Or My.Forms.CashierCreate.sq1.SelectedItem = "" Or My.Forms.CashierCreate.sq2.SelectedItem = "" Or My.Forms.CashierCreate.ans1.Text = "" Or My.Forms.CashierCreate.ans2.Text = "" Or My.Forms.CashierCreate.en.Text = "" Or My.Forms.CashierCreate.pw.Text = "" Or My.Forms.CashierCreate.rtp.Text = "") Then
             MsgBox("Fill the empty box")
         Else
             If (My.Forms.CashierCreate.rtp.Text = My.Forms.CashierCreate.pw.Text) Then
@@ -365,7 +365,7 @@ Module Module1
 
                         'cashier_accounts create (insert to database)
                         ins.CommandText = "INSERT INTO cashier_account VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status, @LogIn_Attempts)"
-                        ins.Parameters.AddWithValue("@Photo", My.Forms.CashierCreate.pl.Text)
+                        ins.Parameters.AddWithValue("@Photo", pic)
                         ins.Parameters.AddWithValue("@Surname", My.Forms.CashierCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.CashierCreate.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.CashierCreate.mn.Text)
@@ -379,7 +379,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@Answer2", My.Forms.CashierCreate.ans2.Text)
                         ins.Parameters.AddWithValue("@EmployeeID", My.Forms.CashierCreate.en.Text)
                         ins.Parameters.AddWithValue("@Password", My.Forms.CashierCreate.pw.Text)
-                        ins.Parameters.AddWithValue("@status", My.Forms.CashierCreate.statusTextBoxCashier.Text)
+                        ins.Parameters.AddWithValue("@status", "Active")
                         ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
                         MsgBox("Cashier Account Successfuly Created!")
@@ -486,7 +486,7 @@ Module Module1
         My.Forms.AddClass.gl.SelectedIndex = -1
         My.Forms.AddClass.sec.Text = ""
 
-        My.Forms.AdminCreate.pl.Text = ""
+
         My.Forms.AdminCreate.ln.Text = ""
         My.Forms.AdminCreate.fn.Text = ""
         My.Forms.AdminCreate.mn.Text = ""
@@ -503,7 +503,7 @@ Module Module1
         My.Forms.AdminCreate.rtp.Text = ""
 
 
-        My.Forms.StudentCreate.pl.Text = ""
+
         My.Forms.StudentCreate.sn.Text = ""
         My.Forms.StudentCreate.ln.Text = ""
         My.Forms.StudentCreate.fn.Text = ""
@@ -526,7 +526,7 @@ Module Module1
         My.Forms.StudentCreate.nso.Text = ""
         My.Forms.StudentCreate.bc.Text = ""
         My.Forms.StudentCreate.bap.Text = ""
-        My.Forms.StudentCreate.pl.Text = ""
+
     End Sub
     Public Sub LoginReg()
         'method to para mag login si registrar, from here, magbabago yung SQL Query natin, instead na INSERT,
@@ -1586,7 +1586,7 @@ Module Module1
     End Sub
     Public Sub delcas1()
         'not implemented
-        Dim reg As String = "DELETE FROM admin WHERE EmployeeID = '" & My.Forms.DeleteCashier.en.Text & "'"
+        Dim reg As String = "DELETE FROM cashier_account WHERE EmployeeID = '" & My.Forms.DeleteCashier.en.Text & "'"
         Try
             Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn)

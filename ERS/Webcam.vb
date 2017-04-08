@@ -28,6 +28,7 @@ Public Class Webcam
     End Sub
 
     Private Sub capture_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles capture_btn.Click
+
         PictureBox1.Image = PictureBox1.Image
         CAMERA.Stop()
         'Dim Path As String
@@ -41,7 +42,6 @@ Public Class Webcam
                 CAMERA.Start()
             ElseIf cameras.ShowDialog() = Windows.Forms.DialogResult.Cancel Then
 
-
             End If
         ElseIf (a = MsgBoxResult.No) Then
             Dim cameras As VideoCaptureDeviceForm = New VideoCaptureDeviceForm
@@ -53,21 +53,22 @@ Public Class Webcam
 
                 pic = SaveFileDialog1.FileName
                 My.Forms.AdminCreate.PictureBox1.Image = Image.FromFile(pic)
-                My.Forms.AdminCreate.pl.Text = ""
+
+
+                My.Forms.AdminCreate_1.pl.Text = SaveFileDialog1.FileName
+                My.Forms.AdminCreate_1.PictureBox1.Image = Image.FromFile(My.Forms.AdminCreate_1.pl.Text)
+                My.Forms.AdminCreate_1.pl.Text = ""
 
                 pic = SaveFileDialog1.FileName
-                My.Forms.AdminCreate_1.PictureBox1.Image = Image.FromFile(pic)
-
-                My.Forms.CashierCreate.pl.Text = SaveFileDialog1.FileName
                 My.Forms.CashierCreate.PictureBox1.Image = Image.FromFile(pic)
+
 
                 pic = SaveFileDialog1.FileName
                 My.Forms.RegistrarCreate.PictureBox1.Image = Image.FromFile(pic)
 
+
                 pic = SaveFileDialog1.FileName
                 My.Forms.StudentCreate.PictureBox1.Image = Image.FromFile(pic)
-                '   My.Forms.StudentCreate.pl.Text = ""
-
 
                 AdminCreate.Enabled = True
                 AdminCreate_1.Enabled = True

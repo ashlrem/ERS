@@ -5,7 +5,7 @@ Public Class SearchStudent
     Private Sub SearchStudent_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
             Dim str As String = "server= '" & server & "';port= '" & port & "';userid= '" & user & "';password= '" & password & "';database='" & database & "'"
             Dim con As New MySqlConnection(str)
-            Dim com As String = "Select Student_ID_No, LastName, GivenName, MiddleName, Birthday, Gender, SchoolYear, GradeLevel, Section, MotherName, OccupationM from student_info"
+        Dim com As String = "Select Student_ID_No, LastName, GivenName, MiddleName, Birthday, Gender, SchoolYear, GradeLevel, Section, MotherName, OccupationM from student_info  "
             Dim Adpt As New MySqlDataAdapter(com, con)
         Dim ds As New DataSet()
             Adpt.Fill(ds, "student_info")
@@ -60,5 +60,9 @@ Public Class SearchStudent
             Screen_Admin.Show()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub filterText_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles filterText.TextChanged
+
     End Sub
 End Class

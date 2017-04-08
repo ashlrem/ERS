@@ -45,7 +45,6 @@ Partial Class AdminCreate
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.statusTxtBoxAdmin = New System.Windows.Forms.TextBox()
         Me.loginAttempt = New System.Windows.Forms.TextBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.cno = New System.Windows.Forms.TextBox()
         Me.ans1 = New System.Windows.Forms.TextBox()
         Me.ans2 = New System.Windows.Forms.TextBox()
@@ -238,14 +237,6 @@ Partial Class AdminCreate
         Me.loginAttempt.Text = "0"
         Me.loginAttempt.Visible = False
         '
-        'pl
-        '
-        Me.pl.Location = New System.Drawing.Point(180, 12)
-        Me.pl.Multiline = True
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(70, 33)
-        Me.pl.TabIndex = 39
-        '
         'cno
         '
         Me.cno.Location = New System.Drawing.Point(625, 157)
@@ -262,7 +253,7 @@ Partial Class AdminCreate
         '
         'ans2
         '
-        Me.ans2.Location = New System.Drawing.Point(180, 289)
+        Me.ans2.Location = New System.Drawing.Point(180, 293)
         Me.ans2.Name = "ans2"
         Me.ans2.Size = New System.Drawing.Size(235, 20)
         Me.ans2.TabIndex = 13
@@ -292,7 +283,6 @@ Partial Class AdminCreate
         Me.Controls.Add(Me.ans1)
         Me.Controls.Add(Me.cno)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.pl)
         Me.Controls.Add(Me.loginAttempt)
         Me.Controls.Add(Me.statusTxtBoxAdmin)
         Me.Controls.Add(Me.Button4)
@@ -343,7 +333,6 @@ Partial Class AdminCreate
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents statusTxtBoxAdmin As System.Windows.Forms.TextBox
     Friend WithEvents loginAttempt As System.Windows.Forms.TextBox
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents cno As System.Windows.Forms.TextBox
     Friend WithEvents ans1 As System.Windows.Forms.TextBox
     Friend WithEvents ans2 As System.Windows.Forms.TextBox

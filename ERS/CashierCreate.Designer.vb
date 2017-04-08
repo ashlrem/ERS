@@ -25,7 +25,6 @@ Partial Class CashierCreate
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CashierCreate))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.add = New System.Windows.Forms.TextBox()
         Me.mn = New System.Windows.Forms.TextBox()
         Me.fn = New System.Windows.Forms.TextBox()
@@ -47,7 +46,6 @@ Partial Class CashierCreate
         Me.ans2 = New System.Windows.Forms.TextBox()
         Me.ans1 = New System.Windows.Forms.TextBox()
         Me.cno = New System.Windows.Forms.TextBox()
-        Me.loginAttempt = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -70,14 +68,6 @@ Partial Class CashierCreate
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
-        '
-        'pl
-        '
-        Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(32, 115)
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(83, 20)
-        Me.pl.TabIndex = 8
         '
         'add
         '
@@ -248,21 +238,11 @@ Partial Class CashierCreate
         Me.cno.Size = New System.Drawing.Size(207, 20)
         Me.cno.TabIndex = 7
         '
-        'loginAttempt
-        '
-        Me.loginAttempt.Location = New System.Drawing.Point(442, 298)
-        Me.loginAttempt.Name = "loginAttempt"
-        Me.loginAttempt.Size = New System.Drawing.Size(100, 20)
-        Me.loginAttempt.TabIndex = 29
-        Me.loginAttempt.Text = "0"
-        Me.loginAttempt.Visible = False
-        '
         'CashierCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 330)
-        Me.Controls.Add(Me.loginAttempt)
         Me.Controls.Add(Me.cno)
         Me.Controls.Add(Me.ans2)
         Me.Controls.Add(Me.ans1)
@@ -278,7 +258,6 @@ Partial Class CashierCreate
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.en)
-        Me.Controls.Add(Me.pl)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ln)
         Me.Controls.Add(Me.fn)
@@ -296,7 +275,6 @@ Partial Class CashierCreate
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents add As System.Windows.Forms.TextBox
     Friend WithEvents mn As System.Windows.Forms.TextBox
     Friend WithEvents fn As System.Windows.Forms.TextBox
@@ -319,5 +297,4 @@ Partial Class CashierCreate
     Friend WithEvents ans2 As System.Windows.Forms.TextBox
     Friend WithEvents ans1 As System.Windows.Forms.TextBox
     Friend WithEvents cno As System.Windows.Forms.TextBox
-    Friend WithEvents loginAttempt As System.Windows.Forms.TextBox
 End Class

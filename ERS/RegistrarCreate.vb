@@ -42,15 +42,15 @@ Public Class RegistrarCreate
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        pl.Text = ""
+
         Try
             If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                pl.Text = OpenFileDialog1.FileName
+                pic = OpenFileDialog1.FileName
             End If
-            PictureBox1.Image = Image.FromFile(pl.Text)
+            PictureBox1.Image = Image.FromFile(pic)
         Catch
             MsgBox("Please select picture.")
-            pl.Text = ""
+
             PictureBox1.Image = PictureBox1.ErrorImage
         End Try
     End Sub
