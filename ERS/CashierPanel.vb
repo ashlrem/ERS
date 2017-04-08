@@ -1,4 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.IO
+Imports System.Drawing.Imaging
 Public Class CashierPanel
     Private Sub CashierPanel_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim connection As New MySqlConnection
@@ -7,6 +9,7 @@ Public Class CashierPanel
         Me.Location = New Point(1, 1)
         Me.Size = SystemInformation.PrimaryMonitorSize()
         Me.empl.Text = My.Forms.CashierLogin.en.Text
+
         Try ' :)
             connection.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';database='" & database & "'"
             Dim reg As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & empl.Text & "')"
@@ -14,9 +17,9 @@ Public Class CashierPanel
             Dim cmd As MySqlCommand = New MySqlCommand(reg, connection) 'haha :) try naten mag login as cashier
             r = cmd.ExecuteReader()
             If r.Read Then
-                n1.Text = r("Surname").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
-                email.Text = r("Email_Account").ToString() & "."
-                cn.Text = r("ContactNumber").ToString() & "."
+                'n1.Text = r("Surname").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
+                'email.Text = r("Email_Account").ToString() & "."
+                'cn.Text = r("ContactNumber").ToString() & "."
                 pic = r("Photo").ToString()
                 PictureBox3.Image = base64toimage(pic)
                 pic = ""
@@ -50,4 +53,12 @@ Public Class CashierPanel
             Me.Close()
         End If
     End Sub
+    Public Function base64toimage(ByVal base64code As String) As Image
+        Dim imagebyte As Byte() = Convert.FromBase64String(base64code)
+        Dim ms As New MemoryStream(imagebyte, 0, imagebyte.Length)
+        Dim tmpImage As Image = Image.FromStream(ms, True)
+
+        Return tmpImage
+    End Function
+
 End Class
