@@ -11,6 +11,8 @@ Module Module1
     Public objConn As New MySqlConnection
     Public encodeType As ImageFormat = ImageFormat.Jpeg
     Public decoding As String = String.Empty
+    Public NSO2 As String
+    Public baptis As String
     'Public server As String = "127.0.0.1" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
     'Public port As String = "3306" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
     'Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
@@ -1745,9 +1747,8 @@ Module Module1
 
         'edit Student info
         Try
-            My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
             'eto yung sql query natin, which is UPDATE.
-            Dim reg1 As String = "UPDATE student_info SET Address = '" & My.Forms.UpdateStudent_A.add.Text & "', Birthday = '" & My.Forms.UpdateStudent_A.bd.Text & "', GradeLevel = '" & My.Forms.UpdateStudent_A.gl.Text & "', Birthday = '" & My.Forms.UpdateStudent_A.bd.Text & "', Contact = '" & My.Forms.UpdateStudent_A.con.Text & "', SchoolYear = '" & My.Forms.UpdateStudent_A.sy.Text & "', Age = '" & My.Forms.UpdateStudent_A.ag.Text & "' WHERE Student_ID_No = '" & My.Forms.UpdateStudent_A.sn.Text & "'"
+            Dim reg1 As String = "UPDATE student_info SET Address = '" & My.Forms.UpdateStudent_A.add.Text & "', Birthday = '" & My.Forms.UpdateStudent_A.bd.Text & "', GradeLevel = '" & My.Forms.UpdateStudent_A.gl.Text & "', Birthday = '" & My.Forms.UpdateStudent_A.bd.Text & "', Contact = '" & My.Forms.UpdateStudent_A.con.Text & "', SchoolYear = '" & My.Forms.UpdateStudent_A.sy.Text & "', Age = '" & My.Forms.UpdateStudent_A.ag.Text & "', NSO= '" & NSO2 & "', Baptismal = '" & baptis & "' WHERE Student_ID_No = '" & My.Forms.UpdateStudent_A.sn.Text & "'"
             'eto yung connection string natin, (insert() noon), cn1 dito.
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg1, cn1)
@@ -1756,7 +1757,8 @@ Module Module1
                     MsgBox("Student Info Edited")
                     My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
                     My.Forms.UpdateStudent_A.UpdateButton_a_Student.Enabled = False
-
+                    My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
+                    My.Forms.UpdateStudent_A.sn.Enabled = True
                     My.Forms.UpdateStudent_A.sn.Text = ""
                     My.Forms.UpdateStudent_A.nam.Text = ""
                     My.Forms.UpdateStudent_A.add.Text = ""
@@ -1781,18 +1783,18 @@ Module Module1
 
         'edit Student info
         Try
-            My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
             'eto yung sql query natin, which is UPDATE.
-            Dim reg1 As String = "UPDATE student_info SET Address = '" & My.Forms.UpdateStudent_R.add.Text & "', Birthday = '" & My.Forms.UpdateStudent_R.bd.Text & "', GradeLevel = '" & My.Forms.UpdateStudent_R.gl.Text & "', Birthday = '" & My.Forms.UpdateStudent_R.bd.Text & "', Contact = '" & My.Forms.UpdateStudent_R.con.Text & "', SchoolYear = '" & My.Forms.UpdateStudent_R.sy.Text & "', Age = '" & My.Forms.UpdateStudent_R.ag.Text & "' WHERE Student_ID_No = '" & My.Forms.UpdateStudent_R.sn.Text & "'"
+            Dim reg1 As String = "UPDATE student_info SET Address = '" & My.Forms.UpdateStudent_R.add.Text & "', Birthday = '" & My.Forms.UpdateStudent_R.bd.Text & "', GradeLevel = '" & My.Forms.UpdateStudent_R.gl.Text & "', Birthday = '" & My.Forms.UpdateStudent_R.bd.Text & "', Contact = '" & My.Forms.UpdateStudent_R.con.Text & "', SchoolYear = '" & My.Forms.UpdateStudent_R.sy.Text & "', Age = '" & My.Forms.UpdateStudent_R.ag.Text & "', NSO = '" & NSO2 & "', Baptismal ='" & baptis & "' WHERE Student_ID_No = '" & My.Forms.UpdateStudent_R.sn.Text & "'"
             'eto yung connection string natin, (insert() noon), cn1 dito.
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg1, cn1)
                     cn1.Open() 'open connection
                     sqlCmd.ExecuteNonQuery() 'execute sql query
                     MsgBox("Student Info Edited")
-                    My.Forms.UpdateStudent_R.SearchStudent_btn.Enabled = True
                     My.Forms.UpdateStudent_R.UpdateButton_a_Student.Enabled = False
-
+                    My.Forms.UpdateStudent_A.sn.Enabled = True
+                    My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
+                    My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
                     My.Forms.UpdateStudent_R.sn.Text = ""
                     My.Forms.UpdateStudent_R.nam.Text = ""
                     My.Forms.UpdateStudent_R.add.Text = ""
@@ -2584,6 +2586,24 @@ Module Module1
                 My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = False
                 My.Forms.UpdateStudent_A.PictureBox2.Image = base64toimage(pic)
 
+                Dim nso As String = r("NSO").ToString()
+                Dim baptismal As String = r("Baptismal").ToString()
+                If nso = "" Then
+                    My.Forms.ViewStudent_R.nso.Checked = False
+                    My.Forms.ViewStudent_R.nso.Enabled = True
+                Else
+                    My.Forms.ViewStudent_R.nso.Checked = True
+                    My.Forms.ViewStudent_R.nso.Enabled = False
+
+                End If
+
+                If baptismal = "" Then
+                    My.Forms.ViewStudent_R.bapt.Checked = False
+                    My.Forms.ViewStudent_R.bapt.Enabled = True
+                Else
+                    My.Forms.ViewStudent_R.bapt.Checked = True
+                    My.Forms.ViewStudent_R.bapt.Enabled = False
+                End If
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2656,11 +2676,28 @@ Module Module1
                 My.Forms.DeleteStudent_R.ag.Text = r("Age").ToString()
                 pic = r("Photo").ToString()
                 My.Forms.DeleteStudent_R.PictureBox2.Image = base64toimage(pic)
-
                 My.Forms.DeleteStudent_R.SearchStudent_btn.Enabled = False
-
                 My.Forms.DeleteStudent_R.DeleteButton_a_Student.Enabled = True
 
+                Dim nso As String = r("NSO").ToString()
+                Dim baptismal As String = r("Baptismal").ToString()
+
+                If nso = "" Then
+                    My.Forms.ViewStudent_R.nso.Checked = False
+                    My.Forms.ViewStudent_R.nso.Enabled = True
+                Else
+                    My.Forms.ViewStudent_R.nso.Checked = True
+                    My.Forms.ViewStudent_R.nso.Enabled = False
+
+                End If
+
+                If baptismal = "" Then
+                    My.Forms.ViewStudent_R.bapt.Checked = False
+                    My.Forms.ViewStudent_R.bapt.Enabled = True
+                Else
+                    My.Forms.ViewStudent_R.bapt.Checked = True
+                    My.Forms.ViewStudent_R.bapt.Enabled = False
+                End If
 
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
@@ -2706,6 +2743,25 @@ Module Module1
                 My.Forms.UpdateStudent_R.sn.Enabled = False
                 My.Forms.UpdateStudent_R.SearchStudent_btn.Enabled = False
                 My.Forms.UpdateStudent_R.PictureBox2.Image = base64toimage(pic)
+                Dim nso As String = r("NSO").ToString()
+                Dim baptismal As String = r("Baptismal").ToString()
+                If nso = "" Then
+                    My.Forms.ViewStudent_R.nso.Checked = False
+                    My.Forms.ViewStudent_R.nso.Enabled = True
+                Else
+                    My.Forms.ViewStudent_R.nso.Checked = True
+                    My.Forms.ViewStudent_R.nso.Enabled = False
+
+                End If
+
+                If baptismal = "" Then
+                    My.Forms.ViewStudent_R.bapt.Checked = False
+                    My.Forms.ViewStudent_R.bapt.Enabled = True
+                Else
+                    My.Forms.ViewStudent_R.bapt.Checked = True
+                    My.Forms.ViewStudent_R.bapt.Enabled = False
+                End If
+
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2741,6 +2797,20 @@ Module Module1
                 pic = r("Photo").ToString()
                 My.Forms.ViewStudent.ag.Text = r("Age").ToString()
                 My.Forms.ViewStudent.PictureBox2.Image = base64toimage(pic)
+                Dim nso As String = r("NSO").ToString()
+                Dim baptismal As String = r("Baptismal").ToString()
+
+                If nso = "" Then
+                    My.Forms.ViewStudent_R.nso.Checked = False
+                Else
+                    My.Forms.ViewStudent_R.nso.Checked = True
+                End If
+
+                If baptismal = "" Then
+                    My.Forms.ViewStudent_R.bapt.Checked = False
+                Else
+                    My.Forms.ViewStudent_R.bapt.Checked = True
+                End If
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2774,6 +2844,22 @@ Module Module1
                 My.Forms.ViewStudent_R.gl.Text = r("GradeLevel").ToString()
                 My.Forms.ViewStudent_R.con.Text = r("Contact").ToString()
                 My.Forms.ViewStudent_R.sy.Text = r("SchoolYear").ToString()
+
+                Dim nso As String = r("NSO").ToString()
+                Dim baptismal As String = r("Baptismal").ToString()
+
+                If nso = "" Then
+                    My.Forms.ViewStudent_R.nso.Checked = False
+                Else
+                    My.Forms.ViewStudent_R.nso.Checked = True
+                End If
+
+                If baptismal = "" Then
+                    My.Forms.ViewStudent_R.bapt.Checked = False
+                Else
+                    My.Forms.ViewStudent_R.bapt.Checked = True
+                End If
+
                 pic = r("Photo").ToString()
                 My.Forms.ViewStudent_R.ag.Text = r("Age").ToString()
                 My.Forms.ViewStudent_R.PictureBox2.Image = base64toimage(pic)

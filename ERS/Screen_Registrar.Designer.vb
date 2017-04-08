@@ -47,6 +47,7 @@ Partial Class Screen_Registrar
         Me.SubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrarPanelPictureBox = New System.Windows.Forms.PictureBox()
+        Me.ViewEnrolledStudentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.RegistrarPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -171,7 +172,7 @@ Partial Class Screen_Registrar
         '
         'SearchToolStripMenuItem
         '
-        Me.SearchToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StudentToolStripMenuItem, Me.SubjectToolStripMenuItem})
+        Me.SearchToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StudentToolStripMenuItem, Me.SubjectToolStripMenuItem, Me.ViewEnrolledStudentsToolStripMenuItem})
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
         Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.SearchToolStripMenuItem.Text = "Search"
@@ -210,6 +211,12 @@ Partial Class Screen_Registrar
         Me.RegistrarPanelPictureBox.Size = New System.Drawing.Size(1020, 477)
         Me.RegistrarPanelPictureBox.TabIndex = 2
         Me.RegistrarPanelPictureBox.TabStop = False
+        '
+        'ViewEnrolledStudentsToolStripMenuItem
+        '
+        Me.ViewEnrolledStudentsToolStripMenuItem.Name = "ViewEnrolledStudentsToolStripMenuItem"
+        Me.ViewEnrolledStudentsToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.ViewEnrolledStudentsToolStripMenuItem.Text = "View Enrolled Students"
         '
         'Screen_Registrar
         '
@@ -253,4 +260,5 @@ Partial Class Screen_Registrar
     Friend WithEvents SubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistrarPanelPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents SubjectToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViewEnrolledStudentsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
