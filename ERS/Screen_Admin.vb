@@ -223,4 +223,11 @@
         AdminPanel.Hide()
         UpdateCashier.Show()
     End Sub
+
+    Private Sub ViewEnrolledStudentsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewEnrolledStudentsToolStripMenuItem.Click
+        SearchStudent.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(SearchStudent)
+        AdminPanel.Hide()
+        SearchStudent.Show()
+    End Sub
 End Class

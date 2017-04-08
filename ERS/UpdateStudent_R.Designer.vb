@@ -35,7 +35,6 @@ Partial Class UpdateStudent_R
         Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.con = New System.Windows.Forms.TextBox()
-        Me.sy = New System.Windows.Forms.TextBox()
         Me.ag = New System.Windows.Forms.TextBox()
         Me.gl = New System.Windows.Forms.TextBox()
         Me.bd = New System.Windows.Forms.TextBox()
@@ -43,7 +42,10 @@ Partial Class UpdateStudent_R
         Me.add = New System.Windows.Forms.TextBox()
         Me.sn = New System.Windows.Forms.TextBox()
         Me.UpdateButton_a_Student = New System.Windows.Forms.Button()
-        Me.pl = New System.Windows.Forms.TextBox()
+        Me.bapt = New System.Windows.Forms.CheckBox()
+        Me.nso = New System.Windows.Forms.CheckBox()
+        Me.sy = New System.Windows.Forms.TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -147,7 +149,7 @@ Partial Class UpdateStudent_R
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(35, 113)
+        Me.PictureBox2.Location = New System.Drawing.Point(52, 107)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(151, 130)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -161,14 +163,6 @@ Partial Class UpdateStudent_R
         Me.con.Name = "con"
         Me.con.Size = New System.Drawing.Size(158, 20)
         Me.con.TabIndex = 30
-        '
-        'sy
-        '
-        Me.sy.Enabled = False
-        Me.sy.Location = New System.Drawing.Point(315, 192)
-        Me.sy.Name = "sy"
-        Me.sy.Size = New System.Drawing.Size(176, 20)
-        Me.sy.TabIndex = 29
         '
         'ag
         '
@@ -227,12 +221,41 @@ Partial Class UpdateStudent_R
         Me.UpdateButton_a_Student.TabIndex = 24
         Me.UpdateButton_a_Student.UseVisualStyleBackColor = False
         '
-        'pl
+        'bapt
         '
-        Me.pl.Location = New System.Drawing.Point(86, 136)
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 20)
-        Me.pl.TabIndex = 43
+        Me.bapt.AutoSize = True
+        Me.bapt.BackColor = System.Drawing.Color.Transparent
+        Me.bapt.Enabled = False
+        Me.bapt.Location = New System.Drawing.Point(402, 285)
+        Me.bapt.Name = "bapt"
+        Me.bapt.Size = New System.Drawing.Size(71, 17)
+        Me.bapt.TabIndex = 86
+        Me.bapt.Text = "Baptismal"
+        Me.bapt.UseVisualStyleBackColor = False
+        '
+        'nso
+        '
+        Me.nso.AutoSize = True
+        Me.nso.BackColor = System.Drawing.Color.Transparent
+        Me.nso.Enabled = False
+        Me.nso.Location = New System.Drawing.Point(295, 289)
+        Me.nso.Name = "nso"
+        Me.nso.Size = New System.Drawing.Size(49, 17)
+        Me.nso.TabIndex = 85
+        Me.nso.Text = "NSO"
+        Me.nso.UseVisualStyleBackColor = False
+        '
+        'sy
+        '
+        Me.sy.Enabled = False
+        Me.sy.Location = New System.Drawing.Point(315, 192)
+        Me.sy.Name = "sy"
+        Me.sy.Size = New System.Drawing.Size(176, 20)
+        Me.sy.TabIndex = 29
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'UpdateStudent_R
         '
@@ -241,6 +264,8 @@ Partial Class UpdateStudent_R
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(904, 353)
         Me.ControlBox = False
+        Me.Controls.Add(Me.bapt)
+        Me.Controls.Add(Me.nso)
         Me.Controls.Add(Me.SearchStudent_btn)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -261,7 +286,6 @@ Partial Class UpdateStudent_R
         Me.Controls.Add(Me.add)
         Me.Controls.Add(Me.sn)
         Me.Controls.Add(Me.UpdateButton_a_Student)
-        Me.Controls.Add(Me.pl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "UpdateStudent_R"
         Me.Text = "UpdateStudent_R"
@@ -282,7 +306,6 @@ Partial Class UpdateStudent_R
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents con As System.Windows.Forms.TextBox
-    Friend WithEvents sy As System.Windows.Forms.TextBox
     Friend WithEvents ag As System.Windows.Forms.TextBox
     Friend WithEvents gl As System.Windows.Forms.TextBox
     Friend WithEvents bd As System.Windows.Forms.TextBox
@@ -290,5 +313,8 @@ Partial Class UpdateStudent_R
     Friend WithEvents add As System.Windows.Forms.TextBox
     Friend WithEvents sn As System.Windows.Forms.TextBox
     Friend WithEvents UpdateButton_a_Student As System.Windows.Forms.Button
-    Friend WithEvents pl As System.Windows.Forms.TextBox
+    Friend WithEvents bapt As System.Windows.Forms.CheckBox
+    Friend WithEvents nso As System.Windows.Forms.CheckBox
+    Friend WithEvents sy As System.Windows.Forms.TextBox
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class

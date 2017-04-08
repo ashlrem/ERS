@@ -23,7 +23,6 @@ Partial Class RegistrarPanel
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cn = New System.Windows.Forms.Label()
@@ -39,20 +38,12 @@ Partial Class RegistrarPanel
         '
         'PictureBox3
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(71, 66)
+        Me.PictureBox3.Location = New System.Drawing.Point(73, 66)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(120, 92)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 56
         Me.PictureBox3.TabStop = False
-        '
-        'pl
-        '
-        Me.pl.Location = New System.Drawing.Point(91, 92)
-        Me.pl.Multiline = True
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 20)
-        Me.pl.TabIndex = 58
         '
         'Label4
         '
@@ -171,7 +162,6 @@ Partial Class RegistrarPanel
         Me.ClientSize = New System.Drawing.Size(1279, 387)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.pl)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cn)
@@ -190,7 +180,6 @@ Partial Class RegistrarPanel
 
     End Sub
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents cn As System.Windows.Forms.Label

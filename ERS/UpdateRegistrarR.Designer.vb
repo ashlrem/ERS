@@ -25,7 +25,6 @@ Partial Class UpdateRegistrarR
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.status = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.update_account = New System.Windows.Forms.Button()
         Me.cno = New System.Windows.Forms.MaskedTextBox()
         Me.eadd = New System.Windows.Forms.TextBox()
@@ -54,7 +53,6 @@ Partial Class UpdateRegistrarR
         '
         Me.GroupBox2.Controls.Add(Me.status)
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
-        Me.GroupBox2.Controls.Add(Me.pl)
         Me.GroupBox2.Controls.Add(Me.update_account)
         Me.GroupBox2.Controls.Add(Me.cno)
         Me.GroupBox2.Controls.Add(Me.eadd)
@@ -96,14 +94,6 @@ Partial Class UpdateRegistrarR
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
-        '
-        'pl
-        '
-        Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(294, 58)
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 20)
-        Me.pl.TabIndex = 8
         '
         'update_account
         '
@@ -283,7 +273,6 @@ Partial Class UpdateRegistrarR
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents status As System.Windows.Forms.ComboBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents update_account As System.Windows.Forms.Button
     Friend WithEvents cno As System.Windows.Forms.MaskedTextBox
     Friend WithEvents eadd As System.Windows.Forms.TextBox
