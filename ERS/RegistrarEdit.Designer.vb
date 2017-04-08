@@ -28,7 +28,6 @@ Partial Class RegistrarEdit
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.cno = New System.Windows.Forms.MaskedTextBox()
         Me.eadd = New System.Windows.Forms.TextBox()
@@ -89,7 +88,6 @@ Partial Class RegistrarEdit
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
-        Me.GroupBox2.Controls.Add(Me.pl)
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.cno)
         Me.GroupBox2.Controls.Add(Me.eadd)
@@ -122,14 +120,6 @@ Partial Class RegistrarEdit
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
-        '
-        'pl
-        '
-        Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(294, 117)
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 20)
-        Me.pl.TabIndex = 8
         '
         'Button2
         '
@@ -275,7 +265,6 @@ Partial Class RegistrarEdit
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents cno As System.Windows.Forms.MaskedTextBox
     Friend WithEvents eadd As System.Windows.Forms.TextBox
     Friend WithEvents add As System.Windows.Forms.TextBox
