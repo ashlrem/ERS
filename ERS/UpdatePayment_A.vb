@@ -1,14 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
-
 Public Class UpdatePayment_A
-
     Private Sub SearchAddpayemt_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchAddpayemt_btn.Click
-        
-
         Dim conn As New MySqlConnection ' <---
         ' Me.sn.Text = My.Forms.AdminPanel.TextBox1.Text
         'Me.FormBorderStyle = 0
-
         Try
             'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
             conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
@@ -26,13 +21,6 @@ Public Class UpdatePayment_A
             MsgBox(ex.StackTrace) '<-- tanggalin naten yung error.
         End Try
         conn.Close()
-
-
-
-
-
-
-
         SearchUpdatePayment_A()
         If midterm.Text = "0" Then
             Payment_grp.Enabled = False
@@ -65,17 +53,11 @@ Public Class UpdatePayment_A
             Me.Enabled = False
         End If
     End Sub
-
     Private Sub UpdatePayment_A_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim t As Integer = total.Text
-        Dim a As Integer = rf.Text
-        Dim b As Integer = lf.Text
-        Dim c As Integer = ef.Text
-        Dim d As Integer = gf.Text
-        Dim f As Integer = mf.Text
-        Dim g As Integer = tf.Text
-        t = a + b + c + d + f + g
-        total.Text = t
+        Dim Screen As System.Drawing.Rectangle
+        Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 125) + 35
+        Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
     Private Sub UpadatePayment_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
         Screen_Cashier.Show()

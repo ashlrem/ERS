@@ -107,6 +107,7 @@ Partial Class AddClass
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "AddClass"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Add Class"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

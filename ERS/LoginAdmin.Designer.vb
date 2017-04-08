@@ -129,10 +129,8 @@ Partial Class LoginAdmin
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblcount)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.Location = New System.Drawing.Point(350, 50)
         Me.Name = "LoginAdmin"
         Me.Text = "LoginAdmin"
-        Me.TransparencyKey = System.Drawing.Color.Yellow
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

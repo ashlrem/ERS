@@ -3,6 +3,7 @@ Imports System.Text.RegularExpressions
 Imports System.IO
 Imports System.Drawing.Imaging
 Module Module1
+    Public pic As String
     Public cn1 As New MySqlConnection
     Public cn As New MySqlConnection
     Public r As MySqlDataReader
@@ -82,7 +83,7 @@ Module Module1
             MsgBox("AlphaNumericSymbol needed to Password!")
             My.Forms.AdminCreate.pw.Clear()
 
-        ElseIf (My.Forms.AdminCreate.pl.Text = "" Or My.Forms.AdminCreate.ln.Text = "" Or My.Forms.AdminCreate.fn.Text = "" Or My.Forms.AdminCreate.mn.Text = "" Or My.Forms.AdminCreate.bd.Text = "" Or My.Forms.AdminCreate.add.Text = "" Or My.Forms.AdminCreate.eadd.Text = "" Or My.Forms.AdminCreate.cno.Text = "" Or My.Forms.AdminCreate.sq1.SelectedItem = "" Or My.Forms.AdminCreate.sq2.SelectedItem = "" Or My.Forms.AdminCreate.ans1.Text = "" Or My.Forms.AdminCreate.ans2.Text = "" Or My.Forms.AdminCreate.en.Text = "" Or My.Forms.AdminCreate.pw.Text = "" Or My.Forms.AdminCreate.rtp.Text = "") Then
+        ElseIf (My.Forms.AdminCreate.ln.Text = "" Or My.Forms.AdminCreate.fn.Text = "" Or My.Forms.AdminCreate.mn.Text = "" Or My.Forms.AdminCreate.bd.Text = "" Or My.Forms.AdminCreate.add.Text = "" Or My.Forms.AdminCreate.eadd.Text = "" Or My.Forms.AdminCreate.cno.Text = "" Or My.Forms.AdminCreate.sq1.SelectedItem = "" Or My.Forms.AdminCreate.sq2.SelectedItem = "" Or My.Forms.AdminCreate.ans1.Text = "" Or My.Forms.AdminCreate.ans2.Text = "" Or My.Forms.AdminCreate.en.Text = "" Or My.Forms.AdminCreate.pw.Text = "" Or My.Forms.AdminCreate.rtp.Text = "") Then
             MsgBox("Fill the empty box")
         Else
             'if no errors, save sa tables, which is sa accounts table(dito naka store lahat ng usernames ni admin, cashier, and registrar)'
@@ -122,7 +123,7 @@ Module Module1
 
                         'admin create (insert to database)
                         ins.CommandText = "INSERT INTO admin VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status, @LogIn_Attempts)"
-                        ins.Parameters.AddWithValue("@Photo", My.Forms.AdminCreate.pl.Text)
+                        ins.Parameters.AddWithValue("@Photo", pic)
                         ins.Parameters.AddWithValue("@Surname", My.Forms.AdminCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.AdminCreate.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.AdminCreate.mn.Text)
@@ -288,7 +289,8 @@ Module Module1
 
                         'registrar create (insert to database)
                         ins.CommandText = "INSERT INTO registrar_account VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status, @LogIn_Attempts)"
-                        ins.Parameters.AddWithValue("@Photo", My.Forms.RegistrarCreate.pl.Text)
+
+                        ins.Parameters.AddWithValue("@Photo", pic)
                         ins.Parameters.AddWithValue("@Surname", My.Forms.RegistrarCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.RegistrarCreate.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.RegistrarCreate.mn.Text)
@@ -861,11 +863,7 @@ Module Module1
                 My.Forms.AdminPanel.n1.Text = r("Surname").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
                 My.Forms.AdminPanel.email.Text = r("Email_Account").ToString() & "."
                 My.Forms.AdminPanel.cn.Text = r("ContactNumber").ToString() & "."
-                My.Forms.AdminPanel.pl.Text = r("Photo").ToString()
-                Try
-                    My.Forms.AdminPanel.PictureBox3.Image = base64toimage(My.Forms.AdminPanel.pl.Text)
-                Catch
-                End Try
+                pic = r("Photo").ToString()
             Else
                 MsgBox("Employee number not Found!")
                 cn1.Close()
@@ -873,7 +871,7 @@ Module Module1
         Catch ex As Exception
         End Try
         cn1.Close()
-        
+
     End Sub
     Public Sub close1()
         'eto yung pag close method ng mga forms.
@@ -1191,9 +1189,9 @@ Module Module1
 
             'kung meron ngang username na tinype ni user sa database, show yung next form. else, error
             If r.Read Then
-                Forgot2.TopLevel = False
-                My.Forms.MainScreen.Pi.Controls.Add(Forgot2)
-                Forgot2.Show()
+                forgot2.TopLevel = False
+                My.Forms.MainScreen.Pi.Controls.Add(forgot2)
+                forgot2.Show()
                 My.Forms.ForgotC.Hide()
                 cn.Close()
             Else
@@ -2632,7 +2630,7 @@ Module Module1
                 My.Forms.DeleteStudent_A.ag.Text = r("Age").ToString()
                 My.Forms.DeleteStudent_A.pl.Text = r("Photo").ToString()
                 My.Forms.DeleteStudent_A.PictureBox2.Image = base64toimage(My.Forms.DeleteStudent_A.pl.Text)
-              
+
 
                 My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = True
 
@@ -2800,6 +2798,9 @@ Module Module1
                 My.Forms.ViewStudent_R.pl.Text = r("Photo").ToString()
                 My.Forms.ViewStudent_R.PictureBox2.Image = base64toimage(My.Forms.ViewStudent_R.pl.Text)
 
+
+
+
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2849,7 +2850,7 @@ Module Module1
         End Try
         conn.Close()
     End Sub
-    
+
     'guys, kapag may question kayo, chat lang kayo dun sa chat box, pag hindi ako available, sasagot naman si tolits.
     'pag urgent, you can reach me at my mobile number. okay?
     'God bless us!

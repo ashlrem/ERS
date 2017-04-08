@@ -19,4 +19,11 @@ Public Class DeleteCashier
         AdminPanel.Show()
         Button2.Show()
     End Sub
+
+    Private Sub DeleteCashier_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim Screen As System.Drawing.Rectangle
+        Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 125) + 35
+        Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
+    End Sub
 End Class

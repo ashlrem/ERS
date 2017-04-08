@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub Screen_Admin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        'Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.Size = SystemInformation.PrimaryMonitorSize()
         AdminPanelPictureBox.Size = Me.Size
         Me.Location = New Point(0, 0)
