@@ -63,7 +63,7 @@ Public Class StudentCreate
             Dim cn = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
             objConn.ConnectionString = cn
             objConn.Open()
-
+                Dim b As String = bd.Value.ToString("MM/dd/yyyy")
                 Try
                     ins.Connection = objConn
                     ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
@@ -72,7 +72,7 @@ Public Class StudentCreate
                     ins.Parameters.AddWithValue("@LastName", ln.Text)
                     ins.Parameters.AddWithValue("@GivenName", fn.Text)
                     ins.Parameters.AddWithValue("@MiddleName", mn.Text)
-                    ins.Parameters.AddWithValue("@Birthday", bd.Text)
+                    ins.Parameters.AddWithValue("@Birthday", b)
                     ins.Parameters.AddWithValue("@Birth_Place", bp.Text)
                     ins.Parameters.AddWithValue("@Gender", gen.SelectedItem.ToString)
                     ins.Parameters.AddWithValue("@Address", add.Text)

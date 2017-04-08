@@ -21,10 +21,17 @@ Public Class AdminCreate_1
             End If
         Catch
         End Try
-        decoding = encodingtypestring
-        pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
-        pic = ""
-        createAdmin_1()
+        Try
+            decoding = encodingtypestring
+            pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+            Try
+                createAdmin_1()
+            Catch
+            End Try
+        Catch
+            MsgBox("Must upload or take picture.")
+        End Try
+
     End Sub
     Public Function imagetobase64(ByVal image As Image, ByVal format As ImageFormat) As String
         Using ms As New MemoryStream()

@@ -21,6 +21,6 @@
     End Sub
 
     Private Sub SearchSubj_btn_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchSubj_btn.Click
-        SearchSubject_A_Delete_btn()
+        SearchClass_A_Delete_btn()
     End Sub
 End Class
