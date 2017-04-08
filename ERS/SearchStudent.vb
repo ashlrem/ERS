@@ -2,19 +2,28 @@
 
 Public Class SearchStudent
 
+    Private Sub SearchStudent_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        Screen_Admin.Show()
+        AdminPanel.Show()
+    End Sub
     Private Sub SearchStudent_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-            Dim str As String = "server= '" & server & "';port= '" & port & "';userid= '" & user & "';password= '" & password & "';database='" & database & "'"
-            Dim con As New MySqlConnection(str)
+        Dim str As String = "server= '" & server & "';port= '" & port & "';userid= '" & user & "';password= '" & password & "';database='" & database & "'"
+        Dim con As New MySqlConnection(str)
         Dim com As String = "Select Student_ID_No, LastName, GivenName, MiddleName, Birthday, Gender, SchoolYear, GradeLevel, Section, MotherName, OccupationM from student_info  "
-            Dim Adpt As New MySqlDataAdapter(com, con)
+        Dim Adpt As New MySqlDataAdapter(com, con)
         Dim ds As New DataSet()
-            Adpt.Fill(ds, "student_info")
+        Adpt.Fill(ds, "student_info")
         DataGridView1.DataSource = ds.Tables(0)
         Dim studentCount As Integer
         studentCount = DataGridView1.RowCount
-            Dim column As DataGridViewColumn = DataGridView1.Columns(0)
+        Dim column As DataGridViewColumn = DataGridView1.Columns(0)
         DataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
         lblNoOfStudent.Text = studentCount
+
+        Dim Screen As System.Drawing.Rectangle
+        Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 125) + 35
+        Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
 
     Private Sub filterText_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles filterText.TextChanged

@@ -22,6 +22,7 @@ Partial Class Screen_Admin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpdateAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,7 +53,6 @@ Partial Class Screen_Admin
         Me.AddStudentRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpdateStudentRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteStudentRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ViewStudentRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddSubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -68,17 +68,23 @@ Partial Class Screen_Admin
         Me.SearchStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewEnrolledStudentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminPanelPictureBox = New System.Windows.Forms.PictureBox()
+        Me.SearchArchiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.AdminPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(193, 6)
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AccountsToolStripMenuItem, Me.AcademeToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1028, 24)
-        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Size = New System.Drawing.Size(1022, 24)
+        Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
@@ -122,7 +128,7 @@ Partial Class Screen_Admin
         '
         Me.AdministratorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAdminToolStripMenuItem, Me.UpdateAdminToolStripMenuItem, Me.DeleteAdminToolStripMenuItem, Me.ToolStripSeparator2, Me.ViewAdminToolStripMenuItem})
         Me.AdministratorToolStripMenuItem.Name = "AdministratorToolStripMenuItem"
-        Me.AdministratorToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AdministratorToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.AdministratorToolStripMenuItem.Text = "Administrator"
         '
         'AddAdminToolStripMenuItem
@@ -158,7 +164,7 @@ Partial Class Screen_Admin
         '
         Me.RegistrarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddRegistrarToolStripMenuItem, Me.UpdateRegistrarToolStripMenuItem, Me.DeleteRegistrarToolStripMenuItem, Me.ToolStripSeparator3, Me.ViewRegistrarToolStripMenuItem})
         Me.RegistrarToolStripMenuItem.Name = "RegistrarToolStripMenuItem"
-        Me.RegistrarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RegistrarToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.RegistrarToolStripMenuItem.Text = "Registrar"
         '
         'AddRegistrarToolStripMenuItem
@@ -194,7 +200,7 @@ Partial Class Screen_Admin
         '
         Me.CashierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddCashierToolStripMenuItem, Me.UpdateCashierToolStripMenuItem, Me.DeleteCashierToolStripMenuItem, Me.ToolStripSeparator4, Me.ViewCashierToolStripMenuItem})
         Me.CashierToolStripMenuItem.Name = "CashierToolStripMenuItem"
-        Me.CashierToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CashierToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.CashierToolStripMenuItem.Text = "Cashier"
         '
         'AddCashierToolStripMenuItem
@@ -257,11 +263,6 @@ Partial Class Screen_Admin
         Me.DeleteStudentRecordToolStripMenuItem.Name = "DeleteStudentRecordToolStripMenuItem"
         Me.DeleteStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
         Me.DeleteStudentRecordToolStripMenuItem.Text = "Delete Student Record"
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(193, 6)
         '
         'ViewStudentRecordToolStripMenuItem
         '
@@ -334,7 +335,7 @@ Partial Class Screen_Admin
         '
         'StudentToolStripMenuItem
         '
-        Me.StudentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchStudentToolStripMenuItem})
+        Me.StudentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchStudentToolStripMenuItem, Me.SearchArchiveToolStripMenuItem})
         Me.StudentToolStripMenuItem.Name = "StudentToolStripMenuItem"
         Me.StudentToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.StudentToolStripMenuItem.Text = "Student"
@@ -357,24 +358,28 @@ Partial Class Screen_Admin
         Me.AdminPanelPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AdminPanelPictureBox.ErrorImage = Nothing
         Me.AdminPanelPictureBox.InitialImage = Nothing
-        Me.AdminPanelPictureBox.Location = New System.Drawing.Point(0, 24)
+        Me.AdminPanelPictureBox.Location = New System.Drawing.Point(0, 0)
         Me.AdminPanelPictureBox.Name = "AdminPanelPictureBox"
-        Me.AdminPanelPictureBox.Size = New System.Drawing.Size(1028, 533)
+        Me.AdminPanelPictureBox.Size = New System.Drawing.Size(1022, 551)
         Me.AdminPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.AdminPanelPictureBox.TabIndex = 1
+        Me.AdminPanelPictureBox.TabIndex = 3
         Me.AdminPanelPictureBox.TabStop = False
+        '
+        'SearchArchiveToolStripMenuItem
+        '
+        Me.SearchArchiveToolStripMenuItem.Name = "SearchArchiveToolStripMenuItem"
+        Me.SearchArchiveToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.SearchArchiveToolStripMenuItem.Text = "Search Archive"
         '
         'Screen_Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 557)
-        Me.Controls.Add(Me.AdminPanelPictureBox)
+        Me.ClientSize = New System.Drawing.Size(1022, 551)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Controls.Add(Me.AdminPanelPictureBox)
         Me.Name = "Screen_Admin"
-        Me.Text = "Administrator"
+        Me.Text = "Screen_Admin"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.AdminPanelPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
@@ -382,10 +387,12 @@ Partial Class Screen_Admin
         Me.PerformLayout()
 
     End Sub
+    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UpdateAccountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AccountsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdministratorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -411,7 +418,6 @@ Partial Class Screen_Admin
     Friend WithEvents AddStudentRecordToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UpdateStudentRecordToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteStudentRecordToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ViewStudentRecordToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SubjectsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AddSubjectToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -425,7 +431,7 @@ Partial Class Screen_Admin
     Friend WithEvents SearchCashierToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StudentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchStudentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UpdateAccountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AdminPanelPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents ViewEnrolledStudentsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AdminPanelPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents SearchArchiveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
