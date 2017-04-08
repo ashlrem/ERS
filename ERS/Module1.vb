@@ -1,4 +1,4 @@
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 Imports System.Text.RegularExpressions
 Imports System.IO
 Imports System.Drawing.Imaging
@@ -2617,7 +2617,7 @@ Module Module1
             MessageBox.Show(ex.Message)
             cn.Close()
         End Try
-             
+
     End Sub
     Public Sub SearchSubject_R_View_btn()
         'not implemented
@@ -2818,7 +2818,7 @@ Module Module1
         conn.Close()
     End Sub
     Public Sub SearchStudent_R_Delete_btn()
-        Dim conn As New MySqlConnection 
+        Dim conn As New MySqlConnection
         Try
             'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
             conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
