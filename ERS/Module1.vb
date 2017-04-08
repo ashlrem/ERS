@@ -13,17 +13,17 @@ Module Module1
     Public decoding As String = String.Empty
     Public NSO2 As String
     Public baptis As String
-    'Public server As String = "127.0.0.1" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
-    'Public port As String = "3306" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
-    'Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
-    'Public password As String = "12345" 'no password si root dun sa wamp natin, so leave it empty
-    'Public database As String = "ers" ' eto yung name ng database natin, ers.
-
-    Public server As String = "127.0.0.1" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
-    Public port As String = "" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
-    Public user As String = "root" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
-    Public password As String = "" 'no password si root dun sa wamp natin, so leave it empty
+    Public server As String = "192.168.254.100" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
+    Public port As String = "3306" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
+    Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
+    Public password As String = "1234" 'no password si root dun sa wamp natin, so leave it empty
     Public database As String = "ers" ' eto yung name ng database natin, ers.
+
+    'Public server As String = "127.0.0.1" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
+    'Public port As String = "" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
+    'Public user As String = "root" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
+    'Public password As String = "" 'no password si root dun sa wamp natin, so leave it empty
+    'Public database As String = "ers" ' eto yung name ng database natin, ers.
     Public Sub splash()
         'connection string na ginagamit ng system natin para mag connect sa database
         cn.ConnectionString = "server= '" & server & "';port= '" & port & "';userid= '" & user & "';password= '" & password & "';database='" & database & "'"
