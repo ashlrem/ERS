@@ -32,14 +32,13 @@ Partial Class CashierPanel
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox3
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(150, 70)
+        Me.PictureBox3.Location = New System.Drawing.Point(165, 70)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(120, 92)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -144,14 +143,6 @@ Partial Class CashierPanel
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Welcome Cashier!"
         '
-        'pl
-        '
-        Me.pl.Location = New System.Drawing.Point(170, 96)
-        Me.pl.Multiline = True
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 20)
-        Me.pl.TabIndex = 46
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -171,7 +162,6 @@ Partial Class CashierPanel
         Me.ClientSize = New System.Drawing.Size(1279, 387)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.pl)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cn)
@@ -199,6 +189,5 @@ Partial Class CashierPanel
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

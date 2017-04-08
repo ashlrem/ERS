@@ -98,4 +98,11 @@
         Me.Location = New Point(1, 1)
         Me.Size = SystemInformation.PrimaryMonitorSize()
     End Sub
+
+    Private Sub ViewEnrolledStudentsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewEnrolledStudentsToolStripMenuItem.Click
+        SearchStudent.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(SearchStudent)
+        RegistrarPanel.Hide()
+        SearchStudent.Show()
+    End Sub
 End Class

@@ -6,6 +6,6 @@
         Me.Size = SystemInformation.PrimaryMonitorSize()
         Me.empl.Text = My.Forms.RegistrarLogin.en.Text
         registrarPanelDisplay()
-        PictureBox3.Image = base64toimage(pl.Text)
+        PictureBox3.Image = base64toimage(pic)
     End Sub
 End Class

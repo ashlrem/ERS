@@ -43,7 +43,9 @@ Partial Class UpdateStudent_A
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.SearchStudent_btn = New System.Windows.Forms.Button()
-        Me.pl = New System.Windows.Forms.TextBox()
+        Me.bapt = New System.Windows.Forms.CheckBox()
+        Me.nso = New System.Windows.Forms.CheckBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,7 +60,7 @@ Partial Class UpdateStudent_A
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(58, 109)
+        Me.PictureBox2.Location = New System.Drawing.Point(63, 118)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(151, 130)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -227,12 +229,33 @@ Partial Class UpdateStudent_A
         Me.SearchStudent_btn.Text = "Search"
         Me.SearchStudent_btn.UseVisualStyleBackColor = True
         '
-        'pl
+        'bapt
         '
-        Me.pl.Location = New System.Drawing.Point(109, 145)
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 20)
-        Me.pl.TabIndex = 22
+        Me.bapt.AutoSize = True
+        Me.bapt.BackColor = System.Drawing.Color.Transparent
+        Me.bapt.Enabled = False
+        Me.bapt.Location = New System.Drawing.Point(392, 305)
+        Me.bapt.Name = "bapt"
+        Me.bapt.Size = New System.Drawing.Size(71, 17)
+        Me.bapt.TabIndex = 86
+        Me.bapt.Text = "Baptismal"
+        Me.bapt.UseVisualStyleBackColor = False
+        '
+        'nso
+        '
+        Me.nso.AutoSize = True
+        Me.nso.BackColor = System.Drawing.Color.Transparent
+        Me.nso.Enabled = False
+        Me.nso.Location = New System.Drawing.Point(285, 309)
+        Me.nso.Name = "nso"
+        Me.nso.Size = New System.Drawing.Size(49, 17)
+        Me.nso.TabIndex = 85
+        Me.nso.Text = "NSO"
+        Me.nso.UseVisualStyleBackColor = False
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'UpdateStudent_A
         '
@@ -241,6 +264,8 @@ Partial Class UpdateStudent_A
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(904, 353)
         Me.ControlBox = False
+        Me.Controls.Add(Me.bapt)
+        Me.Controls.Add(Me.nso)
         Me.Controls.Add(Me.SearchStudent_btn)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -261,7 +286,6 @@ Partial Class UpdateStudent_A
         Me.Controls.Add(Me.add)
         Me.Controls.Add(Me.sn)
         Me.Controls.Add(Me.UpdateButton_a_Student)
-        Me.Controls.Add(Me.pl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "UpdateStudent_A"
         Me.Text = "UpdateStudent_A"
@@ -290,5 +314,7 @@ Partial Class UpdateStudent_A
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents SearchStudent_btn As System.Windows.Forms.Button
-    Friend WithEvents pl As System.Windows.Forms.TextBox
+    Friend WithEvents bapt As System.Windows.Forms.CheckBox
+    Friend WithEvents nso As System.Windows.Forms.CheckBox
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class
