@@ -423,8 +423,9 @@ Module Module1
                 'pero same flow. gawa ng connection string, ioopen yung connection ni database,
                 'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO subject_tbl VALUES(@GradeLevel, @Section)"
-                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClass.gl.SelectedItem.ToString)
+
+                ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level, @Section)"
+                ins.Parameters.AddWithValue("@Grade_Level", My.Forms.AddClass.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.Text.ToString)
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
@@ -439,7 +440,7 @@ Module Module1
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.ToString)
         End Try
         objConn.Close()
     End Sub
