@@ -18,12 +18,17 @@ Public Class ViewClass
             MessageBox.Show("No subject Found")
         End If
     End Sub
-    Private Sub SearchSubj_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchSubj_btn.Click
+    Private Sub SearchSubj_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         cn.Close()
         SearchSubject_A_View_btn()
     End Sub
     Private Sub ViewClass_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
         Screen_Admin.Show()
         AdminPanel.Show()
+    End Sub
+
+    Private Sub SearchSubj_btn_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchSubj_btn.Click
+        cn.Close()
+        SearchSubject_A_View_btn()
     End Sub
 End Class

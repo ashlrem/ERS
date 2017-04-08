@@ -37,7 +37,6 @@ Partial Class CashierCreate
         Me.eadd = New System.Windows.Forms.TextBox()
         Me.sq2 = New System.Windows.Forms.ComboBox()
         Me.sq1 = New System.Windows.Forms.ComboBox()
-        Me.en = New System.Windows.Forms.MaskedTextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.statusTextBoxCashier = New System.Windows.Forms.TextBox()
@@ -46,6 +45,7 @@ Partial Class CashierCreate
         Me.ans2 = New System.Windows.Forms.TextBox()
         Me.ans1 = New System.Windows.Forms.TextBox()
         Me.cno = New System.Windows.Forms.TextBox()
+        Me.en = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,7 +62,7 @@ Partial Class CashierCreate
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 77)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 79)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(118, 77)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -168,13 +168,6 @@ Partial Class CashierCreate
         Me.sq1.Size = New System.Drawing.Size(261, 21)
         Me.sq1.TabIndex = 10
         '
-        'en
-        '
-        Me.en.Location = New System.Drawing.Point(623, 188)
-        Me.en.Name = "en"
-        Me.en.Size = New System.Drawing.Size(207, 20)
-        Me.en.TabIndex = 9
-        '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(4, 162)
@@ -238,11 +231,19 @@ Partial Class CashierCreate
         Me.cno.Size = New System.Drawing.Size(207, 20)
         Me.cno.TabIndex = 7
         '
+        'en
+        '
+        Me.en.Location = New System.Drawing.Point(621, 188)
+        Me.en.Name = "en"
+        Me.en.Size = New System.Drawing.Size(206, 20)
+        Me.en.TabIndex = 9
+        '
         'CashierCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 330)
+        Me.Controls.Add(Me.en)
         Me.Controls.Add(Me.cno)
         Me.Controls.Add(Me.ans2)
         Me.Controls.Add(Me.ans1)
@@ -257,7 +258,6 @@ Partial Class CashierCreate
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.en)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ln)
         Me.Controls.Add(Me.fn)
@@ -267,7 +267,7 @@ Partial Class CashierCreate
         Me.Controls.Add(Me.statusTextBoxCashier)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "CashierCreate"
-        Me.Text = "Create Cashier"
+        Me.Text = "Cashier Create"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -288,7 +288,6 @@ Partial Class CashierCreate
     Friend WithEvents eadd As System.Windows.Forms.TextBox
     Friend WithEvents sq2 As System.Windows.Forms.ComboBox
     Friend WithEvents sq1 As System.Windows.Forms.ComboBox
-    Friend WithEvents en As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents statusTextBoxCashier As System.Windows.Forms.TextBox
@@ -297,4 +296,5 @@ Partial Class CashierCreate
     Friend WithEvents ans2 As System.Windows.Forms.TextBox
     Friend WithEvents ans1 As System.Windows.Forms.TextBox
     Friend WithEvents cno As System.Windows.Forms.TextBox
+    Friend WithEvents en As System.Windows.Forms.TextBox
 End Class

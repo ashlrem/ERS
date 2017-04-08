@@ -30,6 +30,7 @@ Public Class AdminCreate
         End Try
         decoding = encodingtypestring
         pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+        pic = ""
         createAdmin()
     End Sub
 
@@ -69,5 +70,4 @@ Public Class AdminCreate
             Return base64String
             End Using
     End Function
-
 End Class

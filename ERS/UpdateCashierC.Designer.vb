@@ -78,12 +78,13 @@ Partial Class UpdateCashierC
         '
         'status
         '
+        Me.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.status.FormattingEnabled = True
+        Me.status.Items.AddRange(New Object() {"Active", "Blocked"})
         Me.status.Location = New System.Drawing.Point(291, 119)
         Me.status.Name = "status"
         Me.status.Size = New System.Drawing.Size(103, 21)
         Me.status.TabIndex = 14
-        Me.status.Text = "Active"
         '
         'update_account
         '
@@ -271,7 +272,6 @@ Partial Class UpdateCashierC
 
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents status As System.Windows.Forms.ComboBox
     Friend WithEvents update_account As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents cno As System.Windows.Forms.MaskedTextBox
@@ -292,4 +292,5 @@ Partial Class UpdateCashierC
     Friend WithEvents ValidateAccountUpdate_btn As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents status As System.Windows.Forms.ComboBox
 End Class

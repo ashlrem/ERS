@@ -28,8 +28,6 @@ Partial Class AdminCreate_1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.rtp = New System.Windows.Forms.MaskedTextBox()
-        Me.pw = New System.Windows.Forms.MaskedTextBox()
         Me.eadd = New System.Windows.Forms.TextBox()
         Me.sq2 = New System.Windows.Forms.ComboBox()
         Me.bd = New System.Windows.Forms.DateTimePicker()
@@ -37,7 +35,6 @@ Partial Class AdminCreate_1
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.ln = New System.Windows.Forms.TextBox()
         Me.fn = New System.Windows.Forms.TextBox()
@@ -45,12 +42,12 @@ Partial Class AdminCreate_1
         Me.add = New System.Windows.Forms.TextBox()
         Me.mn = New System.Windows.Forms.TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.statusTxtBoxAdmin1 = New System.Windows.Forms.TextBox()
-        Me.loginAttempt = New System.Windows.Forms.TextBox()
         Me.cno = New System.Windows.Forms.TextBox()
-        Me.en = New System.Windows.Forms.MaskedTextBox()
         Me.ans2 = New System.Windows.Forms.TextBox()
         Me.ans1 = New System.Windows.Forms.TextBox()
+        Me.pw = New System.Windows.Forms.TextBox()
+        Me.rtp = New System.Windows.Forms.TextBox()
+        Me.en = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -94,20 +91,6 @@ Partial Class AdminCreate_1
         Me.Button3.TabIndex = 17
         Me.Button3.Text = "UploadPhoto"
         Me.Button3.UseVisualStyleBackColor = True
-        '
-        'rtp
-        '
-        Me.rtp.Location = New System.Drawing.Point(603, 241)
-        Me.rtp.Name = "rtp"
-        Me.rtp.Size = New System.Drawing.Size(227, 20)
-        Me.rtp.TabIndex = 15
-        '
-        'pw
-        '
-        Me.pw.Location = New System.Drawing.Point(602, 215)
-        Me.pw.Name = "pw"
-        Me.pw.Size = New System.Drawing.Size(228, 20)
-        Me.pw.TabIndex = 14
         '
         'eadd
         '
@@ -167,21 +150,12 @@ Partial Class AdminCreate_1
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 71)
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 64)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(128, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 36
         Me.PictureBox1.TabStop = False
-        '
-        'pl
-        '
-        Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(32, 93)
-        Me.pl.Multiline = True
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(83, 20)
-        Me.pl.TabIndex = 35
         '
         'Button6
         '
@@ -235,37 +209,12 @@ Partial Class AdminCreate_1
         Me.PictureBox2.TabIndex = 34
         Me.PictureBox2.TabStop = False
         '
-        'statusTxtBoxAdmin1
-        '
-        Me.statusTxtBoxAdmin1.Location = New System.Drawing.Point(32, 93)
-        Me.statusTxtBoxAdmin1.Name = "statusTxtBoxAdmin1"
-        Me.statusTxtBoxAdmin1.Size = New System.Drawing.Size(44, 20)
-        Me.statusTxtBoxAdmin1.TabIndex = 37
-        Me.statusTxtBoxAdmin1.Text = "Active"
-        Me.statusTxtBoxAdmin1.Visible = False
-        '
-        'loginAttempt
-        '
-        Me.loginAttempt.Location = New System.Drawing.Point(82, 91)
-        Me.loginAttempt.Name = "loginAttempt"
-        Me.loginAttempt.Size = New System.Drawing.Size(43, 20)
-        Me.loginAttempt.TabIndex = 38
-        Me.loginAttempt.Text = "0"
-        Me.loginAttempt.Visible = False
-        '
         'cno
         '
         Me.cno.Location = New System.Drawing.Point(625, 155)
         Me.cno.Name = "cno"
         Me.cno.Size = New System.Drawing.Size(205, 20)
         Me.cno.TabIndex = 7
-        '
-        'en
-        '
-        Me.en.Location = New System.Drawing.Point(623, 185)
-        Me.en.Name = "en"
-        Me.en.Size = New System.Drawing.Size(207, 20)
-        Me.en.TabIndex = 9
         '
         'ans2
         '
@@ -281,29 +230,49 @@ Partial Class AdminCreate_1
         Me.ans1.Size = New System.Drawing.Size(235, 20)
         Me.ans1.TabIndex = 11
         '
+        'pw
+        '
+        Me.pw.Location = New System.Drawing.Point(602, 217)
+        Me.pw.Name = "pw"
+        Me.pw.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.pw.Size = New System.Drawing.Size(235, 20)
+        Me.pw.TabIndex = 14
+        '
+        'rtp
+        '
+        Me.rtp.Location = New System.Drawing.Point(603, 245)
+        Me.rtp.Name = "rtp"
+        Me.rtp.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.rtp.Size = New System.Drawing.Size(235, 20)
+        Me.rtp.TabIndex = 15
+        '
+        'en
+        '
+        Me.en.Location = New System.Drawing.Point(627, 186)
+        Me.en.Name = "en"
+        Me.en.Size = New System.Drawing.Size(206, 20)
+        Me.en.TabIndex = 9
+        '
         'AdminCreate_1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 331)
+        Me.Controls.Add(Me.en)
+        Me.Controls.Add(Me.rtp)
+        Me.Controls.Add(Me.pw)
         Me.Controls.Add(Me.ans2)
         Me.Controls.Add(Me.ans1)
         Me.Controls.Add(Me.cno)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.loginAttempt)
-        Me.Controls.Add(Me.statusTxtBoxAdmin1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.rtp)
-        Me.Controls.Add(Me.pw)
         Me.Controls.Add(Me.eadd)
         Me.Controls.Add(Me.sq2)
         Me.Controls.Add(Me.bd)
         Me.Controls.Add(Me.sq1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.en)
-        Me.Controls.Add(Me.pl)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.ln)
         Me.Controls.Add(Me.fn)
@@ -314,7 +283,7 @@ Partial Class AdminCreate_1
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "AdminCreate_1"
-        Me.Text = "AdminCreate"
+        Me.Text = "Admin Create"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -326,8 +295,6 @@ Partial Class AdminCreate_1
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents rtp As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents pw As System.Windows.Forms.MaskedTextBox
     Friend WithEvents eadd As System.Windows.Forms.TextBox
     Friend WithEvents sq2 As System.Windows.Forms.ComboBox
     Friend WithEvents bd As System.Windows.Forms.DateTimePicker
@@ -335,7 +302,6 @@ Partial Class AdminCreate_1
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents ln As System.Windows.Forms.TextBox
     Friend WithEvents fn As System.Windows.Forms.TextBox
@@ -343,10 +309,10 @@ Partial Class AdminCreate_1
     Friend WithEvents add As System.Windows.Forms.TextBox
     Friend WithEvents mn As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents statusTxtBoxAdmin1 As System.Windows.Forms.TextBox
-    Friend WithEvents loginAttempt As System.Windows.Forms.TextBox
     Friend WithEvents cno As System.Windows.Forms.TextBox
-    Friend WithEvents en As System.Windows.Forms.MaskedTextBox
     Friend WithEvents ans2 As System.Windows.Forms.TextBox
     Friend WithEvents ans1 As System.Windows.Forms.TextBox
+    Friend WithEvents pw As System.Windows.Forms.TextBox
+    Friend WithEvents rtp As System.Windows.Forms.TextBox
+    Friend WithEvents en As System.Windows.Forms.TextBox
 End Class

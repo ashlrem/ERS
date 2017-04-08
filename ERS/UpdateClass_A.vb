@@ -1,8 +1,8 @@
 ﻿Public Class UpdateClass_A
-    Private Sub SearchSubj_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchSubj_btn.Click
+    Private Sub SearchSubj_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         SearchSubject_A_Update_btn()
     End Sub
-    Private Sub UpdateSubj_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateSubj_btn.Click
+    Private Sub UpdateSubj_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         updateSubjA_btn()
     End Sub
     Private Sub UpdateSub_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
@@ -17,7 +17,7 @@
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
     End Sub
 
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
 
     End Sub
 End Class

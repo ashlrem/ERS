@@ -46,8 +46,8 @@ Partial Class Screen_Registrar
         Me.SearchStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistrarPanelPictureBox = New System.Windows.Forms.PictureBox()
         Me.ViewEnrolledStudentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrarPanelPictureBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.RegistrarPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -152,6 +152,7 @@ Partial Class Screen_Registrar
         Me.UpdateSubjectToolStripMenuItem.Name = "UpdateSubjectToolStripMenuItem"
         Me.UpdateSubjectToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.UpdateSubjectToolStripMenuItem.Text = "Update Class Section"
+        Me.UpdateSubjectToolStripMenuItem.Visible = False
         '
         'DeleteSubjectToolStripMenuItem
         '
@@ -181,7 +182,7 @@ Partial Class Screen_Registrar
         '
         Me.StudentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchStudentToolStripMenuItem})
         Me.StudentToolStripMenuItem.Name = "StudentToolStripMenuItem"
-        Me.StudentToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.StudentToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.StudentToolStripMenuItem.Text = "Search Student"
         '
         'SearchStudentToolStripMenuItem
@@ -194,7 +195,7 @@ Partial Class Screen_Registrar
         '
         Me.SubjectToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubjectToolStripMenuItem1})
         Me.SubjectToolStripMenuItem.Name = "SubjectToolStripMenuItem"
-        Me.SubjectToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.SubjectToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.SubjectToolStripMenuItem.Text = "Search Subject"
         '
         'SubjectToolStripMenuItem1
@@ -202,6 +203,12 @@ Partial Class Screen_Registrar
         Me.SubjectToolStripMenuItem1.Name = "SubjectToolStripMenuItem1"
         Me.SubjectToolStripMenuItem1.Size = New System.Drawing.Size(113, 22)
         Me.SubjectToolStripMenuItem1.Text = "Subject"
+        '
+        'ViewEnrolledStudentsToolStripMenuItem
+        '
+        Me.ViewEnrolledStudentsToolStripMenuItem.Name = "ViewEnrolledStudentsToolStripMenuItem"
+        Me.ViewEnrolledStudentsToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.ViewEnrolledStudentsToolStripMenuItem.Text = "View Enrolled Students"
         '
         'RegistrarPanelPictureBox
         '
@@ -211,12 +218,6 @@ Partial Class Screen_Registrar
         Me.RegistrarPanelPictureBox.Size = New System.Drawing.Size(1020, 477)
         Me.RegistrarPanelPictureBox.TabIndex = 2
         Me.RegistrarPanelPictureBox.TabStop = False
-        '
-        'ViewEnrolledStudentsToolStripMenuItem
-        '
-        Me.ViewEnrolledStudentsToolStripMenuItem.Name = "ViewEnrolledStudentsToolStripMenuItem"
-        Me.ViewEnrolledStudentsToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.ViewEnrolledStudentsToolStripMenuItem.Text = "View Enrolled Students"
         '
         'Screen_Registrar
         '

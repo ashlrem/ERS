@@ -7,5 +7,6 @@
         Me.empl.Text = My.Forms.RegistrarLogin.en.Text
         registrarPanelDisplay()
         PictureBox3.Image = base64toimage(pic)
+        pic = ""
     End Sub
 End Class
