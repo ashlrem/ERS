@@ -114,7 +114,6 @@ Partial Class AddPayment_A
         'miscellaneous_fee_grp
         '
         Me.miscellaneous_fee_grp.Controls.Add(Me.Label20)
-        Me.miscellaneous_fee_grp.Controls.Add(Me.enterTuition_btn)
         Me.miscellaneous_fee_grp.Controls.Add(Me.getSubj)
         Me.miscellaneous_fee_grp.Controls.Add(Me.total)
         Me.miscellaneous_fee_grp.Controls.Add(Me.Label7)
@@ -139,11 +138,11 @@ Partial Class AddPayment_A
         '
         'enterTuition_btn
         '
-        Me.enterTuition_btn.Location = New System.Drawing.Point(242, 60)
+        Me.enterTuition_btn.Location = New System.Drawing.Point(307, 116)
         Me.enterTuition_btn.Name = "enterTuition_btn"
-        Me.enterTuition_btn.Size = New System.Drawing.Size(28, 23)
+        Me.enterTuition_btn.Size = New System.Drawing.Size(285, 63)
         Me.enterTuition_btn.TabIndex = 2
-        Me.enterTuition_btn.Text = ">>"
+        Me.enterTuition_btn.Text = "COMPUTE"
         Me.enterTuition_btn.UseVisualStyleBackColor = True
         '
         'getSubj
@@ -204,7 +203,7 @@ Partial Class AddPayment_A
         Me.Payment_grp.Controls.Add(Me.midterm)
         Me.Payment_grp.Controls.Add(Me.prelim)
         Me.Payment_grp.Enabled = False
-        Me.Payment_grp.Location = New System.Drawing.Point(307, 255)
+        Me.Payment_grp.Location = New System.Drawing.Point(307, 307)
         Me.Payment_grp.Name = "Payment_grp"
         Me.Payment_grp.Size = New System.Drawing.Size(286, 107)
         Me.Payment_grp.TabIndex = 3
@@ -257,7 +256,7 @@ Partial Class AddPayment_A
         Me.EnterPartial_grp.Controls.Add(Me.Label19)
         Me.EnterPartial_grp.Controls.Add(Me.partialp)
         Me.EnterPartial_grp.Enabled = False
-        Me.EnterPartial_grp.Location = New System.Drawing.Point(307, 133)
+        Me.EnterPartial_grp.Location = New System.Drawing.Point(307, 185)
         Me.EnterPartial_grp.Name = "EnterPartial_grp"
         Me.EnterPartial_grp.Size = New System.Drawing.Size(286, 109)
         Me.EnterPartial_grp.TabIndex = 3
@@ -315,7 +314,7 @@ Partial Class AddPayment_A
         Me.Proceed_btn.Name = "Proceed_btn"
         Me.Proceed_btn.Size = New System.Drawing.Size(277, 70)
         Me.Proceed_btn.TabIndex = 5
-        Me.Proceed_btn.Text = "Continue>>"
+        Me.Proceed_btn.Text = "CONTINUE >>"
         Me.Proceed_btn.UseVisualStyleBackColor = True
         '
         'grade
@@ -638,6 +637,7 @@ Partial Class AddPayment_A
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(604, 536)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.enterTuition_btn)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Proceed_btn)
         Me.Controls.Add(Me.EnterPartial_grp)
