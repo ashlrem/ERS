@@ -24,7 +24,6 @@ Partial Class RegistrarCreate
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistrarCreate))
         Me.bd = New System.Windows.Forms.DateTimePicker()
-        Me.en = New System.Windows.Forms.MaskedTextBox()
         Me.add = New System.Windows.Forms.TextBox()
         Me.fn = New System.Windows.Forms.TextBox()
         Me.eadd = New System.Windows.Forms.TextBox()
@@ -48,6 +47,7 @@ Partial Class RegistrarCreate
         Me.rtp = New System.Windows.Forms.TextBox()
         Me.ans2 = New System.Windows.Forms.TextBox()
         Me.ans1 = New System.Windows.Forms.TextBox()
+        Me.en = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,13 +60,6 @@ Partial Class RegistrarCreate
         Me.bd.Name = "bd"
         Me.bd.Size = New System.Drawing.Size(260, 20)
         Me.bd.TabIndex = 6
-        '
-        'en
-        '
-        Me.en.Location = New System.Drawing.Point(623, 187)
-        Me.en.Name = "en"
-        Me.en.Size = New System.Drawing.Size(207, 20)
-        Me.en.TabIndex = 9
         '
         'add
         '
@@ -251,11 +244,19 @@ Partial Class RegistrarCreate
         Me.ans1.Size = New System.Drawing.Size(235, 20)
         Me.ans1.TabIndex = 11
         '
+        'en
+        '
+        Me.en.Location = New System.Drawing.Point(626, 184)
+        Me.en.Name = "en"
+        Me.en.Size = New System.Drawing.Size(206, 20)
+        Me.en.TabIndex = 9
+        '
         'RegistrarCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 330)
+        Me.Controls.Add(Me.en)
         Me.Controls.Add(Me.ans2)
         Me.Controls.Add(Me.ans1)
         Me.Controls.Add(Me.rtp)
@@ -270,7 +271,6 @@ Partial Class RegistrarCreate
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.en)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.ln)
         Me.Controls.Add(Me.fn)
@@ -290,7 +290,6 @@ Partial Class RegistrarCreate
 
     End Sub
     Friend WithEvents bd As System.Windows.Forms.DateTimePicker
-    Friend WithEvents en As System.Windows.Forms.MaskedTextBox
     Friend WithEvents add As System.Windows.Forms.TextBox
     Friend WithEvents fn As System.Windows.Forms.TextBox
     Friend WithEvents eadd As System.Windows.Forms.TextBox
@@ -314,4 +313,5 @@ Partial Class RegistrarCreate
     Friend WithEvents rtp As System.Windows.Forms.TextBox
     Friend WithEvents ans2 As System.Windows.Forms.TextBox
     Friend WithEvents ans1 As System.Windows.Forms.TextBox
+    Friend WithEvents en As System.Windows.Forms.TextBox
 End Class

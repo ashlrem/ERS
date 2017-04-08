@@ -78,12 +78,13 @@ Partial Class UpdateRegistrar
         '
         'status
         '
+        Me.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.status.FormattingEnabled = True
-        Me.status.Location = New System.Drawing.Point(291, 135)
+        Me.status.Items.AddRange(New Object() {"Active", "Blocked"})
+        Me.status.Location = New System.Drawing.Point(291, 119)
         Me.status.Name = "status"
         Me.status.Size = New System.Drawing.Size(103, 21)
         Me.status.TabIndex = 13
-        Me.status.Text = "Active"
         '
         'PictureBox1
         '

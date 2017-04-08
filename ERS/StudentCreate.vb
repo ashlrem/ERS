@@ -49,7 +49,7 @@ Public Class StudentCreate
             End Try
             decoding = encodingtypestring
             pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
-
+            pic = ""
 
 
             Dim objConn As New MySqlConnection

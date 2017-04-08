@@ -55,9 +55,8 @@ Public Class Webcam
                 My.Forms.AdminCreate.PictureBox1.Image = Image.FromFile(pic)
 
 
-                My.Forms.AdminCreate_1.pl.Text = SaveFileDialog1.FileName
-                My.Forms.AdminCreate_1.PictureBox1.Image = Image.FromFile(My.Forms.AdminCreate_1.pl.Text)
-                My.Forms.AdminCreate_1.pl.Text = ""
+                pic = SaveFileDialog1.FileName
+                My.Forms.AdminCreate_1.PictureBox1.Image = Image.FromFile(pic)
 
                 pic = SaveFileDialog1.FileName
                 My.Forms.CashierCreate.PictureBox1.Image = Image.FromFile(pic)

@@ -24,5 +24,6 @@ Public Class UpdateRegistrarR
         Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
         Me.Top = (Screen.Height \ 2) - (Me.Height - 125) + 35
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
+        status.SelectedItem = "Active"
     End Sub
 End Class

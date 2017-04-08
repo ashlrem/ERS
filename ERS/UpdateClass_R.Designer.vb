@@ -24,20 +24,20 @@ Partial Class UpdateClass_R
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.UpdateSubj_btn = New System.Windows.Forms.Button()
-        Me.sec = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.subj = New System.Windows.Forms.TextBox()
         Me.SearchSubj_btn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.sec = New System.Windows.Forms.ComboBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.UpdateSubj_btn)
         Me.GroupBox2.Controls.Add(Me.sec)
+        Me.GroupBox2.Controls.Add(Me.UpdateSubj_btn)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Enabled = False
         Me.GroupBox2.Location = New System.Drawing.Point(16, 103)
@@ -55,13 +55,6 @@ Partial Class UpdateClass_R
         Me.UpdateSubj_btn.TabIndex = 6
         Me.UpdateSubj_btn.Text = "Update"
         Me.UpdateSubj_btn.UseVisualStyleBackColor = True
-        '
-        'sec
-        '
-        Me.sec.Location = New System.Drawing.Point(133, 24)
-        Me.sec.Name = "sec"
-        Me.sec.Size = New System.Drawing.Size(170, 20)
-        Me.sec.TabIndex = 3
         '
         'Label3
         '
@@ -109,6 +102,15 @@ Partial Class UpdateClass_R
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Enter Section"
         '
+        'sec
+        '
+        Me.sec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.sec.FormattingEnabled = True
+        Me.sec.Location = New System.Drawing.Point(93, 28)
+        Me.sec.Name = "sec"
+        Me.sec.Size = New System.Drawing.Size(121, 21)
+        Me.sec.TabIndex = 7
+        '
         'UpdateClass_R
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -128,10 +130,10 @@ Partial Class UpdateClass_R
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents UpdateSubj_btn As System.Windows.Forms.Button
-    Friend WithEvents sec As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents subj As System.Windows.Forms.TextBox
     Friend WithEvents SearchSubj_btn As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents sec As System.Windows.Forms.ComboBox
 End Class

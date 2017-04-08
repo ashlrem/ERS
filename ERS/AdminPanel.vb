@@ -10,6 +10,7 @@ Public Class AdminPanel
         Me.empl.Text = My.Forms.LoginAdmin.en.Text
         adminPan()
         PictureBox3.Image = base64toimage(pic)
+        pic = ""
     End Sub
     Public Function base64toimage(ByVal base64code As String) As Image
         Dim imagebyte As Byte() = Convert.FromBase64String(base64code)

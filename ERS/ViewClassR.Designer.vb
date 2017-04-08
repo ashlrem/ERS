@@ -96,11 +96,11 @@ Partial Class ViewClassR
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 36)
+        Me.Label1.Location = New System.Drawing.Point(9, 34)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 13)
+        Me.Label1.Size = New System.Drawing.Size(96, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Enter Subject:"
+        Me.Label1.Text = "Enter Grade Level:"
         '
         'ViewClassR
         '

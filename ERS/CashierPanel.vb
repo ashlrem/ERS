@@ -19,6 +19,7 @@ Public Class CashierPanel
                 cn.Text = r("ContactNumber").ToString() & "."
                 pic = r("Photo").ToString()
                 PictureBox3.Image = base64toimage(pic)
+                pic = ""
                 connection.Close()
             Else
                 MsgBox("EmployeeID not Found!")

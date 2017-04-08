@@ -66,8 +66,8 @@ Partial Class Screen_Admin
         Me.SearchCashierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdminPanelPictureBox = New System.Windows.Forms.PictureBox()
         Me.ViewEnrolledStudentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdminPanelPictureBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.AdminPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -122,7 +122,7 @@ Partial Class Screen_Admin
         '
         Me.AdministratorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAdminToolStripMenuItem, Me.UpdateAdminToolStripMenuItem, Me.DeleteAdminToolStripMenuItem, Me.ToolStripSeparator2, Me.ViewAdminToolStripMenuItem})
         Me.AdministratorToolStripMenuItem.Name = "AdministratorToolStripMenuItem"
-        Me.AdministratorToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.AdministratorToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AdministratorToolStripMenuItem.Text = "Administrator"
         '
         'AddAdminToolStripMenuItem
@@ -158,7 +158,7 @@ Partial Class Screen_Admin
         '
         Me.RegistrarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddRegistrarToolStripMenuItem, Me.UpdateRegistrarToolStripMenuItem, Me.DeleteRegistrarToolStripMenuItem, Me.ToolStripSeparator3, Me.ViewRegistrarToolStripMenuItem})
         Me.RegistrarToolStripMenuItem.Name = "RegistrarToolStripMenuItem"
-        Me.RegistrarToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.RegistrarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.RegistrarToolStripMenuItem.Text = "Registrar"
         '
         'AddRegistrarToolStripMenuItem
@@ -194,7 +194,7 @@ Partial Class Screen_Admin
         '
         Me.CashierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddCashierToolStripMenuItem, Me.UpdateCashierToolStripMenuItem, Me.DeleteCashierToolStripMenuItem, Me.ToolStripSeparator4, Me.ViewCashierToolStripMenuItem})
         Me.CashierToolStripMenuItem.Name = "CashierToolStripMenuItem"
-        Me.CashierToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.CashierToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CashierToolStripMenuItem.Text = "Cashier"
         '
         'AddCashierToolStripMenuItem
@@ -287,6 +287,7 @@ Partial Class Screen_Admin
         Me.UpdateSubjectToolStripMenuItem.Name = "UpdateSubjectToolStripMenuItem"
         Me.UpdateSubjectToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.UpdateSubjectToolStripMenuItem.Text = "Update Subject"
+        Me.UpdateSubjectToolStripMenuItem.Visible = False
         '
         'DeleteSubjectToolStripMenuItem
         '
@@ -344,6 +345,12 @@ Partial Class Screen_Admin
         Me.SearchStudentToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.SearchStudentToolStripMenuItem.Text = "Search Student"
         '
+        'ViewEnrolledStudentsToolStripMenuItem
+        '
+        Me.ViewEnrolledStudentsToolStripMenuItem.Name = "ViewEnrolledStudentsToolStripMenuItem"
+        Me.ViewEnrolledStudentsToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.ViewEnrolledStudentsToolStripMenuItem.Text = "View Enrolled Students"
+        '
         'AdminPanelPictureBox
         '
         Me.AdminPanelPictureBox.BackColor = System.Drawing.Color.Transparent
@@ -356,12 +363,6 @@ Partial Class Screen_Admin
         Me.AdminPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.AdminPanelPictureBox.TabIndex = 1
         Me.AdminPanelPictureBox.TabStop = False
-        '
-        'ViewEnrolledStudentsToolStripMenuItem
-        '
-        Me.ViewEnrolledStudentsToolStripMenuItem.Name = "ViewEnrolledStudentsToolStripMenuItem"
-        Me.ViewEnrolledStudentsToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.ViewEnrolledStudentsToolStripMenuItem.Text = "View Enrolled Students"
         '
         'Screen_Admin
         '

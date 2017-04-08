@@ -684,7 +684,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarEdit.resx">
       <DependentUpon>RegistrarEdit.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarLogin.resx">
       <DependentUpon>RegistrarLogin.vb</DependentUpon>

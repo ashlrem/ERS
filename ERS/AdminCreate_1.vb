@@ -23,6 +23,7 @@ Public Class AdminCreate_1
         End Try
         decoding = encodingtypestring
         pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+        pic = ""
         createAdmin_1()
     End Sub
     Public Function imagetobase64(ByVal image As Image, ByVal format As ImageFormat) As String
@@ -64,11 +65,15 @@ Public Class AdminCreate_1
         Webcam.Show()
     End Sub
 
-    Private Sub statusTxtBoxAdmin1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles statusTxtBoxAdmin1.TextChanged
+    Private Sub statusTxtBoxAdmin1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub loginAttempt_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles loginAttempt.TextChanged
+    Private Sub loginAttempt_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox2.Click
 
     End Sub
 End Class
