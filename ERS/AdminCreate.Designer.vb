@@ -153,7 +153,7 @@ Partial Class AdminCreate
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 70)
+        Me.PictureBox1.Location = New System.Drawing.Point(11, 70)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(125, 86)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -240,7 +240,7 @@ Partial Class AdminCreate
         '
         'pl
         '
-        Me.pl.Location = New System.Drawing.Point(29, 111)
+        Me.pl.Location = New System.Drawing.Point(180, 12)
         Me.pl.Multiline = True
         Me.pl.Name = "pl"
         Me.pl.Size = New System.Drawing.Size(70, 33)

@@ -25,7 +25,6 @@ Partial Class UpdateAdmin
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.status = New System.Windows.Forms.ComboBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         Me.UpdateAdmin_btn = New System.Windows.Forms.Button()
         Me.cno = New System.Windows.Forms.MaskedTextBox()
         Me.eadd = New System.Windows.Forms.TextBox()
@@ -54,7 +53,6 @@ Partial Class UpdateAdmin
         '
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
         Me.GroupBox2.Controls.Add(Me.status)
-        Me.GroupBox2.Controls.Add(Me.pl)
         Me.GroupBox2.Controls.Add(Me.UpdateAdmin_btn)
         Me.GroupBox2.Controls.Add(Me.cno)
         Me.GroupBox2.Controls.Add(Me.eadd)
@@ -97,15 +95,6 @@ Partial Class UpdateAdmin
         Me.status.Name = "status"
         Me.status.Size = New System.Drawing.Size(103, 21)
         Me.status.TabIndex = 13
-        '
-        'pl
-        '
-        Me.pl.Enabled = False
-        Me.pl.Location = New System.Drawing.Point(291, 50)
-        Me.pl.Multiline = True
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 28)
-        Me.pl.TabIndex = 8
         '
         'UpdateAdmin_btn
         '
@@ -285,7 +274,6 @@ Partial Class UpdateAdmin
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents pl As System.Windows.Forms.TextBox
     Friend WithEvents UpdateAdmin_btn As System.Windows.Forms.Button
     Friend WithEvents cno As System.Windows.Forms.MaskedTextBox
     Friend WithEvents eadd As System.Windows.Forms.TextBox

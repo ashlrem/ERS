@@ -42,7 +42,6 @@ Partial Class ViewStudent
         Me.nam = New System.Windows.Forms.TextBox()
         Me.add = New System.Windows.Forms.TextBox()
         Me.sn = New System.Windows.Forms.TextBox()
-        Me.pl = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -146,7 +145,7 @@ Partial Class ViewStudent
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(35, 108)
+        Me.PictureBox2.Location = New System.Drawing.Point(52, 104)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(151, 130)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -216,13 +215,6 @@ Partial Class ViewStudent
         Me.sn.Size = New System.Drawing.Size(176, 20)
         Me.sn.TabIndex = 48
         '
-        'pl
-        '
-        Me.pl.Location = New System.Drawing.Point(86, 131)
-        Me.pl.Name = "pl"
-        Me.pl.Size = New System.Drawing.Size(100, 20)
-        Me.pl.TabIndex = 64
-        '
         'ViewStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -249,7 +241,6 @@ Partial Class ViewStudent
         Me.Controls.Add(Me.nam)
         Me.Controls.Add(Me.add)
         Me.Controls.Add(Me.sn)
-        Me.Controls.Add(Me.pl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "ViewStudent"
         Me.Text = "ViewStudent"
@@ -277,5 +268,4 @@ Partial Class ViewStudent
     Friend WithEvents nam As System.Windows.Forms.TextBox
     Friend WithEvents add As System.Windows.Forms.TextBox
     Friend WithEvents sn As System.Windows.Forms.TextBox
-    Friend WithEvents pl As System.Windows.Forms.TextBox
 End Class

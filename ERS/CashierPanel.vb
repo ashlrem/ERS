@@ -17,8 +17,8 @@ Public Class CashierPanel
                 n1.Text = r("Surname").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
                 email.Text = r("Email_Account").ToString() & "."
                 cn.Text = r("ContactNumber").ToString() & "."
-                pl.Text = r("Photo").ToString()
-                PictureBox3.Image = base64toimage(pl.Text)
+                pic = r("Photo").ToString()
+                PictureBox3.Image = base64toimage(pic)
                 connection.Close()
             Else
                 MsgBox("EmployeeID not Found!")
@@ -30,7 +30,7 @@ Public Class CashierPanel
         connection.Close()
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim a As Integer
         a = MsgBox("Are you sure do you want to logout?", MsgBoxStyle.YesNo)
         If (a = MsgBoxResult.Yes) Then

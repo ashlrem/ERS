@@ -123,6 +123,7 @@ Partial Class Forgot1
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Location = New System.Drawing.Point(350, 50)
         Me.Name = "Forgot1"
         Me.Text = "Forgot1"
         Me.ResumeLayout(False)

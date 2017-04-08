@@ -6,7 +6,6 @@ Public Class UpdateCashier
 
     Private Sub ValidateAccountUpdate_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ValidateAccountUpdate_btn.Click
         vCashier_btn()
-
     End Sub
 
     Public Function base64toimage(ByVal base64code As String) As Image
@@ -19,13 +18,16 @@ Public Class UpdateCashier
     Private Sub update_account_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles update_account.Click
         updateAccntCashier_btn()
     End Sub
+    Private Sub UpdateCashier_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
 
-    Private Sub UpdateCashier_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
-    Private Sub UpdateRegistrar_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
         Screen_Admin.Show()
         AdminPanel.Show()
     End Sub
 
+    Private Sub UpdateCashier_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim Screen As System.Drawing.Rectangle
+        Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 125) + 35
+        Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
+    End Sub
 End Class

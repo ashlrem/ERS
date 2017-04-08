@@ -147,6 +147,8 @@
       <HintPath>..\..\..\..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Vision.dll</HintPath>
     </Reference>
     <Reference Include="CustomMarshalers" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -157,6 +159,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core">
@@ -182,16 +185,22 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox1.Designer.vb">
-      <DependentUpon>AboutBox1.vb</DependentUpon>
+    <Compile Include="About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
     </Compile>
-    <Compile Include="AboutBox1.vb">
+    <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="addBookItem.Designer.vb">
       <DependentUpon>addBookItem.vb</DependentUpon>
     </Compile>
     <Compile Include="addBookItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClassR.Designer.vb">
+      <DependentUpon>AddClassR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddClassR.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddPayment_A.Designer.vb">
@@ -429,6 +438,12 @@
     <Compile Include="Screen_Registrar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SearchStudent.Designer.vb">
+      <DependentUpon>SearchStudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchStudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -459,6 +474,12 @@
     <Compile Include="UpdateCashier.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UpdateCashierC.Designer.vb">
+      <DependentUpon>UpdateCashierC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCashierC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UpdatePayment_A.Designer.vb">
       <DependentUpon>UpdatePayment_A.vb</DependentUpon>
     </Compile>
@@ -469,6 +490,12 @@
       <DependentUpon>UpdateRegistrar.vb</DependentUpon>
     </Compile>
     <Compile Include="UpdateRegistrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateRegistrarR.Designer.vb">
+      <DependentUpon>UpdateRegistrarR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateRegistrarR.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdateStudent_A.Designer.vb">
@@ -533,11 +560,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AboutBox1.resx">
-      <DependentUpon>AboutBox1.vb</DependentUpon>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addBookItem.resx">
       <DependentUpon>addBookItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddClassR.resx">
+      <DependentUpon>AddClassR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPayment_A.resx">
       <DependentUpon>AddPayment_A.vb</DependentUpon>
@@ -663,6 +693,7 @@
     <EmbeddedResource Include="RegistrarPanel.resx">
       <DependentUpon>RegistrarPanel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="About.rdlc" />
     <EmbeddedResource Include="Screen_Admin.resx">
       <DependentUpon>Screen_Admin.vb</DependentUpon>
     </EmbeddedResource>
@@ -671,6 +702,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screen_Registrar.resx">
       <DependentUpon>Screen_Registrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchStudent.resx">
+      <DependentUpon>SearchStudent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
@@ -689,11 +723,17 @@
     <EmbeddedResource Include="UpdateCashier.resx">
       <DependentUpon>UpdateCashier.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCashierC.resx">
+      <DependentUpon>UpdateCashierC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdatePayment_A.resx">
       <DependentUpon>UpdatePayment_A.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateRegistrar.resx">
       <DependentUpon>UpdateRegistrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateRegistrarR.resx">
+      <DependentUpon>UpdateRegistrarR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateStudent_A.resx">
       <DependentUpon>UpdateStudent_A.vb</DependentUpon>

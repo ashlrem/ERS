@@ -660,7 +660,6 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\bin\Debug\AForge.Video.VFW.xml
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\bin\Debug\AForge.Video.Ximea.xml
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\bin\Debug\AForge.Vision.xml
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.vbprojResolveAssemblyReference.cache
-C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AboutBox1.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.addBookItem.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddPayment_A.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AdminCreate.resources
@@ -799,3 +798,10 @@ C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.forgot2.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.forgot3.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ForgotC.resources
 C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.ForgotR.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateCashierC.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.UpdateRegistrarR.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.AddClassR.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.About.resources
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\RdlCompile.cache
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\RdlCompile.compiled
+C:\Users\Jinwin\Documents\GitHub\forked\ERS\ERS\obj\Debug\ERS.SearchStudent.resources

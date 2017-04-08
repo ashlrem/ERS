@@ -3,6 +3,7 @@ Imports System.Text.RegularExpressions
 Imports System.IO
 Imports System.Drawing.Imaging
 Module Module1
+    Public pic As String
     Public cn1 As New MySqlConnection
     Public cn As New MySqlConnection
     Public r As MySqlDataReader
@@ -64,8 +65,7 @@ Module Module1
             My.Forms.RegistrarPanel.n1.Text = r("Surname").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
             My.Forms.RegistrarPanel.email.Text = r("Email_Account").ToString() & "."
             My.Forms.RegistrarPanel.cn.Text = r("ContactNumber").ToString() & "."
-            My.Forms.RegistrarPanel.pl.Text = r("Photo").ToString()
-            My.Forms.RegistrarPanel.PictureBox3.Image = base64toimage(My.Forms.RegistrarPanel.pl.Text)
+            pic = r("Photo").ToString()
             cn1.Close() 'remember na laging icclose yung database connection. parang sa pag ibig, dapat laging may closure kayo ng x mo. hahaha
         Else
             MsgBox("Employee number not Found!")
@@ -82,7 +82,7 @@ Module Module1
             MsgBox("AlphaNumericSymbol needed to Password!")
             My.Forms.AdminCreate.pw.Clear()
 
-        ElseIf (My.Forms.AdminCreate.pl.Text = "" Or My.Forms.AdminCreate.ln.Text = "" Or My.Forms.AdminCreate.fn.Text = "" Or My.Forms.AdminCreate.mn.Text = "" Or My.Forms.AdminCreate.bd.Text = "" Or My.Forms.AdminCreate.add.Text = "" Or My.Forms.AdminCreate.eadd.Text = "" Or My.Forms.AdminCreate.cno.Text = "" Or My.Forms.AdminCreate.sq1.SelectedItem = "" Or My.Forms.AdminCreate.sq2.SelectedItem = "" Or My.Forms.AdminCreate.ans1.Text = "" Or My.Forms.AdminCreate.ans2.Text = "" Or My.Forms.AdminCreate.en.Text = "" Or My.Forms.AdminCreate.pw.Text = "" Or My.Forms.AdminCreate.rtp.Text = "") Then
+        ElseIf (My.Forms.AdminCreate.ln.Text = "" Or My.Forms.AdminCreate.fn.Text = "" Or My.Forms.AdminCreate.mn.Text = "" Or My.Forms.AdminCreate.bd.Text = "" Or My.Forms.AdminCreate.add.Text = "" Or My.Forms.AdminCreate.eadd.Text = "" Or My.Forms.AdminCreate.cno.Text = "" Or My.Forms.AdminCreate.sq1.SelectedItem = "" Or My.Forms.AdminCreate.sq2.SelectedItem = "" Or My.Forms.AdminCreate.ans1.Text = "" Or My.Forms.AdminCreate.ans2.Text = "" Or My.Forms.AdminCreate.en.Text = "" Or My.Forms.AdminCreate.pw.Text = "" Or My.Forms.AdminCreate.rtp.Text = "") Then
             MsgBox("Fill the empty box")
         Else
             'if no errors, save sa tables, which is sa accounts table(dito naka store lahat ng usernames ni admin, cashier, and registrar)'
@@ -122,7 +122,7 @@ Module Module1
 
                         'admin create (insert to database)
                         ins.CommandText = "INSERT INTO admin VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status, @LogIn_Attempts)"
-                        ins.Parameters.AddWithValue("@Photo", My.Forms.AdminCreate.pl.Text)
+                        ins.Parameters.AddWithValue("@Photo", pic)
                         ins.Parameters.AddWithValue("@Surname", My.Forms.AdminCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.AdminCreate.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.AdminCreate.mn.Text)
@@ -288,7 +288,8 @@ Module Module1
 
                         'registrar create (insert to database)
                         ins.CommandText = "INSERT INTO registrar_account VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status, @LogIn_Attempts)"
-                        ins.Parameters.AddWithValue("@Photo", My.Forms.RegistrarCreate.pl.Text)
+
+                        ins.Parameters.AddWithValue("@Photo", pic)
                         ins.Parameters.AddWithValue("@Surname", My.Forms.RegistrarCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.RegistrarCreate.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.RegistrarCreate.mn.Text)
@@ -431,12 +432,48 @@ Module Module1
         End Try
         objConn.Close()
     End Sub
+    Public Sub qweR()
+        'Adding Subjects (insert to database table "subject_tbl")
+        Dim cn = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+        objConn.ConnectionString = cn
+        objConn.Open()
+        Try
+            If (My.Forms.AddClassR.gl.SelectedIndex = -1 Or My.Forms.AddClassR.sec.Text = "") Then
+                MsgBox("Enter the empty fields!")
+            Else
+                'so dito, subjects yung sine save natin sa database, so yung SQL Query natin,
+                'INSERT INTO subject_tbl, para lang din tayong gumagawa ng user account, pero nagbago yung variables natin.
+                'pero same flow. gawa ng connection string, ioopen yung connection ni database,
+                'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
+                ins.Connection = objConn
+                ins.CommandText = "INSERT INTO subject_tbl VALUES( @GradeLevel, @Section)"
+                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClassR.gl.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@Section", My.Forms.AddClassR.sec.Text.ToString)
+                ins.ExecuteNonQuery()
+                ins.Parameters.Clear()
+                MsgBox("Subject saved successfully!")
+                objConn.Close()
+                Dim a As Integer
+                a = MsgBox("Do you want to Add another subject?", MsgBoxStyle.YesNo)
+                If (a = MsgBoxResult.Yes) Then
+                    AddSubClear()
+                ElseIf (a = MsgBoxResult.No) Then
+                    My.Forms.AddClassR.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        objConn.Close()
+    End Sub
+
     Public Sub insert()
         'insert method to. tandaan lang natin na kapag may nakita tayong 'insert()' sa ibang method, eto yung tinatawag niya.
         'bakit kelangan nito? para hindi na natin paulit ulit na copy paste etong 2 lines of code sa lahat ng method.
         cn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
         cn1.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
     End Sub
+
     Public Sub AddSubClear()
 
         'so eto yung method para mag clear yung mga text boxes and stuff sa code natin.
@@ -825,11 +862,7 @@ Module Module1
                 My.Forms.AdminPanel.n1.Text = r("Surname").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
                 My.Forms.AdminPanel.email.Text = r("Email_Account").ToString() & "."
                 My.Forms.AdminPanel.cn.Text = r("ContactNumber").ToString() & "."
-                My.Forms.AdminPanel.pl.Text = r("Photo").ToString()
-                Try
-                    My.Forms.AdminPanel.PictureBox3.Image = base64toimage(My.Forms.AdminPanel.pl.Text)
-                Catch
-                End Try
+                pic = r("Photo").ToString()
             Else
                 MsgBox("Employee number not Found!")
                 cn1.Close()
@@ -837,7 +870,7 @@ Module Module1
         Catch ex As Exception
         End Try
         cn1.Close()
-        
+
     End Sub
     Public Sub close1()
         'eto yung pag close method ng mga forms.
@@ -1155,9 +1188,9 @@ Module Module1
 
             'kung meron ngang username na tinype ni user sa database, show yung next form. else, error
             If r.Read Then
-                Forgot2.TopLevel = False
-                My.Forms.MainScreen.Pi.Controls.Add(Forgot2)
-                Forgot2.Show()
+                forgot2.TopLevel = False
+                My.Forms.MainScreen.Pi.Controls.Add(forgot2)
+                forgot2.Show()
                 My.Forms.ForgotC.Hide()
                 cn.Close()
             Else
@@ -1220,7 +1253,7 @@ Module Module1
                 My.Forms.RegistrarEdit.eadd.Text = r("Email_Account").ToString()
                 My.Forms.RegistrarEdit.cno.Text = r("ContactNumber").ToString()
                 My.Forms.RegistrarEdit.eadd.Text = r("Email_Account").ToString()
-                My.Forms.RegistrarEdit.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.RegistrarEdit.GroupBox2.Enabled = True
                 My.Forms.RegistrarEdit.Button1.Enabled = False
                 My.Forms.RegistrarEdit.en.Enabled = False
@@ -1277,7 +1310,7 @@ Module Module1
                 My.Forms.CashierEdit.eadd.Text = r("Email_Account").ToString()
                 My.Forms.CashierEdit.cno.Text = r("ContactNumber").ToString()
                 My.Forms.CashierEdit.eadd.Text = r("Email_Account").ToString()
-                My.Forms.CashierEdit.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.CashierEdit.GroupBox2.Enabled = True
                 My.Forms.CashierEdit.Button1.Enabled = False
                 My.Forms.CashierEdit.en.Enabled = False
@@ -1339,11 +1372,11 @@ Module Module1
                 My.Forms.DeleteRegistrar.eadd.Text = r("Email_Account").ToString()
                 My.Forms.DeleteRegistrar.cno.Text = r("ContactNumber").ToString()
                 My.Forms.DeleteRegistrar.eadd.Text = r("Email_Account").ToString()
-                My.Forms.DeleteRegistrar.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.DeleteRegistrar.GroupBox2.Enabled = True
                 My.Forms.DeleteRegistrar.Button1.Enabled = False
                 My.Forms.DeleteRegistrar.en.Enabled = False
-                My.Forms.DeleteRegistrar.PictureBox1.Image = base64toimage(My.Forms.DeleteRegistrar.pl.Text)
+                My.Forms.DeleteRegistrar.PictureBox1.Image = base64toimage(pic)
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
@@ -1404,11 +1437,11 @@ Module Module1
                 My.Forms.DeleteCashier.eadd.Text = r("Email_Account").ToString()
                 My.Forms.DeleteCashier.cno.Text = r("ContactNumber").ToString()
                 My.Forms.DeleteCashier.eadd.Text = r("Email_Account").ToString()
-                My.Forms.DeleteCashier.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.DeleteCashier.GroupBox2.Enabled = True
                 My.Forms.DeleteCashier.Button1.Enabled = False
                 My.Forms.DeleteCashier.en.Enabled = False
-                My.Forms.DeleteCashier.PictureBox1.Image = base64toimage(My.Forms.DeleteCashier.pl.Text)
+                My.Forms.DeleteCashier.PictureBox1.Image = base64toimage(pic)
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
@@ -1438,11 +1471,11 @@ Module Module1
                 My.Forms.deleteAdmin.eadd.Text = r("Email_Account").ToString()
                 My.Forms.deleteAdmin.cno.Text = r("ContactNumber").ToString()
                 My.Forms.deleteAdmin.eadd.Text = r("Email_Account").ToString()
-                My.Forms.deleteAdmin.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.deleteAdmin.GroupBox2.Enabled = True
                 My.Forms.deleteAdmin.Button1.Enabled = False
                 My.Forms.deleteAdmin.en.Enabled = False
-                My.Forms.deleteAdmin.PictureBox1.Image = base64toimage(My.Forms.deleteAdmin.pl.Text)
+                My.Forms.deleteAdmin.PictureBox1.Image = base64toimage(pic)
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
@@ -1539,7 +1572,6 @@ Module Module1
                     My.Forms.deleteAdmin.add.Text = ""
                     My.Forms.deleteAdmin.eadd.Text = ""
                     My.Forms.deleteAdmin.cno.Text = ""
-                    My.Forms.deleteAdmin.pl.Text = ""
                     My.Forms.deleteAdmin.PictureBox1.Image = Nothing
                     cn.Close()
                 End Using
@@ -1570,7 +1602,6 @@ Module Module1
                     My.Forms.DeleteCashier.add.Text = ""
                     My.Forms.DeleteCashier.eadd.Text = ""
                     My.Forms.DeleteCashier.cno.Text = ""
-                    My.Forms.DeleteCashier.pl.Text = ""
                     My.Forms.DeleteCashier.PictureBox1.Image = Nothing
                     cn.Close()
                 End Using
@@ -1606,7 +1637,7 @@ Module Module1
             objConn.Open()
             ins.Connection = objConn
             ins.CommandText = "INSERT INTO student_info_archive VALUES(@Photo ,@Name, @Student_ID_No)"
-            ins.Parameters.AddWithValue("@Photo", My.Forms.DeleteStudent_A.pl.Text)
+            ins.Parameters.AddWithValue("@Photo", pic)
             ins.Parameters.AddWithValue("@Name", My.Forms.DeleteStudent_A.nam.Text)
             ins.Parameters.AddWithValue("@Student_ID_No", My.Forms.DeleteStudent_A.sn.Text)
             ins.ExecuteNonQuery()
@@ -1632,7 +1663,6 @@ Module Module1
                     My.Forms.DeleteStudent_A.ag.Text = ""
                     My.Forms.DeleteStudent_A.sy.Text = ""
                     My.Forms.DeleteStudent_A.con.Text = ""
-                    My.Forms.DeleteStudent_A.pl.Text = ""
                     My.Forms.DeleteStudent_A.PictureBox2.Image = Nothing
                     cn1.Close()
                 End Using
@@ -1670,7 +1700,7 @@ Module Module1
             objConn.Open()
             ins.Connection = objConn
             ins.CommandText = "INSERT INTO student_info_archive VALUES(@Photo ,@Name, @Student_ID_No)"
-            ins.Parameters.AddWithValue("@Photo", My.Forms.DeleteStudent_R.pl.Text)
+            ins.Parameters.AddWithValue("@Photo", pic)
             ins.Parameters.AddWithValue("@Name", My.Forms.DeleteStudent_R.nam.Text)
             ins.Parameters.AddWithValue("@Student_ID_No", My.Forms.DeleteStudent_R.sn.Text)
             ins.ExecuteNonQuery()
@@ -1696,7 +1726,6 @@ Module Module1
                     My.Forms.DeleteStudent_R.ag.Text = ""
                     My.Forms.DeleteStudent_R.sy.Text = ""
                     My.Forms.DeleteStudent_R.con.Text = ""
-                    My.Forms.DeleteStudent_R.pl.Text = ""
                     My.Forms.DeleteStudent_R.PictureBox2.Image = Nothing
                     cn1.Close()
                 End Using
@@ -1735,9 +1764,7 @@ Module Module1
                     My.Forms.UpdateStudent_A.gl.Text = ""
                     My.Forms.UpdateStudent_A.con.Text = ""
                     My.Forms.UpdateStudent_A.sy.Text = ""
-                    My.Forms.UpdateStudent_A.pl.Text = ""
                     My.Forms.UpdateStudent_A.ag.Text = ""
-                    My.Forms.UpdateStudent_A.pl.Text = ""
                     My.Forms.UpdateStudent_A.PictureBox2.Image = Nothing
                     cn1.Close() 'close connection
                 End Using
@@ -1773,9 +1800,7 @@ Module Module1
                     My.Forms.UpdateStudent_R.gl.Text = ""
                     My.Forms.UpdateStudent_R.con.Text = ""
                     My.Forms.UpdateStudent_R.sy.Text = ""
-                    My.Forms.UpdateStudent_R.pl.Text = ""
                     My.Forms.UpdateStudent_R.ag.Text = ""
-                    My.Forms.UpdateStudent_R.pl.Text = ""
                     My.Forms.UpdateStudent_R.PictureBox2.Image = Nothing
                     cn1.Close() 'close connection
                 End Using
@@ -1804,11 +1829,11 @@ Module Module1
                 My.Forms.UpdateAdmin.eadd.Text = r("Email_Account").ToString()
                 My.Forms.UpdateAdmin.cno.Text = r("ContactNumber").ToString()
                 My.Forms.UpdateAdmin.eadd.Text = r("Email_Account").ToString()
-                My.Forms.UpdateAdmin.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.UpdateAdmin.GroupBox2.Enabled = True
                 My.Forms.UpdateAdmin.ValidateAccountUpdate_btn.Enabled = False
                 My.Forms.UpdateAdmin.en.Enabled = False
-                My.Forms.UpdateAdmin.PictureBox1.Image = base64toimage(My.Forms.UpdateAdmin.pl.Text)
+                My.Forms.UpdateAdmin.PictureBox1.Image = base64toimage(pic)
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
@@ -1876,16 +1901,51 @@ Module Module1
                 My.Forms.UpdateRegistrar.eadd.Text = r("Email_Account").ToString()
                 My.Forms.UpdateRegistrar.cno.Text = r("ContactNumber").ToString()
                 My.Forms.UpdateRegistrar.eadd.Text = r("Email_Account").ToString()
-                My.Forms.UpdateRegistrar.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.UpdateRegistrar.GroupBox2.Enabled = True
                 My.Forms.UpdateRegistrar.ValidateAccountUpdate_btn.Enabled = False
                 My.Forms.UpdateRegistrar.en.Enabled = False
-                My.Forms.UpdateRegistrar.PictureBox1.Image = base64toimage(My.Forms.UpdateRegistrar.pl.Text)
+                My.Forms.UpdateRegistrar.PictureBox1.Image = base64toimage(pic)
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
                 My.Forms.UpdateRegistrar.en.Text = ""
                 My.Forms.UpdateRegistrar.en.Focus()
+                cn.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+    Public Sub rRegistrar_btn()
+        'not implemented
+        Try
+            insert()
+            Dim r As MySqlDataReader
+            Dim reg As String = "SELECT * FROM registrar_account WHERE (EmployeeID ='" & My.Forms.UpdateRegistrarR.en.Text & "')"
+            cn.Open()
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn)
+            r = cmd.ExecuteReader()
+            If r.Read Then
+                My.Forms.UpdateRegistrarR.ln.Text = r("Surname").ToString()
+                My.Forms.UpdateRegistrarR.fn.Text = r("GivenName").ToString()
+                My.Forms.UpdateRegistrarR.mn.Text = r("MiddleName").ToString()
+                My.Forms.UpdateRegistrarR.bd.Text = r("Birthday").ToString()
+                My.Forms.UpdateRegistrarR.add.Text = r("Address").ToString()
+                My.Forms.UpdateRegistrarR.eadd.Text = r("Email_Account").ToString()
+                My.Forms.UpdateRegistrarR.cno.Text = r("ContactNumber").ToString()
+                My.Forms.UpdateRegistrarR.eadd.Text = r("Email_Account").ToString()
+                pic = r("Photo").ToString()
+                My.Forms.UpdateRegistrarR.GroupBox2.Enabled = True
+                My.Forms.UpdateRegistrarR.ValidateAccountUpdate_btn.Enabled = False
+                My.Forms.UpdateRegistrarR.en.Enabled = False
+                My.Forms.UpdateRegistrarR.PictureBox1.Image = base64toimage(pic)
+                cn.Close()
+            Else
+                MsgBox("EmployeeID not Found!")
+                My.Forms.UpdateRegistrarR.en.Text = ""
+                My.Forms.UpdateRegistrarR.en.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -1901,7 +1961,7 @@ Module Module1
               And My.Forms.UpdateRegistrar.cno.Text = "") Then
                 MsgBox("Please enter the empty fields")
             Else
-                Dim reg As String = "UPDATE registrar_account SET Surname = '" & My.Forms.UpdateRegistrar.ln.Text & "', GivenName = '" & My.Forms.UpdateRegistrar.fn.Text & "', MiddleName = '" & My.Forms.UpdateRegistrar.mn.Text & "', Birthday = '" & My.Forms.UpdateRegistrar.bd.Text & "', Address = '" & My.Forms.UpdateRegistrar.add.Text & "', Email_Account = '" & My.Forms.UpdateRegistrar.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateRegistrar.cno.Text & "' , status = '" & My.Forms.UpdateCashier.status.Text & "', LogIn_Attempts = 0 WHERE EmployeeID = '" & My.Forms.UpdateRegistrar.en.Text & "' "
+                Dim reg As String = "UPDATE registrar_account SET Surname = '" & My.Forms.UpdateRegistrar.ln.Text & "', GivenName = '" & My.Forms.UpdateRegistrar.fn.Text & "', MiddleName = '" & My.Forms.UpdateRegistrar.mn.Text & "', Birthday = '" & My.Forms.UpdateRegistrar.bd.Text & "', Address = '" & My.Forms.UpdateRegistrar.add.Text & "', Email_Account = '" & My.Forms.UpdateRegistrar.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateRegistrar.cno.Text & "' , status = '" & My.Forms.UpdateRegistrar.status.Text & "', LogIn_Attempts = 0 WHERE EmployeeID = '" & My.Forms.UpdateRegistrar.en.Text & "' "
                 Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                     Using sqlCmd = New MySqlCommand(reg, cn1)
                         cn1.Open()
@@ -1930,6 +1990,43 @@ Module Module1
             cn.Close()
         End Try
     End Sub
+    Public Sub updateAccntRegistrarR_btn()
+        Try
+            If (My.Forms.UpdateRegistrarR.ln.Text = "" And My.Forms.UpdateRegistrarR.fn.Text = "" _
+              And My.Forms.UpdateRegistrarR.mn.Text = "" And My.Forms.UpdateRegistrarR.bd.Text = "" _
+              And My.Forms.UpdateRegistrarR.add.Text = "" And My.Forms.UpdateRegistrarR.eadd.Text = "" _
+              And My.Forms.UpdateRegistrarR.cno.Text = "") Then
+                MsgBox("Please enter the empty fields")
+            Else
+                Dim reg As String = "UPDATE registrar_account SET Surname = '" & My.Forms.UpdateRegistrarR.ln.Text & "', GivenName = '" & My.Forms.UpdateRegistrarR.fn.Text & "', MiddleName = '" & My.Forms.UpdateRegistrarR.mn.Text & "', Birthday = '" & My.Forms.UpdateRegistrarR.bd.Text & "', Address = '" & My.Forms.UpdateRegistrarR.add.Text & "', Email_Account = '" & My.Forms.UpdateRegistrarR.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateRegistrarR.cno.Text & "' , status = '" & My.Forms.UpdateRegistrarR.status.Text & "', LogIn_Attempts = 0 WHERE EmployeeID = '" & My.Forms.UpdateRegistrarR.en.Text & "' "
+                Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
+                    Using sqlCmd = New MySqlCommand(reg, cn1)
+                        cn1.Open()
+                        sqlCmd.ExecuteNonQuery()
+                        MsgBox("Registrar Account Updated!")
+                        My.Forms.UpdateRegistrarR.en.Text = ""
+                        My.Forms.UpdateRegistrarR.ln.Text = ""
+                        My.Forms.UpdateRegistrarR.fn.Text = ""
+                        My.Forms.UpdateRegistrarR.mn.Text = ""
+                        My.Forms.UpdateRegistrarR.bd.Text = ""
+                        My.Forms.UpdateRegistrarR.add.Text = ""
+                        My.Forms.UpdateRegistrarR.eadd.Text = ""
+                        My.Forms.UpdateRegistrarR.cno.Text = ""
+                        My.Forms.UpdateRegistrarR.GroupBox2.Enabled = False
+                        My.Forms.UpdateRegistrarR.ValidateAccountUpdate_btn.Enabled = True
+                        My.Forms.UpdateRegistrarR.en.Enabled = True
+                        My.Forms.UpdateRegistrarR.en.Focus()
+                        My.Forms.UpdateRegistrarR.PictureBox1.Image = Nothing
+                        cn1.Close()
+                    End Using
+                    cn1.Close()
+                End Using
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
     Public Sub vCashier_btn()
         'not implemented
         Try
@@ -1948,17 +2045,53 @@ Module Module1
                 My.Forms.UpdateCashier.eadd.Text = r("Email_Account").ToString()
                 My.Forms.UpdateCashier.cno.Text = r("ContactNumber").ToString()
                 My.Forms.UpdateCashier.eadd.Text = r("Email_Account").ToString()
-                My.Forms.UpdateCashier.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.UpdateCashier.cno.Text = r("ContactNumber").ToString()
                 My.Forms.UpdateCashier.GroupBox2.Enabled = True
                 My.Forms.UpdateCashier.ValidateAccountUpdate_btn.Enabled = False
                 My.Forms.UpdateCashier.en.Enabled = False
-                My.Forms.UpdateCashier.PictureBox1.Image = base64toimage(My.Forms.UpdateCashier.pl.Text)
+                My.Forms.UpdateCashier.PictureBox1.Image = base64toimage(pic)
                 cn.Close()
             Else
                 MsgBox("EmployeeID not Found!")
                 My.Forms.UpdateCashier.en.Text = ""
                 My.Forms.UpdateCashier.en.Focus()
+                cn.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+    Public Sub SCashier_btn()
+        'not implemented
+        Try
+            insert()
+            Dim r As MySqlDataReader
+            Dim reg As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & My.Forms.UpdateCashierC.en.Text & "')"
+            cn.Open()
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, cn)
+            r = cmd.ExecuteReader()
+            If r.Read Then
+                My.Forms.UpdateCashierC.ln.Text = r("Surname").ToString()
+                My.Forms.UpdateCashierC.fn.Text = r("GivenName").ToString()
+                My.Forms.UpdateCashierC.mn.Text = r("MiddleName").ToString()
+                My.Forms.UpdateCashierC.bd.Text = r("Birthday").ToString()
+                My.Forms.UpdateCashierC.add.Text = r("Address").ToString()
+                My.Forms.UpdateCashierC.eadd.Text = r("Email_Account").ToString()
+                My.Forms.UpdateCashierC.cno.Text = r("ContactNumber").ToString()
+                My.Forms.UpdateCashierC.eadd.Text = r("Email_Account").ToString()
+                pic = r("Photo").ToString()
+                My.Forms.UpdateCashierC.cno.Text = r("ContactNumber").ToString()
+                My.Forms.UpdateCashierC.GroupBox2.Enabled = True
+                My.Forms.UpdateCashierC.ValidateAccountUpdate_btn.Enabled = False
+                My.Forms.UpdateCashierC.en.Enabled = False
+                My.Forms.UpdateCashierC.PictureBox1.Image = base64toimage(pic)
+                cn.Close()
+            Else
+                MsgBox("EmployeeID not Found!")
+                My.Forms.UpdateCashierC.en.Text = ""
+                My.Forms.UpdateCashierC.en.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2009,7 +2142,43 @@ Module Module1
             cn.Close()
         End Try
     End Sub
-  
+    Public Sub UpdateCashiercc()
+        Try
+            If (My.Forms.UpdateCashierC.ln.Text = "" And My.Forms.UpdateCashierC.fn.Text = "" _
+              And My.Forms.UpdateCashierC.mn.Text = "" And My.Forms.UpdateCashierC.bd.Text = "" _
+              And My.Forms.UpdateCashierC.add.Text = "" And My.Forms.UpdateCashierC.eadd.Text = "" _
+              And My.Forms.UpdateCashierC.cno.Text = "") Then
+                MsgBox("Please enter the empty fields")
+            Else
+                Dim reg As String = "UPDATE cashier_account SET Surname = '" & My.Forms.UpdateCashierC.ln.Text & "', GivenName = '" & My.Forms.UpdateCashierC.fn.Text & "', MiddleName = '" & My.Forms.UpdateCashierC.mn.Text & "', Birthday = '" & My.Forms.UpdateCashierC.bd.Text & "', Address = '" & My.Forms.UpdateCashierC.add.Text & "', Email_Account = '" & My.Forms.UpdateCashierC.eadd.Text & "', ContactNumber = '" & My.Forms.UpdateCashierC.cno.Text & "', status = '" & My.Forms.UpdateCashierC.status.Text & "', LogIn_Attempts = 0 where EmployeeID = '" & My.Forms.UpdateCashierC.en.Text & "'"
+                Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
+                    Using sqlCmd = New MySqlCommand(reg, cn1)
+                        cn1.Open()
+                        sqlCmd.ExecuteNonQuery()
+                        MsgBox("Cashier Account Updated!")
+                        My.Forms.UpdateCashierC.en.Text = ""
+                        My.Forms.UpdateCashierC.ln.Text = ""
+                        My.Forms.UpdateCashierC.fn.Text = ""
+                        My.Forms.UpdateCashierC.mn.Text = ""
+                        My.Forms.UpdateCashierC.bd.Text = ""
+                        My.Forms.UpdateCashierC.add.Text = ""
+                        My.Forms.UpdateCashierC.eadd.Text = ""
+                        My.Forms.UpdateCashierC.cno.Text = ""
+                        My.Forms.UpdateCashierC.GroupBox2.Enabled = False
+                        My.Forms.UpdateCashierC.ValidateAccountUpdate_btn.Enabled = True
+                        My.Forms.UpdateCashierC.en.Enabled = True
+                        My.Forms.UpdateCashierC.PictureBox1.Image = Nothing
+                        My.Forms.UpdateCashierC.en.Focus()
+                        cn1.Close()
+                    End Using
+                    cn1.Close()
+                End Using
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
     Public Sub updateSubjA_btn()
         Try
             If (My.Forms.UpdateClass_A.nm.Text = "" And My.Forms.UpdateClass_A.teacher.Text = "" _
@@ -2355,22 +2524,18 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Subject_Name ='" & My.Forms.ViewClassR.subj.SelectedItem & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Grade_Level ='" & My.Forms.ViewClassR.subj.SelectedItem & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
             r = cmd.ExecuteReader()
             If r.Read Then
 
-                'For form DeleteSubj_R search button
-                My.Forms.ViewClassR.gl.Text = r("Grade_Level").ToString()
-                My.Forms.ViewClassR.sec.Text = r("Section").ToString()
-                My.Forms.ViewClassR.sy.Text = r("School_Year").ToString()
-                My.Forms.ViewClassR.tim.Text = r("Time").ToString()
-                My.Forms.ViewClassR.nm.Text = r("No_Minutes").ToString()
-                My.Forms.ViewClassR.teacher.Text = r("Teacher").ToString()
-                My.Forms.ViewClassR.SearchSubj_btn.Enabled = False
-                My.Forms.ViewClassR.subj.Enabled = False
+                My.Forms.ViewClassR.sec.Items.Clear()
+                My.Forms.ViewClassR.sec.Items.Add(r("Section").ToString())
+                While (r.Read())
+                    My.Forms.ViewClassR.sec.Items.Add(r("Section").ToString())
+                End While
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
@@ -2404,21 +2569,20 @@ Module Module1
                 My.Forms.UpdateStudent_A.gl.Text = r("GradeLevel").ToString()
                 My.Forms.UpdateStudent_A.con.Text = r("Contact").ToString()
                 My.Forms.UpdateStudent_A.sy.Text = r("SchoolYear").ToString()
-                My.Forms.UpdateStudent_A.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.UpdateStudent_A.ag.Text = r("Age").ToString()
-                My.Forms.UpdateStudent_A.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
 
                 My.Forms.UpdateStudent_A.add.Enabled = True
                 My.Forms.UpdateStudent_A.bd.Enabled = True
                 My.Forms.UpdateStudent_A.gl.Enabled = True
                 My.Forms.UpdateStudent_A.con.Enabled = True
                 My.Forms.UpdateStudent_A.sy.Enabled = True
-                My.Forms.UpdateStudent_A.pl.Enabled = True
+
                 My.Forms.UpdateStudent_A.ag.Enabled = True
-                My.Forms.UpdateStudent_A.pl.Enabled = True
                 My.Forms.UpdateStudent_A.sn.Enabled = False
                 My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = False
-                My.Forms.UpdateStudent_A.PictureBox2.Image = base64toimage(My.Forms.UpdateStudent_A.pl.Text)
+                My.Forms.UpdateStudent_A.PictureBox2.Image = base64toimage(pic)
 
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
@@ -2452,15 +2616,10 @@ Module Module1
                 My.Forms.DeleteStudent_A.gl.Text = r("GradeLevel").ToString()
                 My.Forms.DeleteStudent_A.con.Text = r("Contact").ToString()
                 My.Forms.DeleteStudent_A.sy.Text = r("SchoolYear").ToString()
-                My.Forms.DeleteStudent_A.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.DeleteStudent_A.ag.Text = r("Age").ToString()
-                My.Forms.DeleteStudent_A.pl.Text = r("Photo").ToString()
-                My.Forms.DeleteStudent_A.PictureBox2.Image = base64toimage(My.Forms.DeleteStudent_A.pl.Text)
-              
-
+                My.Forms.DeleteStudent_A.PictureBox2.Image = base64toimage(pic)
                 My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = True
-
-
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2493,10 +2652,10 @@ Module Module1
                 My.Forms.DeleteStudent_R.gl.Text = r("GradeLevel").ToString()
                 My.Forms.DeleteStudent_R.con.Text = r("Contact").ToString()
                 My.Forms.DeleteStudent_R.sy.Text = r("SchoolYear").ToString()
-                My.Forms.DeleteStudent_R.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.DeleteStudent_R.ag.Text = r("Age").ToString()
-                My.Forms.DeleteStudent_R.pl.Text = r("Photo").ToString()
-                My.Forms.DeleteStudent_R.PictureBox2.Image = base64toimage(My.Forms.DeleteStudent_R.pl.Text)
+                pic = r("Photo").ToString()
+                My.Forms.DeleteStudent_R.PictureBox2.Image = base64toimage(pic)
 
                 My.Forms.DeleteStudent_R.SearchStudent_btn.Enabled = False
 
@@ -2535,21 +2694,18 @@ Module Module1
                 My.Forms.UpdateStudent_R.gl.Text = r("GradeLevel").ToString()
                 My.Forms.UpdateStudent_R.con.Text = r("Contact").ToString()
                 My.Forms.UpdateStudent_R.sy.Text = r("SchoolYear").ToString()
-                My.Forms.UpdateStudent_R.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.UpdateStudent_R.ag.Text = r("Age").ToString()
-                My.Forms.UpdateStudent_R.pl.Text = r("Photo").ToString()
 
                 My.Forms.UpdateStudent_R.add.Enabled = True
                 My.Forms.UpdateStudent_R.bd.Enabled = True
                 My.Forms.UpdateStudent_R.gl.Enabled = True
                 My.Forms.UpdateStudent_R.con.Enabled = True
                 My.Forms.UpdateStudent_R.sy.Enabled = True
-                My.Forms.UpdateStudent_R.pl.Enabled = True
                 My.Forms.UpdateStudent_R.ag.Enabled = True
-                My.Forms.UpdateStudent_R.pl.Enabled = True
                 My.Forms.UpdateStudent_R.sn.Enabled = False
                 My.Forms.UpdateStudent_R.SearchStudent_btn.Enabled = False
-                My.Forms.UpdateStudent_R.PictureBox2.Image = base64toimage(My.Forms.UpdateStudent_R.pl.Text)
+                My.Forms.UpdateStudent_R.PictureBox2.Image = base64toimage(pic)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2582,10 +2738,9 @@ Module Module1
                 My.Forms.ViewStudent.gl.Text = r("GradeLevel").ToString()
                 My.Forms.ViewStudent.con.Text = r("Contact").ToString()
                 My.Forms.ViewStudent.sy.Text = r("SchoolYear").ToString()
-                My.Forms.ViewStudent.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.ViewStudent.ag.Text = r("Age").ToString()
-                My.Forms.ViewStudent.pl.Text = r("Photo").ToString()
-                My.Forms.ViewStudent.PictureBox2.Image = base64toimage(My.Forms.ViewStudent.pl.Text)
+                My.Forms.ViewStudent.PictureBox2.Image = base64toimage(pic)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2619,10 +2774,12 @@ Module Module1
                 My.Forms.ViewStudent_R.gl.Text = r("GradeLevel").ToString()
                 My.Forms.ViewStudent_R.con.Text = r("Contact").ToString()
                 My.Forms.ViewStudent_R.sy.Text = r("SchoolYear").ToString()
-                My.Forms.ViewStudent_R.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.ViewStudent_R.ag.Text = r("Age").ToString()
-                My.Forms.ViewStudent_R.pl.Text = r("Photo").ToString()
-                My.Forms.ViewStudent_R.PictureBox2.Image = base64toimage(My.Forms.ViewStudent_R.pl.Text)
+                My.Forms.ViewStudent_R.PictureBox2.Image = base64toimage(pic)
+
+
+
 
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
@@ -2658,10 +2815,9 @@ Module Module1
                 My.Forms.ViewStud_C.gl.Text = r("GradeLevel").ToString()
                 My.Forms.ViewStud_C.con.Text = r("Contact").ToString()
                 My.Forms.ViewStud_C.sy.Text = r("SchoolYear").ToString()
-                My.Forms.ViewStud_C.pl.Text = r("Photo").ToString()
+                pic = r("Photo").ToString()
                 My.Forms.ViewStud_C.ag.Text = r("Age").ToString()
-                My.Forms.ViewStud_C.pl.Text = r("Photo").ToString()
-                My.Forms.ViewStud_C.PictureBox2.Image = base64toimage(My.Forms.ViewStud_C.pl.Text)
+                My.Forms.ViewStud_C.PictureBox2.Image = base64toimage(pic)
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2673,7 +2829,7 @@ Module Module1
         End Try
         conn.Close()
     End Sub
-    
+
     'guys, kapag may question kayo, chat lang kayo dun sa chat box, pag hindi ako available, sasagot naman si tolits.
     'pag urgent, you can reach me at my mobile number. okay?
     'God bless us!

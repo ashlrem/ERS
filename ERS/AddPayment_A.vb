@@ -2,7 +2,10 @@
    
     Public t As Integer
     Private Sub AddPayment_A_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        Dim Screen As System.Drawing.Rectangle
+        Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 125) + 35
+        Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
 
 
         'Dim tuition As Integer
@@ -68,11 +71,6 @@
         Proceed_btn.Enabled = True
        
     End Sub
-    Private Sub AddPayment_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-        Screen_Admin.Show()
-        AdminPanel.Show()
-    End Sub
-
     Private Sub pp_rdbnt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pp_rdbnt.CheckedChanged
         EnterPartial_grp.Enabled = True
         Payment_grp.Text = "Partial payment"
@@ -136,7 +134,6 @@
             midterm.Text = "-"
             total.Enabled = True
             Me.Enabled = False
-
         ElseIf pp_rdbnt.Checked = True Then
             Proceed_btn.Enabled = False
             PartialPayment_A()
@@ -162,8 +159,11 @@
         grade.Text = "---"
         Proceed_btn.Enabled = False
   
-  End Sub
-
+    End Sub
+    Private Sub AddPayment_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        Screen_Cashier.Show()
+        Screen_Cashier.Show()
+    End Sub
     Private Sub enterTuition_btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles enterTuition_btn.Click
         If total.Text = "" Then
             MsgBox("Please enter tuitionfee.")
@@ -181,6 +181,27 @@
                 t = t + totalB
                 total1.Text = t
             ElseIf grade.Text = "Grade 2" Then
+
+                t = total.Text
+                t = t + totalB
+                total1.Text = t
+
+            ElseIf grade.Text = "Grade 3" Then
+
+                t = total.Text
+                t = t + totalB
+                total1.Text = t
+            ElseIf grade.Text = "Grade 4" Then
+
+                t = total.Text
+                t = t + totalB
+                total1.Text = t
+            ElseIf grade.Text = "Grade 5" Then
+
+                t = total.Text
+                t = t + totalB
+                total1.Text = t
+            ElseIf grade.Text = "Grade 6" Then
 
                 t = total.Text
                 t = t + totalB
@@ -216,7 +237,6 @@
             p9.Text = "100"
             subjandbooksComputation()
 
-
         ElseIf getSubj.SelectedItem = "Grade 2" Then
             Subj1.Text = "Mathematics 2"
             Subj2.Text = "Filipino 2"
@@ -239,7 +259,93 @@
             p9.Text = "75"
             subjandbooksComputation()
 
+        ElseIf getSubj.SelectedItem = "Grade 3" Then
+            Subj1.Text = "Mathematics 3"
+            Subj2.Text = "Filipino 3"
+            Subj3.Text = "Science 3"
+            Subj4.Text = "English 3"
+            Subj5.Text = "MSEP 3"
+            Subj6.Text = "EPP 3"
+            Subj7.Text = "Computer 3"
+            Subj8.Text = "TLE 3"
+            Subj9.Text = "EP 3"
 
+            p1.Text = "100"
+            p2.Text = "100"
+            p3.Text = "100"
+            p4.Text = "100"
+            p5.Text = "100"
+            p6.Text = "100"
+            p7.Text = "100"
+            p8.Text = "100"
+            p9.Text = "75"
+            subjandbooksComputation()
+
+        ElseIf getSubj.SelectedItem = "Grade 4" Then
+            Subj1.Text = "Mathematics 4"
+            Subj2.Text = "Filipino 4"
+            Subj3.Text = "Science 4"
+            Subj4.Text = "English 4"
+            Subj5.Text = "MSEP 4"
+            Subj6.Text = "EPP 4"
+            Subj7.Text = "Computer 4"
+            Subj8.Text = "TLE 4"
+            Subj9.Text = "EP 4"
+
+            p1.Text = "100"
+            p2.Text = "100"
+            p3.Text = "100"
+            p4.Text = "100"
+            p5.Text = "100"
+            p6.Text = "100"
+            p7.Text = "100"
+            p8.Text = "100"
+            p9.Text = "75"
+            subjandbooksComputation()
+
+        ElseIf getSubj.SelectedItem = "Grade 5" Then
+            Subj1.Text = "Mathematics 5"
+            Subj2.Text = "Filipino 5"
+            Subj3.Text = "Science 5"
+            Subj4.Text = "English 5"
+            Subj5.Text = "MSEP 5"
+            Subj6.Text = "EPP 5"
+            Subj7.Text = "Computer 5"
+            Subj8.Text = "TLE 5"
+            Subj9.Text = "EP 5"
+
+            p1.Text = "100"
+            p2.Text = "100"
+            p3.Text = "100"
+            p4.Text = "100"
+            p5.Text = "100"
+            p6.Text = "100"
+            p7.Text = "100"
+            p8.Text = "100"
+            p9.Text = "75"
+            subjandbooksComputation()
+
+        ElseIf getSubj.SelectedItem = "Grade 6" Then
+            Subj1.Text = "Mathematics 6"
+            Subj2.Text = "Filipino 6"
+            Subj3.Text = "Science 6"
+            Subj4.Text = "English 6"
+            Subj5.Text = "MSEP 6"
+            Subj6.Text = "EPP 6"
+            Subj7.Text = "Computer 6"
+            Subj8.Text = "TLE 6"
+            Subj9.Text = "EP 6"
+
+            p1.Text = "100"
+            p2.Text = "100"
+            p3.Text = "100"
+            p4.Text = "100"
+            p5.Text = "100"
+            p6.Text = "100"
+            p7.Text = "100"
+            p8.Text = "100"
+            p9.Text = "75"
+            subjandbooksComputation()
         End If
     End Sub
     Private Sub subjandbooksComputation()
@@ -290,40 +396,28 @@
     Private Sub p1_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles p1.TextChanged
         subjandbooksComputation()
     End Sub
-
     Private Sub p2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p2.TextChanged
         subjandbooksComputation()
     End Sub
-
     Private Sub p3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p3.TextChanged
         subjandbooksComputation()
     End Sub
-
     Private Sub p4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p4.TextChanged
         subjandbooksComputation()
     End Sub
-
     Private Sub p5_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p5.TextChanged
         subjandbooksComputation()
     End Sub
-
     Private Sub p6_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p6.TextChanged
         subjandbooksComputation()
     End Sub
-
     Private Sub p7_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p7.TextChanged
         subjandbooksComputation()
     End Sub
-
     Private Sub p8_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p8.TextChanged
         subjandbooksComputation()
     End Sub
-
     Private Sub p9_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p9.TextChanged
         subjandbooksComputation()
-    End Sub
-
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
     End Sub
 End Class

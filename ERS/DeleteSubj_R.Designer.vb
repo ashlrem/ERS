@@ -24,10 +24,10 @@ Partial Class DeleteSubj_R
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DeleteSubj_btn = New System.Windows.Forms.Button()
-        Me.sec = New System.Windows.Forms.TextBox()
         Me.gl = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.sec = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.SearchSubj_btn = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
@@ -56,28 +56,12 @@ Partial Class DeleteSubj_R
         Me.DeleteSubj_btn.Text = "Delete Subject"
         Me.DeleteSubj_btn.UseVisualStyleBackColor = True
         '
-        'sec
-        '
-        Me.sec.Location = New System.Drawing.Point(87, 29)
-        Me.sec.Name = "sec"
-        Me.sec.Size = New System.Drawing.Size(170, 20)
-        Me.sec.TabIndex = 2
-        '
         'gl
         '
         Me.gl.Location = New System.Drawing.Point(115, 32)
         Me.gl.Name = "gl"
         Me.gl.Size = New System.Drawing.Size(170, 20)
         Me.gl.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 32)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Enter Section"
         '
         'Label8
         '
@@ -87,6 +71,22 @@ Partial Class DeleteSubj_R
         Me.Label8.Size = New System.Drawing.Size(68, 13)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "" & Global.Microsoft.VisualBasic.ChrW(9) & "Grade_Level"
+        '
+        'sec
+        '
+        Me.sec.Location = New System.Drawing.Point(87, 29)
+        Me.sec.Name = "sec"
+        Me.sec.Size = New System.Drawing.Size(170, 20)
+        Me.sec.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 32)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(71, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Enter Section"
         '
         'GroupBox1
         '
