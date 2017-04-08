@@ -61,8 +61,4 @@ Public Class SearchStudent
             Me.Close()
         End If
     End Sub
-
-    Private Sub filterText_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles filterText.TextChanged
-
-    End Sub
 End Class
