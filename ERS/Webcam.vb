@@ -41,6 +41,7 @@ Public Class Webcam
                 CAMERA.Start()
             ElseIf cameras.ShowDialog() = Windows.Forms.DialogResult.Cancel Then
 
+
             End If
         ElseIf (a = MsgBoxResult.No) Then
             Dim cameras As VideoCaptureDeviceForm = New VideoCaptureDeviceForm
