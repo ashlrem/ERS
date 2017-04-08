@@ -38,10 +38,10 @@
     End Sub
 
     Private Sub AddSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddSubjectToolStripMenuItem.Click
-        AddClass_A.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(AddClass_A)
+        AddClass.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(AddClass)
         AdminPanel.Hide()
-        AddClass_A.Show()
+        AddClass.Show()
     End Sub
 
     Private Sub AddAdminToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddAdminToolStripMenuItem.Click
@@ -115,10 +115,10 @@
     End Sub
 
     Private Sub DeleteSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteSubjectToolStripMenuItem.Click
-        DeleteClass.TopLevel = False
-        AdminPanelPictureBox.Controls.Add(DeleteClass)
+        DeleteSub_A.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(DeleteSub_A)
         AdminPanel.Hide()
-        DeleteClass.Show()
+        DeleteSub_A.Show()
     End Sub
 
     Private Sub DeleteStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteStudentRecordToolStripMenuItem.Click
