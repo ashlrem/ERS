@@ -27,33 +27,27 @@ Partial Class StudentCreate
         Me.Label22 = New System.Windows.Forms.Label()
         Me.sn = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.frm137 = New System.Windows.Forms.TextBox()
-        Me.gmr = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.bap = New System.Windows.Forms.TextBox()
-        Me.scho = New System.Windows.Forms.TextBox()
         Me.age = New System.Windows.Forms.TextBox()
-        Me.bc = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.nso = New System.Windows.Forms.TextBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.gl = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.sy = New System.Windows.Forms.MaskedTextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.citi = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.rel = New System.Windows.Forms.MaskedTextBox()
-        Me.bp = New System.Windows.Forms.MaskedTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.bd = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.add = New System.Windows.Forms.MaskedTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.mn = New System.Windows.Forms.TextBox()
         Me.fn = New System.Windows.Forms.TextBox()
+        Me.sy = New System.Windows.Forms.TextBox()
+        Me.rel = New System.Windows.Forms.TextBox()
+        Me.bp = New System.Windows.Forms.TextBox()
+        Me.add = New System.Windows.Forms.TextBox()
         Me.ln = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -62,12 +56,6 @@ Partial Class StudentCreate
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.rl = New System.Windows.Forms.MaskedTextBox()
-        Me.gdn = New System.Windows.Forms.MaskedTextBox()
-        Me.fono = New System.Windows.Forms.MaskedTextBox()
-        Me.fon = New System.Windows.Forms.MaskedTextBox()
-        Me.mono = New System.Windows.Forms.MaskedTextBox()
-        Me.mon = New System.Windows.Forms.MaskedTextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -76,7 +64,13 @@ Partial Class StudentCreate
         Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.cont = New System.Windows.Forms.MaskedTextBox()
+        Me.rl = New System.Windows.Forms.TextBox()
+        Me.fono = New System.Windows.Forms.TextBox()
+        Me.mono = New System.Windows.Forms.TextBox()
+        Me.cont = New System.Windows.Forms.TextBox()
+        Me.gdn = New System.Windows.Forms.TextBox()
+        Me.fon = New System.Windows.Forms.TextBox()
+        Me.mon = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Transferee = New System.Windows.Forms.CheckBox()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
@@ -92,6 +86,8 @@ Partial Class StudentCreate
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
         Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
+        Me.addScho = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.pi.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -104,33 +100,27 @@ Partial Class StudentCreate
         Me.pi.Controls.Add(Me.Label22)
         Me.pi.Controls.Add(Me.sn)
         Me.pi.Controls.Add(Me.PictureBox1)
-        Me.pi.Controls.Add(Me.frm137)
-        Me.pi.Controls.Add(Me.gmr)
         Me.pi.Controls.Add(Me.Button3)
         Me.pi.Controls.Add(Me.Button4)
-        Me.pi.Controls.Add(Me.bap)
-        Me.pi.Controls.Add(Me.scho)
         Me.pi.Controls.Add(Me.age)
-        Me.pi.Controls.Add(Me.bc)
         Me.pi.Controls.Add(Me.Label4)
-        Me.pi.Controls.Add(Me.nso)
         Me.pi.Controls.Add(Me.CheckBox1)
         Me.pi.Controls.Add(Me.gl)
         Me.pi.Controls.Add(Me.Label13)
-        Me.pi.Controls.Add(Me.sy)
         Me.pi.Controls.Add(Me.Label12)
         Me.pi.Controls.Add(Me.citi)
         Me.pi.Controls.Add(Me.Label10)
-        Me.pi.Controls.Add(Me.rel)
-        Me.pi.Controls.Add(Me.bp)
         Me.pi.Controls.Add(Me.Label11)
         Me.pi.Controls.Add(Me.Label6)
         Me.pi.Controls.Add(Me.bd)
         Me.pi.Controls.Add(Me.Label5)
-        Me.pi.Controls.Add(Me.add)
         Me.pi.Controls.Add(Me.Label9)
         Me.pi.Controls.Add(Me.mn)
         Me.pi.Controls.Add(Me.fn)
+        Me.pi.Controls.Add(Me.sy)
+        Me.pi.Controls.Add(Me.rel)
+        Me.pi.Controls.Add(Me.bp)
+        Me.pi.Controls.Add(Me.add)
         Me.pi.Controls.Add(Me.ln)
         Me.pi.Controls.Add(Me.Label3)
         Me.pi.Controls.Add(Me.Label2)
@@ -183,20 +173,6 @@ Partial Class StudentCreate
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
-        'frm137
-        '
-        Me.frm137.Location = New System.Drawing.Point(55, 125)
-        Me.frm137.Name = "frm137"
-        Me.frm137.Size = New System.Drawing.Size(100, 26)
-        Me.frm137.TabIndex = 199
-        '
-        'gmr
-        '
-        Me.gmr.Location = New System.Drawing.Point(82, 110)
-        Me.gmr.Name = "gmr"
-        Me.gmr.Size = New System.Drawing.Size(100, 26)
-        Me.gmr.TabIndex = 198
-        '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(38, 155)
@@ -217,22 +193,6 @@ Partial Class StudentCreate
         Me.Button4.Text = "TakePhoto"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'bap
-        '
-        Me.bap.Enabled = False
-        Me.bap.Location = New System.Drawing.Point(63, 78)
-        Me.bap.Name = "bap"
-        Me.bap.Size = New System.Drawing.Size(100, 26)
-        Me.bap.TabIndex = 4
-        '
-        'scho
-        '
-        Me.scho.Location = New System.Drawing.Point(63, 46)
-        Me.scho.Name = "scho"
-        Me.scho.Size = New System.Drawing.Size(100, 26)
-        Me.scho.TabIndex = 197
-        Me.scho.Text = "No"
-        '
         'age
         '
         Me.age.Enabled = False
@@ -240,14 +200,6 @@ Partial Class StudentCreate
         Me.age.Name = "age"
         Me.age.Size = New System.Drawing.Size(73, 26)
         Me.age.TabIndex = 11
-        '
-        'bc
-        '
-        Me.bc.Enabled = False
-        Me.bc.Location = New System.Drawing.Point(63, 98)
-        Me.bc.Name = "bc"
-        Me.bc.Size = New System.Drawing.Size(100, 26)
-        Me.bc.TabIndex = 4
         '
         'Label4
         '
@@ -257,14 +209,6 @@ Partial Class StudentCreate
         Me.Label4.Size = New System.Drawing.Size(46, 20)
         Me.Label4.TabIndex = 195
         Me.Label4.Text = "Age:"
-        '
-        'nso
-        '
-        Me.nso.Enabled = False
-        Me.nso.Location = New System.Drawing.Point(55, 79)
-        Me.nso.Name = "nso"
-        Me.nso.Size = New System.Drawing.Size(100, 26)
-        Me.nso.TabIndex = 4
         '
         'CheckBox1
         '
@@ -298,14 +242,6 @@ Partial Class StudentCreate
         Me.Label13.TabIndex = 164
         Me.Label13.Text = "Grade Level:"
         '
-        'sy
-        '
-        Me.sy.Location = New System.Drawing.Point(767, 242)
-        Me.sy.Margin = New System.Windows.Forms.Padding(5)
-        Me.sy.Name = "sy"
-        Me.sy.Size = New System.Drawing.Size(282, 26)
-        Me.sy.TabIndex = 13
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -333,22 +269,6 @@ Partial Class StudentCreate
         Me.Label10.Size = New System.Drawing.Size(102, 20)
         Me.Label10.TabIndex = 140
         Me.Label10.Text = "Citizenship:"
-        '
-        'rel
-        '
-        Me.rel.Location = New System.Drawing.Point(769, 204)
-        Me.rel.Margin = New System.Windows.Forms.Padding(5)
-        Me.rel.Name = "rel"
-        Me.rel.Size = New System.Drawing.Size(281, 26)
-        Me.rel.TabIndex = 12
-        '
-        'bp
-        '
-        Me.bp.Location = New System.Drawing.Point(335, 204)
-        Me.bp.Margin = New System.Windows.Forms.Padding(5)
-        Me.bp.Name = "bp"
-        Me.bp.Size = New System.Drawing.Size(315, 26)
-        Me.bp.TabIndex = 7
         '
         'Label11
         '
@@ -391,14 +311,6 @@ Partial Class StudentCreate
         Me.Label5.TabIndex = 114
         Me.Label5.Text = "Birthday:"
         '
-        'add
-        '
-        Me.add.Location = New System.Drawing.Point(335, 164)
-        Me.add.Margin = New System.Windows.Forms.Padding(5)
-        Me.add.Name = "add"
-        Me.add.Size = New System.Drawing.Size(315, 26)
-        Me.add.TabIndex = 6
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -424,6 +336,38 @@ Partial Class StudentCreate
         Me.fn.Name = "fn"
         Me.fn.Size = New System.Drawing.Size(212, 26)
         Me.fn.TabIndex = 4
+        '
+        'sy
+        '
+        Me.sy.Location = New System.Drawing.Point(779, 245)
+        Me.sy.Margin = New System.Windows.Forms.Padding(5)
+        Me.sy.Name = "sy"
+        Me.sy.Size = New System.Drawing.Size(282, 26)
+        Me.sy.TabIndex = 13
+        '
+        'rel
+        '
+        Me.rel.Location = New System.Drawing.Point(767, 209)
+        Me.rel.Margin = New System.Windows.Forms.Padding(5)
+        Me.rel.Name = "rel"
+        Me.rel.Size = New System.Drawing.Size(282, 26)
+        Me.rel.TabIndex = 12
+        '
+        'bp
+        '
+        Me.bp.Location = New System.Drawing.Point(335, 204)
+        Me.bp.Margin = New System.Windows.Forms.Padding(5)
+        Me.bp.Name = "bp"
+        Me.bp.Size = New System.Drawing.Size(315, 26)
+        Me.bp.TabIndex = 7
+        '
+        'add
+        '
+        Me.add.Location = New System.Drawing.Point(335, 164)
+        Me.add.Margin = New System.Windows.Forms.Padding(5)
+        Me.add.Name = "add"
+        Me.add.Size = New System.Drawing.Size(315, 26)
+        Me.add.TabIndex = 6
         '
         'ln
         '
@@ -498,54 +442,6 @@ Partial Class StudentCreate
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'rl
-        '
-        Me.rl.Location = New System.Drawing.Point(684, 111)
-        Me.rl.Margin = New System.Windows.Forms.Padding(5)
-        Me.rl.Name = "rl"
-        Me.rl.Size = New System.Drawing.Size(242, 26)
-        Me.rl.TabIndex = 21
-        '
-        'gdn
-        '
-        Me.gdn.Location = New System.Drawing.Point(166, 113)
-        Me.gdn.Margin = New System.Windows.Forms.Padding(5)
-        Me.gdn.Name = "gdn"
-        Me.gdn.Size = New System.Drawing.Size(301, 26)
-        Me.gdn.TabIndex = 20
-        '
-        'fono
-        '
-        Me.fono.Location = New System.Drawing.Point(686, 71)
-        Me.fono.Margin = New System.Windows.Forms.Padding(5)
-        Me.fono.Name = "fono"
-        Me.fono.Size = New System.Drawing.Size(242, 26)
-        Me.fono.TabIndex = 19
-        '
-        'fon
-        '
-        Me.fon.Location = New System.Drawing.Point(166, 73)
-        Me.fon.Margin = New System.Windows.Forms.Padding(5)
-        Me.fon.Name = "fon"
-        Me.fon.Size = New System.Drawing.Size(301, 26)
-        Me.fon.TabIndex = 18
-        '
-        'mono
-        '
-        Me.mono.Location = New System.Drawing.Point(686, 31)
-        Me.mono.Margin = New System.Windows.Forms.Padding(5)
-        Me.mono.Name = "mono"
-        Me.mono.Size = New System.Drawing.Size(242, 26)
-        Me.mono.TabIndex = 17
-        '
-        'mon
-        '
-        Me.mon.Location = New System.Drawing.Point(167, 33)
-        Me.mon.Margin = New System.Windows.Forms.Padding(5)
-        Me.mon.Name = "mon"
-        Me.mon.Size = New System.Drawing.Size(300, 26)
-        Me.mon.TabIndex = 16
-        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -610,17 +506,17 @@ Partial Class StudentCreate
         '
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.Label20)
-        Me.GroupBox1.Controls.Add(Me.cont)
         Me.GroupBox1.Controls.Add(Me.Label19)
         Me.GroupBox1.Controls.Add(Me.rl)
+        Me.GroupBox1.Controls.Add(Me.fono)
+        Me.GroupBox1.Controls.Add(Me.mono)
+        Me.GroupBox1.Controls.Add(Me.cont)
+        Me.GroupBox1.Controls.Add(Me.gdn)
+        Me.GroupBox1.Controls.Add(Me.fon)
         Me.GroupBox1.Controls.Add(Me.mon)
         Me.GroupBox1.Controls.Add(Me.Label18)
-        Me.GroupBox1.Controls.Add(Me.gdn)
-        Me.GroupBox1.Controls.Add(Me.mono)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label17)
-        Me.GroupBox1.Controls.Add(Me.fono)
-        Me.GroupBox1.Controls.Add(Me.fon)
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Location = New System.Drawing.Point(20, 342)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(5)
@@ -641,19 +537,69 @@ Partial Class StudentCreate
         Me.Label20.TabIndex = 182
         Me.Label20.Text = "Contact:"
         '
+        'rl
+        '
+        Me.rl.Location = New System.Drawing.Point(685, 107)
+        Me.rl.Margin = New System.Windows.Forms.Padding(5)
+        Me.rl.Name = "rl"
+        Me.rl.Size = New System.Drawing.Size(285, 26)
+        Me.rl.TabIndex = 21
+        '
+        'fono
+        '
+        Me.fono.Location = New System.Drawing.Point(685, 75)
+        Me.fono.Margin = New System.Windows.Forms.Padding(5)
+        Me.fono.Name = "fono"
+        Me.fono.Size = New System.Drawing.Size(285, 26)
+        Me.fono.TabIndex = 19
+        '
+        'mono
+        '
+        Me.mono.Location = New System.Drawing.Point(684, 36)
+        Me.mono.Margin = New System.Windows.Forms.Padding(5)
+        Me.mono.Name = "mono"
+        Me.mono.Size = New System.Drawing.Size(285, 26)
+        Me.mono.TabIndex = 17
+        '
         'cont
         '
-        Me.cont.Location = New System.Drawing.Point(166, 143)
+        Me.cont.Location = New System.Drawing.Point(166, 135)
         Me.cont.Margin = New System.Windows.Forms.Padding(5)
         Me.cont.Name = "cont"
-        Me.cont.Size = New System.Drawing.Size(301, 26)
+        Me.cont.Size = New System.Drawing.Size(321, 26)
         Me.cont.TabIndex = 22
+        '
+        'gdn
+        '
+        Me.gdn.Location = New System.Drawing.Point(166, 107)
+        Me.gdn.Margin = New System.Windows.Forms.Padding(5)
+        Me.gdn.Name = "gdn"
+        Me.gdn.Size = New System.Drawing.Size(321, 26)
+        Me.gdn.TabIndex = 20
+        '
+        'fon
+        '
+        Me.fon.Location = New System.Drawing.Point(166, 73)
+        Me.fon.Margin = New System.Windows.Forms.Padding(5)
+        Me.fon.Name = "fon"
+        Me.fon.Size = New System.Drawing.Size(321, 26)
+        Me.fon.TabIndex = 18
+        '
+        'mon
+        '
+        Me.mon.Location = New System.Drawing.Point(166, 33)
+        Me.mon.Margin = New System.Windows.Forms.Padding(5)
+        Me.mon.Name = "mon"
+        Me.mon.Size = New System.Drawing.Size(321, 26)
+        Me.mon.TabIndex = 16
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Transferee)
         Me.GroupBox2.Controls.Add(Me.CheckBox6)
         Me.GroupBox2.Controls.Add(Me.CheckBox5)
+        Me.GroupBox2.Controls.Add(Me.Label23)
+        Me.GroupBox2.Controls.Add(Me.addScho)
         Me.GroupBox2.Controls.Add(Me.Label21)
         Me.GroupBox2.Controls.Add(Me.nols)
         Me.GroupBox2.Controls.Add(Me.StudentCreateEnrollBtn)
@@ -705,7 +651,7 @@ Partial Class StudentCreate
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(368, 24)
+        Me.Label21.Location = New System.Drawing.Point(335, 25)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(181, 20)
         Me.Label21.TabIndex = 196
@@ -714,9 +660,9 @@ Partial Class StudentCreate
         'nols
         '
         Me.nols.Enabled = False
-        Me.nols.Location = New System.Drawing.Point(555, 18)
+        Me.nols.Location = New System.Drawing.Point(524, 22)
         Me.nols.Name = "nols"
-        Me.nols.Size = New System.Drawing.Size(214, 26)
+        Me.nols.Size = New System.Drawing.Size(157, 26)
         Me.nols.TabIndex = 26
         '
         'StudentCreateEnrollBtn
@@ -787,6 +733,23 @@ Partial Class StudentCreate
         Me.VScrollBar1.Size = New System.Drawing.Size(17, 645)
         Me.VScrollBar1.TabIndex = 192
         '
+        'addScho
+        '
+        Me.addScho.Enabled = False
+        Me.addScho.Location = New System.Drawing.Point(782, 22)
+        Me.addScho.Name = "addScho"
+        Me.addScho.Size = New System.Drawing.Size(267, 26)
+        Me.addScho.TabIndex = 26
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(696, 24)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(80, 20)
+        Me.Label23.TabIndex = 196
+        Me.Label23.Text = "Address:"
+        '
         'StudentCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
@@ -821,17 +784,13 @@ Partial Class StudentCreate
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents gl As System.Windows.Forms.ComboBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents sy As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents citi As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents rel As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents bp As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents bd As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents add As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents mn As System.Windows.Forms.TextBox
     Friend WithEvents fn As System.Windows.Forms.TextBox
@@ -840,12 +799,6 @@ Partial Class StudentCreate
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents rl As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents gdn As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents fono As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents fon As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents mono As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents mon As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
@@ -863,24 +816,30 @@ Partial Class StudentCreate
     Friend WithEvents OpenFileDialog2 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents OpenFileDialog3 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents OpenFileDialog4 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents bap As System.Windows.Forms.TextBox
-    Friend WithEvents bc As System.Windows.Forms.TextBox
-    Friend WithEvents nso As System.Windows.Forms.TextBox
     Friend WithEvents age As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents cont As System.Windows.Forms.MaskedTextBox
     Friend WithEvents StudentCreateBackBtn As System.Windows.Forms.Button
-    Friend WithEvents scho As System.Windows.Forms.TextBox
     Friend WithEvents nols As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
-    Friend WithEvents gmr As System.Windows.Forms.TextBox
     Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
-    Friend WithEvents frm137 As System.Windows.Forms.TextBox
     Friend WithEvents Transferee As System.Windows.Forms.CheckBox
     Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
     Friend WithEvents sn As System.Windows.Forms.TextBox
     Friend WithEvents sec As System.Windows.Forms.ComboBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents rel As System.Windows.Forms.TextBox
+    Friend WithEvents bp As System.Windows.Forms.TextBox
+    Friend WithEvents add As System.Windows.Forms.TextBox
+    Friend WithEvents sy As System.Windows.Forms.TextBox
+    Friend WithEvents mono As System.Windows.Forms.TextBox
+    Friend WithEvents fon As System.Windows.Forms.TextBox
+    Friend WithEvents mon As System.Windows.Forms.TextBox
+    Friend WithEvents fono As System.Windows.Forms.TextBox
+    Friend WithEvents rl As System.Windows.Forms.TextBox
+    Friend WithEvents cont As System.Windows.Forms.TextBox
+    Friend WithEvents gdn As System.Windows.Forms.TextBox
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents addScho As System.Windows.Forms.TextBox
 End Class

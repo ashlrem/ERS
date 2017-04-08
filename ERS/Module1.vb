@@ -11,9 +11,14 @@ Module Module1
     Public objConn As New MySqlConnection
     Public encodeType As ImageFormat = ImageFormat.Jpeg
     Public decoding As String = String.Empty
-    Public NSO2 As String
-    Public baptis As String
-    Public server As String = "192.168.254.100" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
+
+    Public NSO2 As String = "none"
+    Public baptis As String = "none"
+    Public card As String = "none"
+    Public form137 As String = "none"
+    Public goodMoral As String = "none"
+
+    Public server As String = "192.168.254.108" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
     Public port As String = "3306" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
     Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
     Public password As String = "1234" 'no password si root dun sa wamp natin, so leave it empty
@@ -418,15 +423,15 @@ Module Module1
                 'pero same flow. gawa ng connection string, ioopen yung connection ni database,
                 'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO subject_tbl VALUES( @GradeLevel, @Section)"
+                ins.CommandText = "INSERT INTO subject_tbl VALUES(@GradeLevel, @Section)"
                 ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClass.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.Text.ToString)
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
-                MsgBox("Subject saved successfully!")
+                MsgBox("Class saved successfully!")
                 objConn.Close()
                 Dim a As Integer
-                a = MsgBox("Do you want to Add another subject?", MsgBoxStyle.YesNo)
+                a = MsgBox("Do you want to Add another Class?", MsgBoxStyle.YesNo)
                 If (a = MsgBoxResult.Yes) Then
                     AddSubClear()
                 ElseIf (a = MsgBoxResult.No) Then
@@ -452,15 +457,15 @@ Module Module1
                 'pero same flow. gawa ng connection string, ioopen yung connection ni database,
                 'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO subject_tbl VALUES( @GradeLevel, @Section)"
+                ins.CommandText = "INSERT INTO subject_tbl VALUES(@GradeLevel, @Section)"
                 ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClassR.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClassR.sec.Text.ToString)
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
-                MsgBox("Subject saved successfully!")
+                MsgBox("Class saved successfully!")
                 objConn.Close()
                 Dim a As Integer
-                a = MsgBox("Do you want to Add another subject?", MsgBoxStyle.YesNo)
+                a = MsgBox("Do you want to Add another class?", MsgBoxStyle.YesNo)
                 If (a = MsgBoxResult.Yes) Then
                     AddSubClear()
                 ElseIf (a = MsgBoxResult.No) Then
@@ -527,10 +532,11 @@ Module Module1
         My.Forms.StudentCreate.fono.Text = ""
         My.Forms.StudentCreate.gdn.Text = ""
         My.Forms.StudentCreate.rl.Text = ""
-        My.Forms.StudentCreate.nso.Text = ""
-        My.Forms.StudentCreate.bc.Text = ""
-        My.Forms.StudentCreate.bap.Text = ""
-
+        NSO2 = ""
+        baptis = ""
+        card = ""
+        form137 = ""
+        goodMoral = ""
     End Sub
     Public Sub LoginReg()
         'method to para mag login si registrar, from here, magbabago yung SQL Query natin, instead na INSERT,
@@ -1755,13 +1761,13 @@ Module Module1
         'edit Student info
         Try
             'eto yung sql query natin, which is UPDATE.
-            Dim reg1 As String = "UPDATE student_info SET Address = '" & My.Forms.UpdateStudent_A.add.Text & "', Birthday = '" & My.Forms.UpdateStudent_A.bd.Text & "', GradeLevel = '" & My.Forms.UpdateStudent_A.gl.Text & "', Birthday = '" & My.Forms.UpdateStudent_A.bd.Text & "', Contact = '" & My.Forms.UpdateStudent_A.con.Text & "', SchoolYear = '" & My.Forms.UpdateStudent_A.sy.Text & "', Age = '" & My.Forms.UpdateStudent_A.ag.Text & "', NSO= '" & NSO2 & "', Baptismal = '" & baptis & "' WHERE Student_ID_No = '" & My.Forms.UpdateStudent_A.sn.Text & "'"
+            Dim reg1 As String = "UPDATE student_info SET Address = '" & My.Forms.UpdateStudent_A.add.Text & "', Birthday = '" & My.Forms.UpdateStudent_A.bd.Text & "', GradeLevel = '" & My.Forms.UpdateStudent_A.gl.Text & "', Birthday = '" & My.Forms.UpdateStudent_A.bd.Text & "', Contact = '" & My.Forms.UpdateStudent_A.con.Text & "', SchoolYear = '" & My.Forms.UpdateStudent_A.sy.Text & "', Age = '" & My.Forms.UpdateStudent_A.ag.Text & "', NSO= '" & NSO2 & "', Baptismal = '" & baptis & "', UploadCard= '" & card & "', UploadForm137 = '" & form137 & "', UploadGoodMoral= '" & goodMoral & "' WHERE Student_ID_No = '" & My.Forms.UpdateStudent_A.sn.Text & "'"
             'eto yung connection string natin, (insert() noon), cn1 dito.
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg1, cn1)
                     cn1.Open() 'open connection
                     sqlCmd.ExecuteNonQuery() 'execute sql query
-                    MsgBox("Student Info Edited")
+                    MsgBox("Student Information Updated Succesful!")
                     My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
                     My.Forms.UpdateStudent_A.UpdateButton_a_Student.Enabled = False
                     My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
@@ -1774,7 +1780,19 @@ Module Module1
                     My.Forms.UpdateStudent_A.con.Text = ""
                     My.Forms.UpdateStudent_A.sy.Text = ""
                     My.Forms.UpdateStudent_A.ag.Text = ""
+                    NSO2 = ""
+                    baptis = ""
+                    card = ""
+                    form137 = ""
+                    goodMoral = ""
+                    My.Forms.UpdateStudent_A.nso_lbl.BackColor = Color.Transparent
+                    My.Forms.UpdateStudent_A.baptismal_lbl.BackColor = Color.Transparent
+                    My.Forms.UpdateStudent_A.form_lbl.BackColor = Color.Transparent
+                    My.Forms.UpdateStudent_A.card_lbl.BackColor = Color.Transparent
+                    My.Forms.UpdateStudent_A.gm_lbl.BackColor = Color.Transparent
                     My.Forms.UpdateStudent_A.PictureBox2.Image = Nothing
+                    My.Forms.UpdateStudent_A.GroupBox1.Enabled = False
+
                     cn1.Close() 'close connection
                 End Using
                 cn1.Close()
@@ -1785,23 +1803,19 @@ Module Module1
         End Try
     End Sub
     Public Sub editstud_R()
-        'edit student info method guys, easy lang to maintindihan. alam naman na natin yung
-        'routine natin kapag magttransact tayo kay database eh.
-
-        'edit Student info
         Try
             'eto yung sql query natin, which is UPDATE.
-            Dim reg1 As String = "UPDATE student_info SET Address = '" & My.Forms.UpdateStudent_R.add.Text & "', Birthday = '" & My.Forms.UpdateStudent_R.bd.Text & "', GradeLevel = '" & My.Forms.UpdateStudent_R.gl.Text & "', Birthday = '" & My.Forms.UpdateStudent_R.bd.Text & "', Contact = '" & My.Forms.UpdateStudent_R.con.Text & "', SchoolYear = '" & My.Forms.UpdateStudent_R.sy.Text & "', Age = '" & My.Forms.UpdateStudent_R.ag.Text & "', NSO = '" & NSO2 & "', Baptismal ='" & baptis & "' WHERE Student_ID_No = '" & My.Forms.UpdateStudent_R.sn.Text & "'"
+            Dim reg1 As String = "UPDATE student_info SET Address = '" & My.Forms.UpdateStudent_R.add.Text & "', Birthday = '" & My.Forms.UpdateStudent_R.bd.Text & "', GradeLevel = '" & My.Forms.UpdateStudent_R.gl.Text & "', Birthday = '" & My.Forms.UpdateStudent_R.bd.Text & "', Contact = '" & My.Forms.UpdateStudent_R.con.Text & "', SchoolYear = '" & My.Forms.UpdateStudent_R.sy.Text & "', Age = '" & My.Forms.UpdateStudent_R.ag.Text & "', NSO= '" & NSO2 & "', Baptismal = '" & baptis & "', UploadCard= '" & card & "', UploadForm137 = '" & form137 & "', UploadGoodMoral= '" & goodMoral & "' WHERE Student_ID_No = '" & My.Forms.UpdateStudent_A.sn.Text & "'"
             'eto yung connection string natin, (insert() noon), cn1 dito.
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg1, cn1)
                     cn1.Open() 'open connection
                     sqlCmd.ExecuteNonQuery() 'execute sql query
-                    MsgBox("Student Info Edited")
+                    MsgBox("Student Information Updated Succesful!")
+                    My.Forms.UpdateStudent_R.SearchStudent_btn.Enabled = True
                     My.Forms.UpdateStudent_R.UpdateButton_a_Student.Enabled = False
-                    My.Forms.UpdateStudent_A.sn.Enabled = True
-                    My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
-                    My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = True
+                    My.Forms.UpdateStudent_R.SearchStudent_btn.Enabled = True
+                    My.Forms.UpdateStudent_R.sn.Enabled = True
                     My.Forms.UpdateStudent_R.sn.Text = ""
                     My.Forms.UpdateStudent_R.nam.Text = ""
                     My.Forms.UpdateStudent_R.add.Text = ""
@@ -1810,7 +1824,18 @@ Module Module1
                     My.Forms.UpdateStudent_R.con.Text = ""
                     My.Forms.UpdateStudent_R.sy.Text = ""
                     My.Forms.UpdateStudent_R.ag.Text = ""
+                    NSO2 = ""
+                    baptis = ""
+                    card = ""
+                    form137 = ""
+                    goodMoral = ""
+                    My.Forms.UpdateStudent_R.nso_lbl.BackColor = Color.Transparent
+                    My.Forms.UpdateStudent_R.baptismal_lbl.BackColor = Color.Transparent
+                    My.Forms.UpdateStudent_R.form_lbl.BackColor = Color.Transparent
+                    My.Forms.UpdateStudent_R.card_lbl.BackColor = Color.Transparent
+                    My.Forms.UpdateStudent_R.gm_lbl.BackColor = Color.Transparent
                     My.Forms.UpdateStudent_R.PictureBox2.Image = Nothing
+                    My.Forms.UpdateStudent_R.GroupBox1.Enabled = False
                     cn1.Close() 'close connection
                 End Using
                 cn1.Close()
@@ -2313,26 +2338,14 @@ Module Module1
     Public Sub deleteSubject_A()
         'not implemented
 
-        Dim reg As String = "DELETE FROM subject_tbl WHERE Subject_Name = '" & My.Forms.DeleteSub_A.subj.Text & "' "
+        Dim reg As String = "DELETE FROM subject_tbl WHERE Section = '" & My.Forms.DeleteSub_A.subj.Text & "' "
         Try
             Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn)
                     cn.Open()
                     sqlCmd.ExecuteNonQuery()
-
-                    'For form DeleteSub_A delete button
-                    'My.Forms.DeleteSub_A.gl.Text = ""
-                    'My.Forms.DeleteSub_A.sec.Text = ""
-                    'My.Forms.DeleteSub_A.sy.Text = ""
-                    'My.Forms.DeleteSub_A.tim.Text = ""
-                    'My.Forms.DeleteSub_A.nm.Text = ""
-                    'My.Forms.DeleteSub_A.teacher.Text = ""
-                    My.Forms.DeleteSub_A.subj.Text = ""
-                    My.Forms.DeleteSub_A.SearchSubj_btn.Enabled = True
                     My.Forms.DeleteSub_A.GroupBox2.Enabled = False
-                    My.Forms.DeleteSub_A.subj.Enabled = True
-
-
+                    My.Forms.DeleteSub_A.GroupBox1.Enabled = True
                     MsgBox("Subject Deleted!")
 
                     cn.Close()
@@ -2345,29 +2358,23 @@ Module Module1
         End Try
     End Sub
     Public Sub deleteSubject_R()
-        'not implemented
-
-        'Dim reg As String = "DELETE FROM subject_tbl WHERE Section = '" & My.Forms.DeleteSubj_R.sec.Text & "' and Grade_Level = '" & My.Forms.DeleteSubj_R.gl.Text & "' "
-        'Try
-        '    Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
-        '        Using sqlCmd = New MySqlCommand(reg, cn)
-        '            cn.Open()
-        '            sqlCmd.ExecuteNonQuery()
-
-
-        '            'For form DeleteSubj_R delete button
-        '            My.Forms.DeleteSubj_R.gl.Text = ""
-        '            My.Forms.DeleteSubj_R.sec.Text = ""
-        '            MsgBox("Subject Deleted!")
-
-        '            cn.Close()
-        '        End Using
-        '        cn.Close()
-        '    End Using
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.Message)
-        '    cn.Close()
-        'End Try
+        Dim reg As String = "DELETE FROM subject_tbl WHERE Section = '" & My.Forms.DeleteSubj_R.subj.Text & "' "
+        Try
+            Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
+                Using sqlCmd = New MySqlCommand(reg, cn)
+                    cn.Open()
+                    sqlCmd.ExecuteNonQuery()
+                    MsgBox("Class Deleted!")
+                    My.Forms.DeleteSub_A.GroupBox2.Enabled = False
+                    My.Forms.DeleteSub_A.GroupBox1.Enabled = True
+                    cn.Close()
+                End Using
+                cn.Close()
+            End Using
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            cn.Close()
+        End Try
     End Sub
     Public Sub SearchSubject_A_Update_btn()
         'not implemented
@@ -2442,6 +2449,8 @@ Module Module1
                 While (r.Read())
                     My.Forms.DeleteSub_A.sec.Items.Add(r("Section").ToString())
                 End While
+                My.Forms.DeleteSub_A.GroupBox2.Enabled = True
+                My.Forms.DeleteSub_A.GroupBox1.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
@@ -2471,6 +2480,8 @@ Module Module1
                 While (r.Read())
                     My.Forms.DeleteSubj_R.sec.Items.Add(r("Section").ToString())
                 End While
+                My.Forms.DeleteSubj_R.GroupBox2.Enabled = True
+                My.Forms.DeleteSubj_R.GroupBox1.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
@@ -2544,10 +2555,7 @@ Module Module1
         End Try
     End Sub
     Public Sub SearchStudent_A_Update_btn()
-        'not implemented
-        Dim conn As New MySqlConnection ' <---
-        ' Me.sn.Text = My.Forms.AdminPanel.TextBox1.Text
-        'Me.FormBorderStyle = 0
+        Dim conn As New MySqlConnection
         Try
             'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
             conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
@@ -2577,26 +2585,47 @@ Module Module1
                 My.Forms.UpdateStudent_A.ag.Enabled = True
                 My.Forms.UpdateStudent_A.sn.Enabled = False
                 My.Forms.UpdateStudent_A.SearchStudent_btn.Enabled = False
+                My.Forms.UpdateStudent_A.UpdateButton_a_Student.Enabled = True
                 My.Forms.UpdateStudent_A.PictureBox2.Image = base64toimage(pic)
                 pic = ""
-                Dim nso As String = r("NSO").ToString()
-                Dim baptismal As String = r("Baptismal").ToString()
-                If nso = "" Then
-                    My.Forms.ViewStudent_R.nso.Checked = False
-                    My.Forms.ViewStudent_R.nso.Enabled = True
-                Else
-                    My.Forms.ViewStudent_R.nso.Checked = True
-                    My.Forms.ViewStudent_R.nso.Enabled = False
 
+                NSO2 = r("NSO").ToString()
+                If NSO2 = "" Then
+                    My.Forms.UpdateStudent_A.nso_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.UpdateStudent_A.nso_lbl.BackColor = Color.Green
                 End If
 
-                If baptismal = "" Then
-                    My.Forms.ViewStudent_R.bapt.Checked = False
-                    My.Forms.ViewStudent_R.bapt.Enabled = True
+
+                baptis = r("Baptismal").ToString()
+                If baptis = "" Then
+                    My.Forms.UpdateStudent_A.baptismal_lbl.BackColor = Color.Red
                 Else
-                    My.Forms.ViewStudent_R.bapt.Checked = True
-                    My.Forms.ViewStudent_R.bapt.Enabled = False
+                    My.Forms.UpdateStudent_A.baptismal_lbl.BackColor = Color.Green
                 End If
+
+                card = r("UploadCard").ToString()
+                If card = "" Then
+                    My.Forms.UpdateStudent_A.card_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.UpdateStudent_A.card_lbl.BackColor = Color.Green
+                End If
+
+                form137 = r("UploadForm137").ToString()
+                If form137 = "" Then
+                    My.Forms.UpdateStudent_A.form_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.UpdateStudent_A.form_lbl.BackColor = Color.Green
+                End If
+
+                goodMoral = r("UploadGoodMoral").ToString()
+                If goodMoral = "" Then
+                    My.Forms.UpdateStudent_A.gm_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.UpdateStudent_A.gm_lbl.BackColor = Color.Green
+                End If
+
+                My.Forms.UpdateStudent_A.GroupBox1.Enabled = True
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2666,27 +2695,6 @@ Module Module1
                 My.Forms.DeleteStudent_R.DeleteButton_a_Student.Enabled = True
 
 
-
-                Dim nso As String = r("NSO").ToString()
-                Dim baptismal As String = r("Baptismal").ToString()
-
-                If nso = "" Then
-                    My.Forms.ViewStudent_R.nso.Checked = False
-                    My.Forms.ViewStudent_R.nso.Enabled = True
-                Else
-                    My.Forms.ViewStudent_R.nso.Checked = True
-                    My.Forms.ViewStudent_R.nso.Enabled = False
-
-                End If
-
-                If baptismal = "" Then
-                    My.Forms.ViewStudent_R.bapt.Checked = False
-                    My.Forms.ViewStudent_R.bapt.Enabled = True
-                Else
-                    My.Forms.ViewStudent_R.bapt.Checked = True
-                    My.Forms.ViewStudent_R.bapt.Enabled = False
-                End If
-
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2699,7 +2707,6 @@ Module Module1
         conn.Close()
     End Sub
     Public Sub SearchStudent_r_Update_btn()
-        'not implemented
         Dim conn As New MySqlConnection ' <---
         ' Me.sn.Text = My.Forms.AdminPanel.TextBox1.Text
         'Me.FormBorderStyle = 0
@@ -2721,36 +2728,58 @@ Module Module1
                 My.Forms.UpdateStudent_R.sy.Text = r("SchoolYear").ToString()
                 pic = r("Photo").ToString()
                 My.Forms.UpdateStudent_R.ag.Text = r("Age").ToString()
+                pic = r("Photo").ToString()
 
                 My.Forms.UpdateStudent_R.add.Enabled = True
                 My.Forms.UpdateStudent_R.bd.Enabled = True
                 My.Forms.UpdateStudent_R.gl.Enabled = True
                 My.Forms.UpdateStudent_R.con.Enabled = True
                 My.Forms.UpdateStudent_R.sy.Enabled = True
+
                 My.Forms.UpdateStudent_R.ag.Enabled = True
                 My.Forms.UpdateStudent_R.sn.Enabled = False
                 My.Forms.UpdateStudent_R.SearchStudent_btn.Enabled = False
+                My.Forms.UpdateStudent_R.UpdateButton_a_Student.Enabled = True
                 My.Forms.UpdateStudent_R.PictureBox2.Image = base64toimage(pic)
                 pic = ""
-                Dim nso As String = r("NSO").ToString()
-                Dim baptismal As String = r("Baptismal").ToString()
-                If nso = "" Then
-                    My.Forms.ViewStudent_R.nso.Checked = False
-                    My.Forms.ViewStudent_R.nso.Enabled = True
-                Else
-                    My.Forms.ViewStudent_R.nso.Checked = True
-                    My.Forms.ViewStudent_R.nso.Enabled = False
 
+                NSO2 = r("NSO").ToString()
+                If NSO2 = "" Then
+                    My.Forms.UpdateStudent_R.nso_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.UpdateStudent_R.nso_lbl.BackColor = Color.Green
                 End If
 
-                If baptismal = "" Then
-                    My.Forms.ViewStudent_R.bapt.Checked = False
-                    My.Forms.ViewStudent_R.bapt.Enabled = True
+
+                baptis = r("Baptismal").ToString()
+                If baptis = "" Then
+                    My.Forms.UpdateStudent_R.baptismal_lbl.BackColor = Color.Red
                 Else
-                    My.Forms.ViewStudent_R.bapt.Checked = True
-                    My.Forms.ViewStudent_R.bapt.Enabled = False
+                    My.Forms.UpdateStudent_R.baptismal_lbl.BackColor = Color.Green
                 End If
 
+                card = r("UploadCard").ToString()
+                If card = "" Then
+                    My.Forms.UpdateStudent_R.card_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.UpdateStudent_R.card_lbl.BackColor = Color.Green
+                End If
+
+                form137 = r("UploadForm137").ToString()
+                If form137 = "" Then
+                    My.Forms.UpdateStudent_R.form_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.UpdateStudent_R.form_lbl.BackColor = Color.Green
+                End If
+
+                goodMoral = r("UploadGoodMoral").ToString()
+                If goodMoral = "" Then
+                    My.Forms.UpdateStudent_R.gm_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.UpdateStudent_R.gm_lbl.BackColor = Color.Green
+                End If
+            
+                My.Forms.UpdateStudent_R.GroupBox1.Enabled = True
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2763,10 +2792,7 @@ Module Module1
         conn.Close()
     End Sub
     Public Sub SearchStudent_A_ViewStudent_btn()
-        'not implemented
-        Dim conn As New MySqlConnection ' <---
-        ' Me.sn.Text = My.Forms.AdminPanel.TextBox1.Text
-        'Me.FormBorderStyle = 0
+        Dim conn As New MySqlConnection 
         Try
             'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
             conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
@@ -2785,22 +2811,57 @@ Module Module1
                 My.Forms.ViewStudent.sy.Text = r("SchoolYear").ToString()
                 pic = r("Photo").ToString()
                 My.Forms.ViewStudent.ag.Text = r("Age").ToString()
+                pic = r("Photo").ToString()
+
+                My.Forms.ViewStudent.add.Enabled = True
+                My.Forms.ViewStudent.bd.Enabled = True
+                My.Forms.ViewStudent.gl.Enabled = True
+                My.Forms.ViewStudent.con.Enabled = True
+                My.Forms.ViewStudent.sy.Enabled = True
+
+                My.Forms.ViewStudent.ag.Enabled = True
+                My.Forms.ViewStudent.sn.Enabled = False
+                My.Forms.ViewStudent.SearchStudent_btn.Enabled = False
                 My.Forms.ViewStudent.PictureBox2.Image = base64toimage(pic)
                 pic = ""
-                Dim nso As String = r("NSO").ToString()
-                Dim baptismal As String = r("Baptismal").ToString()
 
-                If nso = "" Then
-                    My.Forms.ViewStudent_R.nso.Checked = False
+                NSO2 = r("NSO").ToString()
+                If NSO2 = "" Then
+                    My.Forms.ViewStudent.nso_lbl.BackColor = Color.Red
                 Else
-                    My.Forms.ViewStudent_R.nso.Checked = True
+                    My.Forms.ViewStudent.nso_lbl.BackColor = Color.Green
                 End If
 
-                If baptismal = "" Then
-                    My.Forms.ViewStudent_R.bapt.Checked = False
+
+                baptis = r("Baptismal").ToString()
+                If baptis = "" Then
+                    My.Forms.ViewStudent.baptismal_lbl.BackColor = Color.Red
                 Else
-                    My.Forms.ViewStudent_R.bapt.Checked = True
+                    My.Forms.ViewStudent.baptismal_lbl.BackColor = Color.Green
                 End If
+
+                card = r("UploadCard").ToString()
+                If card = "" Then
+                    My.Forms.ViewStudent.card_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.ViewStudent.card_lbl.BackColor = Color.Green
+                End If
+
+                form137 = r("UploadForm137").ToString()
+                If form137 = "" Then
+                    My.Forms.ViewStudent.form_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.ViewStudent.form_lbl.BackColor = Color.Green
+                End If
+
+                goodMoral = r("UploadGoodMoral").ToString()
+                If goodMoral = "" Then
+                    My.Forms.ViewStudent.gm_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.ViewStudent.gm_lbl.BackColor = Color.Green
+                End If
+
+                My.Forms.ViewStudent.GroupBox1.Enabled = True
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
@@ -2814,10 +2875,7 @@ Module Module1
     End Sub
 
     Public Sub SearchStudent_R_ViewStudent_btn()
-        'not implemented
-        Dim conn As New MySqlConnection ' <---
-        ' Me.sn.Text = My.Forms.AdminPanel.TextBox1.Text
-        'Me.FormBorderStyle = 0
+       Dim conn As New MySqlConnection 
         Try
             'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
             conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
@@ -2834,33 +2892,63 @@ Module Module1
                 My.Forms.ViewStudent_R.gl.Text = r("GradeLevel").ToString()
                 My.Forms.ViewStudent_R.con.Text = r("Contact").ToString()
                 My.Forms.ViewStudent_R.sy.Text = r("SchoolYear").ToString()
-
-                Dim nso As String = r("NSO").ToString()
-                Dim baptismal As String = r("Baptismal").ToString()
-
-                If nso = "" Then
-                    My.Forms.ViewStudent_R.nso.Checked = False
-                Else
-                    My.Forms.ViewStudent_R.nso.Checked = True
-                End If
-
-                If baptismal = "" Then
-                    My.Forms.ViewStudent_R.bapt.Checked = False
-                Else
-                    My.Forms.ViewStudent_R.bapt.Checked = True
-                End If
-
                 pic = r("Photo").ToString()
                 My.Forms.ViewStudent_R.ag.Text = r("Age").ToString()
+                pic = r("Photo").ToString()
+
+                My.Forms.ViewStudent_R.add.Enabled = True
+                My.Forms.ViewStudent_R.bd.Enabled = True
+                My.Forms.ViewStudent_R.gl.Enabled = True
+                My.Forms.ViewStudent_R.con.Enabled = True
+                My.Forms.ViewStudent_R.sy.Enabled = True
+
+                My.Forms.ViewStudent_R.ag.Enabled = True
+                My.Forms.ViewStudent_R.sn.Enabled = False
+                My.Forms.ViewStudent_R.SearchStudent_btn.Enabled = False
                 My.Forms.ViewStudent_R.PictureBox2.Image = base64toimage(pic)
                 pic = ""
 
+                NSO2 = r("NSO").ToString()
+                If NSO2 = "" Then
+                    My.Forms.ViewStudent_R.nso_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.ViewStudent_R.nso_lbl.BackColor = Color.Green
+                End If
 
 
+                baptis = r("Baptismal").ToString()
+                If baptis = "" Then
+                    My.Forms.ViewStudent_R.baptismal_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.ViewStudent_R.baptismal_lbl.BackColor = Color.Green
+                End If
+
+                card = r("UploadCard").ToString()
+                If card = "" Then
+                    My.Forms.ViewStudent_R.card_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.ViewStudent_R.card_lbl.BackColor = Color.Green
+                End If
+
+                form137 = r("UploadForm137").ToString()
+                If form137 = "" Then
+                    My.Forms.ViewStudent_R.form_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.ViewStudent_R.form_lbl.BackColor = Color.Green
+                End If
+
+                goodMoral = r("UploadGoodMoral").ToString()
+                If goodMoral = "" Then
+                    My.Forms.ViewStudent_R.gm_lbl.BackColor = Color.Red
+                Else
+                    My.Forms.ViewStudent_R.gm_lbl.BackColor = Color.Green
+                End If
+
+                My.Forms.ViewStudent_R.GroupBox1.Enabled = True
                 conn.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
-                My.Forms.ViewStudent.sn.Focus()
+                My.Forms.ViewStudent_R.sn.Focus()
                 conn.Close()
             End If
         Catch ex As Exception
@@ -2868,8 +2956,6 @@ Module Module1
         End Try
         conn.Close()
     End Sub
-
-
     Public Sub SearchStudent_C_ViewStudent_btn()
         'not implemented
         Dim conn As New MySqlConnection ' <---

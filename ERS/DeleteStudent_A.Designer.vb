@@ -43,8 +43,6 @@ Partial Class DeleteStudent_A
         Me.add = New System.Windows.Forms.TextBox()
         Me.sn = New System.Windows.Forms.TextBox()
         Me.DeleteButton_a_Student = New System.Windows.Forms.Button()
-        Me.bapt = New System.Windows.Forms.CheckBox()
-        Me.nso = New System.Windows.Forms.CheckBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -230,30 +228,6 @@ Partial Class DeleteStudent_A
         Me.DeleteButton_a_Student.Text = "Delete"
         Me.DeleteButton_a_Student.UseVisualStyleBackColor = False
         '
-        'bapt
-        '
-        Me.bapt.AutoSize = True
-        Me.bapt.BackColor = System.Drawing.Color.Transparent
-        Me.bapt.Enabled = False
-        Me.bapt.Location = New System.Drawing.Point(370, 281)
-        Me.bapt.Name = "bapt"
-        Me.bapt.Size = New System.Drawing.Size(71, 17)
-        Me.bapt.TabIndex = 86
-        Me.bapt.Text = "Baptismal"
-        Me.bapt.UseVisualStyleBackColor = False
-        '
-        'nso
-        '
-        Me.nso.AutoSize = True
-        Me.nso.BackColor = System.Drawing.Color.Transparent
-        Me.nso.Enabled = False
-        Me.nso.Location = New System.Drawing.Point(263, 285)
-        Me.nso.Name = "nso"
-        Me.nso.Size = New System.Drawing.Size(49, 17)
-        Me.nso.TabIndex = 85
-        Me.nso.Text = "NSO"
-        Me.nso.UseVisualStyleBackColor = False
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
@@ -265,8 +239,6 @@ Partial Class DeleteStudent_A
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(904, 353)
         Me.ControlBox = False
-        Me.Controls.Add(Me.bapt)
-        Me.Controls.Add(Me.nso)
         Me.Controls.Add(Me.SearchStudent_btn)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -315,7 +287,5 @@ Partial Class DeleteStudent_A
     Friend WithEvents add As System.Windows.Forms.TextBox
     Friend WithEvents sn As System.Windows.Forms.TextBox
     Friend WithEvents DeleteButton_a_Student As System.Windows.Forms.Button
-    Friend WithEvents bapt As System.Windows.Forms.CheckBox
-    Friend WithEvents nso As System.Windows.Forms.CheckBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class

@@ -40,7 +40,7 @@ Partial Class DeleteSub_A
         Me.DeleteSubj_btn.Name = "DeleteSubj_btn"
         Me.DeleteSubj_btn.Size = New System.Drawing.Size(115, 27)
         Me.DeleteSubj_btn.TabIndex = 6
-        Me.DeleteSubj_btn.Text = "Delete Subject"
+        Me.DeleteSubj_btn.Text = "Delete Class"
         Me.DeleteSubj_btn.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -106,6 +106,7 @@ Partial Class DeleteSub_A
         Me.GroupBox2.Controls.Add(Me.sec)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.DeleteSubj_btn)
+        Me.GroupBox2.Enabled = False
         Me.GroupBox2.Location = New System.Drawing.Point(16, 108)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(415, 74)
@@ -122,7 +123,7 @@ Partial Class DeleteSub_A
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "DeleteSub_A"
-        Me.Text = "Delete Subject"
+        Me.Text = "Delete Class"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
