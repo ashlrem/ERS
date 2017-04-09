@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class DeleteSubj_R
+Partial Class DeleteClass
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -38,7 +38,7 @@ Partial Class DeleteSubj_R
         '
         Me.subj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.subj.FormattingEnabled = True
-        Me.subj.Items.AddRange(New Object() {"Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6"})
+        Me.subj.Items.AddRange(New Object() {"Grade 1", "Grade 2 ", "Grade 3"})
         Me.subj.Location = New System.Drawing.Point(104, 30)
         Me.subj.Name = "subj"
         Me.subj.Size = New System.Drawing.Size(160, 21)
@@ -76,7 +76,7 @@ Partial Class DeleteSubj_R
         Me.GroupBox1.Controls.Add(Me.subj)
         Me.GroupBox1.Controls.Add(Me.SearchSubj_btn)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 13)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(368, 81)
         Me.GroupBox1.TabIndex = 27
@@ -106,23 +106,23 @@ Partial Class DeleteSubj_R
         Me.GroupBox2.Controls.Add(Me.sec)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.DeleteSubj_btn)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 104)
+        Me.GroupBox2.Enabled = False
+        Me.GroupBox2.Location = New System.Drawing.Point(13, 105)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(415, 74)
         Me.GroupBox2.TabIndex = 28
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Subject Information"
         '
-        'DeleteSubj_R
+        'DeleteClass
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(446, 199)
+        Me.ClientSize = New System.Drawing.Size(440, 193)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.Name = "DeleteSubj_R"
-        Me.Text = "DeleteSubj_R"
+        Me.Name = "DeleteClass"
+        Me.Text = "DeleteClass"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)

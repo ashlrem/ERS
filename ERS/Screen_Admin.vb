@@ -230,4 +230,11 @@
         AdminPanel.Hide()
         SearchStudent.Show()
     End Sub
+
+    Private Sub SearchArchiveToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchArchiveToolStripMenuItem.Click
+        StudentArchive.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(StudentArchive)
+        AdminPanel.Hide()
+        StudentArchive.Show()
+    End Sub
 End Class

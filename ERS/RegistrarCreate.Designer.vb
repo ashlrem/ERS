@@ -125,9 +125,9 @@ Partial Class RegistrarCreate
         Me.sq2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sq2.FormattingEnabled = True
         Me.sq2.Items.AddRange(New Object() {"What is your favorite book?", "What is the first name of your bestfriend?", "What is the last three digits of your Social Security Number?"})
-        Me.sq2.Location = New System.Drawing.Point(183, 265)
+        Me.sq2.Location = New System.Drawing.Point(181, 265)
         Me.sq2.Name = "sq2"
-        Me.sq2.Size = New System.Drawing.Size(256, 21)
+        Me.sq2.Size = New System.Drawing.Size(267, 21)
         Me.sq2.TabIndex = 12
         '
         'PictureBox1
@@ -193,9 +193,9 @@ Partial Class RegistrarCreate
         Me.sq1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sq1.FormattingEnabled = True
         Me.sq1.Items.AddRange(New Object() {"What is your favorite pet?", "What is the zip code of your parents house?", "What is your mother's maiden name?"})
-        Me.sq1.Location = New System.Drawing.Point(188, 211)
+        Me.sq1.Location = New System.Drawing.Point(181, 208)
         Me.sq1.Name = "sq1"
-        Me.sq1.Size = New System.Drawing.Size(251, 21)
+        Me.sq1.Size = New System.Drawing.Size(267, 21)
         Me.sq1.TabIndex = 10
         '
         'PictureBox2
@@ -239,7 +239,7 @@ Partial Class RegistrarCreate
         '
         'ans1
         '
-        Me.ans1.Location = New System.Drawing.Point(183, 237)
+        Me.ans1.Location = New System.Drawing.Point(181, 237)
         Me.ans1.Name = "ans1"
         Me.ans1.Size = New System.Drawing.Size(235, 20)
         Me.ans1.TabIndex = 11
