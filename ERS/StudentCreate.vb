@@ -132,10 +132,6 @@ Public Class StudentCreate
             Me.Close()
         End If
     End Sub
-    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        AddClass.Show()
-        Me.Hide()
-    End Sub
 
     Private Sub Transferee_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Transferee.CheckedChanged
         If (Transferee.Checked = True) Then

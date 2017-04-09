@@ -436,17 +436,13 @@ Module Module1
         objConn.ConnectionString = cn
         objConn.Open()
         Try
-            If (My.Forms.AddClass.gl.SelectedIndex = -1 Or My.Forms.AddClass.sec.Text = "") Then
+            If (My.Forms.AddClass_A.gl.SelectedIndex = -1 Or My.Forms.AddClass_A.sec.Text = "") Then
                 MsgBox("Enter the empty fields!")
             Else
-                'so dito, subjects yung sine save natin sa database, so yung SQL Query natin,
-                'INSERT INTO subject_tbl, para lang din tayong gumagawa ng user account, pero nagbago yung variables natin.
-                'pero same flow. gawa ng connection string, ioopen yung connection ni database,
-                'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level, @Section)"
-                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClass.gl.SelectedItem.ToString)
-                ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.Text.ToString)
+                ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level , @Section)"
+                ins.Parameters.AddWithValue("@Grade_Level", My.Forms.AddClass_A.gl.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@Section", My.Forms.AddClass_A.sec.Text.ToString)
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
                 MsgBox("Class saved successfully!")
@@ -456,11 +452,11 @@ Module Module1
                 If (a = MsgBoxResult.Yes) Then
                     AddSubClear()
                 ElseIf (a = MsgBoxResult.No) Then
-                    My.Forms.AddClass.Close()
+                    My.Forms.AddClass_A.Close()
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.ToString)
         End Try
         objConn.Close()
     End Sub
@@ -513,8 +509,8 @@ Module Module1
         'every successful query. naka automate na kumbaga.
 
         'clearing fields per forms
-        My.Forms.AddClass.gl.SelectedIndex = -1
-        My.Forms.AddClass.sec.Text = ""
+        My.Forms.AddClass_A.gl.SelectedIndex = -1
+        My.Forms.AddClass_A.sec.Text = ""
 
 
         My.Forms.AdminCreate.ln.Text = ""
@@ -2437,14 +2433,14 @@ Module Module1
     Public Sub deleteSubject_A()
         'not implemented
 
-        Dim reg As String = "DELETE FROM subject_tbl WHERE Grade_Level = '" & My.Forms.DeleteSub_A.subj.SelectedItem.ToString & "' and Section = '" & My.Forms.DeleteSub_A.sec.SelectedItem.ToString & "' "
+        Dim reg As String = "DELETE FROM subject_tbl WHERE Grade_Level = '" & My.Forms.DeleteClass.subj.SelectedItem.ToString & "' and Section = '" & My.Forms.DeleteClass.sec.SelectedItem.ToString & "' "
         Try
             Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn)
                     cn.Open()
                     sqlCmd.ExecuteNonQuery()
-                    My.Forms.DeleteSub_A.GroupBox2.Enabled = False
-                    My.Forms.DeleteSub_A.GroupBox1.Enabled = True
+                    My.Forms.DeleteClass.GroupBox2.Enabled = False
+                    My.Forms.DeleteClass.GroupBox1.Enabled = True
                     MsgBox("Subject Deleted!")
 
                     cn.Close()
@@ -2457,15 +2453,15 @@ Module Module1
         End Try
     End Sub
     Public Sub deleteSubject_R()
-        Dim reg As String = "DELETE FROM subject_tbl WHERE Grade_Level = '" & My.Forms.DeleteSub_A.subj.SelectedItem.ToString & "' and Section = '" & My.Forms.DeleteSub_A.sec.SelectedItem.ToString & "' "
+        Dim reg As String = "DELETE FROM subject_tbl WHERE Grade_Level = '" & My.Forms.DeleteClass.subj.SelectedItem.ToString & "' and Section = '" & My.Forms.DeleteClass.sec.SelectedItem.ToString & "' "
         Try
             Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn)
                     cn.Open()
                     sqlCmd.ExecuteNonQuery()
                     MsgBox("Class Deleted!")
-                    My.Forms.DeleteSub_A.GroupBox2.Enabled = False
-                    My.Forms.DeleteSub_A.GroupBox1.Enabled = True
+                    My.Forms.DeleteClass.GroupBox2.Enabled = False
+                    My.Forms.DeleteClass.GroupBox1.Enabled = True
                     cn.Close()
                 End Using
                 cn.Close()
@@ -2536,25 +2532,25 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Grade_Level ='" & My.Forms.DeleteSub_A.subj.SelectedItem & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Grade_Level ='" & My.Forms.DeleteClass.subj.SelectedItem & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
             r = cmd.ExecuteReader()
             If r.Read Then
 
-                My.Forms.DeleteSub_A.sec.Items.Clear()
-                My.Forms.DeleteSub_A.sec.Items.Add(r("Section").ToString())
+                My.Forms.DeleteClass.sec.Items.Clear()
+                My.Forms.DeleteClass.sec.Items.Add(r("Section").ToString())
                 While (r.Read())
-                    My.Forms.DeleteSub_A.sec.Items.Add(r("Section").ToString())
+                    My.Forms.DeleteClass.sec.Items.Add(r("Section").ToString())
                 End While
-                My.Forms.DeleteSub_A.GroupBox2.Enabled = True
-                My.Forms.DeleteSub_A.GroupBox1.Enabled = False
+                My.Forms.DeleteClass.GroupBox2.Enabled = True
+                My.Forms.DeleteClass.GroupBox1.Enabled = False
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.DeleteSub_A.subj.Text = ""
-                My.Forms.DeleteSub_A.subj.Focus()
+                My.Forms.DeleteClass.subj.Text = ""
+                My.Forms.DeleteClass.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
@@ -2740,23 +2736,25 @@ Module Module1
         Try
             insert()
             Dim r As MySqlDataReader
-            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Grade_Level ='" & My.Forms.DeleteSub_A.subj.SelectedItem & "')"
+            Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Grade_Level ='" & My.Forms.DeleteClass.subj.SelectedItem & "')"
             cn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand(DeleteSubj_R_frm, cn)
 
             r = cmd.ExecuteReader()
             If r.Read Then
 
-                My.Forms.DeleteSub_A.sec.Items.Clear()
-                My.Forms.DeleteSub_A.sec.Items.Add(r("Section").ToString())
+                My.Forms.DeleteClass.sec.Items.Clear()
+                My.Forms.DeleteClass.sec.Items.Add(r("Section").ToString())
                 While (r.Read())
-                    My.Forms.DeleteSub_A.sec.Items.Add(r("Section").ToString())
+                    My.Forms.DeleteClass.sec.Items.Add(r("Section").ToString())
                 End While
+                My.Forms.DeleteClass.GroupBox1.Enabled = False
+                My.Forms.DeleteClass.GroupBox2.Enabled = True
                 cn.Close()
             Else
                 MsgBox("Subject not Found!")
-                My.Forms.DeleteSub_A.subj.Text = ""
-                My.Forms.DeleteSub_A.subj.Focus()
+                My.Forms.DeleteClass.subj.Text = ""
+                My.Forms.DeleteClass.subj.Focus()
                 cn.Close()
             End If
         Catch ex As Exception
