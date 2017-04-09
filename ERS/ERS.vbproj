@@ -191,6 +191,12 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="addBookItem.Designer.vb">
       <DependentUpon>addBookItem.vb</DependentUpon>
     </Compile>
@@ -203,6 +209,12 @@
     <Compile Include="AddClassR.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddClass_A.Designer.vb">
+      <DependentUpon>AddClass_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddClass_A.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddPayment_A.Designer.vb">
       <DependentUpon>AddPayment_A.vb</DependentUpon>
     </Compile>
@@ -213,6 +225,12 @@
       <DependentUpon>AddClass.vb</DependentUpon>
     </Compile>
     <Compile Include="AddClass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSubject.Designer.vb">
+      <DependentUpon>AddSubject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddSubject.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminCreate.Designer.vb">
@@ -285,6 +303,12 @@
       <DependentUpon>DeleteCashier.vb</DependentUpon>
     </Compile>
     <Compile Include="DeleteCashier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteClass.Designer.vb">
+      <DependentUpon>DeleteClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteClass.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeletePayment.Designer.vb">
@@ -450,6 +474,12 @@
     <Compile Include="SplashScreen1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StudentArchive.Designer.vb">
+      <DependentUpon>StudentArchive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StudentArchive.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StudentCreate.Designer.vb">
       <DependentUpon>StudentCreate.vb</DependentUpon>
     </Compile>
@@ -522,6 +552,12 @@
     <Compile Include="UpdateClass_R.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UpdateSub_A.Designer.vb">
+      <DependentUpon>UpdateSub_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSub_A.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewStudent.Designer.vb">
       <DependentUpon>ViewStudent.vb</DependentUpon>
     </Compile>
@@ -563,11 +599,17 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addBookItem.resx">
       <DependentUpon>addBookItem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddClassR.resx">
       <DependentUpon>AddClassR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddClass_A.resx">
+      <DependentUpon>AddClass_A.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPayment_A.resx">
       <DependentUpon>AddPayment_A.vb</DependentUpon>
@@ -575,6 +617,9 @@
     <EmbeddedResource Include="AddClass.resx">
       <DependentUpon>AddClass.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSubject.resx">
+      <DependentUpon>AddSubject.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminCreate.resx">
       <DependentUpon>AdminCreate.vb</DependentUpon>
@@ -620,6 +665,9 @@
     <EmbeddedResource Include="DeleteCashier.resx">
       <DependentUpon>DeleteCashier.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteClass.resx">
+      <DependentUpon>DeleteClass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeletePayment.resx">
       <DependentUpon>DeletePayment.vb</DependentUpon>
@@ -709,6 +757,9 @@
       <DependentUpon>SplashScreen1.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentArchive.resx">
+      <DependentUpon>StudentArchive.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentCreate.resx">
       <DependentUpon>StudentCreate.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -745,6 +796,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateClass_R.resx">
       <DependentUpon>UpdateClass_R.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateSub_A.resx">
+      <DependentUpon>UpdateSub_A.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewStudent.resx">
       <DependentUpon>ViewStudent.vb</DependentUpon>

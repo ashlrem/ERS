@@ -75,6 +75,8 @@ Partial Class StudentCreate
         Me.Transferee = New System.Windows.Forms.CheckBox()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.addScho = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.nols = New System.Windows.Forms.TextBox()
         Me.StudentCreateEnrollBtn = New System.Windows.Forms.Button()
@@ -86,8 +88,6 @@ Partial Class StudentCreate
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
         Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
-        Me.addScho = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.pi.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -518,7 +518,7 @@ Partial Class StudentCreate
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.Label16)
-        Me.GroupBox1.Location = New System.Drawing.Point(20, 342)
+        Me.GroupBox1.Location = New System.Drawing.Point(20, 344)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(5)
@@ -648,6 +648,23 @@ Partial Class StudentCreate
         Me.CheckBox5.Text = "Upload Good Moral"
         Me.CheckBox5.UseVisualStyleBackColor = True
         '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(696, 24)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(80, 20)
+        Me.Label23.TabIndex = 196
+        Me.Label23.Text = "Address:"
+        '
+        'addScho
+        '
+        Me.addScho.Enabled = False
+        Me.addScho.Location = New System.Drawing.Point(782, 22)
+        Me.addScho.Name = "addScho"
+        Me.addScho.Size = New System.Drawing.Size(267, 26)
+        Me.addScho.TabIndex = 26
+        '
         'Label21
         '
         Me.Label21.AutoSize = True
@@ -732,23 +749,6 @@ Partial Class StudentCreate
         Me.VScrollBar1.Name = "VScrollBar1"
         Me.VScrollBar1.Size = New System.Drawing.Size(17, 645)
         Me.VScrollBar1.TabIndex = 192
-        '
-        'addScho
-        '
-        Me.addScho.Enabled = False
-        Me.addScho.Location = New System.Drawing.Point(782, 22)
-        Me.addScho.Name = "addScho"
-        Me.addScho.Size = New System.Drawing.Size(267, 26)
-        Me.addScho.TabIndex = 26
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(696, 24)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(80, 20)
-        Me.Label23.TabIndex = 196
-        Me.Label23.Text = "Address:"
         '
         'StudentCreate
         '

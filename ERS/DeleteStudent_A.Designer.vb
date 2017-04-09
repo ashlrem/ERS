@@ -221,7 +221,7 @@ Partial Class DeleteStudent_A
         '
         Me.DeleteButton_a_Student.BackColor = System.Drawing.Color.White
         Me.DeleteButton_a_Student.Enabled = False
-        Me.DeleteButton_a_Student.Location = New System.Drawing.Point(750, 235)
+        Me.DeleteButton_a_Student.Location = New System.Drawing.Point(787, 244)
         Me.DeleteButton_a_Student.Name = "DeleteButton_a_Student"
         Me.DeleteButton_a_Student.Size = New System.Drawing.Size(105, 97)
         Me.DeleteButton_a_Student.TabIndex = 24
