@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+Imports MySql.Data.MySqlClient
 Imports System.Text.RegularExpressions
 Imports System.IO
 Imports System.Drawing.Imaging
@@ -440,13 +440,20 @@ Module Module1
                 MsgBox("Enter the empty fields!")
             Else
                 ins.Connection = objConn
+<<<<<<< HEAD
                 ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level , @Section)"
                 ins.Parameters.AddWithValue("@Grade_Level", My.Forms.AddClass_A.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClass_A.sec.Text.ToString)
+=======
+                ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level, @Section)"
+                ins.Parameters.AddWithValue("@Grade_Level", My.Forms.AddClass.gl.SelectedItem.ToString)
+                ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.Text.ToString)
+>>>>>>> origin/tolits/br
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
                 MsgBox("Class saved successfully!")
                 objConn.Close()
+
                 Dim a As Integer
                 a = MsgBox("Do you want to Add another Class?", MsgBoxStyle.YesNo)
                 If (a = MsgBoxResult.Yes) Then
@@ -454,10 +461,12 @@ Module Module1
                 ElseIf (a = MsgBoxResult.No) Then
                     My.Forms.AddClass_A.Close()
                 End If
+
             End If
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
+
         objConn.Close()
     End Sub
     Public Sub qweR()
@@ -469,13 +478,9 @@ Module Module1
             If (My.Forms.AddClassR.gl.SelectedIndex = -1 Or My.Forms.AddClassR.sec.Text = "") Then
                 MsgBox("Enter the empty fields!")
             Else
-                'so dito, subjects yung sine save natin sa database, so yung SQL Query natin,
-                'INSERT INTO subject_tbl, para lang din tayong gumagawa ng user account, pero nagbago yung variables natin.
-                'pero same flow. gawa ng connection string, ioopen yung connection ni database,
-                'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO subject_tbl VALUES(@GradeLevel, @Section)"
-                ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClassR.gl.SelectedItem.ToString)
+                ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level, @Section)"
+                ins.Parameters.AddWithValue("@Grade_Level", My.Forms.AddClassR.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClassR.sec.Text.ToString)
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
