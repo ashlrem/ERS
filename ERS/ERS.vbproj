@@ -468,6 +468,12 @@
     <Compile Include="SearchStudent.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SearchStudent_R.Designer.vb">
+      <DependentUpon>SearchStudent_R.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchStudent_R.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -753,6 +759,9 @@
     <EmbeddedResource Include="SearchStudent.resx">
       <DependentUpon>SearchStudent.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SearchStudent_R.resx">
+      <DependentUpon>SearchStudent_R.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -821,6 +830,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

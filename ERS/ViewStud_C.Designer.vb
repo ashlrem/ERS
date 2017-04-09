@@ -142,7 +142,6 @@ Partial Class ViewStud_C
         Me.Button3.TabIndex = 74
         Me.Button3.Text = "Cancel"
         Me.Button3.UseVisualStyleBackColor = True
-        Me.Button3.Visible = False
         '
         'PictureBox2
         '
@@ -222,6 +221,7 @@ Partial Class ViewStud_C
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(898, 347)
+        Me.ControlBox = False
         Me.Controls.Add(Me.SearchStudent_btn)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)

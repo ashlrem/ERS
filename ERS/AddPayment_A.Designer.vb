@@ -27,12 +27,12 @@ Partial Class AddPayment_A
         Me.SearchAddpayemt_btn = New System.Windows.Forms.Button()
         Me.miscellaneous_fee_grp = New System.Windows.Forms.GroupBox()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.enterTuition_btn = New System.Windows.Forms.Button()
         Me.getSubj = New System.Windows.Forms.ComboBox()
         Me.total = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.pp_rdbnt = New System.Windows.Forms.RadioButton()
         Me.fp_rdobnt = New System.Windows.Forms.RadioButton()
+        Me.enterTuition_btn = New System.Windows.Forms.Button()
         Me.Payment_grp = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -136,15 +136,6 @@ Partial Class AddPayment_A
         Me.Label20.TabIndex = 9
         Me.Label20.Text = "Grade Level"
         '
-        'enterTuition_btn
-        '
-        Me.enterTuition_btn.Location = New System.Drawing.Point(307, 116)
-        Me.enterTuition_btn.Name = "enterTuition_btn"
-        Me.enterTuition_btn.Size = New System.Drawing.Size(285, 63)
-        Me.enterTuition_btn.TabIndex = 2
-        Me.enterTuition_btn.Text = "COMPUTE"
-        Me.enterTuition_btn.UseVisualStyleBackColor = True
-        '
         'getSubj
         '
         Me.getSubj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -195,6 +186,15 @@ Partial Class AddPayment_A
         Me.fp_rdobnt.TabStop = True
         Me.fp_rdobnt.Text = "Full Payment"
         Me.fp_rdobnt.UseVisualStyleBackColor = True
+        '
+        'enterTuition_btn
+        '
+        Me.enterTuition_btn.Location = New System.Drawing.Point(307, 116)
+        Me.enterTuition_btn.Name = "enterTuition_btn"
+        Me.enterTuition_btn.Size = New System.Drawing.Size(285, 63)
+        Me.enterTuition_btn.TabIndex = 2
+        Me.enterTuition_btn.Text = "COMPUTE"
+        Me.enterTuition_btn.UseVisualStyleBackColor = True
         '
         'Payment_grp
         '
@@ -635,7 +635,7 @@ Partial Class AddPayment_A
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(604, 536)
+        Me.ClientSize = New System.Drawing.Size(604, 547)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.enterTuition_btn)
         Me.Controls.Add(Me.GroupBox1)
@@ -648,6 +648,8 @@ Partial Class AddPayment_A
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximumSize = New System.Drawing.Size(614, 580)
+        Me.MinimumSize = New System.Drawing.Size(614, 580)
         Me.Name = "AddPayment_A"
         Me.Text = "Add Student Payment"
         Me.miscellaneous_fee_grp.ResumeLayout(False)

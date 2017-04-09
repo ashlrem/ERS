@@ -5,8 +5,8 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Screen_Admin.Show()
-        AdminPanel.Show()
+        Screen_Cashier.Show()
+        CashierPanel.Show()
         Me.Close()
     End Sub
 

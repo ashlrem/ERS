@@ -31,4 +31,13 @@
         Me.Top = (Screen.Height \ 2) - (Me.Height - 200)
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2) - 10
     End Sub
+
+    Private Sub LoginCancelBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoginCancelBtn.Click
+        My.Forms.MainScreen.AdminBtn.Visible = True
+        My.Forms.MainScreen.CashierBtn.Visible = True
+        My.Forms.MainScreen.RegistrarBtn.Visible = True
+        My.Forms.MainScreen.AboutUsBtn.Visible = True
+        My.Forms.MainScreen.PictureBox1.Visible = True
+        Me.Close()
+    End Sub
 End Class

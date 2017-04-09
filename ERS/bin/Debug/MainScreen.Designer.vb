@@ -60,7 +60,7 @@ Partial Class MainScreen
         Me.datelbl.AutoSize = True
         Me.datelbl.BackColor = System.Drawing.Color.White
         Me.datelbl.Font = New System.Drawing.Font("Copperplate Gothic Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datelbl.Location = New System.Drawing.Point(1031, 149)
+        Me.datelbl.Location = New System.Drawing.Point(21, 699)
         Me.datelbl.Name = "datelbl"
         Me.datelbl.Size = New System.Drawing.Size(52, 22)
         Me.datelbl.TabIndex = 2
@@ -135,6 +135,7 @@ Partial Class MainScreen
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(386, 289)
         Me.PictureBox1.Name = "PictureBox1"
@@ -161,13 +162,13 @@ Partial Class MainScreen
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1354, 733)
+        Me.Controls.Add(Me.datelbl)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.RegistrarBtn)
         Me.Controls.Add(Me.CashierBtn)
         Me.Controls.Add(Me.AboutUsBtn)
         Me.Controls.Add(Me.AdminBtn)
-        Me.Controls.Add(Me.datelbl)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Pi)
         Me.Controls.Add(Me.DateTimePicker1)

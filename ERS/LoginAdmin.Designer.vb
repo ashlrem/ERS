@@ -41,7 +41,7 @@ Partial Class LoginAdmin
         Me.Button1.Location = New System.Drawing.Point(376, 149)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(105, 27)
-        Me.Button1.TabIndex = 2
+        Me.Button1.TabIndex = 3
         Me.Button1.UseVisualStyleBackColor = False
         '
         'en
@@ -49,7 +49,7 @@ Partial Class LoginAdmin
         Me.en.Location = New System.Drawing.Point(318, 75)
         Me.en.Name = "en"
         Me.en.Size = New System.Drawing.Size(172, 20)
-        Me.en.TabIndex = 3
+        Me.en.TabIndex = 1
         '
         'pw
         '
@@ -57,7 +57,7 @@ Partial Class LoginAdmin
         Me.pw.Name = "pw"
         Me.pw.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.pw.Size = New System.Drawing.Size(172, 20)
-        Me.pw.TabIndex = 4
+        Me.pw.TabIndex = 2
         '
         'Label1
         '
@@ -76,7 +76,7 @@ Partial Class LoginAdmin
         Me.LoginCancelBtn.Location = New System.Drawing.Point(395, 8)
         Me.LoginCancelBtn.Name = "LoginCancelBtn"
         Me.LoginCancelBtn.Size = New System.Drawing.Size(104, 27)
-        Me.LoginCancelBtn.TabIndex = 7
+        Me.LoginCancelBtn.TabIndex = 5
         Me.LoginCancelBtn.Text = "Cancel"
         Me.LoginCancelBtn.UseVisualStyleBackColor = True
         '
@@ -107,7 +107,7 @@ Partial Class LoginAdmin
         Me.LinkLabel1.Location = New System.Drawing.Point(281, 156)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(92, 13)
-        Me.LinkLabel1.TabIndex = 10
+        Me.LinkLabel1.TabIndex = 4
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Forgot Password?"
         '

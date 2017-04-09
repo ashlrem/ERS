@@ -41,17 +41,17 @@ Module Module1
     Public form137 As String = "none"
     Public goodMoral As String = "none"
 
-    'Public server As String = "192.168.254.108" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
-    'Public port As String = "3306" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
-    'Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
-    'Public password As String = "1234" 'no password si root dun sa wamp natin, so leave it empty
-    'Public database As String = "ers" ' eto yung name ng database natin, ers.
-
     Public server As String = "127.0.0.1" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
-    Public port As String = "" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
+    Public port As String = "3306" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
     Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
     Public password As String = "1234" 'no password si root dun sa wamp natin, so leave it empty
     Public database As String = "ers" ' eto yung name ng database natin, ers.
+
+    'Public server As String = "127.0.0.1" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
+    'Public port As String = "" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
+    'Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
+    'Public password As String = "1234" 'no password si root dun sa wamp natin, so leave it empty
+    'Public database As String = "ers" ' eto yung name ng database natin, ers.
     Public Sub splash()
         'connection string na ginagamit ng system natin para mag connect sa database
         cn.ConnectionString = "server= '" & server & "';port= '" & port & "';userid= '" & user & "';password= '" & password & "';database='" & database & "'"
@@ -591,7 +591,7 @@ Module Module1
                             'add if else here to check if account status is active!
                             'if active, login, else, show error that error is blocked.
 
-                            My.Forms.CashierLogin.Hide()
+                            My.Forms.RegistrarLogin.Hide()
                             RegistrarPanel.TopLevel = False
                             My.Forms.Screen_Registrar.RegistrarPanelPictureBox.Controls.Add(RegistrarPanel)
                             Screen_Registrar.Show()
@@ -1643,16 +1643,6 @@ Module Module1
         End Try
     End Sub
     Public Sub dropstud()
-
-        'drop student method. eto yung parang iddrop na si student. pero ang ginawa natin dito,
-        'si student na iddrop, idedelete siya dun sa student_info na table, at, iiinsert siya saa archive table.
-        'bakit? siyempre para may record pa din tayo ng student na yun kahit na nag drop na siya.
-
-        'check sql query lang, guys alam kong naiintindihan na natin yung sql query. yun lang ang important dun.
-        'siyempre importante din na maintindihan mo yung feelings ng....asfgasldkfjalskdjf haha.
-        'anyways, 
-
-        'Drop student (delete from student_info table)
         Try
             Dim objConn As New MySqlConnection
             Dim ins As New MySqlCommand
@@ -1668,7 +1658,7 @@ Module Module1
             ins.Parameters.AddWithValue("@MiddleName", MiddleN)
             ins.Parameters.AddWithValue("@Birthday", My.Forms.DeleteStudent_A.bd.Text)
             ins.Parameters.AddWithValue("@Birth_Place", Birthplace)
-            ins.Parameters.AddWithValue("@Gender", My.Forms.DeleteStudent_A)
+            ins.Parameters.AddWithValue("@Gender", Gender)
             ins.Parameters.AddWithValue("@Address", My.Forms.DeleteStudent_A.add.Text)
             ins.Parameters.AddWithValue("@Age", My.Forms.DeleteStudent_A.ag.Text)
             ins.Parameters.AddWithValue("@Citizenship", Citizen)
@@ -1709,6 +1699,7 @@ Module Module1
             LastN = ""
             religion = ""
             Citizen = ""
+            Gender = ""
             objConn.Close()
             Dim reg As String = "DELETE FROM student_info WHERE Student_ID_No = '" & My.Forms.DeleteStudent_A.sn.Text & "'"
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
@@ -1732,7 +1723,7 @@ Module Module1
                 End Using
                 cn1.Close()
             End Using
-            MsgBox("Student Deleted!!")
+            MsgBox("Student Info Deleted!!")
             My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = False
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -1740,45 +1731,28 @@ Module Module1
         End Try
     End Sub
     Public Sub dropstudR()
-
-        'drop student method. eto yung parang iddrop na si student. pero ang ginawa natin dito,
-        'si student na iddrop, idedelete siya dun sa student_info na table, at, iiinsert siya saa archive table.
-        'bakit? siyempre para may record pa din tayo ng student na yun kahit na nag drop na siya.
-
-        'check sql query lang, guys alam kong naiintindihan na natin yung sql query. yun lang ang important dun.
-        'siyempre importante din na maintindihan mo yung feelings ng....asfgasldkfjalskdjf haha.
-        'anyways, 
-
-        'Drop student (delete from student_info table)
         Try
-            'so eto yung una nating transaction kay database, insert.
-            'usual routine natin kay database.
-            'connection string (insert() noon) cn dito
-            'open connection
-            'sql query execute
-            'close connection
             Dim objConn As New MySqlConnection
             Dim ins As New MySqlCommand
             Dim cn = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
             objConn.ConnectionString = cn
             objConn.Open()
             ins.Connection = objConn
-
             ins.CommandText = "INSERT INTO student_info_archive VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
             ins.Parameters.AddWithValue("@Photo", pic)
-            ins.Parameters.AddWithValue("@Student_ID_No", My.Forms.DeleteStudent_R.sn.Text)
+            ins.Parameters.AddWithValue("@Student_ID_No", My.Forms.DeleteStudent_A.sn.Text)
             ins.Parameters.AddWithValue("@LastName", LastN)
             ins.Parameters.AddWithValue("@GivenName", FirstN)
             ins.Parameters.AddWithValue("@MiddleName", MiddleN)
-            ins.Parameters.AddWithValue("@Birthday", My.Forms.DeleteStudent_R.bd.Text)
+            ins.Parameters.AddWithValue("@Birthday", My.Forms.DeleteStudent_A.bd.Text)
             ins.Parameters.AddWithValue("@Birth_Place", Birthplace)
-            ins.Parameters.AddWithValue("@Gender", My.Forms.DeleteStudent_R)
-            ins.Parameters.AddWithValue("@Address", My.Forms.DeleteStudent_R.add.Text)
-            ins.Parameters.AddWithValue("@Age", My.Forms.DeleteStudent_R.ag.Text)
+            ins.Parameters.AddWithValue("@Gender", Gender)
+            ins.Parameters.AddWithValue("@Address", My.Forms.DeleteStudent_A.add.Text)
+            ins.Parameters.AddWithValue("@Age", My.Forms.DeleteStudent_A.ag.Text)
             ins.Parameters.AddWithValue("@Citizenship", Citizen)
             ins.Parameters.AddWithValue("@Religion", religion)
-            ins.Parameters.AddWithValue("@SchoolYear", My.Forms.DeleteStudent_R.sy.Text)
-            ins.Parameters.AddWithValue("@GradeLevel", My.Forms.DeleteStudent_R.gl.Text)
+            ins.Parameters.AddWithValue("@SchoolYear", My.Forms.DeleteStudent_A.sy.Text)
+            ins.Parameters.AddWithValue("@GradeLevel", My.Forms.DeleteStudent_A.gl.Text)
             ins.Parameters.AddWithValue("@Section", Section)
             ins.Parameters.AddWithValue("@Scholar", Scholar)
             ins.Parameters.AddWithValue("@MotherName", MotherName)
@@ -1787,7 +1761,7 @@ Module Module1
             ins.Parameters.AddWithValue("@OccupationF", FatherOccupation)
             ins.Parameters.AddWithValue("@Guardian", Guardian)
             ins.Parameters.AddWithValue("@Relation", Relation)
-            ins.Parameters.AddWithValue("@Contact", My.Forms.DeleteStudent_R.con.Text)
+            ins.Parameters.AddWithValue("@Contact", My.Forms.DeleteStudent_A.con.Text)
             ins.Parameters.AddWithValue("@NSO", NSO2)
             ins.Parameters.AddWithValue("@Baptismal", baptis)
             ins.Parameters.AddWithValue("@Name_Of_LastSchool", NameLastSchool)
@@ -1796,20 +1770,31 @@ Module Module1
             ins.Parameters.AddWithValue("@UploadForm137", form137)
             ins.Parameters.AddWithValue("@UploadGoodMoral", goodMoral)
             ins.ExecuteNonQuery()
-
+            MotherName = ""
+            MotherOccupation = ""
+            FatherName = ""
+            FatherOccupation = ""
+            Guardian = ""
+            Relation = ""
+            Contact = ""
+            AddressLastSchool = ""
+            NameLastSchool = ""
+            Section = ""
+            Birthplace = ""
+            Scholar = ""
+            FirstN = ""
+            MiddleN = ""
+            LastN = ""
+            religion = ""
+            Citizen = ""
+            Gender = ""
             objConn.Close()
-
-            'may bago tayong transaction kay database which is delete.
-            'same routine tayo guys.
-            'connection string (insert() noon) cn1 dito
-            'open connection
-            'sql query execute
-            'close connection
-            Dim reg As String = "DELETE FROM student_info WHERE Student_ID_No = '" & My.Forms.DeleteStudent_R.sn.Text & "'"
+            Dim reg As String = "DELETE FROM student_info WHERE Student_ID_No = '" & My.Forms.DeleteStudent_A.sn.Text & "'"
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn1)
                     cn1.Open()
                     sqlCmd.ExecuteNonQuery()
+                    pic = ""
                     My.Forms.DeleteStudent_R.DeleteButton_a_Student.Enabled = False
                     My.Forms.DeleteStudent_R.sn.Text = ""
                     My.Forms.DeleteStudent_R.nam.Text = ""
@@ -1827,7 +1812,7 @@ Module Module1
                 cn1.Close()
             End Using
             MsgBox("Student Deleted!!")
-            My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = False
+            My.Forms.DeleteStudent_R.DeleteButton_a_Student.Enabled = False
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             cn.Close()
@@ -2749,14 +2734,14 @@ Module Module1
         End Try
     End Sub
     Public Sub SearchStudent_A_Delete_btn()
-        Dim conn As New MySqlConnection
+        Dim conn1 As New MySqlConnection
         Try
             'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
-            conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+            conn1.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
             Dim r As MySqlDataReader
-            Dim reg As String = "SELECT * FROM student_info WHERE (Student_ID_No ='" & My.Forms.DeleteStudent_A.sn.Text & "')"
-            conn.Open() 'instead na cn1.Open, babaguhin natin. ilalagay natin yung conn na ni declare natin sa taas.
-            Dim cmd As MySqlCommand = New MySqlCommand(reg, conn) '<--- dapat gagana na to. haha.
+            Dim reg1 As String = "SELECT * FROM student_info WHERE (Student_ID_No ='" & My.Forms.DeleteStudent_A.sn.Text & "')"
+            conn1.Open() 'instead na cn1.Open, babaguhin natin. ilalagay natin yung conn na ni declare natin sa taas.
+            Dim cmd As MySqlCommand = New MySqlCommand(reg1, conn1) '<--- dapat gagana na to. haha.
             r = cmd.ExecuteReader()
             If r.Read Then
                 My.Forms.DeleteStudent_A.sn.Text = r("Student_ID_No").ToString()
@@ -2783,6 +2768,7 @@ Module Module1
                 LastN = r("LastName").ToString
                 religion = r("Religion").ToString
                 Citizen = r("Citizenship").ToString
+                Gender = r("Gender").ToString
 
 
 
@@ -2795,16 +2781,16 @@ Module Module1
                 My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = True
 
 
-                conn.Close() 'papalitan natin lahat ng cn1 ng conn
+                conn1.Close() 'papalitan natin lahat ng cn1 ng conn
             Else
                 MsgBox("Student ID not Found!")
                 My.Forms.DeleteStudent_A.sn.Focus()
-                conn.Close()
+                conn1.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.StackTrace) '<-- tanggalin naten yung error.
         End Try
-        conn.Close()
+        conn1.Close()
     End Sub
     Public Sub SearchStudent_R_Delete_btn()
         Dim conn As New MySqlConnection 
@@ -2824,7 +2810,24 @@ Module Module1
                 My.Forms.DeleteStudent_R.gl.Text = r("GradeLevel").ToString()
                 My.Forms.DeleteStudent_R.con.Text = r("Contact").ToString()
                 My.Forms.DeleteStudent_R.sy.Text = r("SchoolYear").ToString()
-
+                MotherName = r("MotherName").ToString
+                MotherOccupation = r("OccupationM").ToString
+                FatherName = r("FatherName").ToString
+                FatherOccupation = r("OccupationF").ToString
+                Guardian = r("Guardian").ToString
+                Relation = r("Relation").ToString
+                Contact = r("Contact").ToString
+                AddressLastSchool = r("Address_of_LastSchool").ToString
+                NameLastSchool = r("Name_Of_LastSchool").ToString
+                Section = r("Section").ToString
+                Birthplace = r("Birth_Place").ToString
+                Scholar = r("Scholar").ToString
+                FirstN = r("GivenName").ToString
+                MiddleN = r("MiddleName").ToString
+                LastN = r("LastName").ToString
+                religion = r("Religion").ToString
+                Citizen = r("Citizenship").ToString
+                Gender = r("Gender").ToString
 
 
 
@@ -2886,7 +2889,7 @@ Module Module1
                 pic = ""
 
                 NSO2 = r("NSO").ToString()
-                If NSO2 = "" Then
+                If NSO2 = "none" Then
                     My.Forms.UpdateStudent_R.nso_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.nso_lbl.BackColor = Color.Green
@@ -2894,28 +2897,28 @@ Module Module1
 
 
                 baptis = r("Baptismal").ToString()
-                If baptis = "" Then
+                If baptis = "none" Then
                     My.Forms.UpdateStudent_R.baptismal_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.baptismal_lbl.BackColor = Color.Green
                 End If
 
                 card = r("UploadCard").ToString()
-                If card = "" Then
+                If card = "none" Then
                     My.Forms.UpdateStudent_R.card_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.card_lbl.BackColor = Color.Green
                 End If
 
                 form137 = r("UploadForm137").ToString()
-                If form137 = "" Then
+                If form137 = "none" Then
                     My.Forms.UpdateStudent_R.form_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.form_lbl.BackColor = Color.Green
                 End If
 
                 goodMoral = r("UploadGoodMoral").ToString()
-                If goodMoral = "" Then
+                If goodMoral = "none" Then
                     My.Forms.UpdateStudent_R.gm_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.gm_lbl.BackColor = Color.Green
@@ -3051,7 +3054,7 @@ Module Module1
                 pic = ""
 
                 NSO2 = r("NSO").ToString()
-                If NSO2 = "" Then
+                If NSO2 = "none" Then
                     My.Forms.ViewStudent_R.nso_lbl.BackColor = Color.Red
                 Else
                     My.Forms.ViewStudent_R.nso_lbl.BackColor = Color.Green
@@ -3059,7 +3062,7 @@ Module Module1
 
 
                 baptis = r("Baptismal").ToString()
-                If baptis = "" Then
+                If baptis = "none" Then
                     My.Forms.ViewStudent_R.baptismal_lbl.BackColor = Color.Red
                 Else
                     My.Forms.ViewStudent_R.baptismal_lbl.BackColor = Color.Green
@@ -3073,14 +3076,14 @@ Module Module1
                 End If
 
                 form137 = r("UploadForm137").ToString()
-                If form137 = "" Then
+                If form137 = "none" Then
                     My.Forms.ViewStudent_R.form_lbl.BackColor = Color.Red
                 Else
                     My.Forms.ViewStudent_R.form_lbl.BackColor = Color.Green
                 End If
 
                 goodMoral = r("UploadGoodMoral").ToString()
-                If goodMoral = "" Then
+                If goodMoral = "none" Then
                     My.Forms.ViewStudent_R.gm_lbl.BackColor = Color.Red
                 Else
                     My.Forms.ViewStudent_R.gm_lbl.BackColor = Color.Green
