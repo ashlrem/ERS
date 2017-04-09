@@ -28,10 +28,17 @@ Public Class AdminCreate
             End If
         Catch
         End Try
-        decoding = encodingtypestring
-        pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
-        pic = ""
-        createAdmin()
+        Try
+            decoding = encodingtypestring
+            pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
+            Try
+                createAdmin()
+            Catch
+            End Try
+        Catch ex As Exception
+            MsgBox("Must upload or take picture.")
+        End Try
+
     End Sub
 
     Private Sub AdminCreate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

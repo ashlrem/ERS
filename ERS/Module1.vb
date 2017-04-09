@@ -12,6 +12,23 @@ Module Module1
     Public encodeType As ImageFormat = ImageFormat.Jpeg
     Public decoding As String = String.Empty
 
+    Public MotherName As String
+    Public MotherOccupation As String
+    Public FatherName As String
+    Public FatherOccupation As String
+    Public Guardian As String
+    Public Relation As String
+    Public Contact As String
+    Public AddressLastSchool As String
+    Public NameLastSchool As String
+    Public Section As String
+    Public Birthplace As String
+    Public Scholar As String
+    Public FirstN As String
+    Public MiddleN As String
+    Public LastN As String
+    Public religion As String
+    Public Citizen As String
     Public NSO2 As String = "none"
     Public baptis As String = "none"
     Public card As String = "none"
@@ -114,7 +131,7 @@ Module Module1
                 objConn1.ConnectionString = cn1
                 objConn1.Open()
 
-
+                Dim b As String = My.Forms.AdminCreate.bd.Value.ToString("MM/dd/yyyy")
                 Try
                     ins1.Connection = objConn1
 
@@ -133,7 +150,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@Surname", My.Forms.AdminCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.AdminCreate.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.AdminCreate.mn.Text)
-                        ins.Parameters.AddWithValue("@Birthday", My.Forms.AdminCreate.bd.Value.ToString)
+                        ins.Parameters.AddWithValue("@Birthday", b)
                         ins.Parameters.AddWithValue("@Address", My.Forms.AdminCreate.add.Text)
                         ins.Parameters.AddWithValue("@Email_Account", My.Forms.AdminCreate.eadd.Text)
                         ins.Parameters.AddWithValue("@ContactNumber", My.Forms.AdminCreate.cno.Text)
@@ -146,6 +163,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@status", "Active")
                         ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
+                        pic = ""
                         MsgBox("Admin Account Successfully Created!")
                         My.Forms.AdminCreate.ln.Focus()
                         MainScreen.Show()
@@ -202,7 +220,7 @@ Module Module1
 
                 Try
                     ins1.Connection = objConn1
-
+                    Dim b As String = My.Forms.AdminCreate_1.bd.Value.ToString("MM/dd/yyyy")
                     'first Try, iiinsert kay accounts yung value nung employee id text box.
                     'pag hindi pa existing, mai insert siya, else, error. (check yung pinaka huling Catch)
                     ins1.CommandText = "INSERT INTO accounts VALUES(@EmployeeID)"
@@ -218,7 +236,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@Surname", My.Forms.AdminCreate_1.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.AdminCreate_1.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.AdminCreate_1.mn.Text)
-                        ins.Parameters.AddWithValue("@Birthday", My.Forms.AdminCreate_1.bd.Value.ToString)
+                        ins.Parameters.AddWithValue("@Birthday", b)
                         ins.Parameters.AddWithValue("@Address", My.Forms.AdminCreate_1.add.Text)
                         ins.Parameters.AddWithValue("@Email_Account", My.Forms.AdminCreate_1.eadd.Text)
                         ins.Parameters.AddWithValue("@ContactNumber", My.Forms.AdminCreate_1.cno.Text)
@@ -231,6 +249,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@status", "Active")
                         ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
+                        pic = ""
                         MsgBox("Admin Account Successfully Created!")
                         My.Forms.AdminCreate_1.ln.Focus()
                         My.Forms.AdminPanel.Show()
@@ -294,7 +313,7 @@ Module Module1
                     ins1.ExecuteNonQuery()
                     Try
                         ins.Connection = objConn 'ins lang yung ginamit dito, so ginamit siya para sa pag save sa registrar. check niyo yung sa admin saka sa cashier.
-
+                        Dim b As String = My.Forms.RegistrarCreate.bd.Value.ToString("MM/dd/yyyy")
                         'registrar create (insert to database)
                         ins.CommandText = "INSERT INTO registrar_account VALUES(@Photo, @Surname, @GivenName, @MiddleName, @Birthday, @Address, @Email_Account, @ContactNumber, @Security_Question1, @Answer1, @Security_Question2, @Answer2, @EmployeeID, @Password, @status, @LogIn_Attempts)"
 
@@ -302,7 +321,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@Surname", My.Forms.RegistrarCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.RegistrarCreate.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.RegistrarCreate.mn.Text)
-                        ins.Parameters.AddWithValue("@Birthday", My.Forms.RegistrarCreate.bd.Value.ToString)
+                        ins.Parameters.AddWithValue("@Birthday", b)
                         ins.Parameters.AddWithValue("@Address", My.Forms.RegistrarCreate.add.Text)
                         ins.Parameters.AddWithValue("@Email_Account", My.Forms.RegistrarCreate.eadd.Text)
                         ins.Parameters.AddWithValue("@ContactNumber", My.Forms.RegistrarCreate.cno.Text)
@@ -315,6 +334,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@status", "Active")
                         ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
+                        pic = ""
                         MsgBox("Registrar Account Successfully Created!")
                         My.Forms.RegistrarCreate.ln.Focus()
                         AdminPanel.Show()
@@ -363,7 +383,7 @@ Module Module1
                 objConn1.Open()
                 Try
                     ins1.Connection = objConn1
-
+                    Dim b As String = My.Forms.CashierCreate.bd.Value.ToString("MM/dd/yyyy")
                     'accounts table to avoid repeatition of EmployeeID
                     ins1.CommandText = "INSERT INTO accounts VALUES(@EmployeeID)"
                     ins1.Parameters.AddWithValue("@EmployeeID", My.Forms.CashierCreate.en.Text)
@@ -377,7 +397,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@Surname", My.Forms.CashierCreate.ln.Text)
                         ins.Parameters.AddWithValue("@GivenName", My.Forms.CashierCreate.fn.Text)
                         ins.Parameters.AddWithValue("@MiddleName", My.Forms.CashierCreate.mn.Text)
-                        ins.Parameters.AddWithValue("@Birthday", My.Forms.CashierCreate.bd.Value.ToString)
+                        ins.Parameters.AddWithValue("@Birthday", b)
                         ins.Parameters.AddWithValue("@Address", My.Forms.CashierCreate.add.Text)
                         ins.Parameters.AddWithValue("@Email_Account", My.Forms.CashierCreate.eadd.Text)
                         ins.Parameters.AddWithValue("@ContactNumber", My.Forms.CashierCreate.cno.Text)
@@ -390,6 +410,7 @@ Module Module1
                         ins.Parameters.AddWithValue("@status", "Active")
                         ins.Parameters.AddWithValue("@LogIn_Attempts", 0)
                         ins.ExecuteNonQuery()
+                        pic = ""
                         MsgBox("Cashier Account Successfuly Created!")
                         My.Forms.CashierCreate.ln.Focus()
                         AdminPanel.Show()
@@ -423,7 +444,7 @@ Module Module1
                 'pero same flow. gawa ng connection string, ioopen yung connection ni database,
                 'then execute ng sql query para mag save sa database. easy lang diba? kayang kaya niyo to!
                 ins.Connection = objConn
-                ins.CommandText = "INSERT INTO subject_tbl VALUES(@GradeLevel, @Section)"
+                ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level, @Section)"
                 ins.Parameters.AddWithValue("@GradeLevel", My.Forms.AddClass.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.Text.ToString)
                 ins.ExecuteNonQuery()
@@ -1651,11 +1672,55 @@ Module Module1
             objConn.ConnectionString = cn
             objConn.Open()
             ins.Connection = objConn
-            ins.CommandText = "INSERT INTO student_info_archive VALUES(@Photo ,@Name, @Student_ID_No)"
+            ins.CommandText = "INSERT INTO student_info_archive VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
             ins.Parameters.AddWithValue("@Photo", pic)
-            ins.Parameters.AddWithValue("@Name", My.Forms.DeleteStudent_A.nam.Text)
             ins.Parameters.AddWithValue("@Student_ID_No", My.Forms.DeleteStudent_A.sn.Text)
+            ins.Parameters.AddWithValue("@LastName", LastN)
+            ins.Parameters.AddWithValue("@GivenName", FirstN)
+            ins.Parameters.AddWithValue("@MiddleName", MiddleN)
+            ins.Parameters.AddWithValue("@Birthday", My.Forms.DeleteStudent_A.bd.Text)
+            ins.Parameters.AddWithValue("@Birth_Place", Birthplace)
+            ins.Parameters.AddWithValue("@Gender", My.Forms.DeleteStudent_A)
+            ins.Parameters.AddWithValue("@Address", My.Forms.DeleteStudent_A.add.Text)
+            ins.Parameters.AddWithValue("@Age", My.Forms.DeleteStudent_A.ag.Text)
+            ins.Parameters.AddWithValue("@Citizenship", Citizen)
+            ins.Parameters.AddWithValue("@Religion", religion)
+            ins.Parameters.AddWithValue("@SchoolYear", My.Forms.DeleteStudent_A.sy.Text)
+            ins.Parameters.AddWithValue("@GradeLevel", My.Forms.DeleteStudent_A.gl.Text)
+            ins.Parameters.AddWithValue("@Section", Section)
+            ins.Parameters.AddWithValue("@Scholar", Scholar)
+            ins.Parameters.AddWithValue("@MotherName", MotherName)
+            ins.Parameters.AddWithValue("@OccupationM", MotherOccupation)
+            ins.Parameters.AddWithValue("@FatherName", FatherName)
+            ins.Parameters.AddWithValue("@OccupationF", FatherOccupation)
+            ins.Parameters.AddWithValue("@Guardian", Guardian)
+            ins.Parameters.AddWithValue("@Relation", Relation)
+            ins.Parameters.AddWithValue("@Contact", My.Forms.DeleteStudent_A.con.Text)
+            ins.Parameters.AddWithValue("@NSO", NSO2)
+            ins.Parameters.AddWithValue("@Baptismal", baptis)
+            ins.Parameters.AddWithValue("@Name_Of_LastSchool", NameLastSchool)
+            ins.Parameters.AddWithValue("@Address_of_LastSchool", AddressLastSchool)
+            ins.Parameters.AddWithValue("@UploadCard", card)
+            ins.Parameters.AddWithValue("@UploadForm137", form137)
+            ins.Parameters.AddWithValue("@UploadGoodMoral", goodMoral)
             ins.ExecuteNonQuery()
+            MotherName = ""
+            MotherOccupation = ""
+            FatherName = ""
+            FatherOccupation = ""
+            Guardian = ""
+            Relation = ""
+            Contact = ""
+            AddressLastSchool = ""
+            NameLastSchool = ""
+            Section = ""
+            Birthplace = ""
+            Scholar = ""
+            FirstN = ""
+            MiddleN = ""
+            LastN = ""
+            religion = ""
+            Citizen = ""
             objConn.Close()
 
             'may bago tayong transaction kay database which is delete.
@@ -1669,7 +1734,8 @@ Module Module1
                 Using sqlCmd = New MySqlCommand(reg, cn1)
                     cn1.Open()
                     sqlCmd.ExecuteNonQuery()
-                    My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = True
+                    pic = ""
+                    My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = False
                     My.Forms.DeleteStudent_A.sn.Text = ""
                     My.Forms.DeleteStudent_A.nam.Text = ""
                     My.Forms.DeleteStudent_A.add.Text = ""
@@ -1678,6 +1744,8 @@ Module Module1
                     My.Forms.DeleteStudent_A.ag.Text = ""
                     My.Forms.DeleteStudent_A.sy.Text = ""
                     My.Forms.DeleteStudent_A.con.Text = ""
+                    My.Forms.DeleteStudent_A.SearchStudent_btn.Enabled = True
+                    My.Forms.DeleteStudent_A.sn.Enabled = True
                     My.Forms.DeleteStudent_A.PictureBox2.Image = Nothing
                     cn1.Close()
                 End Using
@@ -1714,11 +1782,40 @@ Module Module1
             objConn.ConnectionString = cn
             objConn.Open()
             ins.Connection = objConn
-            ins.CommandText = "INSERT INTO student_info_archive VALUES(@Photo ,@Name, @Student_ID_No)"
+
+            ins.CommandText = "INSERT INTO student_info_archive VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
             ins.Parameters.AddWithValue("@Photo", pic)
-            ins.Parameters.AddWithValue("@Name", My.Forms.DeleteStudent_R.nam.Text)
             ins.Parameters.AddWithValue("@Student_ID_No", My.Forms.DeleteStudent_R.sn.Text)
+            ins.Parameters.AddWithValue("@LastName", LastN)
+            ins.Parameters.AddWithValue("@GivenName", FirstN)
+            ins.Parameters.AddWithValue("@MiddleName", MiddleN)
+            ins.Parameters.AddWithValue("@Birthday", My.Forms.DeleteStudent_R.bd.Text)
+            ins.Parameters.AddWithValue("@Birth_Place", Birthplace)
+            ins.Parameters.AddWithValue("@Gender", My.Forms.DeleteStudent_R)
+            ins.Parameters.AddWithValue("@Address", My.Forms.DeleteStudent_R.add.Text)
+            ins.Parameters.AddWithValue("@Age", My.Forms.DeleteStudent_R.ag.Text)
+            ins.Parameters.AddWithValue("@Citizenship", Citizen)
+            ins.Parameters.AddWithValue("@Religion", religion)
+            ins.Parameters.AddWithValue("@SchoolYear", My.Forms.DeleteStudent_R.sy.Text)
+            ins.Parameters.AddWithValue("@GradeLevel", My.Forms.DeleteStudent_R.gl.Text)
+            ins.Parameters.AddWithValue("@Section", Section)
+            ins.Parameters.AddWithValue("@Scholar", Scholar)
+            ins.Parameters.AddWithValue("@MotherName", MotherName)
+            ins.Parameters.AddWithValue("@OccupationM", MotherOccupation)
+            ins.Parameters.AddWithValue("@FatherName", FatherName)
+            ins.Parameters.AddWithValue("@OccupationF", FatherOccupation)
+            ins.Parameters.AddWithValue("@Guardian", Guardian)
+            ins.Parameters.AddWithValue("@Relation", Relation)
+            ins.Parameters.AddWithValue("@Contact", My.Forms.DeleteStudent_R.con.Text)
+            ins.Parameters.AddWithValue("@NSO", NSO2)
+            ins.Parameters.AddWithValue("@Baptismal", baptis)
+            ins.Parameters.AddWithValue("@Name_Of_LastSchool", NameLastSchool)
+            ins.Parameters.AddWithValue("@Address_of_LastSchool", AddressLastSchool)
+            ins.Parameters.AddWithValue("@UploadCard", card)
+            ins.Parameters.AddWithValue("@UploadForm137", form137)
+            ins.Parameters.AddWithValue("@UploadGoodMoral", goodMoral)
             ins.ExecuteNonQuery()
+
             objConn.Close()
 
             'may bago tayong transaction kay database which is delete.
@@ -1732,7 +1829,7 @@ Module Module1
                 Using sqlCmd = New MySqlCommand(reg, cn1)
                     cn1.Open()
                     sqlCmd.ExecuteNonQuery()
-                    My.Forms.DeleteStudent_R.DeleteButton_a_Student.Enabled = True
+                    My.Forms.DeleteStudent_R.DeleteButton_a_Student.Enabled = False
                     My.Forms.DeleteStudent_R.sn.Text = ""
                     My.Forms.DeleteStudent_R.nam.Text = ""
                     My.Forms.DeleteStudent_R.add.Text = ""
@@ -1741,6 +1838,8 @@ Module Module1
                     My.Forms.DeleteStudent_R.ag.Text = ""
                     My.Forms.DeleteStudent_R.sy.Text = ""
                     My.Forms.DeleteStudent_R.con.Text = ""
+                    My.Forms.DeleteStudent_R.SearchStudent_btn.Enabled = True
+                    My.Forms.DeleteStudent_R.sn.Enabled = True
                     My.Forms.DeleteStudent_R.PictureBox2.Image = Nothing
                     cn1.Close()
                 End Using
@@ -2338,7 +2437,7 @@ Module Module1
     Public Sub deleteSubject_A()
         'not implemented
 
-        Dim reg As String = "DELETE FROM subject_tbl WHERE Section = '" & My.Forms.DeleteSub_A.subj.Text & "' "
+        Dim reg As String = "DELETE FROM subject_tbl WHERE Grade_Level = '" & My.Forms.DeleteSub_A.subj.SelectedItem.ToString & "' and Section = '" & My.Forms.DeleteSub_A.sec.SelectedItem.ToString & "' "
         Try
             Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn)
@@ -2358,7 +2457,7 @@ Module Module1
         End Try
     End Sub
     Public Sub deleteSubject_R()
-        Dim reg As String = "DELETE FROM subject_tbl WHERE Section = '" & My.Forms.DeleteSubj_R.subj.Text & "' "
+        Dim reg As String = "DELETE FROM subject_tbl WHERE Grade_Level = '" & My.Forms.DeleteSub_A.subj.SelectedItem.ToString & "' and Section = '" & My.Forms.DeleteSub_A.sec.SelectedItem.ToString & "' "
         Try
             Using cn = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn)
@@ -2637,8 +2736,8 @@ Module Module1
         End Try
         conn.Close()
     End Sub
-    Public Sub SearchStudent_A_Delete_btn()
-       Try
+    Public Sub SearchClass_A_Delete_btn()
+        Try
             insert()
             Dim r As MySqlDataReader
             Dim DeleteSubj_R_frm As String = "SELECT * FROM subject_tbl WHERE (Grade_Level ='" & My.Forms.DeleteSub_A.subj.SelectedItem & "')"
@@ -2665,11 +2764,66 @@ Module Module1
             cn.Close()
         End Try
     End Sub
+    Public Sub SearchStudent_A_Delete_btn()
+        Dim conn As New MySqlConnection
+        Try
+            'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
+            conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
+            Dim r As MySqlDataReader
+            Dim reg As String = "SELECT * FROM student_info WHERE (Student_ID_No ='" & My.Forms.DeleteStudent_A.sn.Text & "')"
+            conn.Open() 'instead na cn1.Open, babaguhin natin. ilalagay natin yung conn na ni declare natin sa taas.
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, conn) '<--- dapat gagana na to. haha.
+            r = cmd.ExecuteReader()
+            If r.Read Then
+                My.Forms.DeleteStudent_A.sn.Text = r("Student_ID_No").ToString()
+                My.Forms.DeleteStudent_A.nam.Text = r("LastName").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
+                My.Forms.DeleteStudent_A.add.Text = r("Address").ToString()
+                My.Forms.DeleteStudent_A.bd.Text = r("Birthday").ToString()
+                My.Forms.DeleteStudent_A.gl.Text = r("GradeLevel").ToString()
+                My.Forms.DeleteStudent_A.con.Text = r("Contact").ToString()
+                My.Forms.DeleteStudent_A.sy.Text = r("SchoolYear").ToString()
+                MotherName = r("MotherName").ToString
+                MotherOccupation = r("OccupationM").ToString
+                FatherName = r("FatherName").ToString
+                FatherOccupation = r("OccupationF").ToString
+                Guardian = r("Guardian").ToString
+                Relation = r("Relation").ToString
+                Contact = r("Contact").ToString
+                AddressLastSchool = r("Address_of_LastSchool").ToString
+                NameLastSchool = r("Name_Of_LastSchool").ToString
+                Section = r("Section").ToString
+                Birthplace = r("Birth_Place").ToString
+                Scholar = r("Scholar").ToString
+                FirstN = r("GivenName").ToString
+                MiddleN = r("MiddleName").ToString
+                LastN = r("LastName").ToString
+                religion = r("Religion").ToString
+                Citizen = r("Citizenship").ToString
+
+
+
+                pic = r("Photo").ToString()
+                My.Forms.DeleteStudent_A.ag.Text = r("Age").ToString()
+                pic = r("Photo").ToString()
+                My.Forms.DeleteStudent_A.PictureBox2.Image = base64toimage(pic)
+
+                My.Forms.DeleteStudent_A.SearchStudent_btn.Enabled = False
+                My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = True
+
+
+                conn.Close() 'papalitan natin lahat ng cn1 ng conn
+            Else
+                MsgBox("Student ID not Found!")
+                My.Forms.DeleteStudent_A.sn.Focus()
+                conn.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.StackTrace) '<-- tanggalin naten yung error.
+        End Try
+        conn.Close()
+    End Sub
     Public Sub SearchStudent_R_Delete_btn()
-        'not implemented
-        Dim conn As New MySqlConnection ' <---
-        ' Me.sn.Text = My.Forms.AdminPanel.TextBox1.Text
-        'Me.FormBorderStyle = 0
+        Dim conn As New MySqlConnection 
         Try
             'insert() 'tatanggalin natin to, ang error kasi is yung pag connect sa db. gawa tayo ng sarili.
             conn.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
@@ -2686,11 +2840,15 @@ Module Module1
                 My.Forms.DeleteStudent_R.gl.Text = r("GradeLevel").ToString()
                 My.Forms.DeleteStudent_R.con.Text = r("Contact").ToString()
                 My.Forms.DeleteStudent_R.sy.Text = r("SchoolYear").ToString()
+
+
+
+
                 pic = r("Photo").ToString()
                 My.Forms.DeleteStudent_R.ag.Text = r("Age").ToString()
                 pic = r("Photo").ToString()
                 My.Forms.DeleteStudent_R.PictureBox2.Image = base64toimage(pic)
-                pic = ""
+
                 My.Forms.DeleteStudent_R.SearchStudent_btn.Enabled = False
                 My.Forms.DeleteStudent_R.DeleteButton_a_Student.Enabled = True
 
