@@ -9,8 +9,8 @@
         deleteSubject_A()
     End Sub
     Private Sub DeleteSub_A_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-        Screen_Registrar.Show()
-        RegistrarPanel.Show()
+        Screen_Admin.Show()
+        AdminPanel.Show()
     End Sub
 
     Private Sub DeleteSub_A_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

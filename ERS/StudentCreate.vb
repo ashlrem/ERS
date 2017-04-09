@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Drawing.Imaging
 Public Class StudentCreate
 
-
+    Public s As String
 
     Private Sub Button3_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         Try
@@ -47,58 +47,73 @@ Public Class StudentCreate
                 End If
             Catch
             End Try
-            decoding = encodingtypestring
-            pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
-            pic = ""
+            Try
+                decoding = encodingtypestring
+                pic = encodingtypestring & imagetobase64(PictureBox1.Image, encodeType)
 
+
+                If CheckBox1.Checked = True Then
+                    s = "Yes"
+                ElseIf CheckBox1.Checked = False Then
+                    s = "No"
+                End If
 
             Dim objConn As New MySqlConnection
             Dim ins As New MySqlCommand
             Dim cn = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
             objConn.ConnectionString = cn
             objConn.Open()
-            Try
-                ins.Connection = objConn
-                ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
-                ins.Parameters.AddWithValue("@Photo", pic)
-                ins.Parameters.AddWithValue("@Student_ID_No", sn.Text)
-                ins.Parameters.AddWithValue("@LastName", ln.Text)
-                ins.Parameters.AddWithValue("@GivenName", fn.Text)
-                ins.Parameters.AddWithValue("@MiddleName", mn.Text)
-                ins.Parameters.AddWithValue("@Birthday", bd.Text)
-                ins.Parameters.AddWithValue("@Birth_Place", bp.Text)
-                ins.Parameters.AddWithValue("@Gender", gen.SelectedItem.ToString)
-                ins.Parameters.AddWithValue("@Address", add.Text)
-                ins.Parameters.AddWithValue("@Age", age.Text)
-                ins.Parameters.AddWithValue("@Citizenship", citi.Text)
-                ins.Parameters.AddWithValue("@Religion", rel.Text)
-                ins.Parameters.AddWithValue("@SchoolYear", sy.Text)
-                ins.Parameters.AddWithValue("@GradeLevel", gl.SelectedItem.ToString)
-                ins.Parameters.AddWithValue("@Section", sec.SelectedItem.ToString)
-                ins.Parameters.AddWithValue("@Scholar", scho.Text)
-                ins.Parameters.AddWithValue("@MotherName", mon.Text)
-                ins.Parameters.AddWithValue("@OccupationM", mono.Text)
-                ins.Parameters.AddWithValue("@FatherName", fon.Text)
-                ins.Parameters.AddWithValue("@OccupationF", fono.Text)
-                ins.Parameters.AddWithValue("@Guardian", gdn.Text)
-                ins.Parameters.AddWithValue("@Relation", rl.Text)
-                ins.Parameters.AddWithValue("@Contact", cont.Text)
-                ins.Parameters.AddWithValue("@NSO", nso.Text)
-                ins.Parameters.AddWithValue("@Baptismal", bap.Text)
-                ins.Parameters.AddWithValue("@Name_Of_LastSchool", nols.Text)
-                ins.Parameters.AddWithValue("@Address_of_LastSchool", bap.Text)
-                ins.Parameters.AddWithValue("@UploadCard", bc.Text)
-                ins.Parameters.AddWithValue("@UploadForm137", frm137.Text)
-                ins.Parameters.AddWithValue("@UploadGoodMoral", gmr.Text)
-                ins.ExecuteNonQuery()
-                PictureBox1.Image = Nothing
-                MsgBox("Student Added!!")
-                AddSubClear()
-                objConn.Close()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
 
+                Try
+                    ins.Connection = objConn
+                    ins.CommandText = "INSERT INTO student_info VALUES(@Photo, @Student_ID_No, @LastName, @GivenName, @MiddleName, @Birthday, @Birth_Place, @Gender, @Address, @Age, @Citizenship, @Religion, @SchoolYear, @GradeLevel, @Section, @Scholar, @MotherName, @OccupationM, @FatherName, @OccupationF, @Guardian, @Relation, @Contact, @NSO, @Baptismal, @Name_Of_LastSchool, @Address_of_LastSchool, @UploadCard, @UploadForm137, @UploadGoodMoral)"
+                    ins.Parameters.AddWithValue("@Photo", pic)
+                    ins.Parameters.AddWithValue("@Student_ID_No", sn.Text)
+                    ins.Parameters.AddWithValue("@LastName", ln.Text)
+                    ins.Parameters.AddWithValue("@GivenName", fn.Text)
+                    ins.Parameters.AddWithValue("@MiddleName", mn.Text)
+                    ins.Parameters.AddWithValue("@Birthday", bd.Text)
+                    ins.Parameters.AddWithValue("@Birth_Place", bp.Text)
+                    ins.Parameters.AddWithValue("@Gender", gen.SelectedItem.ToString)
+                    ins.Parameters.AddWithValue("@Address", add.Text)
+                    ins.Parameters.AddWithValue("@Age", age.Text)
+                    ins.Parameters.AddWithValue("@Citizenship", citi.Text)
+                    ins.Parameters.AddWithValue("@Religion", rel.Text)
+                    ins.Parameters.AddWithValue("@SchoolYear", sy.Text)
+                    ins.Parameters.AddWithValue("@GradeLevel", gl.SelectedItem.ToString)
+                    ins.Parameters.AddWithValue("@Section", sec.SelectedItem.ToString)
+                    ins.Parameters.AddWithValue("@Scholar", s)
+                    ins.Parameters.AddWithValue("@MotherName", mon.Text)
+                    ins.Parameters.AddWithValue("@OccupationM", mono.Text)
+                    ins.Parameters.AddWithValue("@FatherName", fon.Text)
+                    ins.Parameters.AddWithValue("@OccupationF", fono.Text)
+                    ins.Parameters.AddWithValue("@Guardian", gdn.Text)
+                    ins.Parameters.AddWithValue("@Relation", rl.Text)
+                    ins.Parameters.AddWithValue("@Contact", cont.Text)
+                    ins.Parameters.AddWithValue("@NSO", NSO2)
+                    ins.Parameters.AddWithValue("@Baptismal", baptis)
+                    ins.Parameters.AddWithValue("@Name_Of_LastSchool", nols.Text)
+                    ins.Parameters.AddWithValue("@Address_of_LastSchool", addScho.Text)
+                    ins.Parameters.AddWithValue("@UploadCard", card)
+                    ins.Parameters.AddWithValue("@UploadForm137", form137)
+                    ins.Parameters.AddWithValue("@UploadGoodMoral", goodMoral)
+
+                    ins.ExecuteNonQuery()
+
+                    pic = ""
+                    PictureBox1.Image = Nothing
+                    MsgBox("Student Added!!")
+                    AddSubClear()
+                    objConn.Close()
+
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+                End Try
+
+            Catch
+                MsgBox("Must upload picture.")
+            End Try
         End If
     End Sub
 
@@ -117,88 +132,9 @@ Public Class StudentCreate
             Me.Close()
         End If
     End Sub
-
-    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
-        If (CheckBox1.Checked = True) Then
-            scho.Text = "Yes"
-        ElseIf (CheckBox1.Checked = False) Then
-            scho.Text = "No"
-        End If
-    End Sub
-
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         AddClass.Show()
         Me.Hide()
-    End Sub
-
-    Private Sub CheckBox2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox2.CheckedChanged
-        If (CheckBox2.Checked = True) Then
-            Try
-                If (OpenFileDialog2.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                    nso.Text = OpenFileDialog2.FileName
-                    OpenFileDialog2.FileName = nso.Text
-                End If
-            Catch
-                MsgBox("Please select picture.")
-                nso.Text = ""
-            End Try
-        End If
-    End Sub
-
-    Private Sub CheckBox3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox3.CheckedChanged
-        If (CheckBox3.Checked = True) Then
-            Try
-                If (OpenFileDialog3.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                    bc.Text = OpenFileDialog3.FileName
-                    OpenFileDialog2.FileName = bc.Text
-                End If
-            Catch
-                MsgBox("Please select picture.")
-                bap.Text = ""
-            End Try
-        End If
-    End Sub
-
-    Private Sub CheckBox4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox4.CheckedChanged
-        If (CheckBox4.Checked = True) Then
-            Try
-                If (OpenFileDialog4.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                    bap.Text = OpenFileDialog4.FileName
-                    OpenFileDialog2.FileName = bap.Text
-                End If
-            Catch
-                MsgBox("Please select picture.")
-                bc.Text = ""
-            End Try
-        End If
-    End Sub
-
-    Private Sub CheckBox5_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox5.CheckedChanged
-        If (CheckBox2.Checked = True) Then
-            Try
-                If (OpenFileDialog2.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                    nso.Text = OpenFileDialog2.FileName
-                    OpenFileDialog2.FileName = gmr.Text
-                End If
-            Catch
-                MsgBox("Please select picture.")
-                nso.Text = ""
-            End Try
-        End If
-    End Sub
-
-    Private Sub CheckBox6_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox6.CheckedChanged
-        If (CheckBox2.Checked = True) Then
-            Try
-                If (OpenFileDialog2.ShowDialog = Windows.Forms.DialogResult.OK) Then
-                    nso.Text = OpenFileDialog2.FileName
-                    OpenFileDialog2.FileName = frm137.Text
-                End If
-            Catch
-                MsgBox("Please select picture.")
-                nso.Text = ""
-            End Try
-        End If
     End Sub
 
     Private Sub Transferee_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Transferee.CheckedChanged
@@ -207,11 +143,13 @@ Public Class StudentCreate
             CheckBox3.Enabled = True
             CheckBox5.Enabled = True
             CheckBox6.Enabled = True
+            addScho.Enabled = True
         ElseIf (Transferee.Checked = False) Then
             nols.Enabled = False
             CheckBox3.Enabled = False
             CheckBox5.Enabled = False
             CheckBox6.Enabled = False
+            addScho.Enabled = True
         End If
     End Sub
 
@@ -245,5 +183,50 @@ Public Class StudentCreate
         Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
         Me.Top = (Screen.Height \ 2) - (Me.Height) + 330
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox2.CheckedChanged
+        Try
+            If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
+                NSO2 = OpenFileDialog1.FileName
+            End If
+        Catch
+        End Try
+    End Sub
+
+    Private Sub CheckBox4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox4.CheckedChanged
+        Try
+            If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
+                baptis = OpenFileDialog1.FileName
+            End If
+        Catch
+        End Try
+    End Sub
+
+    Private Sub CheckBox3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox3.CheckedChanged
+        Try
+            If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
+                card = OpenFileDialog1.FileName
+            End If
+        Catch
+        End Try
+    End Sub
+
+    Private Sub CheckBox5_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox5.CheckedChanged
+        Try
+            If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
+                goodMoral = OpenFileDialog1.FileName
+            End If
+        Catch
+        End Try
+    End Sub
+
+    Private Sub CheckBox6_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox6.CheckedChanged
+        Try
+            If (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then
+                form137 = OpenFileDialog1.FileName
+            End If
+        Catch
+        End Try
     End Sub
 End Class

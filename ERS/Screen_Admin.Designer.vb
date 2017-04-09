@@ -274,13 +274,13 @@ Partial Class Screen_Admin
         Me.SubjectsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddSubjectToolStripMenuItem, Me.UpdateSubjectToolStripMenuItem, Me.DeleteSubjectToolStripMenuItem, Me.ToolStripSeparator5})
         Me.SubjectsToolStripMenuItem.Name = "SubjectsToolStripMenuItem"
         Me.SubjectsToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.SubjectsToolStripMenuItem.Text = "Subjects"
+        Me.SubjectsToolStripMenuItem.Text = "Class"
         '
         'AddSubjectToolStripMenuItem
         '
         Me.AddSubjectToolStripMenuItem.Name = "AddSubjectToolStripMenuItem"
         Me.AddSubjectToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.AddSubjectToolStripMenuItem.Text = "Add Subject"
+        Me.AddSubjectToolStripMenuItem.Text = "Add Class"
         '
         'UpdateSubjectToolStripMenuItem
         '
@@ -293,7 +293,7 @@ Partial Class Screen_Admin
         '
         Me.DeleteSubjectToolStripMenuItem.Name = "DeleteSubjectToolStripMenuItem"
         Me.DeleteSubjectToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.DeleteSubjectToolStripMenuItem.Text = "Delete Subject"
+        Me.DeleteSubjectToolStripMenuItem.Text = "Delete Class"
         '
         'ToolStripSeparator5
         '

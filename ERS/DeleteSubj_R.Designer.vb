@@ -68,7 +68,7 @@ Partial Class DeleteSubj_R
         Me.DeleteSubj_btn.Name = "DeleteSubj_btn"
         Me.DeleteSubj_btn.Size = New System.Drawing.Size(115, 27)
         Me.DeleteSubj_btn.TabIndex = 6
-        Me.DeleteSubj_btn.Text = "Delete Subject"
+        Me.DeleteSubj_btn.Text = "Delete Class"
         Me.DeleteSubj_btn.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -76,7 +76,7 @@ Partial Class DeleteSubj_R
         Me.GroupBox1.Controls.Add(Me.subj)
         Me.GroupBox1.Controls.Add(Me.SearchSubj_btn)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 38)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(368, 81)
         Me.GroupBox1.TabIndex = 27
@@ -106,7 +106,7 @@ Partial Class DeleteSubj_R
         Me.GroupBox2.Controls.Add(Me.sec)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.DeleteSubj_btn)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 130)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 104)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(415, 74)
         Me.GroupBox2.TabIndex = 28
@@ -117,7 +117,7 @@ Partial Class DeleteSubj_R
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(446, 243)
+        Me.ClientSize = New System.Drawing.Size(446, 199)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
