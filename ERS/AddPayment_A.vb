@@ -25,11 +25,27 @@
         Dim t As Integer = total.Text
         Dim totalB As Integer = totalBooks.Text
         total.Text = t
-        If grade.Text = "Grade 1" Then
+        If getSubj.SelectedItem.ToString = "Grade 1" Then
             t = total.Text
             t = t + totalB
             total1.Text = t
-        ElseIf grade.Text = "Grade 2" Then
+        ElseIf getSubj.SelectedItem.ToString = "Grade 2" Then
+            t = total.Text
+            t = t + totalB
+            total1.Text = t
+        ElseIf getSubj.SelectedItem.ToString = "Grade 3" Then
+            t = total.Text
+            t = t + totalB
+            total1.Text = t
+        ElseIf getSubj.SelectedItem.ToString = "Grade 4" Then
+            t = total.Text
+            t = t + totalB
+            total1.Text = t
+        ElseIf getSubj.SelectedItem.ToString = "Grade 5" Then
+            t = total.Text
+            t = t + totalB
+            total1.Text = t
+        ElseIf getSubj.SelectedItem.ToString = "Grade 6" Then
             t = total.Text
             t = t + totalB
             total1.Text = t
@@ -78,11 +94,27 @@
         prelim.Text = "-"
         midterm.Text = "-"
         Dim totalB As Integer = totalBooks.Text
-        If grade.Text = "Grade 1" Then
+        If getSubj.SelectedItem.ToString = "Grade 1" Then
             t = total.Text
             t = t + totalB
             total1.Text = t
-        ElseIf grade.Text = "Grade 2" Then
+        ElseIf getSubj.SelectedItem.ToString = "Grade 2" Then
+            t = total.Text
+            t = t + totalB
+            total1.Text = t
+        ElseIf getSubj.SelectedItem.ToString = "Grade 3" Then
+            t = total.Text
+            t = t + totalB
+            total1.Text = t
+        ElseIf getSubj.SelectedItem.ToString = "Grade 4" Then
+            t = total.Text
+            t = t + totalB
+            total1.Text = t
+        ElseIf getSubj.SelectedItem.ToString = "Grade 5" Then
+            t = total.Text
+            t = t + totalB
+            total1.Text = t
+        ElseIf getSubj.SelectedItem.ToString = "Grade 6" Then
             t = total.Text
             t = t + totalB
             total1.Text = t
@@ -176,39 +208,33 @@
             fp_rdobnt.Enabled = True
             pp_rdbnt.Enabled = True
             total.Enabled = False
-            If grade.Text = "Grade 1" Then
+
+            If getSubj.SelectedItem.ToString = "Grade 1" Then
                 t = total.Text
                 t = t + totalB
                 total1.Text = t
-            ElseIf grade.Text = "Grade 2" Then
-
+            ElseIf getSubj.SelectedItem.ToString = "Grade 2" Then
                 t = total.Text
                 t = t + totalB
                 total1.Text = t
-
-            ElseIf grade.Text = "Grade 3" Then
-
+            ElseIf getSubj.SelectedItem.ToString = "Grade 3" Then
                 t = total.Text
                 t = t + totalB
                 total1.Text = t
-            ElseIf grade.Text = "Grade 4" Then
-
+            ElseIf getSubj.SelectedItem.ToString = "Grade 4" Then
                 t = total.Text
                 t = t + totalB
                 total1.Text = t
-            ElseIf grade.Text = "Grade 5" Then
-
+            ElseIf getSubj.SelectedItem.ToString = "Grade 5" Then
                 t = total.Text
                 t = t + totalB
                 total1.Text = t
-            ElseIf grade.Text = "Grade 6" Then
-
+            ElseIf getSubj.SelectedItem.ToString = "Grade 6" Then
                 t = total.Text
                 t = t + totalB
                 total1.Text = t
             End If
-
-            End If
+        End If
     End Sub
 
     Private Sub getSubj_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles getSubj.SelectedIndexChanged
@@ -226,15 +252,16 @@
             Subj8.Text = "TLE 1"
             Subj9.Text = "EP 1"
 
-            p1.Text = "100"
-            p2.Text = "100"
-            p3.Text = "100"
-            p4.Text = "100"
-            p5.Text = "100"
-            p6.Text = "100"
-            p7.Text = "100"
-            p8.Text = "100"
-            p9.Text = "100"
+            total.Text = "5000"
+            p1.Text = "600"
+            p2.Text = "450"
+            p3.Text = "600"
+            p4.Text = "600"
+            p5.Text = "400"
+            p6.Text = "350"
+            p7.Text = "1000"
+            p8.Text = "300"
+            p9.Text = "300"
             subjandbooksComputation()
 
         ElseIf getSubj.SelectedItem = "Grade 2" Then
@@ -248,15 +275,16 @@
             Subj8.Text = "TLE 2"
             Subj9.Text = "EP 2"
 
-            p1.Text = "100"
-            p2.Text = "100"
-            p3.Text = "100"
-            p4.Text = "100"
-            p5.Text = "100"
-            p6.Text = "100"
-            p7.Text = "100"
-            p8.Text = "100"
-            p9.Text = "75"
+            total.Text = "6000"
+            p1.Text = "600"
+            p2.Text = "450"
+            p3.Text = "600"
+            p4.Text = "600"
+            p5.Text = "400"
+            p6.Text = "350"
+            p7.Text = "1000"
+            p8.Text = "300"
+            p9.Text = "300"
             subjandbooksComputation()
 
         ElseIf getSubj.SelectedItem = "Grade 3" Then
@@ -270,15 +298,16 @@
             Subj8.Text = "TLE 3"
             Subj9.Text = "EP 3"
 
-            p1.Text = "100"
-            p2.Text = "100"
-            p3.Text = "100"
-            p4.Text = "100"
-            p5.Text = "100"
-            p6.Text = "100"
-            p7.Text = "100"
-            p8.Text = "100"
-            p9.Text = "75"
+            total.Text = "7000"
+            p1.Text = "600"
+            p2.Text = "450"
+            p3.Text = "600"
+            p4.Text = "600"
+            p5.Text = "400"
+            p6.Text = "350"
+            p7.Text = "1000"
+            p8.Text = "300"
+            p9.Text = "300"
             subjandbooksComputation()
 
         ElseIf getSubj.SelectedItem = "Grade 4" Then
@@ -292,6 +321,7 @@
             Subj8.Text = "TLE 4"
             Subj9.Text = "EP 4"
 
+            total.Text = "8000"
             p1.Text = "100"
             p2.Text = "100"
             p3.Text = "100"
@@ -314,15 +344,16 @@
             Subj8.Text = "TLE 5"
             Subj9.Text = "EP 5"
 
-            p1.Text = "100"
-            p2.Text = "100"
-            p3.Text = "100"
-            p4.Text = "100"
-            p5.Text = "100"
-            p6.Text = "100"
-            p7.Text = "100"
-            p8.Text = "100"
-            p9.Text = "75"
+            total.Text = "8000"
+            p1.Text = "600"
+            p2.Text = "450"
+            p3.Text = "600"
+            p4.Text = "600"
+            p5.Text = "400"
+            p6.Text = "350"
+            p7.Text = "1000"
+            p8.Text = "300"
+            p9.Text = "300"
             subjandbooksComputation()
 
         ElseIf getSubj.SelectedItem = "Grade 6" Then
@@ -336,15 +367,16 @@
             Subj8.Text = "TLE 6"
             Subj9.Text = "EP 6"
 
-            p1.Text = "100"
-            p2.Text = "100"
-            p3.Text = "100"
-            p4.Text = "100"
-            p5.Text = "100"
-            p6.Text = "100"
-            p7.Text = "100"
-            p8.Text = "100"
-            p9.Text = "75"
+            total.Text = "9000"
+            p1.Text = "600"
+            p2.Text = "450"
+            p3.Text = "600"
+            p4.Text = "600"
+            p5.Text = "400"
+            p6.Text = "350"
+            p7.Text = "1000"
+            p8.Text = "300"
+            p9.Text = "300"
             subjandbooksComputation()
         End If
     End Sub

@@ -102,9 +102,9 @@
     End Sub
 
     Private Sub ViewEnrolledStudentsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewEnrolledStudentsToolStripMenuItem.Click
-        SearchStudent.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(SearchStudent)
+        SearchStudent_R.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(SearchStudent_R)
         RegistrarPanel.Hide()
-        SearchStudent.Show()
+        SearchStudent_R.Show()
     End Sub
 End Class

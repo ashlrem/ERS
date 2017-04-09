@@ -37,7 +37,7 @@ Partial Class SearchStudent
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 43)
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 46)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(983, 262)
@@ -48,14 +48,14 @@ Partial Class SearchStudent
         Me.filterBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.filterBox.FormattingEnabled = True
         Me.filterBox.Items.AddRange(New Object() {"Student_ID_No", "LastName", "GivenName", "MiddleName", "GradeLevel", "Section"})
-        Me.filterBox.Location = New System.Drawing.Point(91, 15)
+        Me.filterBox.Location = New System.Drawing.Point(89, 18)
         Me.filterBox.Name = "filterBox"
         Me.filterBox.Size = New System.Drawing.Size(169, 21)
         Me.filterBox.TabIndex = 1
         '
         'filterText
         '
-        Me.filterText.Location = New System.Drawing.Point(288, 15)
+        Me.filterText.Location = New System.Drawing.Point(286, 18)
         Me.filterText.Name = "filterText"
         Me.filterText.Size = New System.Drawing.Size(141, 20)
         Me.filterText.TabIndex = 2
@@ -64,7 +64,7 @@ Partial Class SearchStudent
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(19, 323)
+        Me.Label1.Location = New System.Drawing.Point(17, 326)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(198, 18)
         Me.Label1.TabIndex = 3
@@ -74,7 +74,7 @@ Partial Class SearchStudent
         '
         Me.lblNoOfStudent.AutoSize = True
         Me.lblNoOfStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNoOfStudent.Location = New System.Drawing.Point(223, 323)
+        Me.lblNoOfStudent.Location = New System.Drawing.Point(221, 326)
         Me.lblNoOfStudent.Name = "lblNoOfStudent"
         Me.lblNoOfStudent.Size = New System.Drawing.Size(13, 18)
         Me.lblNoOfStudent.TabIndex = 4
@@ -82,7 +82,7 @@ Partial Class SearchStudent
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(916, 12)
+        Me.Button1.Location = New System.Drawing.Point(914, 15)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 5
@@ -102,6 +102,8 @@ Partial Class SearchStudent
         Me.Controls.Add(Me.filterBox)
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximumSize = New System.Drawing.Size(1013, 403)
+        Me.MinimumSize = New System.Drawing.Size(1013, 403)
         Me.Name = "SearchStudent"
         Me.Text = "SearchStudent"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

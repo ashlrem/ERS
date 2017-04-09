@@ -78,7 +78,7 @@ Partial Class CashierLogin
         Me.en.Location = New System.Drawing.Point(317, 77)
         Me.en.Name = "en"
         Me.en.Size = New System.Drawing.Size(163, 20)
-        Me.en.TabIndex = 5
+        Me.en.TabIndex = 1
         '
         'LinkLabel1
         '
@@ -87,7 +87,7 @@ Partial Class CashierLogin
         Me.LinkLabel1.Location = New System.Drawing.Point(280, 154)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(92, 13)
-        Me.LinkLabel1.TabIndex = 11
+        Me.LinkLabel1.TabIndex = 4
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Forgot Password?"
         '
@@ -96,7 +96,7 @@ Partial Class CashierLogin
         Me.LoginCancelBtn.Location = New System.Drawing.Point(378, 12)
         Me.LoginCancelBtn.Name = "LoginCancelBtn"
         Me.LoginCancelBtn.Size = New System.Drawing.Size(104, 27)
-        Me.LoginCancelBtn.TabIndex = 12
+        Me.LoginCancelBtn.TabIndex = 5
         Me.LoginCancelBtn.Text = "Cancel"
         Me.LoginCancelBtn.UseVisualStyleBackColor = True
         '
