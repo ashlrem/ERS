@@ -591,7 +591,7 @@ Module Module1
                             'add if else here to check if account status is active!
                             'if active, login, else, show error that error is blocked.
 
-                            My.Forms.CashierLogin.Hide()
+                            My.Forms.RegistrarLogin.Hide()
                             RegistrarPanel.TopLevel = False
                             My.Forms.Screen_Registrar.RegistrarPanelPictureBox.Controls.Add(RegistrarPanel)
                             Screen_Registrar.Show()
@@ -1643,16 +1643,6 @@ Module Module1
         End Try
     End Sub
     Public Sub dropstud()
-
-        'drop student method. eto yung parang iddrop na si student. pero ang ginawa natin dito,
-        'si student na iddrop, idedelete siya dun sa student_info na table, at, iiinsert siya saa archive table.
-        'bakit? siyempre para may record pa din tayo ng student na yun kahit na nag drop na siya.
-
-        'check sql query lang, guys alam kong naiintindihan na natin yung sql query. yun lang ang important dun.
-        'siyempre importante din na maintindihan mo yung feelings ng....asfgasldkfjalskdjf haha.
-        'anyways, 
-
-        'Drop student (delete from student_info table)
         Try
             Dim objConn As New MySqlConnection
             Dim ins As New MySqlCommand
@@ -1740,23 +1730,7 @@ Module Module1
         End Try
     End Sub
     Public Sub dropstudR()
-
-        'drop student method. eto yung parang iddrop na si student. pero ang ginawa natin dito,
-        'si student na iddrop, idedelete siya dun sa student_info na table, at, iiinsert siya saa archive table.
-        'bakit? siyempre para may record pa din tayo ng student na yun kahit na nag drop na siya.
-
-        'check sql query lang, guys alam kong naiintindihan na natin yung sql query. yun lang ang important dun.
-        'siyempre importante din na maintindihan mo yung feelings ng....asfgasldkfjalskdjf haha.
-        'anyways, 
-
-        'Drop student (delete from student_info table)
         Try
-            'so eto yung una nating transaction kay database, insert.
-            'usual routine natin kay database.
-            'connection string (insert() noon) cn dito
-            'open connection
-            'sql query execute
-            'close connection
             Dim objConn As New MySqlConnection
             Dim ins As New MySqlCommand
             Dim cn = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
@@ -1799,12 +1773,6 @@ Module Module1
 
             objConn.Close()
 
-            'may bago tayong transaction kay database which is delete.
-            'same routine tayo guys.
-            'connection string (insert() noon) cn1 dito
-            'open connection
-            'sql query execute
-            'close connection
             Dim reg As String = "DELETE FROM student_info WHERE Student_ID_No = '" & My.Forms.DeleteStudent_R.sn.Text & "'"
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn1)
@@ -1829,7 +1797,7 @@ Module Module1
             MsgBox("Student Deleted!!")
             My.Forms.DeleteStudent_A.DeleteButton_a_Student.Enabled = False
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.ToString)
             cn.Close()
         End Try
     End Sub
@@ -2886,7 +2854,7 @@ Module Module1
                 pic = ""
 
                 NSO2 = r("NSO").ToString()
-                If NSO2 = "" Then
+                If NSO2 = "none" Then
                     My.Forms.UpdateStudent_R.nso_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.nso_lbl.BackColor = Color.Green
@@ -2894,28 +2862,28 @@ Module Module1
 
 
                 baptis = r("Baptismal").ToString()
-                If baptis = "" Then
+                If baptis = "none" Then
                     My.Forms.UpdateStudent_R.baptismal_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.baptismal_lbl.BackColor = Color.Green
                 End If
 
                 card = r("UploadCard").ToString()
-                If card = "" Then
+                If card = "none" Then
                     My.Forms.UpdateStudent_R.card_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.card_lbl.BackColor = Color.Green
                 End If
 
                 form137 = r("UploadForm137").ToString()
-                If form137 = "" Then
+                If form137 = "none" Then
                     My.Forms.UpdateStudent_R.form_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.form_lbl.BackColor = Color.Green
                 End If
 
                 goodMoral = r("UploadGoodMoral").ToString()
-                If goodMoral = "" Then
+                If goodMoral = "none" Then
                     My.Forms.UpdateStudent_R.gm_lbl.BackColor = Color.Red
                 Else
                     My.Forms.UpdateStudent_R.gm_lbl.BackColor = Color.Green
@@ -3051,7 +3019,7 @@ Module Module1
                 pic = ""
 
                 NSO2 = r("NSO").ToString()
-                If NSO2 = "" Then
+                If NSO2 = "none" Then
                     My.Forms.ViewStudent_R.nso_lbl.BackColor = Color.Red
                 Else
                     My.Forms.ViewStudent_R.nso_lbl.BackColor = Color.Green
@@ -3059,7 +3027,7 @@ Module Module1
 
 
                 baptis = r("Baptismal").ToString()
-                If baptis = "" Then
+                If baptis = "none" Then
                     My.Forms.ViewStudent_R.baptismal_lbl.BackColor = Color.Red
                 Else
                     My.Forms.ViewStudent_R.baptismal_lbl.BackColor = Color.Green
@@ -3073,14 +3041,14 @@ Module Module1
                 End If
 
                 form137 = r("UploadForm137").ToString()
-                If form137 = "" Then
+                If form137 = "none" Then
                     My.Forms.ViewStudent_R.form_lbl.BackColor = Color.Red
                 Else
                     My.Forms.ViewStudent_R.form_lbl.BackColor = Color.Green
                 End If
 
                 goodMoral = r("UploadGoodMoral").ToString()
-                If goodMoral = "" Then
+                If goodMoral = "none" Then
                     My.Forms.ViewStudent_R.gm_lbl.BackColor = Color.Red
                 Else
                     My.Forms.ViewStudent_R.gm_lbl.BackColor = Color.Green

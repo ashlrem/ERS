@@ -77,7 +77,7 @@ Partial Class RegistrarLogin
         Me.en.Location = New System.Drawing.Point(317, 77)
         Me.en.Name = "en"
         Me.en.Size = New System.Drawing.Size(142, 20)
-        Me.en.TabIndex = 5
+        Me.en.TabIndex = 1
         '
         'LinkLabel1
         '
@@ -86,7 +86,7 @@ Partial Class RegistrarLogin
         Me.LinkLabel1.Location = New System.Drawing.Point(267, 157)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(92, 13)
-        Me.LinkLabel1.TabIndex = 12
+        Me.LinkLabel1.TabIndex = 4
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Forgot Password?"
         '

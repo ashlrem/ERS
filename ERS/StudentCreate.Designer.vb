@@ -87,7 +87,6 @@ Partial Class StudentCreate
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
-        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Me.pi.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -743,20 +742,12 @@ Partial Class StudentCreate
         '
         Me.OpenFileDialog4.FileName = "OpenFileDialog4"
         '
-        'VScrollBar1
-        '
-        Me.VScrollBar1.Location = New System.Drawing.Point(1087, 9)
-        Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(17, 645)
-        Me.VScrollBar1.TabIndex = 192
-        '
         'StudentCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1100, 674)
+        Me.ClientSize = New System.Drawing.Size(1100, 690)
         Me.ControlBox = False
-        Me.Controls.Add(Me.VScrollBar1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.pi)
@@ -825,7 +816,6 @@ Partial Class StudentCreate
     Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
     Friend WithEvents Transferee As System.Windows.Forms.CheckBox
-    Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
     Friend WithEvents sn As System.Windows.Forms.TextBox
     Friend WithEvents sec As System.Windows.Forms.ComboBox
     Friend WithEvents Label22 As System.Windows.Forms.Label

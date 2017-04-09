@@ -60,13 +60,14 @@ Public Class SearchStudent
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If My.Forms.AdminPanel.empl.Text = "" Then
-            RegistrarPanel.Show()
-            Screen_Registrar.Show()
-            Me.Close()
-        ElseIf My.Forms.CashierPanel.empl.Text = "" Then
+        If My.Forms.AdminPanel.empl.Text <> "" Then
             AdminPanel.Show()
             Screen_Admin.Show()
+            
+            Me.Close()
+        ElseIf My.Forms.RegistrarPanel.empl.Text <> "" Then
+            RegistrarPanel.Show()
+            Screen_Registrar.Show()
             Me.Close()
         End If
     End Sub
