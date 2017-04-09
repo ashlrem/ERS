@@ -142,6 +142,7 @@ Partial Class ViewStud_C
         Me.Button3.TabIndex = 74
         Me.Button3.Text = "Cancel"
         Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Visible = False
         '
         'PictureBox2
         '
@@ -240,6 +241,8 @@ Partial Class ViewStud_C
         Me.Controls.Add(Me.nam)
         Me.Controls.Add(Me.add)
         Me.Controls.Add(Me.sn)
+        Me.MaximumSize = New System.Drawing.Size(914, 386)
+        Me.MinimumSize = New System.Drawing.Size(914, 386)
         Me.Name = "ViewStud_C"
         Me.Text = "ViewStudent"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

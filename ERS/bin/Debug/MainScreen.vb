@@ -37,45 +37,64 @@
     End Sub
 
     Private Sub CashierBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CashierBtn.Click
+
         PictureBox1.Visible = False
-        CashierLogin.TopLevel = False
         AdminBtn.Visible = False
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
         PictureBox1.Visible = False
         ForgotV.Close()
+        ForgotR.Close()
+        ForgotC.Close()
         RegistrarLogin.Close()
         LoginAdmin.Close()
-        Pi.Controls.Add(CashierLogin)
+
+        'CashierLogin.TopLevel = False
+        'Pi.Controls.Add(CashierLogin)
+
+        CashierLogin.TopMost = True
         CashierLogin.Show()
     End Sub
 
     Private Sub RegistrarBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegistrarBtn.Click
-        RegistrarLogin.TopLevel = False
-        Pi.Controls.Add(RegistrarLogin)
+
         PictureBox1.Visible = False
         AdminBtn.Visible = False
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
         ForgotV.Close()
+        ForgotR.Close()
+        ForgotC.Close()
+
         LoginAdmin.Close()
         CashierLogin.Close()
+
+        'RegistrarLogin.TopLevel = False
+        'Pi.Controls.Add(RegistrarLogin)
+
+        RegistrarLogin.TopMost = True
         RegistrarLogin.Show()
     End Sub
 
     Private Sub AdminBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AdminBtn.Click
+
         PictureBox1.Visible = False
-        LoginAdmin.TopLevel = False
         AdminBtn.Visible = False
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
         ForgotV.Close()
+        ForgotR.Close()
+        ForgotC.Close()
+
         RegistrarLogin.Close()
         CashierLogin.Close()
-        Pi.Controls.Add(LoginAdmin)
+
+        'LoginAdmin.TopLevel = True
+        'Pi.Controls.Add(LoginAdmin)
+        LoginAdmin.TopMost = True
         LoginAdmin.Show()
     End Sub
 End Class

@@ -29,6 +29,7 @@ Partial Class CashierLogin
         Me.Button2 = New System.Windows.Forms.Button()
         Me.en = New System.Windows.Forms.TextBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.LoginCancelBtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -90,13 +91,24 @@ Partial Class CashierLogin
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Forgot Password?"
         '
+        'LoginCancelBtn
+        '
+        Me.LoginCancelBtn.Location = New System.Drawing.Point(378, 12)
+        Me.LoginCancelBtn.Name = "LoginCancelBtn"
+        Me.LoginCancelBtn.Size = New System.Drawing.Size(104, 27)
+        Me.LoginCancelBtn.TabIndex = 12
+        Me.LoginCancelBtn.Text = "Cancel"
+        Me.LoginCancelBtn.UseVisualStyleBackColor = True
+        '
         'CashierLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(508, 186)
+        Me.ClientSize = New System.Drawing.Size(508, 188)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.LoginCancelBtn)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.en)
         Me.Controls.Add(Me.Button2)
@@ -105,6 +117,8 @@ Partial Class CashierLogin
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Location = New System.Drawing.Point(350, 50)
+        Me.MaximumSize = New System.Drawing.Size(518, 221)
+        Me.MinimumSize = New System.Drawing.Size(518, 221)
         Me.Name = "CashierLogin"
         Me.Text = "CashierLogin"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -118,4 +132,5 @@ Partial Class CashierLogin
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents en As System.Windows.Forms.TextBox
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents LoginCancelBtn As System.Windows.Forms.Button
 End Class

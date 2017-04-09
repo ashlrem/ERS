@@ -129,6 +129,8 @@ Partial Class LoginAdmin
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblcount)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximumSize = New System.Drawing.Size(518, 221)
+        Me.MinimumSize = New System.Drawing.Size(518, 221)
         Me.Name = "LoginAdmin"
         Me.Text = "LoginAdmin"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

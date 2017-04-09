@@ -41,17 +41,17 @@ Module Module1
     Public form137 As String = "none"
     Public goodMoral As String = "none"
 
-    Public server As String = "192.168.254.108" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
-    Public port As String = "3306" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
+    'Public server As String = "192.168.254.108" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
+    'Public port As String = "3306" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
+    'Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
+    'Public password As String = "1234" 'no password si root dun sa wamp natin, so leave it empty
+    'Public database As String = "ers" ' eto yung name ng database natin, ers.
+
+    Public server As String = "127.0.0.1" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
+    Public port As String = "" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
     Public user As String = "ers_admin" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
     Public password As String = "1234" 'no password si root dun sa wamp natin, so leave it empty
     Public database As String = "ers" ' eto yung name ng database natin, ers.
-
-    'Public server As String = "127.0.0.1" 'papalitan to ng ip address ng server pag need na siya i connect sa LAN
-    'Public port As String = "" 'gagawing 3306 to pag need na i connect sa LAN, or kung anong port yung na set natin
-    'Public user As String = "root" 'for now, root yung user, pero, magdadagdag tayo ng new username pag LAN
-    'Public password As String = "" 'no password si root dun sa wamp natin, so leave it empty
-    'Public database As String = "ers" ' eto yung name ng database natin, ers.
     Public Sub splash()
         'connection string na ginagamit ng system natin para mag connect sa database
         cn.ConnectionString = "server= '" & server & "';port= '" & port & "';userid= '" & user & "';password= '" & password & "';database='" & database & "'"
@@ -77,26 +77,18 @@ Module Module1
         End If
     End Sub
     Public Sub registrarPanelDisplay()
-        'Registrar panel. To display Picture of Admin, Name, ContactNumber, etc.
         cn.Close()
-        insert() 'okay andito nanaman tong insert() na to, para san nga ulit to guys? remember! hehe
-
-        'meron tayong SQL Query, SELECT * FROM registrar_account <-- eto kasi yung method pag successfully na nakapag login si registrar
-        'ididisplay niya yung information nung registrar na nag login, so select all from registrar_account(table) where is yung EmployeeID
-        'is equals dun sa employee id na nasa text.
+        insert() 
         Dim reg As String = "SELECT * FROM registrar_account WHERE (EmployeeID ='" & My.Forms.RegistrarPanel.empl.Text & "')"
-        cn1.Open() 'open database connection ulit para maka connect tayo sa databae.
-
+        cn1.Open() 
         Dim cmd As MySqlCommand = New MySqlCommand(reg, cn1)
-        r = cmd.ExecuteReader() 'execute sql query
-        'alam na natin kung ano ibig sabihin ng r.Read diba guys? ibig sabihin, meron nun sa database. so,
-        'ididisplay niya kung ano yung nakita niya sa database na under nung employee id
+        r = cmd.ExecuteReader() 
         If r.Read Then
             My.Forms.RegistrarPanel.n1.Text = r("Surname").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
             My.Forms.RegistrarPanel.email.Text = r("Email_Account").ToString() & "."
             My.Forms.RegistrarPanel.cn.Text = r("ContactNumber").ToString() & "."
             pic = r("Photo").ToString()
-            cn1.Close() 'remember na laging icclose yung database connection. parang sa pag ibig, dapat laging may closure kayo ng x mo. hahaha
+            cn1.Close()
         Else
             MsgBox("Employee number not Found!")
             cn1.Close()
