@@ -71,9 +71,9 @@ Partial Class UpdatePayment_A
         Me.Payment_grp.Controls.Add(Me.midterm)
         Me.Payment_grp.Controls.Add(Me.prelim)
         Me.Payment_grp.Enabled = False
-        Me.Payment_grp.Location = New System.Drawing.Point(58, 68)
+        Me.Payment_grp.Location = New System.Drawing.Point(15, 68)
         Me.Payment_grp.Name = "Payment_grp"
-        Me.Payment_grp.Size = New System.Drawing.Size(233, 89)
+        Me.Payment_grp.Size = New System.Drawing.Size(338, 89)
         Me.Payment_grp.TabIndex = 7
         Me.Payment_grp.TabStop = False
         Me.Payment_grp.Text = "Partial Payment"
@@ -98,9 +98,9 @@ Partial Class UpdatePayment_A
         '
         'mid_btn
         '
-        Me.mid_btn.Location = New System.Drawing.Point(152, 47)
+        Me.mid_btn.Location = New System.Drawing.Point(240, 52)
         Me.mid_btn.Name = "mid_btn"
-        Me.mid_btn.Size = New System.Drawing.Size(49, 23)
+        Me.mid_btn.Size = New System.Drawing.Size(92, 23)
         Me.mid_btn.TabIndex = 2
         Me.mid_btn.Text = "Pay"
         Me.mid_btn.UseVisualStyleBackColor = True
@@ -108,9 +108,9 @@ Partial Class UpdatePayment_A
         '
         'pre_btn
         '
-        Me.pre_btn.Location = New System.Drawing.Point(152, 20)
+        Me.pre_btn.Location = New System.Drawing.Point(240, 24)
         Me.pre_btn.Name = "pre_btn"
-        Me.pre_btn.Size = New System.Drawing.Size(49, 23)
+        Me.pre_btn.Size = New System.Drawing.Size(92, 23)
         Me.pre_btn.TabIndex = 2
         Me.pre_btn.Text = "Pay"
         Me.pre_btn.UseVisualStyleBackColor = True
@@ -158,7 +158,7 @@ Partial Class UpdatePayment_A
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(400, 178)
+        Me.ClientSize = New System.Drawing.Size(369, 178)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.grade)
         Me.Controls.Add(Me.Payment_grp)

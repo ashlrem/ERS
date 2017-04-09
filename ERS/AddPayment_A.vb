@@ -4,7 +4,7 @@
     Private Sub AddPayment_A_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim Screen As System.Drawing.Rectangle
         Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
-        Me.Top = (Screen.Height \ 2) - (Me.Height - 125) + 35
+        Me.Top = (Screen.Height \ 2) - (Me.Height - 170) + 35
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
 
 
@@ -372,6 +372,8 @@
 
     Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked = True Then
+            IdLace.Enabled = True
+            Patch.Enabled = True
             p1.Enabled = True
             p2.Enabled = True
             p3.Enabled = True
@@ -382,6 +384,8 @@
             p8.Enabled = True
             p9.Enabled = True
         ElseIf CheckBox1.Checked = False Then
+            IdLace.Enabled = False
+            Patch.Enabled = False
             p1.Enabled = False
             p2.Enabled = False
             p3.Enabled = False
