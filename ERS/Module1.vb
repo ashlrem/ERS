@@ -440,15 +440,14 @@ Module Module1
                 MsgBox("Enter the empty fields!")
             Else
                 ins.Connection = objConn
-<<<<<<< HEAD
                 ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level , @Section)"
                 ins.Parameters.AddWithValue("@Grade_Level", My.Forms.AddClass_A.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClass_A.sec.Text.ToString)
-=======
+
                 ins.CommandText = "INSERT INTO subject_tbl VALUES(@Grade_Level, @Section)"
                 ins.Parameters.AddWithValue("@Grade_Level", My.Forms.AddClass.gl.SelectedItem.ToString)
                 ins.Parameters.AddWithValue("@Section", My.Forms.AddClass.sec.Text.ToString)
->>>>>>> origin/tolits/br
+
                 ins.ExecuteNonQuery()
                 ins.Parameters.Clear()
                 MsgBox("Class saved successfully!")
