@@ -18,17 +18,28 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutUsBtn.Click
-        PictureBox1.Visible = False
-        About.TopLevel = False
-        AdminBtn.Visible = False
-        CashierBtn.Visible = False
-        RegistrarBtn.Visible = False
-        AboutUsBtn.Visible = False
-        PictureBox1.Visible = False
+        'PictureBox1.Visible = False
+        'About.TopLevel = False
+        'AdminBtn.Visible = False
+        'CashierBtn.Visible = False
+        'RegistrarBtn.Visible = False
+        'AboutUsBtn.Visible = False
+        'PictureBox1.Visible = False
+
+        PictureBox1.Enabled = False
+        AboutUsBtn.Enabled = False
+        AdminBtn.Enabled = False
+        CashierBtn.Enabled = False
+        RegistrarBtn.Enabled = False
+        AboutUsBtn.Enabled = False
+        PictureBox1.Enabled = False
+        Button5.Enabled = False
+
         ForgotV.Close()
         RegistrarLogin.Close()
         LoginAdmin.Close()
-        Pi.Controls.Add(About)
+        'Pi.Controls.Add(About)
+        About.TopMost = True
         About.Show()
 
     End Sub
