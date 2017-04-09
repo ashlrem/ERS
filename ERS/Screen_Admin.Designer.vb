@@ -66,9 +66,9 @@ Partial Class Screen_Admin
         Me.SearchCashierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchArchiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewEnrolledStudentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminPanelPictureBox = New System.Windows.Forms.PictureBox()
-        Me.SearchArchiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.AdminPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -346,6 +346,12 @@ Partial Class Screen_Admin
         Me.SearchStudentToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.SearchStudentToolStripMenuItem.Text = "Search Student"
         '
+        'SearchArchiveToolStripMenuItem
+        '
+        Me.SearchArchiveToolStripMenuItem.Name = "SearchArchiveToolStripMenuItem"
+        Me.SearchArchiveToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.SearchArchiveToolStripMenuItem.Text = "Search Archive"
+        '
         'ViewEnrolledStudentsToolStripMenuItem
         '
         Me.ViewEnrolledStudentsToolStripMenuItem.Name = "ViewEnrolledStudentsToolStripMenuItem"
@@ -364,12 +370,6 @@ Partial Class Screen_Admin
         Me.AdminPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.AdminPanelPictureBox.TabIndex = 3
         Me.AdminPanelPictureBox.TabStop = False
-        '
-        'SearchArchiveToolStripMenuItem
-        '
-        Me.SearchArchiveToolStripMenuItem.Name = "SearchArchiveToolStripMenuItem"
-        Me.SearchArchiveToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.SearchArchiveToolStripMenuItem.Text = "Search Archive"
         '
         'Screen_Admin
         '
