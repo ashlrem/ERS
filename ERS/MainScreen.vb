@@ -18,28 +18,17 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutUsBtn.Click
-        'PictureBox1.Visible = False
-        'About.TopLevel = False
-        'AdminBtn.Visible = False
-        'CashierBtn.Visible = False
-        'RegistrarBtn.Visible = False
-        'AboutUsBtn.Visible = False
-        'PictureBox1.Visible = False
-
-        PictureBox1.Enabled = False
-        AboutUsBtn.Enabled = False
-        AdminBtn.Enabled = False
-        CashierBtn.Enabled = False
-        RegistrarBtn.Enabled = False
-        AboutUsBtn.Enabled = False
-        PictureBox1.Enabled = False
-        Button5.Enabled = False
-
+        PictureBox1.Visible = False
+        About.TopLevel = False
+        AdminBtn.Visible = False
+        CashierBtn.Visible = False
+        RegistrarBtn.Visible = False
+        AboutUsBtn.Visible = False
+        PictureBox1.Visible = False
         ForgotV.Close()
         RegistrarLogin.Close()
         LoginAdmin.Close()
-        'Pi.Controls.Add(About)
-        About.TopMost = True
+        Pi.Controls.Add(About)
         About.Show()
 
     End Sub
@@ -48,64 +37,45 @@
     End Sub
 
     Private Sub CashierBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CashierBtn.Click
-
         PictureBox1.Visible = False
+        CashierLogin.TopLevel = False
         AdminBtn.Visible = False
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
         PictureBox1.Visible = False
         ForgotV.Close()
-        ForgotR.Close()
-        ForgotC.Close()
         RegistrarLogin.Close()
         LoginAdmin.Close()
-
-        'CashierLogin.TopLevel = False
-        'Pi.Controls.Add(CashierLogin)
-
-        CashierLogin.TopMost = True
+        Pi.Controls.Add(CashierLogin)
         CashierLogin.Show()
     End Sub
 
     Private Sub RegistrarBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegistrarBtn.Click
-
+        RegistrarLogin.TopLevel = False
+        Pi.Controls.Add(RegistrarLogin)
         PictureBox1.Visible = False
         AdminBtn.Visible = False
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
         ForgotV.Close()
-        ForgotR.Close()
-        ForgotC.Close()
-
         LoginAdmin.Close()
         CashierLogin.Close()
-
-        'RegistrarLogin.TopLevel = False
-        'Pi.Controls.Add(RegistrarLogin)
-
-        RegistrarLogin.TopMost = True
         RegistrarLogin.Show()
     End Sub
 
     Private Sub AdminBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AdminBtn.Click
-
         PictureBox1.Visible = False
+        LoginAdmin.TopLevel = False
         AdminBtn.Visible = False
         CashierBtn.Visible = False
         RegistrarBtn.Visible = False
         AboutUsBtn.Visible = False
         ForgotV.Close()
-        ForgotR.Close()
-        ForgotC.Close()
-
         RegistrarLogin.Close()
         CashierLogin.Close()
-
-        'LoginAdmin.TopLevel = True
-        'Pi.Controls.Add(LoginAdmin)
-        LoginAdmin.TopMost = True
+        Pi.Controls.Add(LoginAdmin)
         LoginAdmin.Show()
     End Sub
 End Class

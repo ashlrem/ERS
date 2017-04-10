@@ -44,11 +44,6 @@ Partial Class ViewStudent_R
         Me.sn = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.goodmoral_btn = New System.Windows.Forms.Button()
-        Me.form137_btn = New System.Windows.Forms.Button()
-        Me.card_btn = New System.Windows.Forms.Button()
-        Me.baptismal_btn = New System.Windows.Forms.Button()
-        Me.nso_btn = New System.Windows.Forms.Button()
         Me.card_lbl = New System.Windows.Forms.Label()
         Me.gm_lbl = New System.Windows.Forms.Label()
         Me.nso_lbl = New System.Windows.Forms.Label()
@@ -60,7 +55,7 @@ Partial Class ViewStudent_R
         '
         'SearchStudent_btn
         '
-        Me.SearchStudent_btn.Location = New System.Drawing.Point(562, 115)
+        Me.SearchStudent_btn.Location = New System.Drawing.Point(513, 111)
         Me.SearchStudent_btn.Name = "SearchStudent_btn"
         Me.SearchStudent_btn.Size = New System.Drawing.Size(75, 23)
         Me.SearchStudent_btn.TabIndex = 83
@@ -71,7 +66,7 @@ Partial Class ViewStudent_R
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(570, 207)
+        Me.Label8.Location = New System.Drawing.Point(521, 203)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(47, 13)
         Me.Label8.TabIndex = 75
@@ -81,7 +76,7 @@ Partial Class ViewStudent_R
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Location = New System.Drawing.Point(570, 155)
+        Me.Label7.Location = New System.Drawing.Point(521, 151)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(48, 13)
         Me.Label7.TabIndex = 76
@@ -91,7 +86,7 @@ Partial Class ViewStudent_R
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(260, 229)
+        Me.Label6.Location = New System.Drawing.Point(211, 225)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 80
@@ -101,7 +96,7 @@ Partial Class ViewStudent_R
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(570, 181)
+        Me.Label5.Location = New System.Drawing.Point(521, 177)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(29, 13)
         Me.Label5.TabIndex = 79
@@ -111,7 +106,7 @@ Partial Class ViewStudent_R
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(260, 200)
+        Me.Label4.Location = New System.Drawing.Point(211, 196)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 13)
         Me.Label4.TabIndex = 77
@@ -121,7 +116,7 @@ Partial Class ViewStudent_R
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(260, 177)
+        Me.Label3.Location = New System.Drawing.Point(211, 173)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 13)
         Me.Label3.TabIndex = 78
@@ -131,7 +126,7 @@ Partial Class ViewStudent_R
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(260, 151)
+        Me.Label2.Location = New System.Drawing.Point(211, 147)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 13)
         Me.Label2.TabIndex = 81
@@ -141,7 +136,7 @@ Partial Class ViewStudent_R
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(254, 121)
+        Me.Label1.Location = New System.Drawing.Point(205, 117)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(84, 13)
         Me.Label1.TabIndex = 82
@@ -158,7 +153,7 @@ Partial Class ViewStudent_R
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(97, 115)
+        Me.PictureBox2.Location = New System.Drawing.Point(48, 111)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(151, 130)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -168,7 +163,7 @@ Partial Class ViewStudent_R
         'con
         '
         Me.con.Enabled = False
-        Me.con.Location = New System.Drawing.Point(661, 204)
+        Me.con.Location = New System.Drawing.Point(612, 200)
         Me.con.Name = "con"
         Me.con.Size = New System.Drawing.Size(158, 20)
         Me.con.TabIndex = 71
@@ -176,7 +171,7 @@ Partial Class ViewStudent_R
         'sy
         '
         Me.sy.Enabled = False
-        Me.sy.Location = New System.Drawing.Point(360, 200)
+        Me.sy.Location = New System.Drawing.Point(311, 196)
         Me.sy.Name = "sy"
         Me.sy.Size = New System.Drawing.Size(176, 20)
         Me.sy.TabIndex = 70
@@ -184,7 +179,7 @@ Partial Class ViewStudent_R
         'ag
         '
         Me.ag.Enabled = False
-        Me.ag.Location = New System.Drawing.Point(660, 177)
+        Me.ag.Location = New System.Drawing.Point(611, 173)
         Me.ag.Name = "ag"
         Me.ag.Size = New System.Drawing.Size(159, 20)
         Me.ag.TabIndex = 73
@@ -192,7 +187,7 @@ Partial Class ViewStudent_R
         'gl
         '
         Me.gl.Enabled = False
-        Me.gl.Location = New System.Drawing.Point(360, 174)
+        Me.gl.Location = New System.Drawing.Point(311, 170)
         Me.gl.Name = "gl"
         Me.gl.Size = New System.Drawing.Size(176, 20)
         Me.gl.TabIndex = 72
@@ -200,7 +195,7 @@ Partial Class ViewStudent_R
         'bd
         '
         Me.bd.Enabled = False
-        Me.bd.Location = New System.Drawing.Point(660, 148)
+        Me.bd.Location = New System.Drawing.Point(611, 144)
         Me.bd.Name = "bd"
         Me.bd.Size = New System.Drawing.Size(159, 20)
         Me.bd.TabIndex = 67
@@ -208,7 +203,7 @@ Partial Class ViewStudent_R
         'nam
         '
         Me.nam.Enabled = False
-        Me.nam.Location = New System.Drawing.Point(360, 148)
+        Me.nam.Location = New System.Drawing.Point(311, 144)
         Me.nam.Name = "nam"
         Me.nam.Size = New System.Drawing.Size(176, 20)
         Me.nam.TabIndex = 66
@@ -216,14 +211,14 @@ Partial Class ViewStudent_R
         'add
         '
         Me.add.Enabled = False
-        Me.add.Location = New System.Drawing.Point(360, 226)
+        Me.add.Location = New System.Drawing.Point(311, 222)
         Me.add.Name = "add"
         Me.add.Size = New System.Drawing.Size(176, 20)
         Me.add.TabIndex = 69
         '
         'sn
         '
-        Me.sn.Location = New System.Drawing.Point(360, 117)
+        Me.sn.Location = New System.Drawing.Point(311, 113)
         Me.sn.Name = "sn"
         Me.sn.Size = New System.Drawing.Size(176, 20)
         Me.sn.TabIndex = 68
@@ -234,68 +229,18 @@ Partial Class ViewStudent_R
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.goodmoral_btn)
-        Me.GroupBox1.Controls.Add(Me.form137_btn)
-        Me.GroupBox1.Controls.Add(Me.card_btn)
-        Me.GroupBox1.Controls.Add(Me.baptismal_btn)
-        Me.GroupBox1.Controls.Add(Me.nso_btn)
         Me.GroupBox1.Controls.Add(Me.card_lbl)
         Me.GroupBox1.Controls.Add(Me.gm_lbl)
         Me.GroupBox1.Controls.Add(Me.nso_lbl)
         Me.GroupBox1.Controls.Add(Me.form_lbl)
         Me.GroupBox1.Controls.Add(Me.baptismal_lbl)
         Me.GroupBox1.Enabled = False
-        Me.GroupBox1.Location = New System.Drawing.Point(75, 258)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 254)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(755, 87)
         Me.GroupBox1.TabIndex = 89
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Requirements:"
-        '
-        'goodmoral_btn
-        '
-        Me.goodmoral_btn.Location = New System.Drawing.Point(613, 54)
-        Me.goodmoral_btn.Name = "goodmoral_btn"
-        Me.goodmoral_btn.Size = New System.Drawing.Size(80, 23)
-        Me.goodmoral_btn.TabIndex = 88
-        Me.goodmoral_btn.Text = "Upload"
-        Me.goodmoral_btn.UseVisualStyleBackColor = True
-        '
-        'form137_btn
-        '
-        Me.form137_btn.Location = New System.Drawing.Point(438, 54)
-        Me.form137_btn.Name = "form137_btn"
-        Me.form137_btn.Size = New System.Drawing.Size(80, 23)
-        Me.form137_btn.TabIndex = 88
-        Me.form137_btn.Text = "Upload"
-        Me.form137_btn.UseVisualStyleBackColor = True
-        '
-        'card_btn
-        '
-        Me.card_btn.Location = New System.Drawing.Point(294, 55)
-        Me.card_btn.Name = "card_btn"
-        Me.card_btn.Size = New System.Drawing.Size(80, 23)
-        Me.card_btn.TabIndex = 88
-        Me.card_btn.Text = "Upload"
-        Me.card_btn.UseVisualStyleBackColor = True
-        '
-        'baptismal_btn
-        '
-        Me.baptismal_btn.Location = New System.Drawing.Point(136, 55)
-        Me.baptismal_btn.Name = "baptismal_btn"
-        Me.baptismal_btn.Size = New System.Drawing.Size(80, 23)
-        Me.baptismal_btn.TabIndex = 88
-        Me.baptismal_btn.Text = "Upload"
-        Me.baptismal_btn.UseVisualStyleBackColor = True
-        '
-        'nso_btn
-        '
-        Me.nso_btn.Location = New System.Drawing.Point(11, 53)
-        Me.nso_btn.Name = "nso_btn"
-        Me.nso_btn.Size = New System.Drawing.Size(80, 23)
-        Me.nso_btn.TabIndex = 88
-        Me.nso_btn.Text = "Upload"
-        Me.nso_btn.UseVisualStyleBackColor = True
         '
         'card_lbl
         '
@@ -357,7 +302,7 @@ Partial Class ViewStudent_R
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(904, 375)
+        Me.ClientSize = New System.Drawing.Size(904, 356)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SearchStudent_btn)
@@ -410,11 +355,6 @@ Partial Class ViewStudent_R
     Friend WithEvents sn As System.Windows.Forms.TextBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents goodmoral_btn As System.Windows.Forms.Button
-    Friend WithEvents form137_btn As System.Windows.Forms.Button
-    Friend WithEvents card_btn As System.Windows.Forms.Button
-    Friend WithEvents baptismal_btn As System.Windows.Forms.Button
-    Friend WithEvents nso_btn As System.Windows.Forms.Button
     Friend WithEvents card_lbl As System.Windows.Forms.Label
     Friend WithEvents gm_lbl As System.Windows.Forms.Label
     Friend WithEvents nso_lbl As System.Windows.Forms.Label

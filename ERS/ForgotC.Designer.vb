@@ -30,7 +30,7 @@ Partial Class ForgotC
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(176, 72)
+        Me.Button2.Location = New System.Drawing.Point(209, 68)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 7
@@ -40,7 +40,7 @@ Partial Class ForgotC
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(46, 35)
+        Me.Label1.Location = New System.Drawing.Point(12, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(124, 13)
         Me.Label1.TabIndex = 6
@@ -48,14 +48,14 @@ Partial Class ForgotC
         '
         'ne1
         '
-        Me.ne1.Location = New System.Drawing.Point(179, 32)
+        Me.ne1.Location = New System.Drawing.Point(145, 26)
         Me.ne1.Name = "ne1"
         Me.ne1.Size = New System.Drawing.Size(100, 20)
         Me.ne1.TabIndex = 4
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(95, 72)
+        Me.Button1.Location = New System.Drawing.Point(128, 68)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 5
@@ -66,15 +66,13 @@ Partial Class ForgotC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(326, 135)
+        Me.ClientSize = New System.Drawing.Size(298, 116)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ne1)
         Me.Controls.Add(Me.Button1)
         Me.Location = New System.Drawing.Point(350, 50)
-        Me.MaximumSize = New System.Drawing.Size(342, 174)
-        Me.MinimumSize = New System.Drawing.Size(342, 174)
         Me.Name = "ForgotC"
         Me.Text = "ForgotC"
         Me.ResumeLayout(False)

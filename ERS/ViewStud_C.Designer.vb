@@ -42,7 +42,14 @@ Partial Class ViewStud_C
         Me.nam = New System.Windows.Forms.TextBox()
         Me.add = New System.Windows.Forms.TextBox()
         Me.sn = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.card_lbl = New System.Windows.Forms.Label()
+        Me.gm_lbl = New System.Windows.Forms.Label()
+        Me.nso_lbl = New System.Windows.Forms.Label()
+        Me.form_lbl = New System.Windows.Forms.Label()
+        Me.baptismal_lbl = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SearchStudent_btn
@@ -215,13 +222,83 @@ Partial Class ViewStud_C
         Me.sn.Size = New System.Drawing.Size(176, 20)
         Me.sn.TabIndex = 68
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.card_lbl)
+        Me.GroupBox1.Controls.Add(Me.gm_lbl)
+        Me.GroupBox1.Controls.Add(Me.nso_lbl)
+        Me.GroupBox1.Controls.Add(Me.form_lbl)
+        Me.GroupBox1.Controls.Add(Me.baptismal_lbl)
+        Me.GroupBox1.Enabled = False
+        Me.GroupBox1.Location = New System.Drawing.Point(38, 274)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(755, 58)
+        Me.GroupBox1.TabIndex = 90
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Requirements:"
+        '
+        'card_lbl
+        '
+        Me.card_lbl.AutoSize = True
+        Me.card_lbl.BackColor = System.Drawing.Color.Transparent
+        Me.card_lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.card_lbl.Location = New System.Drawing.Point(305, 19)
+        Me.card_lbl.Name = "card_lbl"
+        Me.card_lbl.Size = New System.Drawing.Size(58, 25)
+        Me.card_lbl.TabIndex = 87
+        Me.card_lbl.Text = "Card"
+        '
+        'gm_lbl
+        '
+        Me.gm_lbl.AutoSize = True
+        Me.gm_lbl.BackColor = System.Drawing.Color.Transparent
+        Me.gm_lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gm_lbl.Location = New System.Drawing.Point(583, 19)
+        Me.gm_lbl.Name = "gm_lbl"
+        Me.gm_lbl.Size = New System.Drawing.Size(124, 25)
+        Me.gm_lbl.TabIndex = 87
+        Me.gm_lbl.Text = "Good Moral"
+        '
+        'nso_lbl
+        '
+        Me.nso_lbl.AutoSize = True
+        Me.nso_lbl.BackColor = System.Drawing.Color.Transparent
+        Me.nso_lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nso_lbl.Location = New System.Drawing.Point(22, 19)
+        Me.nso_lbl.Name = "nso_lbl"
+        Me.nso_lbl.Size = New System.Drawing.Size(57, 25)
+        Me.nso_lbl.TabIndex = 87
+        Me.nso_lbl.Text = "NSO"
+        '
+        'form_lbl
+        '
+        Me.form_lbl.AutoSize = True
+        Me.form_lbl.BackColor = System.Drawing.Color.Transparent
+        Me.form_lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.form_lbl.Location = New System.Drawing.Point(425, 19)
+        Me.form_lbl.Name = "form_lbl"
+        Me.form_lbl.Size = New System.Drawing.Size(110, 25)
+        Me.form_lbl.TabIndex = 87
+        Me.form_lbl.Text = "Form 1-37"
+        '
+        'baptismal_lbl
+        '
+        Me.baptismal_lbl.AutoSize = True
+        Me.baptismal_lbl.BackColor = System.Drawing.Color.Transparent
+        Me.baptismal_lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.baptismal_lbl.Location = New System.Drawing.Point(130, 19)
+        Me.baptismal_lbl.Name = "baptismal_lbl"
+        Me.baptismal_lbl.Size = New System.Drawing.Size(106, 25)
+        Me.baptismal_lbl.TabIndex = 87
+        Me.baptismal_lbl.Text = "Baptismal"
+        '
         'ViewStud_C
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(898, 347)
-        Me.ControlBox = False
+        Me.ClientSize = New System.Drawing.Size(898, 373)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SearchStudent_btn)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -241,11 +318,11 @@ Partial Class ViewStud_C
         Me.Controls.Add(Me.nam)
         Me.Controls.Add(Me.add)
         Me.Controls.Add(Me.sn)
-        Me.MaximumSize = New System.Drawing.Size(914, 386)
-        Me.MinimumSize = New System.Drawing.Size(914, 386)
         Me.Name = "ViewStud_C"
         Me.Text = "ViewStudent"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -269,4 +346,10 @@ Partial Class ViewStud_C
     Friend WithEvents nam As System.Windows.Forms.TextBox
     Friend WithEvents add As System.Windows.Forms.TextBox
     Friend WithEvents sn As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents card_lbl As System.Windows.Forms.Label
+    Friend WithEvents gm_lbl As System.Windows.Forms.Label
+    Friend WithEvents nso_lbl As System.Windows.Forms.Label
+    Friend WithEvents form_lbl As System.Windows.Forms.Label
+    Friend WithEvents baptismal_lbl As System.Windows.Forms.Label
 End Class

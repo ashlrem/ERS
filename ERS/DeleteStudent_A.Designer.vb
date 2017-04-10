@@ -237,7 +237,7 @@ Partial Class DeleteStudent_A
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(904, 363)
+        Me.ClientSize = New System.Drawing.Size(904, 353)
         Me.ControlBox = False
         Me.Controls.Add(Me.SearchStudent_btn)
         Me.Controls.Add(Me.Label8)

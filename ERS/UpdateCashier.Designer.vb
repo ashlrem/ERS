@@ -26,10 +26,8 @@ Partial Class UpdateCashier
         Me.status = New System.Windows.Forms.ComboBox()
         Me.update_account = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.cno = New System.Windows.Forms.MaskedTextBox()
         Me.eadd = New System.Windows.Forms.TextBox()
         Me.add = New System.Windows.Forms.TextBox()
-        Me.bd = New System.Windows.Forms.MaskedTextBox()
         Me.mn = New System.Windows.Forms.TextBox()
         Me.fn = New System.Windows.Forms.TextBox()
         Me.ln = New System.Windows.Forms.TextBox()
@@ -44,6 +42,8 @@ Partial Class UpdateCashier
         Me.en = New System.Windows.Forms.TextBox()
         Me.ValidateAccountUpdate_btn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.bd = New System.Windows.Forms.TextBox()
+        Me.cno = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -51,13 +51,13 @@ Partial Class UpdateCashier
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.cno)
+        Me.GroupBox2.Controls.Add(Me.bd)
         Me.GroupBox2.Controls.Add(Me.status)
         Me.GroupBox2.Controls.Add(Me.update_account)
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
-        Me.GroupBox2.Controls.Add(Me.cno)
         Me.GroupBox2.Controls.Add(Me.eadd)
         Me.GroupBox2.Controls.Add(Me.add)
-        Me.GroupBox2.Controls.Add(Me.bd)
         Me.GroupBox2.Controls.Add(Me.mn)
         Me.GroupBox2.Controls.Add(Me.fn)
         Me.GroupBox2.Controls.Add(Me.ln)
@@ -105,13 +105,6 @@ Partial Class UpdateCashier
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
-        'cno
-        '
-        Me.cno.Location = New System.Drawing.Point(115, 188)
-        Me.cno.Name = "cno"
-        Me.cno.Size = New System.Drawing.Size(170, 20)
-        Me.cno.TabIndex = 7
-        '
         'eadd
         '
         Me.eadd.Location = New System.Drawing.Point(115, 162)
@@ -125,13 +118,6 @@ Partial Class UpdateCashier
         Me.add.Name = "add"
         Me.add.Size = New System.Drawing.Size(170, 20)
         Me.add.TabIndex = 5
-        '
-        'bd
-        '
-        Me.bd.Location = New System.Drawing.Point(115, 110)
-        Me.bd.Name = "bd"
-        Me.bd.Size = New System.Drawing.Size(170, 20)
-        Me.bd.TabIndex = 4
         '
         'mn
         '
@@ -254,6 +240,20 @@ Partial Class UpdateCashier
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "EmployeeID:"
         '
+        'bd
+        '
+        Me.bd.Location = New System.Drawing.Point(115, 110)
+        Me.bd.Name = "bd"
+        Me.bd.Size = New System.Drawing.Size(170, 20)
+        Me.bd.TabIndex = 4
+        '
+        'cno
+        '
+        Me.cno.Location = New System.Drawing.Point(115, 188)
+        Me.cno.Name = "cno"
+        Me.cno.Size = New System.Drawing.Size(170, 20)
+        Me.cno.TabIndex = 7
+        '
         'UpdateCashier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -274,10 +274,8 @@ Partial Class UpdateCashier
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents cno As System.Windows.Forms.MaskedTextBox
     Friend WithEvents eadd As System.Windows.Forms.TextBox
     Friend WithEvents add As System.Windows.Forms.TextBox
-    Friend WithEvents bd As System.Windows.Forms.MaskedTextBox
     Friend WithEvents mn As System.Windows.Forms.TextBox
     Friend WithEvents fn As System.Windows.Forms.TextBox
     Friend WithEvents ln As System.Windows.Forms.TextBox
@@ -294,4 +292,6 @@ Partial Class UpdateCashier
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents update_account As System.Windows.Forms.Button
     Friend WithEvents status As System.Windows.Forms.ComboBox
+    Friend WithEvents cno As System.Windows.Forms.TextBox
+    Friend WithEvents bd As System.Windows.Forms.TextBox
 End Class

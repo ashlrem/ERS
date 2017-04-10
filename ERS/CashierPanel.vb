@@ -7,29 +7,27 @@ Public Class CashierPanel
         Me.Location = New Point(1, 1)
         Me.Size = SystemInformation.PrimaryMonitorSize()
         Me.empl.Text = My.Forms.CashierLogin.en.Text
-
-
-        connection.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'"
-        Dim reg As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & empl.Text & "')"
-        connection.Open()
-
-        Dim cmd As MySqlCommand = New MySqlCommand(reg, connection)
-        r = cmd.ExecuteReader()
         Try ' :)
+            connection.ConnectionString = "server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';database='" & database & "'"
+            Dim reg As String = "SELECT * FROM cashier_account WHERE (EmployeeID ='" & empl.Text & "')"
+            connection.Open()
+            Dim cmd As MySqlCommand = New MySqlCommand(reg, connection) 'haha :) try naten mag login as cashier
+            r = cmd.ExecuteReader()
             If r.Read Then
                 n1.Text = r("Surname").ToString() & ", " & r("GivenName").ToString() & " " & r("MiddleName").ToString() & "."
                 email.Text = r("Email_Account").ToString() & "."
                 cn.Text = r("ContactNumber").ToString() & "."
                 pic = r("Photo").ToString()
+                PictureBox3.Image = base64toimage(pic)
+                pic = ""
                 connection.Close()
             Else
                 MsgBox("EmployeeID not Found!")
                 connection.Close()
             End If
         Catch ex As Exception
+
         End Try
-        PictureBox3.Image = base64toimage(pic)
-        pic = ""
         connection.Close()
     End Sub
 

@@ -36,24 +36,24 @@ Partial Class DeletePayment
         '
         'SearchAddpayemt_btn
         '
-        Me.SearchAddpayemt_btn.Location = New System.Drawing.Point(194, 32)
+        Me.SearchAddpayemt_btn.Location = New System.Drawing.Point(288, 25)
         Me.SearchAddpayemt_btn.Name = "SearchAddpayemt_btn"
-        Me.SearchAddpayemt_btn.Size = New System.Drawing.Size(94, 36)
+        Me.SearchAddpayemt_btn.Size = New System.Drawing.Size(75, 23)
         Me.SearchAddpayemt_btn.TabIndex = 8
         Me.SearchAddpayemt_btn.Text = "Search"
         Me.SearchAddpayemt_btn.UseVisualStyleBackColor = True
         '
         'sn
         '
-        Me.sn.Location = New System.Drawing.Point(55, 48)
+        Me.sn.Location = New System.Drawing.Point(152, 25)
         Me.sn.Name = "sn"
-        Me.sn.Size = New System.Drawing.Size(121, 20)
+        Me.sn.Size = New System.Drawing.Size(130, 20)
         Me.sn.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(52, 32)
+        Me.Label1.Location = New System.Drawing.Point(22, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(124, 13)
         Me.Label1.TabIndex = 6
@@ -66,7 +66,7 @@ Partial Class DeletePayment
         Me.Payment_grp.Controls.Add(Me.midterm)
         Me.Payment_grp.Controls.Add(Me.prelim)
         Me.Payment_grp.Enabled = False
-        Me.Payment_grp.Location = New System.Drawing.Point(55, 85)
+        Me.Payment_grp.Location = New System.Drawing.Point(98, 68)
         Me.Payment_grp.Name = "Payment_grp"
         Me.Payment_grp.Size = New System.Drawing.Size(233, 93)
         Me.Payment_grp.TabIndex = 10
@@ -114,9 +114,9 @@ Partial Class DeletePayment
         'DeletePayment_btn
         '
         Me.DeletePayment_btn.Enabled = False
-        Me.DeletePayment_btn.Location = New System.Drawing.Point(55, 193)
+        Me.DeletePayment_btn.Location = New System.Drawing.Point(98, 167)
         Me.DeletePayment_btn.Name = "DeletePayment_btn"
-        Me.DeletePayment_btn.Size = New System.Drawing.Size(233, 61)
+        Me.DeletePayment_btn.Size = New System.Drawing.Size(233, 42)
         Me.DeletePayment_btn.TabIndex = 11
         Me.DeletePayment_btn.Text = "Delete"
         Me.DeletePayment_btn.UseVisualStyleBackColor = True
@@ -125,17 +125,15 @@ Partial Class DeletePayment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(344, 278)
+        Me.ClientSize = New System.Drawing.Size(394, 233)
         Me.Controls.Add(Me.DeletePayment_btn)
         Me.Controls.Add(Me.Payment_grp)
         Me.Controls.Add(Me.SearchAddpayemt_btn)
         Me.Controls.Add(Me.sn)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.MaximumSize = New System.Drawing.Size(354, 311)
-        Me.MinimumSize = New System.Drawing.Size(354, 311)
         Me.Name = "DeletePayment"
-        Me.Text = "Payments"
+        Me.Text = "DeletePayment"
         Me.Payment_grp.ResumeLayout(False)
         Me.Payment_grp.PerformLayout()
         Me.ResumeLayout(False)
