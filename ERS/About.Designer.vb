@@ -36,7 +36,7 @@ Partial Class About
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(465, 30)
+        Me.Label1.Location = New System.Drawing.Point(378, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(127, 16)
         Me.Label1.TabIndex = 17
@@ -50,7 +50,7 @@ Partial Class About
         Me.LabelProductName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelProductName.MaximumSize = New System.Drawing.Size(0, 30)
         Me.LabelProductName.Name = "LabelProductName"
-        Me.LabelProductName.Size = New System.Drawing.Size(1086, 30)
+        Me.LabelProductName.Size = New System.Drawing.Size(839, 30)
         Me.LabelProductName.TabIndex = 16
         Me.LabelProductName.Text = "St. Martin de Porres Catholic School"
         Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -62,7 +62,7 @@ Partial Class About
         Me.LabelVersion.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelVersion.MaximumSize = New System.Drawing.Size(0, 17)
         Me.LabelVersion.Name = "LabelVersion"
-        Me.LabelVersion.Size = New System.Drawing.Size(1086, 17)
+        Me.LabelVersion.Size = New System.Drawing.Size(839, 17)
         Me.LabelVersion.TabIndex = 13
         Me.LabelVersion.Text = "Paombong, Bulacan"
         Me.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -71,7 +71,7 @@ Partial Class About
         '
         Me.OKButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.OKButton.Location = New System.Drawing.Point(941, 467)
+        Me.OKButton.Location = New System.Drawing.Point(694, 467)
         Me.OKButton.Name = "OKButton"
         Me.OKButton.Size = New System.Drawing.Size(117, 22)
         Me.OKButton.TabIndex = 14
@@ -108,14 +108,14 @@ Partial Class About
         Me.ReportViewer.ShowStopButton = False
         Me.ReportViewer.ShowToolBar = False
         Me.ReportViewer.ShowZoomControl = False
-        Me.ReportViewer.Size = New System.Drawing.Size(659, 406)
+        Me.ReportViewer.Size = New System.Drawing.Size(427, 369)
         Me.ReportViewer.TabIndex = 18
         '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1086, 501)
+        Me.ClientSize = New System.Drawing.Size(839, 501)
         Me.ControlBox = False
         Me.Controls.Add(Me.ReportViewer)
         Me.Controls.Add(Me.Label1)
