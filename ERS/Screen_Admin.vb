@@ -31,114 +31,100 @@
     End Sub
 
     Private Sub AddStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddStudentRecordToolStripMenuItem.Click
-        StudentCreate.TopMost = True
-        'StudentCreate.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(StudentCreate)
-        'AdminPanel.Hide()
+        StudentCreate.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(StudentCreate)
+        AdminPanel.Hide()
         StudentCreate.Show()
     End Sub
 
     Private Sub AddSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddSubjectToolStripMenuItem.Click
-        AddClass.TopMost = True
-        'AddClass.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(AddClass)
-        'AdminPanel.Hide()
+        AddClass.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(AddClass)
+        AdminPanel.Hide()
         AddClass.Show()
     End Sub
 
     Private Sub AddAdminToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddAdminToolStripMenuItem.Click
-        AdminCreate_1.TopMost = True
-        'AdminCreate_1.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(AdminCreate_1)
-        'AdminPanel.Hide()
+        AdminCreate_1.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(AdminCreate_1)
+        AdminPanel.Hide()
         AdminCreate_1.Show()
     End Sub
 
     Private Sub AddRegistrarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddRegistrarToolStripMenuItem.Click
-        RegistrarCreate.TopMost = True
-        'RegistrarCreate.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(RegistrarCreate)
-        'AdminPanel.Hide()
+        RegistrarCreate.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(RegistrarCreate)
+        AdminPanel.Hide()
         RegistrarCreate.Show()
     End Sub
 
     Private Sub AddCashierToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCashierToolStripMenuItem.Click
-        CashierCreate.TopMost = True
-        'CashierCreate.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(CashierCreate)
-        'AdminPanel.Hide()
+        CashierCreate.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(CashierCreate)
+        AdminPanel.Hide()
         CashierCreate.Show()
     End Sub
 
     Private Sub DeleteAdminToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteAdminToolStripMenuItem.Click
-        deleteAdmin.TopMost = True
-        'deleteAdmin.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(deleteAdmin)
-        'AdminPanel.Hide()
+        deleteAdmin.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(deleteAdmin)
+        AdminPanel.Hide()
         deleteAdmin.Show()
     End Sub
 
     Private Sub DeleteRegistrarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteRegistrarToolStripMenuItem.Click
-        DeleteRegistrar.TopMost = True
-        'DeleteRegistrar.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(DeleteRegistrar)
-        'AdminPanel.Hide()
+        DeleteRegistrar.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(DeleteRegistrar)
+        AdminPanel.Hide()
         DeleteRegistrar.Show()
     End Sub
 
     Private Sub DeleteCashierToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteCashierToolStripMenuItem.Click
-        DeleteCashier.TopMost = True
-        'DeleteCashier.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(DeleteCashier)
-        'AdminPanel.Hide()
+        DeleteCashier.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(DeleteCashier)
+        AdminPanel.Hide()
         DeleteCashier.Show()
     End Sub
 
     Private Sub UpdateStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateStudentRecordToolStripMenuItem.Click
-        UpdateStudent_A.TopMost = True
-        'UpdateStudent_A.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(UpdateStudent_A)
-        'AdminPanel.Hide()
+        UpdateStudent_A.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(UpdateStudent_A)
+        AdminPanel.Hide()
         UpdateStudent_A.Show()
     End Sub
 
     Private Sub ViewStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewStudentRecordToolStripMenuItem.Click
-        ViewStudent.TopMost = True
-        'ViewStudent.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(ViewStudent)
-        'AdminPanel.Hide()
+        ViewStudent.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(ViewStudent)
+        AdminPanel.Hide()
         ViewStudent.Show()
     End Sub
 
     Private Sub UpdateAccountToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateAccountToolStripMenuItem.Click
-        UpdateAdmin.TopMost = True
-        'UpdateAdmin.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(UpdateAdmin)
-        'AdminPanel.Hide()
+        UpdateAdmin.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(UpdateAdmin)
+        AdminPanel.Hide()
         UpdateAdmin.Show()
     End Sub
 
     Private Sub UpdateSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateSubjectToolStripMenuItem.Click
-        UpdateClass_A.TopMost = True
-        'UpdateClass_A.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(UpdateClass_A)
-        'AdminPanel.Hide()
+        UpdateClass_A.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(UpdateClass_A)
+        AdminPanel.Hide()
         UpdateClass_A.Show()
     End Sub
 
     Private Sub DeleteSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteSubjectToolStripMenuItem.Click
-        DeleteSub_A.TopMost = True
-        'DeleteSub_A.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(DeleteSub_A)
-        'AdminPanel.Hide()
+        DeleteSub_A.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(DeleteSub_A)
+        AdminPanel.Hide()
         DeleteSub_A.Show()
     End Sub
 
     Private Sub DeleteStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteStudentRecordToolStripMenuItem.Click
-        DeleteStudent_A.TopMost = True
-        'DeleteStudent_A.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(DeleteStudent_A)
-        'AdminPanel.Hide()
+        DeleteStudent_A.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(DeleteStudent_A)
+        AdminPanel.Hide()
         DeleteStudent_A.Show()
     End Sub
 
@@ -204,66 +190,51 @@
     End Sub
 
     Private Sub SearchSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        ViewClass.TopMost = True
-        'ViewClass.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(ViewClass)
-        'AdminPanel.Hide()
+        ViewClass.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(ViewClass)
+        AdminPanel.Hide()
         ViewClass.Show()
     End Sub
 
     Private Sub ViewSubjectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        ViewClass.TopMost = True
-        'ViewClass.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(ViewClass)
-        'AdminPanel.Hide()
+        ViewClass.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(ViewClass)
+        AdminPanel.Hide()
         ViewClass.Show()
     End Sub
 
     Private Sub UpdateAdminToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateAdminToolStripMenuItem.Click
-        UpdateAdmin.TopMost = True
-        'UpdateAdmin.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(UpdateAdmin)
-        'AdminPanel.Hide()
+        UpdateAdmin.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(UpdateAdmin)
+        AdminPanel.Hide()
         UpdateAdmin.Show()
     End Sub
 
     Private Sub UpdateRegistrarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateRegistrarToolStripMenuItem.Click
-        UpdateRegistrar.TopMost = True
-        'UpdateRegistrar.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(UpdateRegistrar)
-        'AdminPanel.Hide()
+        UpdateRegistrar.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(UpdateRegistrar)
+        AdminPanel.Hide()
         UpdateRegistrar.Show()
     End Sub
 
     Private Sub UpdateCashierToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateCashierToolStripMenuItem.Click
-        UpdateCashier.TopMost = True
-        'UpdateCashier.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(UpdateCashier)
-        'AdminPanel.Hide()
+        UpdateCashier.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(UpdateCashier)
+        AdminPanel.Hide()
         UpdateCashier.Show()
     End Sub
 
     Private Sub ViewEnrolledStudentsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewEnrolledStudentsToolStripMenuItem.Click
-        SearchStudent.TopMost = True
-        'SearchStudent.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(SearchStudent)
-        'AdminPanel.Hide()
+        SearchStudent.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(SearchStudent)
+        AdminPanel.Hide()
         SearchStudent.Show()
     End Sub
 
     Private Sub SearchArchiveToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchArchiveToolStripMenuItem.Click
-        StudentArchive.TopMost = True
-        'StudentArchive.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(StudentArchive)
-        'AdminPanel.Hide()
-        StudentArchive.Show()
-    End Sub
-
-    Private Sub RestoreStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RestoreStudentRecordToolStripMenuItem.Click
-        StudentArchive.TopMost = True
-        'StudentArchive.TopLevel = False
-        'AdminPanelPictureBox.Controls.Add(StudentArchive)
-        'AdminPanel.Hide()
+        StudentArchive.TopLevel = False
+        AdminPanelPictureBox.Controls.Add(StudentArchive)
+        AdminPanel.Hide()
         StudentArchive.Show()
     End Sub
 End Class

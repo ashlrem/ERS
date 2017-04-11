@@ -4,6 +4,7 @@ Public Class ViewSubjectR
 
     Private Sub ViewSubjectR_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         insert()
+
         Dim r As MySqlDataReader
         Dim reg As String = "SELECT Subject_Name FROM subject_tbl"
         cn.Open()

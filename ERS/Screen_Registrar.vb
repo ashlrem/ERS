@@ -50,11 +50,9 @@
     End Sub
 
     Private Sub AddStudentRecordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddStudentRecordToolStripMenuItem.Click
-
-        'StudentCreate.TopLevel = False
-        'RegistrarPanelPictureBox.Controls.Add(StudentCreate)
-        'RegistrarPanel.Hide()
-        StudentCreate.TopMost = True
+        StudentCreate.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(StudentCreate)
+        RegistrarPanel.Hide()
         StudentCreate.Show()
     End Sub
 
@@ -102,9 +100,9 @@
     End Sub
 
     Private Sub ViewEnrolledStudentsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewEnrolledStudentsToolStripMenuItem.Click
-        SearchStudent_R.TopLevel = False
-        RegistrarPanelPictureBox.Controls.Add(SearchStudent_R)
+        SearchStudent.TopLevel = False
+        RegistrarPanelPictureBox.Controls.Add(SearchStudent)
         RegistrarPanel.Hide()
-        SearchStudent_R.Show()
+        SearchStudent.Show()
     End Sub
 End Class

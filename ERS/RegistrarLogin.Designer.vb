@@ -29,7 +29,6 @@ Partial Class RegistrarLogin
         Me.Button1 = New System.Windows.Forms.Button()
         Me.en = New System.Windows.Forms.TextBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.LoginCancelBtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,7 +77,7 @@ Partial Class RegistrarLogin
         Me.en.Location = New System.Drawing.Point(317, 77)
         Me.en.Name = "en"
         Me.en.Size = New System.Drawing.Size(142, 20)
-        Me.en.TabIndex = 1
+        Me.en.TabIndex = 5
         '
         'LinkLabel1
         '
@@ -87,18 +86,9 @@ Partial Class RegistrarLogin
         Me.LinkLabel1.Location = New System.Drawing.Point(267, 157)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(92, 13)
-        Me.LinkLabel1.TabIndex = 4
+        Me.LinkLabel1.TabIndex = 12
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Forgot Password?"
-        '
-        'LoginCancelBtn
-        '
-        Me.LoginCancelBtn.Location = New System.Drawing.Point(392, 12)
-        Me.LoginCancelBtn.Name = "LoginCancelBtn"
-        Me.LoginCancelBtn.Size = New System.Drawing.Size(104, 27)
-        Me.LoginCancelBtn.TabIndex = 8
-        Me.LoginCancelBtn.Text = "Cancel"
-        Me.LoginCancelBtn.UseVisualStyleBackColor = True
         '
         'RegistrarLogin
         '
@@ -107,8 +97,6 @@ Partial Class RegistrarLogin
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(508, 186)
-        Me.ControlBox = False
-        Me.Controls.Add(Me.LoginCancelBtn)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.en)
         Me.Controls.Add(Me.Button1)
@@ -117,8 +105,6 @@ Partial Class RegistrarLogin
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Location = New System.Drawing.Point(350, 50)
-        Me.MaximumSize = New System.Drawing.Size(518, 219)
-        Me.MinimumSize = New System.Drawing.Size(518, 219)
         Me.Name = "RegistrarLogin"
         Me.Text = "RegistrarLogin"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -132,5 +118,4 @@ Partial Class RegistrarLogin
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents en As System.Windows.Forms.TextBox
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
-    Friend WithEvents LoginCancelBtn As System.Windows.Forms.Button
 End Class

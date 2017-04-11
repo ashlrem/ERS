@@ -2,11 +2,11 @@
 
 Public Class forgot3
     Dim cn As New MySqlConnection
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         forgotRR()
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         My.Forms.MainScreen.AdminBtn.Visible = True
         My.Forms.MainScreen.CashierBtn.Visible = True
         My.Forms.MainScreen.RegistrarBtn.Visible = True
@@ -15,7 +15,7 @@ Public Class forgot3
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         ans1.Text = ""
         ans2.Text = ""
         Me.Close()
@@ -42,21 +42,5 @@ Public Class forgot3
             cn.Close()
         End If
         cn.Close()
-    End Sub
-
-    Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        My.Forms.MainScreen.AdminBtn.Visible = True
-        My.Forms.MainScreen.CashierBtn.Visible = True
-        My.Forms.MainScreen.RegistrarBtn.Visible = True
-        My.Forms.MainScreen.AboutUsBtn.Visible = True
-        My.Forms.MainScreen.PictureBox1.Visible = True
-        Me.Close()
-    End Sub
-
-    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        ans1.Text = ""
-        ans2.Text = ""
-        Me.Close()
-        ForgotR.Show()
     End Sub
 End Class

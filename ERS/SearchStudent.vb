@@ -1,6 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class SearchStudent
+
+    Private Sub SearchStudent_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        Screen_Admin.Show()
+        AdminPanel.Show()
+    End Sub
     Private Sub SearchStudent_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim str As String = "server= '" & server & "';port= '" & port & "';userid= '" & user & "';password= '" & password & "';database='" & database & "'"
         Dim con As New MySqlConnection(str)
@@ -55,9 +60,14 @@ Public Class SearchStudent
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-
+        If My.Forms.AdminPanel.empl.Text = "" Then
+            RegistrarPanel.Show()
+            Screen_Registrar.Show()
+            Me.Close()
+        ElseIf My.Forms.CashierPanel.empl.Text = "" Then
             AdminPanel.Show()
             Screen_Admin.Show()
             Me.Close()
+        End If
     End Sub
 End Class

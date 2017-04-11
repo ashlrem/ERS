@@ -136,7 +136,6 @@ Module Payment
         Try
        
             Dim reg As String = "UPDATE payment_tbl SET FirstPayment = 0 where Student_ID_No ='" & My.Forms.UpdatePayment_A.sn.Text & "'"
-            Dim paymentOf As String = "Midterm"
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn1)
                     cn1.Open()
@@ -144,9 +143,8 @@ Module Payment
                     My.Forms.Reciept.nameOS.Text = My.Forms.UpdatePayment_A.sn.Text
                     My.Forms.Reciept.grade.Text = My.Forms.UpdatePayment_A.grade.Text
                     My.Forms.Reciept.amount.Text = My.Forms.UpdatePayment_A.prelim.Text
-                    My.Forms.Reciept.po.Text = paymentOf
                     Reciept.Show()
-                    MsgBox("Midterm Paid!")
+                    MsgBox("Prelim Paid!")
                     My.Forms.UpdatePayment_A.pre_btn.Text = "Paid!"
                     cn1.Close()
                 End Using
@@ -160,18 +158,16 @@ Module Payment
     Public Sub midtermPay_btn()
         Try
 
-            Dim reg As String = "UPDATE payment_tbl SET SecondPayment = 0 Where Student_ID_No ='" & My.Forms.UpdatePayment_A.sn.Text & "'"
-            Dim paymentOf As String = "Final"
+            Dim reg As String = "UPDATE payment_tbl SET SecondPayment = 0 Where Student_ID_No  '" & My.Forms.UpdatePayment_A.sn.Text & "'"
             Using cn1 = New MySqlConnection("server= '" & server & "'; userid= '" & user & "'; port= '" & port & "';password= '" & password & "';database='" & database & "'")
                 Using sqlCmd = New MySqlCommand(reg, cn1)
                     cn1.Open()
                     sqlCmd.ExecuteNonQuery()
-                    MsgBox("Finals Paid!")
+                    MsgBox("Midterm Paid!")
                     My.Forms.UpdatePayment_A.mid_btn.Text = "Paid!"
                     My.Forms.Reciept.nameOS.Text = My.Forms.UpdatePayment_A.sn.Text
                     My.Forms.Reciept.grade.Text = My.Forms.UpdatePayment_A.grade.Text
-                    My.Forms.Reciept.amount.Text = My.Forms.UpdatePayment_A.midterm.Text
-                    My.Forms.Reciept.po.Text = paymentOf
+                    My.Forms.Reciept.amount.Text = My.Forms.UpdatePayment_A.prelim.Text
                     Reciept.Show()
                     cn1.Close()
                 End Using

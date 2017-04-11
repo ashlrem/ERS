@@ -1,8 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class StudentArchive
-
-
     Private Sub StudentArchive_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
         Screen_Admin.Show()
         AdminPanel.Show()
@@ -49,6 +47,6 @@ Public Class StudentArchive
 
         retrieve123_btn()
         insertArchive()
-        sn.Clear()
+
     End Sub
 End Class

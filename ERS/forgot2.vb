@@ -24,11 +24,11 @@ Public Class forgot2
         cn.Close()
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         forgotCC()
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         My.Forms.MainScreen.AdminBtn.Visible = True
         My.Forms.MainScreen.CashierBtn.Visible = True
         My.Forms.MainScreen.RegistrarBtn.Visible = True
@@ -37,19 +37,10 @@ Public Class forgot2
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         ans1.Text = ""
         ans2.Text = ""
         Me.Close()
         ForgotC.Show()
-    End Sub
-
-    Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        My.Forms.MainScreen.AdminBtn.Visible = True
-        My.Forms.MainScreen.CashierBtn.Visible = True
-        My.Forms.MainScreen.RegistrarBtn.Visible = True
-        My.Forms.MainScreen.AboutUsBtn.Visible = True
-        My.Forms.MainScreen.PictureBox1.Visible = True
-        Me.Close()
     End Sub
 End Class

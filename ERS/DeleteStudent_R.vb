@@ -23,12 +23,7 @@ Public Class DeleteStudent_R
     End Function
 
     Private Sub DeleteButton_a_Student_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteButton_a_Student.Click
-        Dim a As Integer
-        a = MsgBox("Are you sure do you want to delete Student Info?", MsgBoxStyle.YesNo)
-        If (a = MsgBoxResult.Yes) Then
-            dropstudR()
-        End If
-
+        dropstudR()
     End Sub
 
     Private Sub DeleteStudent_R_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

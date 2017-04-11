@@ -30,7 +30,7 @@ Partial Class ForgotV
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(96, 85)
+        Me.Button1.Location = New System.Drawing.Point(125, 75)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 2
@@ -39,7 +39,7 @@ Partial Class ForgotV
         '
         'ne1
         '
-        Me.ne1.Location = New System.Drawing.Point(177, 41)
+        Me.ne1.Location = New System.Drawing.Point(142, 33)
         Me.ne1.Name = "ne1"
         Me.ne1.Size = New System.Drawing.Size(100, 20)
         Me.ne1.TabIndex = 1
@@ -47,7 +47,7 @@ Partial Class ForgotV
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 44)
+        Me.Label1.Location = New System.Drawing.Point(12, 40)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(124, 13)
         Me.Label1.TabIndex = 2
@@ -55,7 +55,7 @@ Partial Class ForgotV
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(177, 85)
+        Me.Button2.Location = New System.Drawing.Point(206, 75)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 3
@@ -66,7 +66,7 @@ Partial Class ForgotV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(332, 141)
+        Me.ClientSize = New System.Drawing.Size(304, 122)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
@@ -74,8 +74,6 @@ Partial Class ForgotV
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Location = New System.Drawing.Point(350, 50)
-        Me.MaximumSize = New System.Drawing.Size(342, 174)
-        Me.MinimumSize = New System.Drawing.Size(342, 174)
         Me.Name = "ForgotV"
         Me.Text = "ForgotV"
         Me.ResumeLayout(False)
