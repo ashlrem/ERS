@@ -221,6 +221,7 @@ Partial Class ViewStud_C
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(898, 347)
+        Me.ControlBox = False
         Me.Controls.Add(Me.SearchStudent_btn)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -240,6 +241,8 @@ Partial Class ViewStud_C
         Me.Controls.Add(Me.nam)
         Me.Controls.Add(Me.add)
         Me.Controls.Add(Me.sn)
+        Me.MaximumSize = New System.Drawing.Size(914, 386)
+        Me.MinimumSize = New System.Drawing.Size(914, 386)
         Me.Name = "ViewStud_C"
         Me.Text = "ViewStudent"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

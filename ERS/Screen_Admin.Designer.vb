@@ -66,9 +66,10 @@ Partial Class Screen_Admin
         Me.SearchCashierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchArchiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewEnrolledStudentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminPanelPictureBox = New System.Windows.Forms.PictureBox()
-        Me.SearchArchiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RestoreStudentRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.AdminPanelPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -76,7 +77,7 @@ Partial Class Screen_Admin
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(194, 6)
         '
         'MenuStrip1
         '
@@ -241,7 +242,7 @@ Partial Class Screen_Admin
         '
         'StudentRecordToolStripMenuItem
         '
-        Me.StudentRecordToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddStudentRecordToolStripMenuItem, Me.UpdateStudentRecordToolStripMenuItem, Me.DeleteStudentRecordToolStripMenuItem, Me.ToolStripSeparator6, Me.ViewStudentRecordToolStripMenuItem})
+        Me.StudentRecordToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddStudentRecordToolStripMenuItem, Me.UpdateStudentRecordToolStripMenuItem, Me.DeleteStudentRecordToolStripMenuItem, Me.ToolStripSeparator6, Me.ViewStudentRecordToolStripMenuItem, Me.RestoreStudentRecordToolStripMenuItem})
         Me.StudentRecordToolStripMenuItem.Name = "StudentRecordToolStripMenuItem"
         Me.StudentRecordToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.StudentRecordToolStripMenuItem.Text = "Student Record"
@@ -249,25 +250,25 @@ Partial Class Screen_Admin
         'AddStudentRecordToolStripMenuItem
         '
         Me.AddStudentRecordToolStripMenuItem.Name = "AddStudentRecordToolStripMenuItem"
-        Me.AddStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.AddStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.AddStudentRecordToolStripMenuItem.Text = "Add Student Record"
         '
         'UpdateStudentRecordToolStripMenuItem
         '
         Me.UpdateStudentRecordToolStripMenuItem.Name = "UpdateStudentRecordToolStripMenuItem"
-        Me.UpdateStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.UpdateStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.UpdateStudentRecordToolStripMenuItem.Text = "Update Student Record"
         '
         'DeleteStudentRecordToolStripMenuItem
         '
         Me.DeleteStudentRecordToolStripMenuItem.Name = "DeleteStudentRecordToolStripMenuItem"
-        Me.DeleteStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.DeleteStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.DeleteStudentRecordToolStripMenuItem.Text = "Delete Student Record"
         '
         'ViewStudentRecordToolStripMenuItem
         '
         Me.ViewStudentRecordToolStripMenuItem.Name = "ViewStudentRecordToolStripMenuItem"
-        Me.ViewStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.ViewStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ViewStudentRecordToolStripMenuItem.Text = "View Student Record"
         '
         'SubjectsToolStripMenuItem
@@ -346,6 +347,12 @@ Partial Class Screen_Admin
         Me.SearchStudentToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.SearchStudentToolStripMenuItem.Text = "Search Student"
         '
+        'SearchArchiveToolStripMenuItem
+        '
+        Me.SearchArchiveToolStripMenuItem.Name = "SearchArchiveToolStripMenuItem"
+        Me.SearchArchiveToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.SearchArchiveToolStripMenuItem.Text = "Search Archive"
+        '
         'ViewEnrolledStudentsToolStripMenuItem
         '
         Me.ViewEnrolledStudentsToolStripMenuItem.Name = "ViewEnrolledStudentsToolStripMenuItem"
@@ -365,11 +372,11 @@ Partial Class Screen_Admin
         Me.AdminPanelPictureBox.TabIndex = 3
         Me.AdminPanelPictureBox.TabStop = False
         '
-        'SearchArchiveToolStripMenuItem
+        'RestoreStudentRecordToolStripMenuItem
         '
-        Me.SearchArchiveToolStripMenuItem.Name = "SearchArchiveToolStripMenuItem"
-        Me.SearchArchiveToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.SearchArchiveToolStripMenuItem.Text = "Search Archive"
+        Me.RestoreStudentRecordToolStripMenuItem.Name = "RestoreStudentRecordToolStripMenuItem"
+        Me.RestoreStudentRecordToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.RestoreStudentRecordToolStripMenuItem.Text = "Restore Student Record"
         '
         'Screen_Admin
         '
@@ -434,4 +441,5 @@ Partial Class Screen_Admin
     Friend WithEvents ViewEnrolledStudentsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdminPanelPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents SearchArchiveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RestoreStudentRecordToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

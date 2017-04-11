@@ -107,20 +107,46 @@ Public Class StudentCreate
                         ins.Parameters.AddWithValue("@UploadGoodMoral", goodMoral)
 
                         ins.ExecuteNonQuery()
-                        CheckBox1.Checked = False
-                        CheckBox2.Checked = False
-                        CheckBox3.Checked = False
-                        CheckBox4.Checked = False
-                        CheckBox5.Checked = False
-                        CheckBox6.Checked = False
+                        MsgBox("Student Added!!")
+
+                        If CheckBox1.Checked = True Then
+                            CheckBox1.Checked = False
+                        End If
+
+                        If CheckBox2.Checked = True Then
+                            CheckBox2.Checked = False
+                        End If
+
+                        If CheckBox3.Checked = True Then
+                            CheckBox3.Checked = False
+                        End If
+
+                        If CheckBox4.Checked = True Then
+                            CheckBox4.Checked = False
+                        End If
+
+                        If CheckBox5.Checked = True Then
+                            CheckBox5.Checked = False
+                        End If
+
+                        If CheckBox6.Checked = True Then
+                            CheckBox6.Checked = False
+                        End If
+
+                        'CheckBox1.Checked = False
+                        'CheckBox2.Checked = False
+                        'CheckBox3.Checked = False
+                        'CheckBox4.Checked = False
+                        'CheckBox5.Checked = False
+                        'CheckBox6.Checked = False
                         pic = ""
                         PictureBox1.Image = Nothing
-                        MsgBox("Student Added!!")
                         AddSubClear()
+
                         objConn.Close()
 
                     Catch ex As Exception
-                        MessageBox.Show(ex.ToString)
+                        MessageBox.Show("Student ID already exists!")
                     End Try
                 Else
                     MsgBox("Student ID already exist in the Database!")
@@ -130,6 +156,7 @@ Public Class StudentCreate
                 MsgBox("Must upload picture.")
             End Try
         End If
+
     End Sub
 
     Private Sub bd_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bd.ValueChanged
@@ -192,8 +219,9 @@ Public Class StudentCreate
     Private Sub StudentCreate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim Screen As System.Drawing.Rectangle
         Screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea()
-        Me.Top = (Screen.Height \ 2) - (Me.Height) + 330
+        Me.Top = (Screen.Height \ 2) - (Me.Height) + 380
         Me.Left = (Screen.Width \ 2) - (Me.Width \ 2)
+
     End Sub
 
     Private Sub CheckBox2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox2.CheckedChanged

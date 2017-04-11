@@ -105,6 +105,7 @@ Partial Class Screen_Cashier
         Me.DeletePaymentToolStripMenuItem.Name = "DeletePaymentToolStripMenuItem"
         Me.DeletePaymentToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.DeletePaymentToolStripMenuItem.Text = "Delete Payment"
+        Me.DeletePaymentToolStripMenuItem.Visible = False
         '
         'ToolStripSeparator2
         '

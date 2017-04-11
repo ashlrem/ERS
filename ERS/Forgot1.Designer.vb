@@ -37,7 +37,7 @@ Partial Class Forgot1
         '
         Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Location = New System.Drawing.Point(553, 232)
+        Me.Button1.Location = New System.Drawing.Point(546, 248)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(128, 37)
         Me.Button1.TabIndex = 0
@@ -47,7 +47,7 @@ Partial Class Forgot1
         '
         Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Location = New System.Drawing.Point(553, 189)
+        Me.Button2.Location = New System.Drawing.Point(546, 205)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(128, 37)
         Me.Button2.TabIndex = 0
@@ -57,7 +57,7 @@ Partial Class Forgot1
         '
         Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.Location = New System.Drawing.Point(553, 140)
+        Me.Button3.Location = New System.Drawing.Point(546, 156)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(128, 42)
         Me.Button3.TabIndex = 3
@@ -66,33 +66,33 @@ Partial Class Forgot1
         'sq1
         '
         Me.sq1.AutoSize = True
-        Me.sq1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sq1.Location = New System.Drawing.Point(43, 110)
+        Me.sq1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sq1.Location = New System.Drawing.Point(36, 126)
         Me.sq1.Name = "sq1"
-        Me.sq1.Size = New System.Drawing.Size(101, 31)
+        Me.sq1.Size = New System.Drawing.Size(63, 20)
         Me.sq1.TabIndex = 1
         Me.sq1.Text = "Label1"
         '
         'sq2
         '
         Me.sq2.AutoSize = True
-        Me.sq2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.sq2.Location = New System.Drawing.Point(43, 204)
+        Me.sq2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sq2.Location = New System.Drawing.Point(36, 220)
         Me.sq2.Name = "sq2"
-        Me.sq2.Size = New System.Drawing.Size(101, 31)
+        Me.sq2.Size = New System.Drawing.Size(63, 20)
         Me.sq2.TabIndex = 1
         Me.sq2.Text = "Label1"
         '
         'ans1
         '
-        Me.ans1.Location = New System.Drawing.Point(79, 155)
+        Me.ans1.Location = New System.Drawing.Point(72, 171)
         Me.ans1.Name = "ans1"
         Me.ans1.Size = New System.Drawing.Size(294, 20)
         Me.ans1.TabIndex = 1
         '
         'ans2
         '
-        Me.ans2.Location = New System.Drawing.Point(79, 249)
+        Me.ans2.Location = New System.Drawing.Point(72, 265)
         Me.ans2.Name = "ans2"
         Me.ans2.Size = New System.Drawing.Size(294, 20)
         Me.ans2.TabIndex = 2
@@ -100,7 +100,7 @@ Partial Class Forgot1
         'ne1
         '
         Me.ne1.AutoSize = True
-        Me.ne1.Location = New System.Drawing.Point(580, 155)
+        Me.ne1.Location = New System.Drawing.Point(573, 171)
         Me.ne1.Name = "ne1"
         Me.ne1.Size = New System.Drawing.Size(39, 13)
         Me.ne1.TabIndex = 4
@@ -124,6 +124,8 @@ Partial Class Forgot1
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Location = New System.Drawing.Point(350, 50)
+        Me.MaximumSize = New System.Drawing.Size(712, 371)
+        Me.MinimumSize = New System.Drawing.Size(712, 371)
         Me.Name = "Forgot1"
         Me.Text = "Forgot1"
         Me.ResumeLayout(False)

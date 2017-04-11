@@ -12,7 +12,11 @@ Public Class DeleteStudent_A
         Return tmpImage
     End Function
     Private Sub DeleteButton_a_Student_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteButton_a_Student.Click
-        dropstud()
+        Dim a As Integer
+        a = MsgBox("Are you sure do you want to delete Student Info?", MsgBoxStyle.YesNo)
+        If (a = MsgBoxResult.Yes) Then
+            dropstud()
+        End If
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         Screen_Admin.Show()

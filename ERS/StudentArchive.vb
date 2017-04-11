@@ -49,6 +49,6 @@ Public Class StudentArchive
 
         retrieve123_btn()
         insertArchive()
-
+        sn.Clear()
     End Sub
 End Class
